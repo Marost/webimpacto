@@ -1,5 +1,14 @@
 /* IMPACTO EVANGELISTICO */
 
+/* FUNCIONES */
+.sombraIzqInf(){
+    -moz-box-shadow: -3px 3px 20px #000000;
+    -webkit-box-shadow: -3px 3px 20px #000000;
+    box-shadow: -3px 3px 20px #000000;
+    filter: progid:DXImageTransform.Microsoft.Shadow(strength = 3, direction = 225, color = '#000000');
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength = 3, Direction = 225, Color = '#000000')";
+}
+
 /*
  * HTML5 Boilerplate
  *
@@ -23,6 +32,7 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
+    font-family: 'Open sans', sans-serif;
 }
 
 ::-moz-selection {
@@ -73,20 +83,570 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+header,
+section#slider,
+section#news,
+footer{
+    position: relative;
+    float: left;
+    width: 100%;
+}
 
+.interior{
+    width: 990px;
+    margin: 0 auto;
+}
 
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
 
+header{
 
+    h1{
 
+        a{
+            background: url("../imagenes/logo.png");
+            float: left;
+            height: 125px;
+            display: block;
+            text-indent: -1000em;
+            width: 350px;
+        }
+    }
 
+    .der{
+        width: 640px;
+        float: left;
 
+        #social{
+            float: left;
+            padding: 0 0 0 530px;
 
+            ul{
+                margin: 0;
+                padding: 0;
+                list-style: none;
 
+                li{
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    display: block;
+                    float: left;
+                    border-left: 1px solid #ccc;
 
+                    a{
+                        display: block;
+                        width: 26px;
+                        height: 26px;
+                        float: left;
+                        margin: 0 5px;
+                        text-indent: -1000em;
+                        background: url("../imagenes/icons.png");
+                    }
 
+                    a.rss{
+                        background-position: 0 0;
+                    }
 
+                    a.facebook{
+                        background-position: -36px 0;
+                    }
 
+                    a.youtube{
+                        background-position: -72px 0;
+                    }
+                }
 
+                li:first-child{
+                    border-left: none;
+                }
+            }
+        }
+
+        #busqueda{
+            float: left;
+            padding: 65px 0 0 330px;
+
+        }
+    }
+
+    nav{
+        float: left;
+        background: #FF1D25;
+        height: 35px;
+        width: 100%;
+        margin-top: 10px;
+
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+
+                a{
+                    display: block;
+                    float: left;
+                    font-size: 14px;
+                    margin: 0 10px;
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px 0 0 0;
+                }
+
+                a:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        
+    }
+
+}
+
+/* ==========================================================================
+   SLIDER
+   ========================================================================== */
+
+section#slider{
+    height: 360px;
+    background: #CCC;
+    margin: 5px 0;
+}
+
+/* ==========================================================================
+   NEWS
+   ========================================================================== */
+
+section#news{
+
+    #nws, #nwm, #nwi{
+        width: 100%;
+        float: left;
+    }
+
+    #nws{        
+
+        .nwizq{
+            width: 290px;
+            float: left;
+            border-right: 1px solid #ccc;
+            padding-right: 39px;
+
+            aside{
+                width: 290px;
+                float: left;
+                padding-bottom: 15px;
+                padding-top: 15px;
+                border-bottom: 3px solid #000;
+
+                .edimpreso{
+                    float: left;
+                    background: url("../imagenes/fondo-portada.gif");
+                    padding: 10px;
+
+                    .datos{
+                        width: 115px;
+                        float: left;
+                        padding-top: 20px;
+
+                        h3{
+                            font-size: 26px;
+                            font-weight: normal;
+                            margin: 0;
+                        }
+
+                        h3.numedicion{
+                            color: #2991C8;
+                        }
+
+                        p{
+                            display: block;
+                            background: url("../imagenes/icon-flecha.gif") no-repeat;
+                            background-position: 0 20px;
+                            height: 30px;
+                        }
+
+                    }
+
+                    .imagen{
+                        width: 155px;
+                        float: left;
+                        .sombraIzqInf();
+                    }
+                }
+
+                .edanterior{
+                    float: left;
+                    padding: 10px;
+                    background-color: #00B2FF;
+
+                    h3, p{
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    h3{
+                        color: #fff;
+                        font-size: 18px;
+                        font-weight: 600;
+                        border-bottom: 1px dashed white;
+                    }
+
+                    p{
+                        color: #000;
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+                }
+
+                .columnistas{
+
+                    h3{
+                        margin: 0 0 5px 0;
+                        padding: 0;
+
+                        span{
+                            background-color: #034EA1;
+                            display: block;
+                            width: 25px;
+                            height: 25px;
+                            float: left;
+                            margin-right: 5px;
+                        }
+                    }
+
+                    article{
+                        border-top: 2px dashed #D8D8D8;
+                        padding: 10px;
+                        float: left;
+
+                        .imagen{
+                            float: left;
+                            margin: 0 5px 0 0;
+                        }
+
+                        .datos{
+                            float: left;
+                            width: 190px;
+
+                            h2, p{
+                                margin: 0; 
+                                padding: 0;
+                            }
+
+                            h2{
+                                height: 62px;
+                                font-weight: 600;
+                                font-size: 16px;
+                                color: #2991C8;
+                            }
+
+                            p{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+
+                .publicidad{
+                    width: 290px;
+                    height: 315px;
+                    float: left;
+                    background-color: #A7272D;
+                }
+            }
+
+            aside:first-child{
+                padding-top: 0;
+            }
+
+            aside:last-child{
+                border-bottom: none;
+            }
+        }
+
+        .nwder{
+            width: 620px;
+            float: left;
+            border-left: 1px solid #ccc;
+            padding-left: 39px;
+
+            section{
+                float: left;
+
+                h3{
+                    font-size: 40px;
+                    margin: 0;
+                    padding: 0;
+                    border-top: 5px solid black;
+                }
+
+                article{
+                    float: left;
+                    padding: 15px 0;
+                    border: 1px solid #CCC;
+                    border-left: none;
+                    border-right: none;
+
+                    .imagen{
+                        float: left;
+                        margin: 0 15px 0 0;
+                    }
+
+                    .datos{
+                        float: left;
+                        width: 315px;
+                        height: 170px;
+
+                        h2{
+                            font-weight: normal;
+                            font-size: 22px;
+                            line-height: 120%;
+                            margin: 0;
+                        }
+
+                        p{
+                            font-size: 12px;
+                            color: #808080;
+                        }
+                    }
+
+                    .fecha_social{
+                        float: left;
+
+                        p{
+                            font-size: 12px;
+                            margin: 0;
+                            padding: 0;
+                        }
+
+                        .addthis_toolbox{
+                            margin-top: 6px;
+                        }
+                    }
+                }
+
+                article:last-child{
+                    border-top: none;
+                }
+            }
+
+            section:last-child{
+                margin-top: 15px;
+            }
+        }
+    }
+
+    #nwm{
+        margin: 10px 0;
+        border-bottom: 5px solid;
+        padding-bottom: 10px;
+
+        .nwizq{
+            width: 574px;
+            float: left;
+            padding-right: 21px;
+            border-right: 1px solid #ccc;
+            
+            #galeria-datos{
+                width: 100%;
+                padding: 7px 0 5px 0;
+                float: left;
+                border-bottom: 1px solid #ccc;
+                border-top: 5px solid #000;
+
+                h3{
+                    margin: 0;
+                    padding: 0;
+                    float: left;
+                    width: 470px;
+
+                    span{
+                        background-color: #034EA1;
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        float: left;
+                        margin-right: 5px;
+                        margin-top: 4px;
+                    }
+                }
+
+                p{
+                    margin: 10px 0 0 0;
+                    padding: 0;
+                    float: left;
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+            }
+
+            #galeria-contenido{
+                width: 100%;
+                float: left;
+            }
+        }
+
+        .nwder{
+            width: 372px;
+            float: left;
+            padding-left: 21px;
+            border-left: 1px solid #ccc;
+
+            aside{
+                border-top: 5px solid #000;
+                float: left;
+                width: 372px;
+
+                .titulo{
+                    width: 100%;
+                    float: left;
+                    border-bottom: 1px dashed #ccc;
+
+                    h3{
+                        margin: 0;
+                        padding: 0;
+                        float: left;
+                        width: 470px;
+                        font-size: 18px;
+
+                        span{
+                            background-color: #034EA1;
+                            display: block;
+                            width: 15px;
+                            height: 15px;
+                            float: left;
+                            margin-right: 5px;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+
+                .contenido{
+                    font-size: 12px;
+                    margin: 10px;
+                    height: 128px;
+                    width: 352px;
+                    float: left;
+                    overflow: hidden;
+
+                    p{
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+                
+            }
+        }
+
+    }
+
+    #nwi{
+
+        .videos{
+
+            .titulo{
+                width: 100%;
+                float: left;
+                border-bottom: 1px dashed #ccc;
+                margin-bottom: 15px;
+
+                h3{
+                    margin: 0;
+                    padding: 0;
+                    float: left;
+                    width: 470px;
+                    font-size: 18px;
+
+                    span{
+                        background-color: #034EA1;
+                        display: block;
+                        width: 15px;
+                        height: 15px;
+                        float: left;
+                        margin-right: 5px;
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            .contenido {
+                width: 880px;
+                margin: 0 55px;
+                position: relative;
+
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    display: block;
+
+                    li {
+                        width: 260px;
+                        padding: 0;
+                        margin: 0 17px;
+                        display: block;
+                        float: left;
+
+                        .play{
+                            float: left;
+                        }
+
+                        .datos{
+                            float: left;
+
+                            h2{
+                                font-size: 14px;
+                                margin: 0;
+                                padding: 0;
+                            }
+
+                            p{
+                                font-size: 12px;
+                                margin: 0;
+                                padding: 10px 0 0 0;
+                            }
+                        }
+                    }
+                }                
+
+                .prev {
+                    position: absolute;
+                    top: 110px;
+                    left: -50px;
+                    display: block;
+                    width: 48px;
+                    height: 48px;
+                    background-image: url("../imagenes/icons.png");
+                    background-position: 0 -36px;
+                    text-indent: -1000em;
+                }
+                .next {
+                    position: absolute;
+                    top: 110px;
+                    right: -50px;
+                    display: block;
+                    width: 48px;
+                    height: 48px;
+                    background-image: url("../imagenes/icons.png");
+                    background-position: -58px -36px;
+                    text-indent: -1000em;
+                }
+
+                .clearfix {
+                    float: none;
+                    clear: both;
+                }
+            }
+        }
+    }
+}
 
 
 /* ==========================================================================
