@@ -1,3 +1,11 @@
+<?php
+require_once("panel@impacto/conexion/conexion.php");
+require_once("panel@impacto/conexion/funciones.php");
+
+//NOTICIAS
+$rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 2", $conexion);
+
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -241,28 +249,17 @@
 
                             <h3>NOTICIAS</h3>
 
-                            <article>
-
-                                <div class="imagen">
-                                    <img src="" alt="" width="290" height="220">
-                                </div>
-
-                                <div class="datos">
-                                    <h2>El mundo no se acaba en diciembre, lo explica la NASA</h2>
-                                    <p>¿Te preparas para algún apocalipsis ficticio este mes?</p>
-                                    <p>La idea de que el mundo termina el 21 de diciembre </p>
-                                </div>
-
-                                <div class="fecha_social">
-                                    <p>Miercoles, 24 de agosto del 2012</p>
-
-                                    <div class="addthis_toolbox addthis_default_style ">
-                                        <a class="addthis_button_tweet" tw:count="horizontal"></a>
-                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
-                                    </div>                                    
-                                </div>
-                                
-                            </article>
+                            <?php while($fila_noticias=mysql_fetch_array($rst_noticias)){
+                                    $noticias_id=$fila_noticias["id"];
+                                    $noticias_url=$fila_noticias["url"];
+                                    $noticias_urlFinal=$web."nota/".$noticias_id."-".$noticias_url;
+                                    $noticias_titulo=$fila_noticias["titulo"];
+                                    $noticias_contenido=primerParrafo($fila_noticias["contenido"]);
+                                    $fechaPubNoticia=$fila_noticias["fecha_publicacion"];
+                                    $fechaNoticia=explode(" ", $fechaPubNoticia);
+                                    $fechaExpNoticia=explode("-", $fechaNoticia[0]);
+                                    $noticias_fecha=nombreFechaTotal($fechaExpNoticia[0],$fechaExpNoticia[1],$fechaExpNoticia[2]);
+                            ?>
 
                             <article>
 
@@ -271,21 +268,24 @@
                                 </div>
 
                                 <div class="datos">
-                                    <h2>El mundo no se acaba en diciembre, lo explica la NASA</h2>
-                                    <p>¿Te preparas para algún apocalipsis ficticio este mes?</p>
-                                    <p>La idea de que el mundo termina el 21 de diciembre </p>
+                                    <h2><a href="<?php echo $noticias_urlFinal; ?>" title="<?php echo $noticias_titulo; ?>">
+                                        <?php echo $noticias_titulo; ?></a></h2>
+                                    <?php echo $noticias_contenido; ?>
                                 </div>
 
                                 <div class="fecha_social">
-                                    <p>Miercoles, 24 de agosto del 2012</p>
+                                    <p><?php echo $noticias_fecha; ?></p>
 
-                                    <div class="addthis_toolbox addthis_default_style ">
+                                    <div class="addthis_toolbox addthis_default_style"
+                                        addthis:url="<?php echo $noticias_urlFinal; ?>" addthis:title="<?php echo $noticias_titulo; ?>">
                                         <a class="addthis_button_tweet" tw:count="horizontal"></a>
                                         <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
                                     </div>                                    
                                 </div>
                                 
                             </article>
+
+                            <?php } ?>
 
                         </section>
 
