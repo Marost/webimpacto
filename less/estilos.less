@@ -121,7 +121,7 @@ header{
 
         #social{
             float: left;
-            padding: 0 0 0 530px;
+            padding: 0 0 0 450px;
 
             ul{
                 margin: 0;
@@ -146,17 +146,22 @@ header{
                         background: url("../imagenes/icons.png");
                     }
 
-                    a.rss{
+                    a.youtube{
+                        width: 65px !important;
                         background-position: 0 0;
                     }
 
-                    a.facebook{
-                        background-position: -36px 0;
+                    a.google{
+                        background-position: -75px 0;
                     }
 
-                    a.youtube{
-                        background-position: -72px 0;
+                    a.twitter{
+                        background-position: -111px 0;
                     }
+
+                    a.facebook{
+                        background-position: -147px 0;
+                    }                    
                 }
 
                 li:first-child{
@@ -214,9 +219,17 @@ header{
    ========================================================================== */
 
 section#slider{
-    height: 360px;
+    max-height: 360px;
     background: #CCC;
     margin: 5px 0;
+
+    .fullwidthbanner-container{
+        width:100% !important;
+        position:relative;
+        padding:0;
+        max-height:360px !important;
+        overflow:hidden;
+    }
 }
 
 /* ==========================================================================
@@ -405,10 +418,15 @@ section#news{
                         height: 170px;
 
                         h2{
-                            font-weight: normal;
-                            font-size: 22px;
+                            font-weight: 600;
+                            font-size: 25px;
                             line-height: 120%;
                             margin: 0;
+
+                            a{
+                                color: #000;
+                                text-decoration: none;
+                            }
                         }
 
                         p{
@@ -540,11 +558,18 @@ section#news{
                         margin: 0;
                         padding: 0;
                     }
+
+                    .wg_saludos{
+                        width: 100%;
+                        float: left;                        
+                    }
+
+                    .bx-prev, .bx-next{
+                        display: none;
+                    }
                 }
-                
             }
         }
-
     }
 
     #nwi{
