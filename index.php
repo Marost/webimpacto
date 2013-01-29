@@ -2,8 +2,22 @@
 require_once("panel@impacto/conexion/conexion.php");
 require_once("panel@impacto/conexion/funciones.php");
 
+//WIDGETS
+$sc_addthis=true;
+$sc_galinferior=true;
+$sc_videos=true;
+$sc_saludos=true;
+$sc_slider=true;
+
+
 //NOTICIAS
 $rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 2", $conexion);
+
+//SALUDOS
+$rst_saludos=mysql_query("SELECT * FROM iev_saludos WHERE id>0 AND estado_saludo='A' ORDER BY fecha DESC LIMIT 12", $conexion);
+
+//NOS ESCRIBEN
+$rst_escriben=mysql_query("SELECT * FROM iev_saludos WHERE id>0 AND estado_saludo='A' ORDER BY fecha DESC LIMIT 12", $conexion);
 
 ?>
 <!DOCTYPE html>
@@ -18,88 +32,7 @@ $rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <!-- FONT -->
-        <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
-
-        <!-- ESTILOS -->
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/estilos.css">
-
-        <!-- MODERNIZR -->
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-
-        <!-- CSS FORM BUSCAR -->
-        <link rel="stylesheet" href="libs/search-forms/light/search-light.css" />
-        <!--[if lt IE 9]>
-                <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
-                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-        <script src="libs/search-forms/light/placeholder.js"></script>
-
-        <!-- ADDTHIS -->
-        <script>var addthis_config = {"data_track_addressbar":true};</script>
-        <script src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63"></script>
-
-        <!-- GALERIA -->
-        <link href="libs/royalslider/royalslider/royalslider.css" rel="stylesheet">
-        <link href="libs/royalslider/royalslider/default/rs-default.css" rel="stylesheet">
-        <link href="libs/royalslider/preview-assets/css/smoothness/jquery-ui-1.8.22.custom.css" rel="stylesheet">
-        <link href="libs/royalslider/preview-assets/css/github.css" rel="stylesheet">
-
-        <script src="libs/royalslider/preview-assets/js/highlight.pack.js"></script>
-        <script src="libs/royalslider/preview-assets/js/jquery-ui-1.8.22.custom.min.js"></script>
-        <script> hljs.initHighlightingOnLoad();</script>
-
-        <script src="libs/royalslider/royalslider/jquery-1.8.0.min.js"></script>
-        <script src="libs/royalslider/royalslider/jquery.royalslider.min.js"></script>
-        <script>
-        var jGalHome = jQuery.noConflict();
-
-        jGalHome(document).ready(function() {
-            jGalHome('#galeria-contenido').royalSlider({
-                fullscreen: {
-                  enabled: false
-                },
-                controlNavigation: 'thumbnails',
-                thumbs: {
-                  orientation: 'vertical'
-                },
-                transitionType:'fade',
-                autoScaleSlider: true, 
-                autoScaleSliderWidth: 960,     
-                autoScaleSliderHeight: 520,
-                loop: true,
-                arrowsNav: false,
-                keyboardNavEnabled: true,
-                globalCaption: true,
-                firstMargin: 10,
-                autoPlay: {
-                    enabled: true,
-                    pauseOnHover: true,
-                    delay: 5000
-                }
-            });
-        });
-        </script>
-
-        <!-- VIDEOS -->
-        <script src="libs/caroufredsel/jquery-1.8.2.min.js"></script>
-        <script src="libs/caroufredsel/jquery.carouFredSel-6.1.0-packed.js"></script>
-        <script>
-        var jVideos = jQuery.noConflict();
-
-        jVideos(document).ready(function() {
-            jVideos('#video-lista').carouFredSel({
-                auto: false,
-                prev: '#prev-video',
-                next: '#next-video',
-                pagination: false,
-                items: 3
-            });
-        });
-        </script>
+        <?php require_once("w-script.php"); ?>
 
     </head>
     <body>
@@ -109,65 +42,17 @@ $rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$
 
         <header>
 
-            <div class="interior">
-                
-                <h1>
-                    <a href="#" title="Impacto Evangelistico">Impacto Evangelístico</a>
-                </h1>
-
-                <div class="der">
-                    
-                    <div id="social">
-                        <ul>
-                            <li><a href="#" class="rss" title="RSS">RSS</a></li>
-                            <li><a href="#" class="facebook" title="Facebook">Facebook</a></li>
-                            <li><a href="#" class="youtube" title="Youtube">Youtube</a></li>
-                        </ul>
-                    </div>
-
-                    <div id="busqueda">
-                        <form action="" class="search-form noframe rbtn rlarge lblue">
-                            <input type="text" name="buscar" class="search-input" placeholder="Buscar..." />
-                            <input class="search-btn" type="submit" value="" />
-                        </form>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <nav>
-                <div class="interior">
-                    <ul>
-                        <li><a href="#" title="">Inicio</a></li>
-                        <li><a href="#" title="">Portada</a></li>
-                        <li><a href="#" title="">Noticias</a></li>
-                        <li><a href="#" title="">Editorial</a></li>
-                        <li><a href="#" title="">Internacional</a></li>
-                        <li><a href="#" title="">Economía</a></li>
-                        <li><a href="#" title="">Historia</a></li>
-                        <li><a href="#" title="">Literatura</a></li>
-                        <li><a href="#" title="">Testimonios</a></li>
-                        <li><a href="#" title="">Heroes de la Fe</a></li>
-                        <li><a href="#" title="">Devocionales</a></li>
-                    </ul>
-                </div>
-            </nav>
+            <?php require_once("w-header.php"); ?>
             
         </header>
 
-        <section id="slider">
-            
-            <div class="interior">
-                
-            </div>
-
-        </section>
+        <?php require_once("w-slider.php"); ?>
 
         <section id="news">
             
             <div class="interior">
                 
+                <!-- SECCION SUPERIOR -->
                 <section id="nws">
 
                     <div class="nwizq">
@@ -321,7 +206,9 @@ $rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$
                     </div>
 
                 </section>
+                <!-- SECCION SUPERIOR FIN -->
 
+                <!-- SECCION CENTRO -->
                 <section id="nwm">
                     <div class="nwizq">
 
@@ -368,7 +255,15 @@ $rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$
                             </div>
 
                             <div class="contenido">
-                                <p>Augue adipiscing porta turpis amet, in lundium velit? Penatibus turpis. Platea aenean, pid pid dolor pellentesque vel porttitor. Sit aliquam! Sed aliquet risus turpis. Augue adipiscing porta turpis amet, in lundium velit? Penatibus turpis. Platea aenean, pid pid dolor pellentesque vel porttitor. Sit aliquam! Sed aliquet risus turpis. Augue adipiscing porta turpis amet, in lundium velit? Penatibus turpis. Platea aenean, pid pid dolor pellentesque vel porttitor. Sit aliquam! Sed aliquet risus turpis.Augue adipiscing porta turpis amet, in lundium velit? Penatibus turpis. Platea aenean, pid pid dolor pellentesque vel porttitor. Sit aliquam! Sed aliquet risus turpis.</p>
+                                
+                                <div class="wg_saludos">
+                                    <?php while($fila_saludos=mysql_fetch_array($rst_saludos)){ ?>
+                                    <div>
+                                        <p><strong><?php echo $fila_saludos["nombre"]; ?>:</strong> <?php echo $fila_saludos["contenido"]; ?></p>
+                                    </div>
+                                    <?php } ?>
+                                </div>
+
                             </div>
                         </aside>
 
@@ -381,91 +276,27 @@ $rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$
                     </div>
 
                 </section>
+                <!-- SECCION CENTRO FIN -->
 
+                <!-- SECCION INFERIOR -->
                 <section id="nwi">
 
-                    <section class="videos">
-                        
-                        <div class="titulo">
-                            <h3><span></span>VIDEOS</h3>
-                        </div>
-
-                        <div class="contenido">
-                            <ul id="video-lista">
-                                <li>
-                                    <div class="play">
-                                        <iframe width="260" height="146" src="http://www.youtube.com/embed/OQVD1mZMLZ4?rel=0" frameborder="0" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="datos">
-                                        <h2>Bethel televisión realiza pruebas para lanzar señal en alta definición</h2>
-                                        <p>Noviembre 2012</p>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="play">
-                                        <iframe width="260" height="146" src="http://www.youtube.com/embed/OQVD1mZMLZ4?rel=0" frameborder="0" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="datos">
-                                        <h2>Bethel televisión realiza pruebas para lanzar señal en alta definición</h2>
-                                        <p>Noviembre 2012</p>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="play">
-                                        <iframe width="260" height="146" src="http://www.youtube.com/embed/OQVD1mZMLZ4?rel=0" frameborder="0" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="datos">
-                                        <h2>Bethel televisión realiza pruebas para lanzar señal en alta definición</h2>
-                                        <p>Noviembre 2012</p>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="play">
-                                        <iframe width="260" height="146" src="http://www.youtube.com/embed/OQVD1mZMLZ4?rel=0" frameborder="0" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="datos">
-                                        <h2>Bethel televisión realiza pruebas para lanzar señal en alta definición</h2>
-                                        <p>Noviembre 2012</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                            <a id="prev-video" class="prev" href="javascript:;">&lt;</a>
-                            <a id="next-video" class="next" href="javascript:;">&gt;</a>
-                            <div id="pager2" class="pager"></div>
-                        </div>
-
-                    </section>
+                    <?php require_once("w-videos.php"); ?>
 
                 </section>
+                <!-- SECCION INFERIOR FIN -->
 
             </div>
 
         </section>
 
+        <!-- FOOTER -->
         <footer>
             
-            <div class="interior">
-                
-                <div class="logo">
-                    <img src="imagenes/logo-b.png" alt="" height="60">
-                    <p>© 2013. Todos los derechos reservados.</p>
-                </div>
-
-                <div class="datos">
-                    
-                    <aside>
-                        
-                    </aside>
-
-                </div>
-
-            </div>
+            <?php require_once("w-footer.php"); ?>
 
         </footer>
+        <!-- FOOTER FIN -->
 
     </body>
 </html>
