@@ -31,18 +31,17 @@ $sesion_pre="ievs";
 $fechaActual=date("Y-m-d H:i:s");
 
 //EMPRESA
-/*$rst_empresa=mysql_query("SELECT * FROM ".$tabla_suf."_empresa WHERE id=1;", $conexion);
+$rst_empresa=mysql_query("SELECT * FROM ".$tabla_suf."_empresa WHERE id=1;", $conexion);
 $fila_empresa=mysql_fetch_array($rst_empresa);
 $web=$fila_empresa["web"];
+
 
 if ($_SESSION["user-".$sesion_pre.""]<>""){
 	$usuario_user=$_SESSION["user-".$sesion_pre.""];
 	$usuario_nombre=$_SESSION["user_nombre-".$sesion_pre.""];
 	$usuario_apellido=$_SESSION["user_apellido-".$sesion_pre.""];
 	$usuario_email=$_SESSION["user_email-".$sesion_pre.""];
-	
-	//PRIVILEGIOS
-	$rst_prv_user=mysql_query("SELECT * FROM ".$tabla_suf."_usuario_privilegios WHERE usuario='".$usuario_user."'", $conexion);
-	$fila_prv_user=mysql_fetch_array($rst_prv_user);	
-}*/
+}
+
+
 ?>

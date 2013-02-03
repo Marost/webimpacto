@@ -9,15 +9,8 @@ $sc_videos=true;
 $sc_saludos=true;
 $sc_slider=true;
 
-
 //NOTICIAS
 $rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 2", $conexion);
-
-//SALUDOS
-$rst_saludos=mysql_query("SELECT * FROM iev_saludos WHERE id>0 AND estado_saludo='A' ORDER BY fecha DESC LIMIT 12", $conexion);
-
-//NOS ESCRIBEN
-$rst_escriben=mysql_query("SELECT * FROM iev_saludos WHERE id>0 AND estado_saludo='A' ORDER BY fecha DESC LIMIT 12", $conexion);
 
 ?>
 <!DOCTYPE html>
@@ -57,66 +50,9 @@ $rst_escriben=mysql_query("SELECT * FROM iev_saludos WHERE id>0 AND estado_salud
 
                     <div class="nwizq">
 
-                        <aside>
+                        <?php require_once("w-portada.php"); ?>
 
-                            <div class="edimpreso">
-                                
-                                <div class="datos">
-                                    <h3>Edición del mes</h3>
-                                    <h3 class="numedicion">N° 707</h3>
-                                    <p>Click Aquí</p>
-                                </div>
-
-                                <div class="imagen">
-                                    <a href="#" title="Edición N° 707">
-                                        <img src="imagenes/upload/portada.jpg" alt="">
-                                    </a>
-                                </div>
-
-                            </div>
-
-                            <div class="edanterior">
-                                <h3>EDICIONES ANTERIORES</h3>
-                                <p>Click aquí xxxx xxxxx xxxxx xxxx xxxxx xxx xxxxx xxxx xxxxxx xxxxxx x</p>
-                            </div>
-                            
-                        </aside>
-
-                        <aside>
-                            
-                            <div class="columnistas">
-                                
-                                <h3><span></span>COLUMNISTAS</h3>
-
-                                <article>
-                                    
-                                    <div class="imagen">
-                                        <img src="imagenes/upload/rev-gustavo.png" alt="">
-                                    </div>
-
-                                    <div class="datos">
-                                        <h2>OÍD PALABRA DE JEHOVÁ</h2>
-                                        <p>Rev. Gustavo Martínez</p>
-                                    </div>
-
-                                </article>
-
-                                <article>
-                                    
-                                    <div class="imagen">
-                                        <img src="imagenes/upload/rev-jose.png" alt="">
-                                    </div>
-
-                                    <div class="datos">
-                                        <h2>UN ACTO VALIOSO Y COSTOSO</h2>
-                                        <p>Rev. José Soto</p>
-                                    </div>
-
-                                </article>
-
-                            </div>
-
-                        </aside>
+                        <?php require_once("w-columnistas.php"); ?>
 
                         <aside>
 
@@ -239,39 +175,11 @@ $rst_escriben=mysql_query("SELECT * FROM iev_saludos WHERE id>0 AND estado_salud
 
                     <div class="nwder">
                         
-                        <aside>
-                            <div class="titulo">
-                                <h3><span></span>NOS ESCRIBEN</h3>
-                            </div>
+                        <?php require_once("w-escriben.php"); ?>
 
-                            <div class="contenido">
-                                <p>Augue adipiscing porta turpis amet, in lundium velit? Penatibus turpis. Platea aenean, pid pid dolor pellentesque vel porttitor. Sit aliquam! Sed aliquet risus turpis. Augue adipiscing porta turpis amet, in lundium velit? Penatibus turpis. Platea aenean, pid pid dolor pellentesque vel porttitor. Sit aliquam! Sed aliquet risus turpis. Augue adipiscing porta turpis amet, in lundium velit? Penatibus turpis. Platea aenean, pid pid dolor pellentesque vel porttitor. Sit aliquam! Sed aliquet risus turpis.Augue adipiscing porta turpis amet, in lundium velit? Penatibus turpis. Platea aenean, pid pid dolor pellentesque vel porttitor. Sit aliquam! Sed aliquet risus turpis.</p>
-                            </div>
-                        </aside>
+                        <?php require_once("w-saludos.php"); ?>
 
-                        <aside>
-                            <div class="titulo">
-                                <h3><span></span>ENVÍA TUS SALUDOS</h3>
-                            </div>
-
-                            <div class="contenido">
-                                
-                                <div class="wg_saludos">
-                                    <?php while($fila_saludos=mysql_fetch_array($rst_saludos)){ ?>
-                                    <div>
-                                        <p><strong><?php echo $fila_saludos["nombre"]; ?>:</strong> <?php echo $fila_saludos["contenido"]; ?></p>
-                                    </div>
-                                    <?php } ?>
-                                </div>
-
-                            </div>
-                        </aside>
-
-                        <aside>
-                            <div class="titulo">
-                                <h3><span></span>INFOGRAFIAS</h3>
-                            </div>
-                        </aside>
+                        <?php require_once("w-infografias.php"); ?>
 
                     </div>
 

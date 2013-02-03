@@ -4,13 +4,14 @@ require_once("panel@impacto/conexion/funciones.php");
 
 //VARIABLES DE URL
 $id_url=$_REQUEST["id"];
+$url=$_REQUEST["url"];
 
 //WIDGETS
 $sc_addthis=true;
 $sc_galinferior=true;
 $sc_videos=true;
 $sc_saludos=true;
-$sc_slider=true;
+$sc_slider=false;
 
 //NOTICIA
 $rst_noticia=mysql_query("SELECT * FROM iev_noticia WHERE id=$id_url", $conexion);
@@ -19,16 +20,22 @@ $fila_noticia=mysql_fetch_array($rst_noticia);
 //VARIABLES
 $noticia_titulo=$fila_noticia["titulo"];
 $noticia_contenido=$fila_noticia["contenido"];
+$noticia_categoria=$fila_noticia["categoria"];
 $noticia_imagen=$fila_noticia["imagen"];
 $noticia_imagen_carpeta=$fila_noticia["carpeta_imagen"];
 $noticia_fechatotal=explode(" ", $fila_noticia["fecha_publicacion"]);
-$noticia_fechapub=explode("-", $noticia_fechatotal);
+$noticia_fechapub=explode("-", $noticia_fechatotal[0]);
 
-//SALUDOS
-$rst_saludos=mysql_query("SELECT * FROM iev_saludos WHERE id>0 AND estado_saludo='A' ORDER BY fecha DESC LIMIT 12", $conexion);
+//CATEGORIA
+$rst_categoria=mysql_query("SELECT * FROM iev_noticia_categoria WHERE id=$noticia_categoria", $conexion);
+$fila_categoria=mysql_fetch_array($rst_categoria);
 
-//NOS ESCRIBEN
-$rst_escriben=mysql_query("SELECT * FROM iev_saludos WHERE id>0 AND estado_saludo='A' ORDER BY fecha DESC LIMIT 12", $conexion);
+//VARIABLES
+$categoria_titulo=$fila_categoria["categoria"];
+
+//VARIABLES
+$url_final=$web."nota/".$id_url."-".$url;
+$url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
 
 ?>
 <!DOCTYPE html>
@@ -42,6 +49,16 @@ $rst_escriben=mysql_query("SELECT * FROM iev_saludos WHERE id>0 AND estado_salud
         <title><?php echo $noticia_titulo; ?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
+        <base href="<?php echo $web; ?>">
+
+        <!-- OPEN GRAPH -->
+        <meta property="og:title" content="<?php echo $noticia_titulo; ?>"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:url" content="<?php echo $url_final; ?>"/>
+        <meta property="og:image" content="<?php echo $url_imagen; ?>"/>
+        <meta property="og:site_name" content=""/>
+        <meta property="fb:admins" content="1376286793"/>
+        <meta property="og:description" content=""/>
 
         <?php require_once("w-script.php"); ?>
 
@@ -66,16 +83,25 @@ $rst_escriben=mysql_query("SELECT * FROM iev_saludos WHERE id>0 AND estado_salud
                 <!-- SECCION SUPERIOR -->
                 <section id="nws">
 
-                    <div class="nwder">
+                    <div class="nwder notawizq">
 
                         <section class="nota">
                             
-                            <div class="fecha">
-                                <?php echo nombreFechaTotal($noticia_fechapub[0], $noticia_fechapub[1], $noticia_fechapub[2]); ?>
+                            <div class="datos">
+
+                                <div class="categoria">
+                                    <?php echo $categoria_titulo; ?>
+                                </div>
+
+                                <div class="fecha">
+                                    <?php echo nombreFechaTotal($noticia_fechapub[0], $noticia_fechapub[1], $noticia_fechapub[2]); ?>
+                                </div>
+                                    
                             </div>
 
                             <div class="titulo">
-                                <?php echo $noticia_titulo; ?>
+                                <h2><?php echo $noticia_titulo; ?></h2>
+                                <?php echo cortarTextoRH($noticia_contenido,1,0,150); ?>
                             </div>
 
                             <div class="imagen">
@@ -83,14 +109,14 @@ $rst_escriben=mysql_query("SELECT * FROM iev_saludos WHERE id>0 AND estado_salud
                             </div>
 
                             <div class="info">
-                                <?php echo $noticia_contenido; ?>
+                                <?php echo cortarTextoRH($noticia_contenido,0,1,0); ?>
                             </div>
 
                         </section>
                         
                     </div>
 
-                    <div class="nwizq">
+                    <div class="nwizq notawder">
 
                         <aside>
 
@@ -117,41 +143,7 @@ $rst_escriben=mysql_query("SELECT * FROM iev_saludos WHERE id>0 AND estado_salud
                             
                         </aside>
 
-                        <aside>
-                            
-                            <div class="columnistas">
-                                
-                                <h3><span></span>COLUMNISTAS</h3>
-
-                                <article>
-                                    
-                                    <div class="imagen">
-                                        <img src="imagenes/upload/rev-gustavo.png" alt="">
-                                    </div>
-
-                                    <div class="datos">
-                                        <h2>OÍD PALABRA DE JEHOVÁ</h2>
-                                        <p>Rev. Gustavo Martínez</p>
-                                    </div>
-
-                                </article>
-
-                                <article>
-                                    
-                                    <div class="imagen">
-                                        <img src="imagenes/upload/rev-jose.png" alt="">
-                                    </div>
-
-                                    <div class="datos">
-                                        <h2>UN ACTO VALIOSO Y COSTOSO</h2>
-                                        <p>Rev. José Soto</p>
-                                    </div>
-
-                                </article>
-
-                            </div>
-
-                        </aside>
+                        <?php require_once("w-columnistas.php"); ?>
 
                         <aside>
 
@@ -160,19 +152,17 @@ $rst_escriben=mysql_query("SELECT * FROM iev_saludos WHERE id>0 AND estado_salud
                             </div>
                             
                         </aside>
+
+                        <?php require_once("w-escriben.php"); ?>
+
+                        <?php require_once("w-saludos.php"); ?>
+
+                        <?php require_once("w-infografias.php"); ?>
                     
                     </div>
 
                 </section>
                 <!-- SECCION SUPERIOR FIN -->
-
-                <!-- SECCION INFERIOR -->
-                <section id="nwi">
-
-                    <?php require_once("w-videos.php"); ?>
-
-                </section>
-                <!-- SECCION INFERIOR FIN -->
 
             </div>
 
