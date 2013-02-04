@@ -15,7 +15,7 @@
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="libs/search-forms/light/placeholder.js"></script>
 
 <?php if($sc_addthis==true){ ?>
@@ -108,7 +108,7 @@ function startSaludo(){
 <?php if($sc_slider==true){ ?>
 <!-- SLIDER -->
 <link rel="stylesheet" type="text/css" href="libs/revolution-slider/css/settings.css" media="screen" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="libs/revolution-slider/js/jquery.themepunch.plugins.min.js"></script>
 <script src="libs/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
 <script>
