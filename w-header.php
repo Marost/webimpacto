@@ -1,7 +1,7 @@
 <div class="interior">
                 
     <h1>
-        <a href="#" title="Impacto Evangelistico">Impacto Evangelístico</a>
+        <a href="/" title="Impacto Evangelistico">Impacto Evangelístico</a>
     </h1>
 
     <div class="der">
@@ -29,7 +29,7 @@
 <nav>
     <div class="interior">
         <ul>
-            <li><a href="#" title="">Inicio</a></li>
+            <li><a href="/" title="">Inicio</a></li>
             <li><a href="#" title="">Portada</a></li>
             <li><a href="#" title="">Noticias</a></li>
             <li><a href="#" title="">Editorial</a></li>

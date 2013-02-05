@@ -9,8 +9,11 @@ $sc_videos=true;
 $sc_saludos=true;
 $sc_slider=true;
 
-//NOTICIAS
-$rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 2", $conexion);
+//NOTICIA INFERIORES
+$rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND noticia=1 ORDER BY fecha_publicacion DESC LIMIT 2", $conexion);
+
+//EVENTOS
+$rst_eventos=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND noticia=1 AND categoria=8 ORDER BY fecha_publicacion DESC LIMIT 1", $conexion);
 
 ?>
 <!DOCTYPE html>
@@ -75,6 +78,8 @@ $rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$
                                     $noticias_url=$fila_noticias["url"];
                                     $noticias_urlFinal=$web."nota/".$noticias_id."-".$noticias_url;
                                     $noticias_titulo=$fila_noticias["titulo"];
+                                    $noticias_imagen=$fila_noticias["imagen"];
+                                    $noticias_imagen_carpeta=$fila_noticias["carpeta_imagen"];
                                     $noticias_contenido=primerParrafo($fila_noticias["contenido"]);
                                     $fechaPubNoticia=$fila_noticias["fecha_publicacion"];
                                     $fechaNoticia=explode(" ", $fechaPubNoticia);
@@ -85,7 +90,8 @@ $rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$
                             <article>
 
                                 <div class="imagen">
-                                    <img src="" alt="" width="290" height="220">
+                                    <img src="imagenes/upload/<?php echo $noticias_imagen_carpeta."thumb/".$noticias_imagen; ?>" 
+                                    alt="<?php echo $noticias_titulo; ?>" width="290" height="220">
                                 </div>
 
                                 <div class="datos">
@@ -114,28 +120,46 @@ $rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$
 
                             <h3>EVENTOS</h3>
 
+                            <?php while($fila_eventos=mysql_fetch_array($rst_eventos)){
+                                    $eventos_id=$fila_eventos["id"];
+                                    $eventos_url=$fila_eventos["url"];
+                                    $eventos_urlFinal=$web."nota/".$eventos_id."-".$eventos_url;
+                                    $eventos_titulo=$fila_eventos["titulo"];
+                                    $eventos_imagen=$fila_eventos["imagen"];
+                                    $eventos_imagen_carpeta=$fila_eventos["carpeta_imagen"];
+                                    $eventos_contenido=primerParrafo($fila_eventos["contenido"]);
+                                    $fechaPubNoticia=$fila_eventos["fecha_publicacion"];
+                                    $fechaNoticia=explode(" ", $fechaPubNoticia);
+                                    $fechaExpNoticia=explode("-", $fechaNoticia[0]);
+                                    $eventos_fecha=nombreFechaTotal($fechaExpNoticia[0],$fechaExpNoticia[1],$fechaExpNoticia[2]);
+                            ?>
+
                             <article>
 
                                 <div class="imagen">
-                                    <img src="" alt="" width="290" height="220">
+                                    <img src="imagenes/upload/<?php echo $eventos_imagen_carpeta."thumb/".$eventos_imagen; ?>" 
+                                    alt="<?php echo $eventos_titulo; ?>" width="290" height="220">
                                 </div>
 
                                 <div class="datos">
-                                    <h2>El mundo no se acaba en diciembre, lo explica la NASA</h2>
-                                    <p>¿Te preparas para algún apocalipsis ficticio este mes?</p>
-                                    <p>La idea de que el mundo termina el 21 de diciembre </p>
+                                    <h2><a href="<?php echo $eventos_urlFinal; ?>" title="<?php echo $eventos_titulo; ?>">
+                                        <?php echo $eventos_titulo; ?></a></h2>
+                                    <?php echo $eventos_contenido; ?>
                                 </div>
 
                                 <div class="fecha_social">
-                                    <p>Miercoles, 24 de agosto del 2012</p>
+                                    <p><?php echo $eventos_fecha; ?></p>
 
-                                    <div class="addthis_toolbox addthis_default_style ">
+                                    <div class="addthis_toolbox addthis_default_style"
+                                        addthis:url="<?php echo $eventos_urlFinal; ?>" addthis:title="<?php echo $eventos_titulo; ?>">
                                         <a class="addthis_button_tweet" tw:count="horizontal"></a>
                                         <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
                                     </div>                                    
                                 </div>
                                 
                             </article>
+
+                            <?php } ?>
                             
                         </section>
                         

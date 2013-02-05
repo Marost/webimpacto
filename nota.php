@@ -108,6 +108,17 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
                                 <img src="imagenes/upload/<?php echo $noticia_imagen_carpeta."".$noticia_imagen; ?>" alt="<?php echo $noticia_titulo; ?>">
                             </div>
 
+                            <div class="addthis_toolbox addthis_default_style ">
+                                <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+                                <a class="addthis_button_tweet" tw:count="horizontal"></a>
+                                <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
+                                <a class="addthis_button_pinterest_pinit" 
+                                pi:pinit:url="<?php echo $web; ?>nota/<?php echo $nota_id."-".$nota_url; ?>" 
+                                pi:pinit:media="<?php echo $web; ?>upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" 
+                                pi:pinit:layout="horizontal"></a>
+                                <a class="addthis_counter addthis_pill_style"></a>
+                            </div>
+
                             <div class="info">
                                 <?php echo cortarTextoRH($noticia_contenido,0,1,0); ?>
                             </div>

@@ -21,6 +21,7 @@
 <?php if($sc_addthis==true){ ?>
 <!-- ADDTHIS -->
 <script>var addthis_config = {"data_track_addressbar":true};</script>
+<script>var addthis_config = {"data_track_clickback":false}</script>
 <script src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63"></script>
 <?php } ?>
 
@@ -68,12 +69,13 @@ jGalHome(document).ready(function() {
 
 <?php if($sc_videos==true){ ?>
 <!-- VIDEOS - SECCION -->
-<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="libs/caroufredsel/jquery-1.8.2.min.js"></script>
 <script src="libs/caroufredsel/jquery.carouFredSel-6.1.0-packed.js"></script>
 <script>
 var jVideos = jQuery.noConflict();
+jVideos(document).on("ready", startVideos);
 
-jVideos(document).ready(function() {
+function startVideos(){
     jVideos('#video-lista').carouFredSel({
         auto: false,
         prev: '#prev-video',
@@ -81,7 +83,7 @@ jVideos(document).ready(function() {
         pagination: false,
         items: 3
     });
-});
+}
 </script>
 <?php } ?>
 
@@ -108,7 +110,7 @@ function startSaludo(){
 <?php if($sc_slider==true){ ?>
 <!-- SLIDER -->
 <link rel="stylesheet" type="text/css" href="libs/revolution-slider/css/settings.css" media="screen" />
-<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="libs/revolution-slider/js/jquery.themepunch.plugins.min.js"></script>
 <script src="libs/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
 <script>
