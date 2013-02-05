@@ -15,7 +15,7 @@
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script src="libs/search-forms/light/placeholder.js"></script>
 
 <?php if($sc_addthis==true){ ?>
@@ -33,7 +33,7 @@
 <script src="libs/royalslider/preview-assets/js/highlight.pack.js"></script>
 <script src="libs/royalslider/preview-assets/js/jquery-ui-1.8.22.custom.min.js"></script>
 <script> hljs.initHighlightingOnLoad(); </script>
-<script src="libs/royalslider/royalslider/jquery-1.8.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script src="libs/royalslider/royalslider/jquery.royalslider.min.js"></script>
 <script>
 var jGalHome = jQuery.noConflict();
@@ -68,7 +68,7 @@ jGalHome(document).ready(function() {
 
 <?php if($sc_videos==true){ ?>
 <!-- VIDEOS - SECCION -->
-<script src="libs/caroufredsel/jquery-1.8.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script src="libs/caroufredsel/jquery.carouFredSel-6.1.0-packed.js"></script>
 <script>
 var jVideos = jQuery.noConflict();
@@ -87,7 +87,7 @@ jVideos(document).ready(function() {
 
 <?php if($sc_saludos==true){ ?>
 <!-- SALUDOS -->
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script src="libs/bxslider/jquery.bxSlider.min.js"></script>
 <script>
 var jSald = jQuery.noConflict();
@@ -108,7 +108,7 @@ function startSaludo(){
 <?php if($sc_slider==true){ ?>
 <!-- SLIDER -->
 <link rel="stylesheet" type="text/css" href="libs/revolution-slider/css/settings.css" media="screen" />
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script src="libs/revolution-slider/js/jquery.themepunch.plugins.min.js"></script>
 <script src="libs/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
 <script>
