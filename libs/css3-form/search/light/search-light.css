@@ -51,12 +51,12 @@ input:-moz-placeholder {
 	-moz-background-clip:    padding;
 	-webkit-background-clip: padding-box;
 	background-clip:         padding-box;
-	behavior: url(PIE.htc);
+	behavior: url(/libs/css3-form/PIE.htc);
 }
 
 .search-input {
 	width: 196px;
-	height: 20px;
+	height: 23px;
 	padding: 6px 10px 6px 35px;
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color: #333;
@@ -70,7 +70,7 @@ input:-moz-placeholder {
 	-moz-background-clip:    padding;
 	-webkit-background-clip: padding-box;
 	background-clip:         padding-box;
-	behavior: url(PIE.htc);
+	behavior: url(/libs/css3-form/PIE.htc);
 }
 
 .search-btn {
@@ -92,7 +92,7 @@ input:-moz-placeholder {
 	-moz-background-clip:    padding;
 	-webkit-background-clip: padding-box;
 	background-clip:         padding-box;
-	behavior: url(PIE.htc);
+	behavior: url(/libs/css3-form/PIE.htc);
 }
 
 .frame.rbtn .search-btn {
@@ -140,16 +140,17 @@ input:-moz-placeholder {
 }
 
 .noframe.inbtn .search-input {
-	width: 259px;
-	background: #fff;
-	padding: 6px 10px;
-	padding-right: 35px;
+	width: 285px;
+	background: white;
+	padding: 4px 10px;
+	float: left;
 }
 
 .noframe.nobtn .search-input {
-	width: 261px;
+	width: 152px;
 	padding-left: 35px;
 	background: #fff url(search-dark.png) 10px center no-repeat;
+	float: left;
 }
 
 .noframe.inbtn .search-btn {
@@ -299,7 +300,6 @@ input:-moz-placeholder {
 	background: url(search-light.png) center center no-repeat,      -o-linear-gradient(top, #86bdf0, #1560a6); /* Opera 11.10+ */
 	background: url(search-light.png) center center no-repeat,         linear-gradient(top, #86bdf0, #1560a6);
 	-pie-background: url(search-light.png) center center no-repeat,    linear-gradient(top, #86bdf0, #1560a6); /* IE6-IE9 */
-	vertical-align: middle;
 }
 
 

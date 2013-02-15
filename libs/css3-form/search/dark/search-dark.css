@@ -87,7 +87,7 @@ input:-moz-placeholder {
 	-moz-background-clip:    padding;
 	-webkit-background-clip: padding-box;
 	background-clip:         padding-box;
-	behavior: url(PIE.htc);
+	behavior: url(/libs/css3-form/PIE.htc);
 }
 
 .search-input {
@@ -106,7 +106,7 @@ input:-moz-placeholder {
 	-moz-background-clip:    padding;
 	-webkit-background-clip: padding-box;
 	background-clip:         padding-box;
-	behavior: url(PIE.htc);
+	behavior: url(/libs/css3-form/PIE.htc);
 }
 
 .search-btn {
@@ -128,7 +128,7 @@ input:-moz-placeholder {
 	-moz-background-clip:    padding;
 	-webkit-background-clip: padding-box;
 	background-clip:         padding-box;
-	behavior: url(PIE.htc);
+	behavior: url(/libs/css3-form/PIE.htc);
 }
 
 .frame.rbtn .search-btn {
