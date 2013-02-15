@@ -6,6 +6,7 @@ include("../../../conexion/funciones.php");
 //DECLARACION DE VARIABLES
 $idnoticia=$_REQUEST["id"];
 $titulo=$_POST["titulo"];
+$nombre=$_POST["nombre_edicion"];
 
 //FECHA PUBLICACION
 $fecha_publicacion=$_POST["fecha"];
@@ -15,17 +16,14 @@ $fecha_pub=$fecha_publicacion." ".$hora_publicacion.":00";
 //IMAGEN Y VIDEO
 if($_POST['flash_uploader_0_tmpname']==""){
 	$imagen=$_POST["imagen_actual"];
-	$carpeta_imagen=$_POST["carpeta_imagen"];
 }elseif($_POST['flash_uploader_0_tmpname']<>""){
 	$imagen=$_POST['flash_uploader_0_tmpname'];
-	$carpeta_imagen=fechaCarpeta()."/";
 }
 
 //GUARDAR DATOS
 mysql_query("UPDATE ".$tabla_suf."_edicion SET titulo='".addslashes($titulo)."', 
-imagen='$imagen', 
-dato_usuario='$usuario_user', 
-carpeta_imagen='$carpeta_imagen' WHERE id=$idnoticia;", $conexion);
+nombre_edicion='$nombre', imagen='$imagen', 
+dato_usuario='$usuario_user', fecha_publicacion='$fecha_pub' WHERE id=$idnoticia;", $conexion);
 	
 if (mysql_errno()!=0)
 {

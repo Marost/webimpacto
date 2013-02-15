@@ -79,6 +79,17 @@ jmnpr(document).ready(function(){
         	Listar</a></li>
     </ul>
   </dd>
+  <dt class="items"><b>Portada</b></dt>
+  <dd>
+    <ul class="items">
+      <li>
+        <a href="<?php echo $fila_empresa["web"]."".$carpeta_admin; ?>/paginas/portadas/noticias/form-agregar.php">
+          Agregar</a></li>
+      <li>
+        <a href="<?php echo $fila_empresa["web"]."".$carpeta_admin; ?>/paginas/portadas/noticias/listar.php">
+          Listar</a></li>
+    </ul>
+  </dd>
   <dt class="items"><b>Mensajes</b></dt>
   <dd>
     <ul class="items">

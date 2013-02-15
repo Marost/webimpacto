@@ -20,7 +20,7 @@ $hora_actual=$hora[0].":".$hora[1];
 <link rel="stylesheet" type="text/css" href="../../../css/style-listas.css" />
 
 <!-- CKEDITOR -->
-<script type="text/javascript" src="../../../js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="../../../js/ckeditor.js"></script>
 
 <!-- SPRY -->
 <link href="../../../../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
@@ -38,10 +38,12 @@ jfec(function() {
 	jfec("#fecha").datepicker({
 		showOn: 'button',
 		buttonImage: '../../../images/calendar.gif',
-		buttonImageOnly: true
+		buttonImageOnly: true,
+		dateFormat: "yy-mm-dd"
 	});
 });
 </script>
+
 
 <!-- PLUPLOAD -->
 <link rel="stylesheet" type="text/css" href="../../../css/plupload.queue.css"/>
@@ -90,6 +92,10 @@ jq(function() {
             	    <tr>
             	      <td width="20%" height="30" align="right" ><p><strong>Número Edición:</strong></p></td>
             	      <td width="80%" height="30" align="left"><input name="titulo" type="text" id="titulo" size="50" /></td>
+          	      </tr>
+            	    <tr>
+            	      <td height="30" align="right" ><p><strong>Nombre Edición:</strong></p></td>
+            	      <td height="30" align="left"><input name="nombre_edicion" type="text" id="nombre_edicion" size="50" /></td>
           	      </tr>
            	      <tr>
             	      <td colspan="2">

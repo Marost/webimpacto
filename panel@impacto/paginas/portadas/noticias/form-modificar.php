@@ -25,7 +25,7 @@ $hora_actual=$hora[0].":".$hora[1];
 <link rel="stylesheet" type="text/css" href="../../../css/style-listas.css" />
 
 <!-- CKEDITOR -->
-<script src="../../../js/ckeditor/ckeditor.js" type="text/javascript"></script>
+<script src="../../../js/ckeditor.js" type="text/javascript"></script>
 
 <!-- VIDEO -->
 <script type="text/javascript" src="../../../../js/flowplayer-3.2.6.min.js"></script>
@@ -46,7 +46,8 @@ jfec(function() {
 	jfec("#fecha").datepicker({
 		showOn: 'button',
 		buttonImage: '../../../images/calendar.gif',
-		buttonImageOnly: true
+		buttonImageOnly: true,
+		dateFormat: "yy-mm-dd"
 	});
 });
 </script>
@@ -55,7 +56,7 @@ jfec(function() {
 <link rel="stylesheet" type="text/css" href="../../../css/plupload.queue.css"/>
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
-	google.load("jquery", "1.3");
+  google.load("jquery", "1.3");
 </script>
 <script type="text/javascript" src="../../../js/plupload/gears_init.js"></script>
 <script type="text/javascript" src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>
@@ -64,13 +65,13 @@ jfec(function() {
 <script>
 var jq = jQuery.noConflict();
 jq(function() {
-	jq("#flash_uploader").pluploadQueue({
-		runtimes : 'flash', url : 'upload.php', max_file_size : '10mb',
-		chunk_size : '1mb', unique_names : true,
-		filters : [ {title : "Image files", extensions : "jpg,gif,png"}],
-		resize : {width : 520, height : 700, quality : 100},
-		flash_swf_url : '../../../js/plupload/plupload.flash.swf'
-	});	
+  jq("#flash_uploader").pluploadQueue({
+    runtimes : 'flash', url : 'upload.php', max_file_size : '10mb',
+    chunk_size : '1mb', unique_names : true,
+    filters : [ {title : "Image files", extensions : "jpg,gif,png"}],
+    resize : {width : 520, height : 700, quality : 100},
+    flash_swf_url : '../../../js/plupload/plupload.flash.swf'
+  }); 
 });
 </script>
 
@@ -96,16 +97,19 @@ jq(function() {
             	      <td colspan="2" align="center">&nbsp;</td>
           	      </tr>
             	    <tr>
-            	      <td width="20%" height="30" align="right"><p><strong>Titulo:</strong></p></td>
+            	      <td width="20%" height="30" align="right"><p><strong>Número Eidición:</strong></p></td>
             	      <td width="80%" height="30" align="left"><input name="titulo" type="text" id="titulo" value='<?php echo $fila_query["titulo"] ?>' size="50" /></td>
+          	      </tr>
+            	    <tr>
+            	      <td height="30" align="right"><p><strong>Nombre Eidición:</strong></p></td>
+            	      <td height="30" align="left"><input name="nombre_edicion" type="text" id="nombre_edicion" value='<?php echo $fila_query["nombre_edicion"]; ?>' size="50" /></td>
           	      </tr>
             	    <tr>
             	      <td colspan="2"><table width="100%" border="0" cellpadding="5" cellspacing="0">
             	        <tr>
             	          <td width="20%" align="right"><p><strong>Imagen actual:</strong></p></td>
-            	          <td width="80%" align="left"><img src="../../../../imagenes/revista/<?php echo $fila_query["carpeta_imagen"]."".$fila_query["imagen"] ?>" alt="" width="150" />
+            	          <td width="80%" align="left"><img src="../../../../imagenes/revista/<?php echo $fila_query["imagen"] ?>" alt="" width="150" />
             	            <input name="imagen_actual" type="hidden" id="imagen_actual" value="<?php echo $fila_query["imagen"] ?>" />
-            	            <input name="carpeta_imagen" type="hidden" id="carpeta_imagen" value="<?php echo $fila_query["carpeta_imagen"] ?>" /></td>
           	          </tr>
             	        <tr>
             	          <td colspan="2"><p align="left"><strong>Selecciona una imagen para la noticia:</strong></p>

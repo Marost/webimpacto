@@ -6,6 +6,7 @@ include("../../../conexion/funciones.php");
 //DECLARACION DE VARIABLES
 $titulo=$_POST["titulo"];
 $url=getUrlAmigable(eliminarTextoURL($titulo));
+$nombre=$_POST["nombre_edicion"];
 
 //FECHA PUBLICACION
 $fecha_publicacion=$_POST["fecha"];
@@ -16,20 +17,19 @@ $fecha_pub=$fecha_publicacion." ".$hora_publicacion.":00";
 if($_POST['flash_uploader_0_tmpname']<>""){
 	$mostrar_imagen=1;
 	$imagen=$_POST['flash_uploader_0_tmpname'];
-	$carpeta_imagen=fechaCarpeta()."/";	
 }
 
 //INSERTANDO DATOS
 $rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_edicion (url,
 titulo, 
+nombre_edicion,
 imagen, 
 dato_usuario, 
-carpeta_imagen,
 fecha_publicacion) VALUES('$url',
 '$titulo',
+'$nombre',
 '$imagen', 
 '$usuario_user', 
-'$carpeta_imagen',
 '$fecha_pub');",$conexion);
 
 if (mysql_errno()!=0){

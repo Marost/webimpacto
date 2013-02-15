@@ -18,7 +18,7 @@ include("../../../conexion/funciones.php");
 	header("Pragma: no-cache");
 
 	// Settings
-	$targetDir = "../../../../imagenes/revista/".fechaCarpeta();
+	$targetDir = "../../../../imagenes/revista/";
 	$cleanupTargetDir = false; // Remove old files
 	$maxFileAge = 60 * 60; // Temp file age in seconds
 
