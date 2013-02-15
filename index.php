@@ -76,7 +76,7 @@ $rst_eventos=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$f
                             <?php while($fila_noticias=mysql_fetch_array($rst_noticias)){
                                     $noticias_id=$fila_noticias["id"];
                                     $noticias_url=$fila_noticias["url"];
-                                    $noticias_urlFinal=$web."nota/".$noticias_id."-".$noticias_url;
+                                    $noticias_urlFinal=$web."noticia/".$noticias_id."-".$noticias_url;
                                     $noticias_titulo=$fila_noticias["titulo"];
                                     $noticias_imagen=$fila_noticias["imagen"];
                                     $noticias_imagen_carpeta=$fila_noticias["carpeta_imagen"];
@@ -123,7 +123,7 @@ $rst_eventos=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$f
                             <?php while($fila_eventos=mysql_fetch_array($rst_eventos)){
                                     $eventos_id=$fila_eventos["id"];
                                     $eventos_url=$fila_eventos["url"];
-                                    $eventos_urlFinal=$web."nota/".$eventos_id."-".$eventos_url;
+                                    $eventos_urlFinal=$web."noticia/".$eventos_id."-".$eventos_url;
                                     $eventos_titulo=$fila_eventos["titulo"];
                                     $eventos_imagen=$fila_eventos["imagen"];
                                     $eventos_imagen_carpeta=$fila_eventos["carpeta_imagen"];
