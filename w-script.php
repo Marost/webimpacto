@@ -10,13 +10,13 @@
 <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
 <!-- CSS FORM BUSCAR -->
-<link rel="stylesheet" href="libs/search-forms/light/search-light.css" />
+<link rel="stylesheet" href="libs/css3-form/search/light/search-light.css" />
 <!--[if lt IE 9]>
         <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<script src="libs/search-forms/light/placeholder.js"></script>
+<script src="libs/css3-form/search/light/placeholder.js"></script>
 
 <?php if($sc_addthis==true){ ?>
 <!-- ADDTHIS -->
@@ -57,6 +57,41 @@ jGalHome(document).ready(function() {
         keyboardNavEnabled: true,
         globalCaption: true,
         firstMargin: 10,
+        autoPlay: {
+            enabled: true,
+            pauseOnHover: true,
+            delay: 5000
+        }
+    });
+});
+</script>
+<?php } ?>
+
+<?php if($sc_galeria==true){ ?>
+<!-- GALERIA INFERIOR -->
+<link href="libs/royalslider/royalslider/royalslider.css" rel="stylesheet">
+<link href="libs/royalslider/royalslider/default/rs-default.css" rel="stylesheet">
+<link href="libs/royalslider/preview-assets/css/smoothness/jquery-ui-1.8.22.custom.css" rel="stylesheet">
+<link href="libs/royalslider/preview-assets/css/github.css" rel="stylesheet">
+<script src="libs/royalslider/preview-assets/js/highlight.pack.js"></script>
+<script src="libs/royalslider/preview-assets/js/jquery-ui-1.8.22.custom.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="libs/royalslider/royalslider/jquery.royalslider.min.js"></script>
+<script>
+var jGalHome = jQuery.noConflict();
+
+jGalHome(document).ready(function() {
+    jGalHome('#galeria').royalSlider({
+        controlNavigation: 'thumbnails',
+        autoScaleSlider: true, 
+        autoScaleSliderWidth: 960,     
+        autoScaleSliderHeight: 850,
+        loop: false,
+        numImagesToPreload:4,
+        arrowsNavAutohide: true,
+        arrowsNavHideOnTouch: true,
+        keyboardNavEnabled: true,
         autoPlay: {
             enabled: true,
             pauseOnHover: true,

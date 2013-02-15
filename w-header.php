@@ -1,3 +1,8 @@
+<?php
+//CATEGORIAS
+$rst_menu=mysql_query("SELECT * FROM iev_noticia_categoria WHERE id<>11 AND id<>12 ORDER BY orden DESC", $conexion);
+
+?>
 <div class="interior">
                 
     <h1>
@@ -16,7 +21,7 @@
         </div>
 
         <div id="busqueda">
-            <form action="" class="search-form noframe inbtn rsmall lblue">
+            <form action="buscar" class="search-form noframe inbtn rsmall lblue" method="get">
                 <input type="text" name="buscar" class="search-input" placeholder="Buscar..." />
                 <input class="search-btn" type="submit" value="" />
             </form>
@@ -30,16 +35,17 @@
     <div class="interior">
         <ul>
             <li><a href="/" title="">Inicio</a></li>
-            <li><a href="#" title="">Portada</a></li>
-            <li><a href="#" title="">Noticias</a></li>
-            <li><a href="#" title="">Editorial</a></li>
-            <li><a href="#" title="">Internacional</a></li>
-            <li><a href="#" title="">Economía</a></li>
-            <li><a href="#" title="">Historia</a></li>
-            <li><a href="#" title="">Literatura</a></li>
-            <li><a href="#" title="">Testimonios</a></li>
-            <li><a href="#" title="">Heroes de la Fe</a></li>
-            <li><a href="#" title="">Devocionales</a></li>
+            <li><a href="categoria/11/portada" title="">Portada</a></li>
+            <li><a href="categoria/12/noticias" title="">Noticias</a></li>
+            <li><a href="editorial" title="">Editorial</a></li>
+            <?php while($fila_menu=mysql_fetch_array($rst_menu)){
+                    $menu_id=$fila_menu["id"];
+                    $menu_url=$fila_menu["url"];
+                    $menu_titulo=$fila_menu["categoria"];
+            ?>
+            <li><a href="categoria/<?php echo $menu_id."/".$menu_url; ?>" title="<?php echo $menu_titulo; ?>">
+                <?php echo $menu_titulo; ?></a></li>
+            <?php } ?>
         </ul>
     </div>
 </nav>
