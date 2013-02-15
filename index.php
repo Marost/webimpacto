@@ -15,6 +15,9 @@ $rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$
 //EVENTOS
 $rst_eventos=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND noticia=1 AND categoria=8 ORDER BY fecha_publicacion DESC LIMIT 1", $conexion);
 
+//GALERIA
+$rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $conexion);
+
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -178,21 +181,28 @@ $rst_eventos=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$f
                         </div>
 
                         <div id="galeria-contenido" class="royalSlider rsDefault">
-                            <a class="rsImg" href="imagenes/upload/img1.jpg">
-                                Vincent van Gogh - Still Life: Vase with Twelve Sunflowers
-                                <img width="96" height="72" class="rsTmb" src="imagenes/upload/img1.jpg">
+
+                            <?php while($fila_galeria=mysql_fetch_array($rst_galeria)){
+                                    $galeria_id=$fila_galeria["id"];
+                                    $galeria_url=$fila_galeria["url"];
+                                    $galeria_titulo=$fila_galeria["titulo"];
+
+                                    //IMAGEN
+                                    $rst_galimagen=mysql_query("SELECT * FROM iev_galeria_slide WHERE noticia=$galeria_id ORDER BY orden ASC LIMIT 1;");
+                                    $fila_galimagen=mysql_fetch_array($rst_galimagen);
+
+                                    //VARIABLES
+                                    $galimagen_imagen=$fila_galimagen["imagen"];
+                                    $galimagen_imagen_carpeta=$fila_galimagen["carpeta"];
+                            ?>
+                            <a class="rsImg" href="imagenes/galeria/<?php echo $galimagen_imagen_carpeta."".$galimagen_imagen; ?>">
+                                <a href="galeria/<?php echo $galeria_id."-".$galeria_url; ?>" title="<?php echo $galeria_titulo; ?>">
+                                    <?php echo $galeria_titulo; ?></a>
+                                <img width="75" height="75" class="rsTmb" 
+                                    src="imagenes/galeria/<?php echo $galimagen_imagen_carpeta."thumb75/".$galimagen_imagen; ?>">
                             </a>
-                            <a class="rsImg" href="imagenes/upload/img1.jpg">
-                                Vincent van Gogh - Still Life: Vase with Twelve
-                                <img width="96" height="72" class="rsTmb" src="imagenes/upload/img1.jpg">
-                            </a>
-                            <a class="rsImg" href="imagenes/upload/img1.jpg">
-                                Vincent van Gogh - Still Life: Vase with
-                                <img width="96" height="72" class="rsTmb" src="imagenes/upload/img1.jpg">
-                            </a>
-                            <a class="rsImg" href="imagenes/upload/img1.jpg">
-                                Vincent van Gogh - Still Life: Vase
-                                <img width="96" height="72" class="rsTmb" src="imagenes/upload/img1.jpg">
+                            <?php } ?>
+                            
                             </a>
                         </div>
                     </div>
