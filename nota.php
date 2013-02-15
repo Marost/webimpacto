@@ -56,9 +56,9 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
         <meta property="og:type" content="article"/>
         <meta property="og:url" content="<?php echo $url_final; ?>"/>
         <meta property="og:image" content="<?php echo $url_imagen; ?>"/>
-        <meta property="og:site_name" content=""/>
+        <meta property="og:site_name" content="<?php echo $web_nombre; ?>"/>
         <meta property="fb:admins" content="1376286793"/>
-        <meta property="og:description" content=""/>
+        <meta property="og:description" content="<?php echo soloDescripcion($noticia_contenido); ?>"/>
 
         <?php require_once("w-script.php"); ?>
 
@@ -129,40 +129,11 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
 
                     <div class="nwizq notawder">
 
-                        <aside>
-
-                            <div class="edimpreso">
-                                
-                                <div class="datos">
-                                    <h3>Edición del mes</h3>
-                                    <h3 class="numedicion">N° 707</h3>
-                                    <p>Click Aquí</p>
-                                </div>
-
-                                <div class="imagen">
-                                    <a href="#" title="Edición N° 707">
-                                        <img src="imagenes/upload/portada.jpg" alt="">
-                                    </a>
-                                </div>
-
-                            </div>
-
-                            <div class="edanterior">
-                                <h3>EDICIONES ANTERIORES</h3>
-                                <p>Click aquí xxxx xxxxx xxxxx xxxx xxxxx xxx xxxxx xxxx xxxxxx xxxxxx x</p>
-                            </div>
-                            
-                        </aside>
+                        <?php require_once("w-portada.php"); ?>
 
                         <?php require_once("w-columnistas.php"); ?>
 
-                        <aside>
-
-                            <div class="publicidad">
-                                
-                            </div>
-                            
-                        </aside>
+                        <?php require_once("w-publicidad-sb.php"); ?>
 
                         <?php require_once("w-escriben.php"); ?>
 
