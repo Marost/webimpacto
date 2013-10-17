@@ -345,7 +345,7 @@ RewriteRule ^galeria/([0-9]*)-(.*)$             /galeria.php?id=$1&url=$2
 RewriteRule ^buscar$                          /buscar.php
 #RewriteRule ^nosotros$                          /nosotros.php
 #RewriteRule ^entrevista/([0-9]*)-(.*)$             /entrevista.php?id=$1&url=$2
-#RewriteRule ^panel@pichling/$             /panel@pichling/login.php
+RewriteRule ^panel@impacto/$                             /panel@impacto/login.php
 
 # ----------------------------------------------------------------------
 # Suppress or force the "www." at the beginning of URLs
