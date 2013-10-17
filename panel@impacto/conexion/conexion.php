@@ -1,7 +1,7 @@
 <?php
 //CONEXION CON EL SERVIDOR
 $conexion=mysql_connect("localhost","marost2_admin","master@18073");
-mysql_select_db("marost2_diariope_admin",$conexion);
+mysql_select_db("marost2_impactoe_impevadwebmast",$conexion);
 
 //ZONA HORARIA
 date_default_timezone_set('America/Lima');
@@ -23,9 +23,9 @@ global $web_nombre;
 global $fechaActual;
 
 //VARIABLES
-$carpeta_admin="panel@diario16";
-$tabla_suf="dr";
-$sesion_pre="drs";
+$carpeta_admin="panel@impacto";
+$tabla_suf="iev";
+$sesion_pre="ievs";
 $fechaActual=date("Y-m-d H:i:s");
 
 //EMPRESA
