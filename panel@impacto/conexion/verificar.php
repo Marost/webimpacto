@@ -2,8 +2,8 @@
 include("conexion.php");
 
 //VARIABLES DE USARIO Y PASS
-$user=$_POST["user"];
-$clave=$_POST["pass"];
+$user=$_POST["login"];
+$clave=$_POST["password"];
 
 //FUNCION ANTI-INJECTION SQL
 $usuario=mysql_real_escape_string($user);
@@ -21,9 +21,9 @@ if($num_registros==1){
 	$_SESSION["user_nombre-".$sesion_pre.""]=$fila["nombre"];
 	$_SESSION["user_apellido-".$sesion_pre.""]=$fila["apellidos"];
 	$_SESSION["user_email-".$sesion_pre.""]=$fila["email"];
-	header("Location:../principal.php");
+	header("Location:../index.php");
 }elseif($num_registros==0) {
 	mysql_close($conexion);
-	header("Location:../index.php?nosesion=2");
+	header("Location:../login.php?nosesion=2");
 }
 ?>

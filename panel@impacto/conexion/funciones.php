@@ -71,21 +71,37 @@ function codigoAleatorio($length=10,$uc=TRUE,$n=TRUE,$sc=FALSE)
 	return $rstr;
 }
 
-function nombreMes($numero_mes)
-{
+function nombreMes($numero_mes){
 	switch($numero_mes){
-   		case 1: print "Enero"; break;
-		case 2: print "Febrero"; break;
-		case 3: print "Marzo"; break;
-		case 4: print "Abril"; break;
-		case 5: print "Mayo"; break;
-		case 6: print "Junio"; break;
-		case 7: print "Julio"; break;
-		case 8: print "Agosto"; break;
-		case 9: print "Septiembre"; break;
-		case 10: print "Octubre"; break;
-		case 11: print "Noviembre"; break;
-		case 12: print "Diciembre"; break;
+   		case 01: return "Enero"; break;
+		case 02: return "Febrero"; break;
+		case 03: return "Marzo"; break;
+		case 04: return "Abril"; break;
+		case 05: return "Mayo"; break;
+		case 06: return "Junio"; break;
+		case 07: return "Julio"; break;
+		case 08: return "Agosto"; break;
+		case 09: return "Septiembre"; break;
+		case 10: return "Octubre"; break;
+		case 11: return "Noviembre"; break;
+		case 12: return "Diciembre"; break;
+	}
+}
+
+function nombreMesSC($numero_mes){
+	switch($numero_mes){
+   		case 1: return "Enero"; break;
+		case 2: return "Febrero"; break;
+		case 3: return "Marzo"; break;
+		case 4: return "Abril"; break;
+		case 5: return "Mayo"; break;
+		case 6: return "Junio"; break;
+		case 7: return "Julio"; break;
+		case 8: return "Agosto"; break;
+		case 9: return "Septiembre"; break;
+		case 10: return "Octubre"; break;
+		case 11: return "Noviembre"; break;
+		case 12: return "Diciembre"; break;
 	}
 }
 
@@ -232,26 +248,28 @@ function errorComentario($codmensaje){
 }
 
 function tipoVideo($tipo, $carpeta_video, $video, $imagen, $carpeta_imagen, $identificador, $ancho, $alto, $web){
-	if($tipo=='dailymotion'){
-		$codigo='<object width="'.$ancho.'" height="'.$alto.'"><param name="movie" value="http://www.dailymotion.com/swf/video/'.$video.'?width=&theme=eggplant&foreground=%23CFCFCF&highlight=%23834596&background=%23000000&additionalInfos=1&hideInfos=1&start=&animatedTitle=&iframe=0&autoPlay=0"></param><param name="allowFullScreen" value="true"></param><param name="allowScriptAccess" value="always"></param><embed type="application/x-shockwave-flash" src="http://www.dailymotion.com/swf/video/'.$video.'?width=&theme=eggplant&foreground=%23CFCFCF&highlight=%23834596&background=%23000000&additionalInfos=1&hideInfos=1&start=&animatedTitle=&iframe=0&autoPlay=0" width="'.$ancho.'" height="'.$alto.'" allowfullscreen="true" allowscriptaccess="always"></embed></object>';
-	}elseif($tipo=='vimeo'){
-		$codigo='<iframe src="http://player.vimeo.com/video/'.$video.'?color=ffffff" width="'.$ancho.'" height="'.$alto.'" frameborder="0"></iframe>';
-	}elseif($tipo=='youtube'){
-		$codigo='<object width="'.$ancho.'" height="'.$alto.'"><param name="movie" value="http://www.youtube.com/v/'.$video.'?fs=1&amp;hl=es_ES&amp;rel=0"></param>
-					<param name="allowFullScreen" value="true"></param>
-					<param name="allowscriptaccess" value="always"></param>
-					<param name="wmode" value="transparent"></param>
-					<embed src="http://www.youtube.com/v/'.$video.'?fs=1&amp;hl=es_ES&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="'.$ancho.'" height="'.$alto.'"></embed></object>';
+	if($tipo=='youtube'){
+		$codigo='<iframe width="'.$ancho.'" height="'.$alto.'" 
+		src="http://www.youtube.com/embed/'.$video.'?rel=0" 
+		frameborder="0" allowfullscreen></iframe>';
 	}elseif($tipo=='flv'){
-		$codigo='<div class="player" 
-					href="'.$web.'video/'.$carpeta_video.''.$video.'"
-					style="background:url('.$web.'imagenes/upload/'.$carpeta_imagen.''.$imagen.') no-repeat center;">
-					<img src="'.$web.'imagenes/play_large.png" alt="Play this video" />					
-				</div>
-				<script type="text/javascript">
-					flowplayer("div.player", "'.$web.'video/flowplayer-3.2.7.swf");
-				</script>';
+		$codigo='<a href="'.$web.'video/'.$carpeta_video.''.$video.'" class="player"
+				    style="display:block;width:'.$ancho.'px;height:'.$alto.'px;margin:10px auto"
+				    id="player">
+					<img src="'.$web.'imagenes/upload/'.$carpeta_imagen.''.$imagen.'" alt="" />
+					<img id="video-play" src="'.$web.'imagenes/play.png" alt="Play" />
+				</a>
+				<script>
+					flowplayer("player", "'.$web.'video/flowplayer-3.2.16.swf");
+				</script>';				
 	}
+	return $codigo;
+}
+
+function VideoYoutube($video, $ancho, $alto){
+	$codigo='<iframe width="'.$ancho.'" height="'.$alto.'" 
+					src="http://www.youtube.com/embed/'.$video.'?wmode=transparent&autohide=1&egm=0&hd=1&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&showsearch=0&theme=light" 
+					frameborder="0" allowfullscreen></iframe>';
 	return $codigo;
 }
 
@@ -347,6 +365,24 @@ function crearCarpeta(){
 	return $carpeta;
 }
 
+function primerParrafo($texto){
+	$b_superior="</p>";
+	if(ereg($b_superior, $texto)){
+		$total=explode($b_superior, $texto);
+		return $total[0];
+	}
+}
+
+function soloDescripcion($texto){
+	$b_superior="</p>";
+	$e_parrafo="<p>";
+	if(ereg($b_superior, $texto)){
+		$total=explode($b_superior, $texto);
+		$parrafo=explode($e_parrafo,$total[0]);
+		return $parrafo[1];
+	}
+}
+
 function getRealIP(){
    if( $_SERVER['HTTP_X_FORWARDED_FOR'] != '' )
    {
@@ -389,27 +425,68 @@ function getRealIP(){
    return $client_ip;
 }
 
-function URL_final(){
-	$url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-	return $url;
+function seleccionTabla($id, $id_tabla, $tabla, $conexion){
+	$rst_query=mysql_query("SELECT * FROM ".$tabla." WHERE ".$id_tabla."=".$id, $conexion);
+	return $fila_query=mysql_fetch_array($rst_query);
 }
 
-function primerParrafo($texto){
-	$b_superior="</p>";
-	if(ereg($b_superior, $texto)){
-		$total=explode($b_superior, $texto);
-		return $total[0];
+function notaTiempo($fecha_mysql) {
+	$fecha	  	= explode(" ", ($fecha_mysql));
+	$dia		= explode("-", $fecha[0]);
+	$hora	   	= explode(":", $fecha[1]);
+	$fecha_unix = mktime($hora[0], $hora[1], $hora[2], $dia[1], $dia[2], $dia[0]);
+	$ht		 	= time() - $fecha_unix;
+	if( 2116800 <= $ht ){
+		$dia	= date('d', $fecha_unix);
+		$mes	= date('n', $fecha_unix);
+		$ano	= date('Y', $fecha_unix);
+		$hora	= date('H', $fecha_unix);
+		$minuto = date('i',$fecha_unix);
+		$mesarray = array('', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
+		$fecha	= "el $dia de $mesarray[$mes] del $ano";
 	}
+	if( 60 > $ht ){
+		$fecha = "Hace $ht segundos";
+	} elseif( 3570 > $ht ){
+		$hc = round( $ht / 60 );
+		if( 1 < $hc ){
+			$s = "s";
+		}
+		$fecha = "Hace $hc minuto".$s;
+	} elseif( 84600 > $ht ){
+		$hc = round( $ht / 3600 );
+		if( 1 < $hc ){
+			$s = "s";
+		}
+		$fecha = "Hace $hc hora".$s;
+		if( 4200 < $ht && 5400 > $ht ){
+			$fecha = "Hace más de una hora";
+		}
+	} elseif( 561600 > $ht ){
+		$hc = round( $ht / 86400 );
+		if( 1 == $hc ){
+			$fecha = "ayer";
+		}
+		if( 2 ==$hc ){
+			$fecha = "antes de ayer";
+		}
+		if( 2 < $hc )
+			$fecha = "Hace $hc días";
+	} elseif( 2116800 > $ht ){
+		$hc = round( $ht / 604800 );
+		if( 1< $hc ){
+			$s = "s";
+		}
+		$fecha = "Hace $hc semana".$s;
+	} elseif( 30242054.045 > $ht ){
+		$hc = round( $ht / 2629743.83 );
+		if( 1 < $hc ){
+			$s = "es";
+		}
+		$fecha = "Hace $hc mes".$s;
+	}
+	return $fecha;
 }
 
-function soloDescripcion($texto){
-	$b_superior="</p>";
-	$e_parrafo="<p>";
-	if(ereg($b_superior, $texto)){
-		$total=explode($b_superior, $texto);
-		$parrafo=explode($e_parrafo,$total[0]);
-		return $parrafo[1];
-	}
-}
 
 ?>

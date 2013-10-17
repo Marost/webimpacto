@@ -1,10 +1,7 @@
 <?php
 //CONEXION CON EL SERVIDOR
 $conexion=mysql_connect("localhost","marost2_admin","master@18073");
-mysql_select_db("marost2_impactoe_impevadwebmast",$conexion);
-
-//$conexion=mysql_connect("localhost","impactoe_adminwe","7DEEOLI1+{Cu");
-//mysql_select_db("impactoe_impevadwebmast",$conexion);
+mysql_select_db("marost2_diariope_admin",$conexion);
 
 //ZONA HORARIA
 date_default_timezone_set('America/Lima');
@@ -26,9 +23,9 @@ global $web_nombre;
 global $fechaActual;
 
 //VARIABLES
-$carpeta_admin="panel@impacto";
-$tabla_suf="iev";
-$sesion_pre="ievs";
+$carpeta_admin="panel@diario16";
+$tabla_suf="dr";
+$sesion_pre="drs";
 $fechaActual=date("Y-m-d H:i:s");
 
 //EMPRESA
@@ -37,12 +34,14 @@ $fila_empresa=mysql_fetch_array($rst_empresa);
 $web=$fila_empresa["web"];
 $web_nombre=$fila_empresa["nombre"];
 
+//URL DE ARCHIVOS
+$url_admin=$web."".$carpeta_admin."/";
+
 if ($_SESSION["user-".$sesion_pre.""]<>""){
 	$usuario_user=$_SESSION["user-".$sesion_pre.""];
 	$usuario_nombre=$_SESSION["user_nombre-".$sesion_pre.""];
 	$usuario_apellido=$_SESSION["user_apellido-".$sesion_pre.""];
 	$usuario_email=$_SESSION["user_email-".$sesion_pre.""];
 }
-
 
 ?>
