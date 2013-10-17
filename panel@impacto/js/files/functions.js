@@ -304,7 +304,7 @@ $(function() {
 	
 	$("#uploader").pluploadQueue({
 		runtimes : 'html5,html4',
-		url : '/panel@diario16/php/upload.php',
+		url : '/panel@impacto/php/upload.php',
 		max_file_size : '100mb',
 		chunk_size : '1mb',
 		unique_names : true,
@@ -319,7 +319,7 @@ $(function() {
 	
 	$("#uploader_pdf").pluploadQueue({
 		runtimes : 'html5,html4',
-		url : '/panel@diario16/php/upload_pdf.php',
+		url : '/panel@impacto/php/upload_pdf.php',
 		max_file_size : '200mb',
 		chunk_size : '1mb',
 		unique_names : true,
@@ -334,7 +334,7 @@ $(function() {
 	
 	$("#uploader_video").pluploadQueue({
 		runtimes : 'html5,html4',
-		url : '/panel@diario16/php/upload_video.php',
+		url : '/panel@impacto/php/upload_video.php',
 		max_file_size : '500mb',
 		chunk_size : '1mb',
 		unique_names : true,
