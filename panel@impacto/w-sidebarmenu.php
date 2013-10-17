@@ -1,7 +1,7 @@
 <div class="mainNav">
     <div class="user">
         <a title="" class="leftUserDrop">
-            <img src="<?php echo $url_admin; ?>images/user.png" alt="" /></a><span>Diario16</span>
+            <img src="<?php echo $url_admin; ?>images/user.png" alt="" /></a><span>Administrador</span>
     </div>
     
     <!-- Sidebar subnav -->
