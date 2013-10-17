@@ -22,7 +22,7 @@ $noticia_titulo=$fila_noticia["titulo"];
 $noticia_contenido=$fila_noticia["contenido"];
 $noticia_categoria=$fila_noticia["categoria"];
 $noticia_imagen=$fila_noticia["imagen"];
-$noticia_imagen_carpeta=$fila_noticia["carpeta_imagen"];
+$noticia_imagen_carpeta=$fila_noticia["imagen_carpeta"];
 $noticia_fechatotal=explode(" ", $fila_noticia["fecha_publicacion"]);
 $noticia_fechapub=explode("-", $noticia_fechatotal[0]);
 

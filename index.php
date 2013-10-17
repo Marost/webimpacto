@@ -10,7 +10,7 @@ $sc_saludos=true;
 $sc_slider=true;
 
 //NOTICIA INFERIORES
-$rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND noticia=1 ORDER BY fecha_publicacion DESC LIMIT 2", $conexion);
+$rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND noticia=1 AND publicar=1 ORDER BY fecha_publicacion DESC LIMIT 2", $conexion);
 
 //EVENTOS
 $rst_eventos=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND noticia=1 AND categoria=8 ORDER BY fecha_publicacion DESC LIMIT 1", $conexion);
@@ -82,7 +82,7 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
                                     $noticias_urlFinal=$web."noticia/".$noticias_id."-".$noticias_url;
                                     $noticias_titulo=$fila_noticias["titulo"];
                                     $noticias_imagen=$fila_noticias["imagen"];
-                                    $noticias_imagen_carpeta=$fila_noticias["carpeta_imagen"];
+                                    $noticias_imagen_carpeta=$fila_noticias["imagen_carpeta"];
                                     $noticias_contenido=primerParrafo($fila_noticias["contenido"]);
                                     $fechaPubNoticia=$fila_noticias["fecha_publicacion"];
                                     $fechaNoticia=explode(" ", $fechaPubNoticia);
@@ -129,7 +129,7 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
                                     $eventos_urlFinal=$web."noticia/".$eventos_id."-".$eventos_url;
                                     $eventos_titulo=$fila_eventos["titulo"];
                                     $eventos_imagen=$fila_eventos["imagen"];
-                                    $eventos_imagen_carpeta=$fila_eventos["carpeta_imagen"];
+                                    $eventos_imagen_carpeta=$fila_eventos["imagen_carpeta"];
                                     $eventos_contenido=primerParrafo($fila_eventos["contenido"]);
                                     $fechaPubNoticia=$fila_eventos["fecha_publicacion"];
                                     $fechaNoticia=explode(" ", $fechaPubNoticia);

@@ -86,7 +86,7 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_noticia WHERE categoria=$id_url
                                     $noticia_titulo=stripslashes($fila_noticias["titulo"]);
                                     $noticia_contenido=$fila_noticias["contenido"];
                                     $noticia_imagen=$fila_noticias["imagen"];
-                                    $noticia_imagen_carpeta=$fila_noticias["carpeta_imagen"];
+                                    $noticia_imagen_carpeta=$fila_noticias["imagen_carpeta"];
                                     $noticia_fechatotal=explode(" ", $fila_noticias["fecha_publicacion"]);
                                     $noticia_fechapub=explode("-", $noticia_fechatotal[0]);
                             ?>
