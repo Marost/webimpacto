@@ -2,13 +2,19 @@
 	/**
 	 *
 	 * RoyalSlider animated blocks module
-	 * @version 1.0.2:
+	 * @version 1.0.4:
 	 *
 	 * 1.0.2:
 	 * - Fixed mistake from prev fix :/
 	 * 
-	 * 1.0.1:
+	 * 1.0.3:
 	 * - Fixed animated block appearing in Firefox
+	 *
+	 * 1.0.4
+	 * - Fixed bug that could cause incorrect block when randomizeSlides is enabled
+	 *
+	 * 1.0.5
+	 * - moveEffect:none' bug
 	 */ 
 	$.extend($.rsProto, {
 		_initAnimatedBlocks: function() {
@@ -45,7 +51,8 @@
 				}
 			});
 			self.ev.on('rsAfterContentSet', function(e, slideObject) {
-				if(slideObject.id === self.currSlideId) {
+				var currId = self.slides[self.currSlideId].id; 
+				if(slideObject.id === currId) {
 					setTimeout(function() {
 						runBlocks();
 					}, self.st.fadeinLoadedSlide ? 300 : 0);
@@ -129,8 +136,10 @@
 			self._animatedBlockTimeouts = [];
 
 			animBlocks.each(function(index) {
+
 				item = $(this);
 				
+
 				animObj = {};
 				newPropObj = {};
 				transitionData = null;
@@ -155,7 +164,7 @@
 						} else {
 							moveEffect = self.st.block.moveEffect;
 						}
-						if(moveEffect) {
+						if(moveEffect && moveEffect !== 'none') {
 							var moveHorizontal;
 							if(moveEffect === 'right' || moveEffect === 'left') {
 								moveHorizontal = true;
@@ -254,25 +263,6 @@
 
 
 					self._blockAnimProps.push({block:item, css:blockPropsObj});
-
-					
-					// function updateToNewProp(obj) {
-					//     obj.css('background','white');
-					// 	obj.css(newPropObj);
-					// }
-					// setTimeout(function() {
-					//   updateToNewProp(item);
-					// }, 6);
-
-				
-					// (function(obj) {
-				 //        setTimeout(function() {
-				 //        	obj.css('background','magenta');
-					// 		obj.css(newPropObj);
-				 //        }, 6);
-				 //    })(item);
-				 //    
-				 //    
 				 	
 				 	self._updateAnimBlockProps(item, newPropObj);
 

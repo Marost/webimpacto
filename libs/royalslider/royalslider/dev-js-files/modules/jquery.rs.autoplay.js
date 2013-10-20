@@ -2,8 +2,16 @@
 	/**
 	 *
 	 * RoyalSlider auto play module
-	 * @version 1.0.2:
-	 * 
+	 * @version 1.0.5:
+	 *
+	 * 1.0.3:
+	 * - added support for 'autoplay' property name. 
+	 *
+	 * 1.0.4
+	 * - added toggleAutoPlay public method
+	 *
+	 * 1.0.5
+	 * - Fixed issue when autoPlay may not pause when switching browser tabs
 	 */
 	$.extend($.rsProto, {
 		_initAutoplay: function() {
@@ -16,6 +24,11 @@
 		     	pauseOnHover: true,
 		     	delay: 2000
 			};
+
+			// fix deprecated name
+			if(!self.st.autoPlay && self.st.autoplay) {
+				self.st.autoPlay = self.st.autoplay;
+			}
 			self.st.autoPlay = $.extend({}, self._autoPlayDefaults, self.st.autoPlay);
 
 			if(self.st.autoPlay.enabled) {
@@ -31,7 +44,9 @@
 				});
 				self.ev.on('rsBeforeDestroy', function() {
 					self.stopAutoPlay();
+					$(window).off('blur'+self.ns + ' focus' + self.ns);
 				});
+				
 			}
 		},
 		_setupAutoPlay: function() {
@@ -97,6 +112,18 @@
 				} 
 			});
 
+			$(window).on('blur'+self.ns, function(){
+				if(self._autoPlayEnabled) {
+					self._autoPlayPaused = true;
+					self._pause();
+				}
+			}).on('focus'+self.ns, function(){
+			    if(self._autoPlayEnabled && self._autoPlayPaused) {
+					self._autoPlayPaused = false;
+					self._play();
+				}
+			});
+
 			if(self.st.autoPlay.pauseOnHover) {
 				self._pausedByHover = false;
 				self.slider.hover(
@@ -117,12 +144,12 @@
 			}
 			
 		},
-		toggleAutoplay: function() {
+		toggleAutoPlay: function() {
 			var self = this;
 			if(self._autoPlayEnabled) {
-				self.startAutoPlay();
-			} else {
 				self.stopAutoPlay();
+			} else {
+				self.startAutoPlay();
 			}
 		},
 		startAutoPlay: function() {

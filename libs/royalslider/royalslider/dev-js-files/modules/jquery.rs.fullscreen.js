@@ -2,8 +2,19 @@
 	/**
 	 *
 	 * RoyalSlider fullscreen module
-	 * @version 1.0:
-	 * 
+	 * @version 1.0.3:
+	 *
+	 * 1.0.1:
+	 * - Added rsEnterFullscreen and rsExitFullscreen events
+	 *
+	 * 1.0.2
+	 * - Added window scroll detection
+	 *
+	 * 1.0.3
+	 * - Fullscreen button now is added to _controlsContainer element
+	 *
+	 * 1.0.4
+	 * - Fixed issue that could cause small image be loaded in fullscreen
 	 */
 	$.extend($.rsProto, {
 		_initFullscreen: function() {
@@ -23,7 +34,6 @@
 					self._setupFullscreen();
 				});
 			}
-			
 		},
 		_setupFullscreen: function() {
 			var self = this;
@@ -58,8 +68,9 @@
 			 
 			    // update methods to do something useful
 			    if ( self._fullScreenApi.supportsFullScreen) {
-			         self._fullScreenApi.fullScreenEventName =  self._fullScreenApi.prefix + 'fullscreenchange.rs';
-			 
+			    	self.nativeFS = true;
+			         self._fullScreenApi.fullScreenEventName =  self._fullScreenApi.prefix + 'fullscreenchange' + self.ns;
+			 	
 			         self._fullScreenApi.isFullScreen = function() {
 			            switch (this.prefix) {
 			                case '':
@@ -69,13 +80,13 @@
 			                default:
 			                    return document[this.prefix + 'FullScreen'];
 			            }
-			        }
+			        };
 			         self._fullScreenApi.requestFullScreen = function(el) {
 			            return (this.prefix === '') ? el.requestFullScreen() : el[this.prefix + 'RequestFullScreen']();
-			        }
+			        };
 			         self._fullScreenApi.cancelFullScreen = function(el) {
 			            return (this.prefix === '') ? document.cancelFullScreen() : document[this.prefix + 'CancelFullScreen']();
-			        }
+			        };
 			    } else {
 			    	self._fullScreenApi = false;
 			    }
@@ -84,7 +95,7 @@
 
 			if(self.st.fullscreen.buttonFS) {
 				self._fsBtn = $('<div class="rsFullscreenBtn"><div class="rsFullscreenIcn"></div></div>')
-					.appendTo(self.st.controlsInside ? self._sliderOverflow : self.slider)
+					.appendTo(self._controlsContainer)
 					.on('click.rs', function() {
 						if(self.isFullscreen) {
 							self.exitFullscreen();
@@ -117,7 +128,7 @@
 			}
 			self._isFullscreenUpdating = true;
 
-			self._doc.on('keyup.rsfullscreen', function(e) {
+			self._doc.on('keyup' + self.ns + 'fullscreen', function(e) {
 				if(e.keyCode === 27) {
 					self.exitFullscreen();
 				}
@@ -126,10 +137,13 @@
 				self._bindKeyboardNav();
 			}
 
+			var win = $(window);
+			self._fsScrollTopOnEnter = win.scrollTop();
+			self._fsScrollLeftOnEnter = win.scrollLeft();
+
 			self._htmlStyle = $('html').attr('style');
 			self._bodyStyle = $('body').attr('style');
 			self._sliderStyle = self.slider.attr('style');
-			
 
 			$('body, html').css({
 				overflow: 'hidden',
@@ -138,21 +152,18 @@
 				margin: '0',
 				padding: '0'
 			});
+
 			self.slider.addClass('rsFullscreen');
-			//setTimeout(function(){
-			//
+			
+		
 			var item,
 				i;
 			for(i = 0; i < self.numSlides; i++) {
 				item = self.slides[i];
-
-				
-
-
 				
 				item.isRendered = false;
 				if(item.bigImage) {
-
+					item.isBig = true;
 					item.isMedLoaded = item.isLoaded;
 					item.isMedLoading = item.isLoading;
 					item.medImage = item.image;
@@ -165,20 +176,14 @@
 					}
 
 					item.isLoaded = item.isBigLoaded;
-					item.isLoading = item.isBigLoading;
-					
+					item.isLoading = false;
 					item.image = item.bigImage;
+					item.images[0] = item.bigImage;
 					item.iW = item.bigIW;
 					item.iH = item.bigIH;
 
-					item.contentAdded = false;
-					
-					var newHTML = !item.isLoaded ? '<a class="rsImg" href="'+item.image+'"></a>' : '<img class="rsImg" src="'+item.image+'"/>';
-					if(item.content.hasClass('rsImg')) {
-						item.content = $(newHTML);
-					} else {
-						item.content.find('.rsImg').replaceWith(newHTML);
-					}
+					item.isAppended = item.contentAdded = false;
+					self._updateItemSrc(item);
 				}
 				
 			}
@@ -186,10 +191,9 @@
 			
 			self.isFullscreen = true;
 			
-			setTimeout(function() {
-				self._isFullscreenUpdating = false;
-				self.updateSliderSize();
-			}, 100);
+			self._isFullscreenUpdating = false;
+			self.updateSliderSize();
+			self.ev.trigger('rsEnterFullscreen');
 			
 		},
 		exitFullscreen: function(preventNative) {
@@ -207,16 +211,15 @@
 			}
 			self._isFullscreenUpdating = true;
 
-			self._doc.off('keyup.rsfullscreen');
+			self._doc.off('keyup'  + self.ns + 'fullscreen');
 			if(self._fsKeyboard) {
-				self._doc.off('keydown.rskb');
+				self._doc.off('keydown' + self.ns);
 			}
 
 			$('html').attr('style', self._htmlStyle || '');
 			$('body').attr('style', self._bodyStyle || '');
-			self.slider.removeClass('rsFullscreen');
-
 			
+
 			
 			var item,
 				i;
@@ -226,7 +229,7 @@
 				
 				item.isRendered = false;
 				if(item.bigImage) {
-					
+					item.isBig = false;
 					item.slideId = -99;
 					item.isBigLoaded = item.isLoaded;
 					item.isBigLoading = item.isLoading;
@@ -234,42 +237,50 @@
 					item.bigIW = item.iW;
 					item.bigIH = item.iH;
 					item.isLoaded = item.isMedLoaded;
-					item.isLoading = item.isMedLoading;
+					item.isLoading = false;
 					item.image = item.medImage;
+					item.images[0] = item.medImage;
 					item.iW = item.medIW;
 					item.iH = item.medIH;
 
-					item.contentAdded = false;
+					item.isAppended = item.contentAdded = false;
 
-					var newHTML = !item.isLoaded ? '<a class="rsImg" href="'+item.image+'"></a>' : '<img class="rsImg" src="'+item.image+'"/>';
-					if(item.content.hasClass('rsImg')) {
-						item.content = $(newHTML);
-					} else {
-						item.content.find('.rsImg').replaceWith(newHTML);
-					}
-					if(item.holder) {
-						item.holder.html(item.content);
-					}
+					self._updateItemSrc(item, true);
+					
 					
 					if(item.bigImage !== item.medImage) {
 						item.sizeType = 'med';
 					}
 				}
-					
-					
-					
-				
 			}
 			
 			self.isFullscreen = false;
-			//self._updateBlocksContent();
 
-
+			var win = $(window);
+			win.scrollTop( self._fsScrollTopOnEnter );
+			win.scrollLeft( self._fsScrollLeftOnEnter );
 			
+			self._isFullscreenUpdating = false;
+			self.slider.removeClass('rsFullscreen');
+
+			self.updateSliderSize();
+			// fix overflow bug
 			setTimeout(function() {
-				self._isFullscreenUpdating = false;
 				self.updateSliderSize();
-			}, 100);
+			},1);
+			self.ev.trigger('rsExitFullscreen');
+		},
+		_updateItemSrc: function(item, exit) {
+			var newHTML = (!item.isLoaded && !item.isLoading) ? '<a class="rsImg rsMainSlideImage" href="'+item.image+'"></a>' : '<img class="rsImg rsMainSlideImage" src="'+item.image+'"/>';
+			
+			if(item.content.hasClass('rsImg')) {
+				item.content = $(newHTML);
+			} else {
+				item.content.find('.rsImg').eq(0).replaceWith(newHTML);
+			}
+			if(!item.isLoaded && !item.isLoading && item.holder) {
+				item.holder.html(item.content);
+			}
 		}
 	});
 	$.rsModules.fullscreen = $.rsProto._initFullscreen;

@@ -10,7 +10,7 @@
 			var self = this;
 			if(self.st.globalCaption) {
 				self.ev.on('rsAfterInit', function() {
-					self.globalCaption = $('<div class="rsGCaption"></div>').appendTo(self.slider);
+					self.globalCaption = $('<div class="rsGCaption"></div>').appendTo( !self.st.globalCaptionInside ? self.slider : self._sliderOverflow );
 					setCurrCaptionHTML();
 				});
 				self.ev.on('rsBeforeAnimStart' , function() {

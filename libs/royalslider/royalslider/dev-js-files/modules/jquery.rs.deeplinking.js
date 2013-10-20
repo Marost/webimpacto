@@ -2,82 +2,109 @@
 	/**
 	 *
 	 * RoyalSlider Deep Linking Module
-	 * @version 1.0.1 + jQuery hashchange plugin v1.3 Copyright (c) 2010 Ben Alman:
+	 * @version 1.0.6 + jQuery hashchange plugin v1.3 Copyright (c) 2010 Ben Alman:
    *
    * 1.0.1:
-   * - Increased timeout duration before hash changes to 750ms to avoid reloading animation.
+   * - Added timeout before hash changes to 750ms to avoid reloading animation.
+   *
+   * 1.0.2:
+   * - Added multiple slider with hash support
+   *
+   * 1.0.3
+   * - Removed hashchange listener on destroy()
+   *
+   * 1.0.4
+   * - Decreased timeout from 750 to 400ms
+   *
+   * 1.0.5
+   * - History state is now replaced instead of pushing to avoid back button confusion
+   * - jQuery 1.9.0 compability
+   *
+   * 1.0.6
+   * - Namespaced hashchange event
 	 */ 
 	$.extend($.rsProto, {
 		_initDeeplinking: function() {
 			var self = this,
-				isBlocked,
-				hashTimeout,
-        hashChangeTimeout;
+  				isBlocked,
+  				hashTimeout,
+          hashChangeTimeout;
 			
 			self._hashDefaults = {
-				enabled: false,
-				change: false,
-				prefix: ''
+  				enabled: false,
+  				change: false,
+  				prefix: ''
 			};
 
 			self.st.deeplinking = $.extend({}, self._hashDefaults, self.st.deeplinking);
 
 			if(self.st.deeplinking.enabled) {
 
-				var hashChange = self.st.deeplinking.change;
-				var prefix = '#' + self.st.deeplinking.prefix;
-				var getSlideIdByHash = function() {
-					var hash = window.location.hash;
-					if(hash) {
-						hash = parseInt( hash.substring(prefix.length), 10 ); 
-						if(hash >= 0) {
-							return hash - 1;
-						}
-					}
-					return -1;
-				}
+				var hashChange = self.st.deeplinking.change,
+				    prefix = '#' + self.st.deeplinking.prefix,
+				    getSlideIdByHash = function() {
+    					var hash = window.location.hash;
+    					if(hash) {
+    						hash = parseInt( hash.substring(prefix.length), 10 ); 
+    						if(hash >= 0) {
+    							return hash - 1;
+    						}
+    					}
+    					return -1;
+    				};
 
 
 				var id = getSlideIdByHash();
-
-
-
-
 				if(id !== -1) {
 					self.st.startSlideId = id;
 				}
 
 				if(hashChange) {
-					$(window).on('hashchange.rs', function(e){
+					$(window).on('hashchange'+self.ns, function(e){
 						if(!isBlocked) {
 							var id = getSlideIdByHash();
-							if(id < 0) 
-								id = 0;
-							else if(id > self.numSlides - 1)
-								id = self.numSlides - 1;
-							self.goTo( id );
+              if(id < 0) {
+                return;
+              }
+              if(id > self.numSlides - 1)
+                id = self.numSlides - 1;
+              self.goTo( id );
 						}
 					});
-				}
+          self.ev.on('rsBeforeAnimStart', function() {
+            if(hashTimeout) {
+              clearTimeout(hashTimeout);
+            }
+            if(hashChangeTimeout) {
+              clearTimeout(hashChangeTimeout);
+            }
+          });
 
-				self.ev.on('rsAfterSlideChange', function() {
-					if(hashTimeout) {
-						clearTimeout(hashTimeout);
-					}
-          if(hashChangeTimeout) {
-            clearTimeout(hashChangeTimeout);
+  				self.ev.on('rsAfterSlideChange', function() {
+  					if(hashTimeout) {
+  						clearTimeout(hashTimeout);
+  					}
+            if(hashChangeTimeout) {
+              clearTimeout(hashChangeTimeout);
+            }
+            hashChangeTimeout = setTimeout(function() {
+              isBlocked = true;
+              window.location.replace( (''+window.location).split('#')[0] + prefix + (self.currSlideId + 1) );
+              hashTimeout = setTimeout(function() {
+                isBlocked = false;
+                hashTimeout = null;
+              }, 60);
+            }, 400);
+  				
+  				});
+        }
+        self.ev.on('rsBeforeDestroy', function() {
+          hashChangeTimeout = null;
+          hashTimeout = null;
+          if(hashChange) {
+            $(window).off('hashchange' + self.ns);
           }
-          hashChangeTimeout = setTimeout(function() {
-            isBlocked = true;
-            window.location.hash = prefix + (self.currSlideId + 1);
-            hashTimeout = setTimeout(function() {
-              isBlocked = false;
-              hashTimeout = 0;
-            }, 60);
-          }, 750);
-				
-				});
-
+        });
 				
 			}
 		}
@@ -192,7 +219,7 @@
       timeout_id = setTimeout( poll, $.fn[ str_hashchange ].delay );
     };
     
-    $.browser.msie && !supports_onhashchange && (function(){
+    window.attachEvent && !window.addEventListener && !supports_onhashchange && (function(){
       // Not only do IE6/7 need the "magical" Iframe treatment, but so does IE8
       // when running in "IE7 compatibility" mode.
       
