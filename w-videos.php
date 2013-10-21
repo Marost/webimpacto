@@ -1,3 +1,6 @@
+<?php
+$rst_videos=mysql_query("SELECT * FROM iev_videos WHERE publicar=1 ORDER BY fecha_publicacion DESC LIMIT 15;", $conexion);
+?>
 <section class="videos">
                         
     <div class="titulo">
@@ -5,51 +8,32 @@
     </div>
 
     <div class="contenido">
-        <ul id="video-lista">
-            <li>
-                <div class="play">
-                    <iframe width="260" height="146" src="http://www.youtube.com/embed/OQVD1mZMLZ4?rel=0" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="datos">
-                    <h2>Bethel televisión realiza pruebas para lanzar señal en alta definición</h2>
-                    <p>Noviembre 2012</p>
-                </div>
-            </li>
 
-            <li>
-                <div class="play">
-                    <iframe width="260" height="146" src="http://www.youtube.com/embed/OQVD1mZMLZ4?rel=0" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="datos">
-                    <h2>Bethel televisión realiza pruebas para lanzar señal en alta definición</h2>
-                    <p>Noviembre 2012</p>
-                </div>
-            </li>
+        <div id="video-gallery" class="royalSlider videoGallery rsDefault">
 
-            <li>
-                <div class="play">
-                    <iframe width="260" height="146" src="http://www.youtube.com/embed/OQVD1mZMLZ4?rel=0" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="datos">
-                    <h2>Bethel televisión realiza pruebas para lanzar señal en alta definición</h2>
-                    <p>Noviembre 2012</p>
-                </div>
-            </li>
+            <?php while($fila_videos=mysql_fetch_array($rst_videos)){
+                    $videos_titulo=$fila_videos["titulo"];
+                    $videos_contenido=$fila_videos["contenido"];
+                    $videos_imagen=$fila_videos["imagen"];
+                    $videos_imagen_carpeta=$fila_videos["imagen_carpeta"];
+                    $videos_video=$fila_videos["video"];
 
-            <li>
-                <div class="play">
-                    <iframe width="260" height="146" src="http://www.youtube.com/embed/OQVD1mZMLZ4?rel=0" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="datos">
-                    <h2>Bethel televisión realiza pruebas para lanzar señal en alta definición</h2>
-                    <p>Noviembre 2012</p>
-                </div>
-            </li>
-        </ul>
-        <div class="clearfix"></div>
-        <a id="prev-video" class="prev" href="javascript:;">&lt;</a>
-        <a id="next-video" class="next" href="javascript:;">&gt;</a>
-        <div id="pager2" class="pager"></div>
+                    //URL
+                    $videos_UrlImg=$web."imagenes/upload/".$videos_imagen_carpeta."thumb/".$videos_imagen;
+                    $videos_UrlYoutube="http://www.youtube.com/watch?v=".$videos_video;
+            ?>
+            <div class="rsContent">
+                <a class="rsImg" data-rsVideo="<?php echo $videos_UrlYoutube; ?>" href="<?php echo $videos_UrlImg; ?>">
+                    <div class="rsTmb">
+                        <h5><?php echo $videos_titulo ?></h5>
+                    </div>
+                </a>
+                <h3 class="rsABlock sampleBlock"><?php echo $videos_titulo ?></h3>
+            </div>
+            <?php } ?>
+
+        </div>
+        
     </div>
 
 </section>

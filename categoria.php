@@ -89,6 +89,9 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_noticia WHERE categoria=$id_url
                                     $noticia_imagen_carpeta=$fila_noticias["imagen_carpeta"];
                                     $noticia_fechatotal=explode(" ", $fila_noticias["fecha_publicacion"]);
                                     $noticia_fechapub=explode("-", $noticia_fechatotal[0]);
+
+                                    //URL
+                                    $noticia_urlFinal=$web."noticia/".$noticia_id."-".$noticia_url;
                             ?>
 
                             <article>
@@ -103,9 +106,11 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_noticia WHERE categoria=$id_url
                                         <?php echo $noticia_titulo; ?></a></h2>
                                     <?php echo cortarTextoRH($noticia_contenido,1,0,150); ?>
 
-                                    <div class="addthis_toolbox addthis_default_style ">
-                                        <a class="addthis_button_tweet" tw:count="horizontal"></a>
-                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
+                                    <!-- COMPARTIR -->
+                                    <div class="addthis_toolbox addthis_default_style"
+                                        addthis:url="<?php echo $noticia_urlFinal; ?>" addthis:title="<?php echo $noticia_titulo; ?>">
+                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                        <a class="addthis_button_tweet"></a>
                                     </div>
                                 </div>
 

@@ -4,16 +4,17 @@ require_once("panel@impacto/conexion/funciones.php");
 
 //WIDGETS
 $sc_addthis=true;
+$sc_royalslider=true;
 $sc_galinferior=true;
 $sc_videos=true;
 $sc_saludos=true;
 $sc_slider=true;
 
 //NOTICIA INFERIORES
-$rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND noticia=1 AND publicar=1 ORDER BY fecha_publicacion DESC LIMIT 2", $conexion);
+$rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND destacada=2 AND publicar=1 ORDER BY fecha_publicacion DESC LIMIT 2", $conexion);
 
 //EVENTOS
-$rst_eventos=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND noticia=1 AND categoria=8 ORDER BY fecha_publicacion DESC LIMIT 1", $conexion);
+$rst_eventos=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND destacada=2 AND publicar=1 AND categoria=8 ORDER BY fecha_publicacion DESC LIMIT 1", $conexion);
 
 //GALERIA
 $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $conexion);
@@ -106,11 +107,12 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
                                 <div class="fecha_social">
                                     <p><?php echo $noticias_fecha; ?></p>
 
+                                    <!-- COMPARTIR -->
                                     <div class="addthis_toolbox addthis_default_style"
                                         addthis:url="<?php echo $noticias_urlFinal; ?>" addthis:title="<?php echo $noticias_titulo; ?>">
-                                        <a class="addthis_button_tweet" tw:count="horizontal"></a>
-                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
-                                    </div>                                    
+                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                        <a class="addthis_button_tweet"></a>
+                                    </div>
                                 </div>
                                 
                             </article>
@@ -153,11 +155,12 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
                                 <div class="fecha_social">
                                     <p><?php echo $eventos_fecha; ?></p>
 
+                                    <!-- COMPARTIR -->
                                     <div class="addthis_toolbox addthis_default_style"
-                                        addthis:url="<?php echo $eventos_urlFinal; ?>" addthis:title="<?php echo $eventos_titulo; ?>">
-                                        <a class="addthis_button_tweet" tw:count="horizontal"></a>
-                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
-                                    </div>                                    
+                                        addthis:url="<?php echo $noticias_urlFinal; ?>" addthis:title="<?php echo $noticias_titulo; ?>">
+                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                        <a class="addthis_button_tweet"></a>
+                                    </div>                                  
                                 </div>
                                 
                             </article>
@@ -180,7 +183,7 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
                             <p>Más Galerías</Mas>
                         </div>
 
-                        <div id="galeria-contenido" class="royalSlider rsDefault">
+                        <div id="galeria-contenido" class="royalSlider rsUni">
 
                             <?php while($fila_galeria=mysql_fetch_array($rst_galeria)){
                                     $galeria_id=$fila_galeria["id"];
@@ -194,16 +197,23 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
                                     //VARIABLES
                                     $galimagen_imagen=$fila_galimagen["imagen"];
                                     $galimagen_imagen_carpeta=$fila_galimagen["carpeta"];
+
+                                    //URL
+                                    $galeria_UrlWeb=$web."galeria/".$galeria_id."-".$galeria_url;
+                                    $galeria_UrlImg=$web."imagenes/galeria/".$galimagen_imagen_carpeta."".$galimagen_imagen;
+                                    $galeria_UrlImg75=$web."imagenes/galeria/".$galimagen_imagen_carpeta."thumb75/".$galimagen_imagen;
                             ?>
-                            <a class="rsImg" href="imagenes/galeria/<?php echo $galimagen_imagen_carpeta."".$galimagen_imagen; ?>">
-                                <a href="galeria/<?php echo $galeria_id."-".$galeria_url; ?>" title="<?php echo $galeria_titulo; ?>">
-                                    <?php echo $galeria_titulo; ?></a>
-                                <img width="75" height="75" class="rsTmb" 
-                                    src="imagenes/galeria/<?php echo $galimagen_imagen_carpeta."thumb75/".$galimagen_imagen; ?>">
-                            </a>
+                            <div>
+                                <img class="rsImg" data-rsbigimg="<?php echo $galeria_UrlImg75; ?>" src="<?php echo $galeria_UrlImg; ?>" />
+                                <figure class="rsCaption">
+                                    <a href="<?php echo $galeria_UrlWeb; ?>" title="<?php echo $galeria_titulo; ?>">
+                                        <?php echo $galeria_titulo; ?>
+                                    </a>
+                                </figure>
+                                <img width="96" height="72" class="rsTmb" src="<?php echo $galeria_UrlImg75; ?>">
+                            </div>
                             <?php } ?>
-                            
-                            </a>
+
                         </div>
                     </div>
 

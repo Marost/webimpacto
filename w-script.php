@@ -20,38 +20,41 @@
 
 <?php if($sc_addthis==true){ ?>
 <!-- ADDTHIS -->
-<script>var addthis_config = {"data_track_addressbar":true};</script>
-<script>var addthis_config = {"data_track_clickback":false}</script>
-<script src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63"></script>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63"></script>
+<?php } ?>
+
+<?php if($sc_royalslider==true){ ?>
+<!-- ROYALSLIDER -->
+
 <?php } ?>
 
 <?php if($sc_galinferior==true){ ?>
 <!-- GALERIA INFERIOR -->
-<link href="libs/royalslider/royalslider/royalslider.css" rel="stylesheet">
-<link href="libs/royalslider/royalslider/default/rs-default.css" rel="stylesheet">
-<link href="libs/royalslider/preview-assets/css/smoothness/jquery-ui-1.8.22.custom.css" rel="stylesheet">
-<link href="libs/royalslider/preview-assets/css/github.css" rel="stylesheet">
-<script src="libs/royalslider/preview-assets/js/highlight.pack.js"></script>
-<script src="libs/royalslider/preview-assets/js/jquery-ui-1.8.22.custom.min.js"></script>
-<script> hljs.initHighlightingOnLoad(); </script>
-<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<script src="libs/royalslider/royalslider/jquery.royalslider.min.js"></script>
+<script src="libs/royalslider/jquery-1.8.3.min.js"></script>
+<script src="libs/royalslider/jquery.royalslider.min.js"></script>
+<link href="libs/royalslider/royalslider.css" rel="stylesheet">
+<link href="libs/royalslider/skins/universal/rs-universal.css" rel="stylesheet">
 <script>
 var jGalHome = jQuery.noConflict();
 
-jGalHome(document).ready(function() {
+jGalHome(document).on("ready", startGalHome);
+
+function startGalHome(){
     jGalHome('#galeria-contenido').royalSlider({
         fullscreen: {
-          enabled: false
+          enabled: true,
+          nativeFS: true
         },
         controlNavigation: 'thumbnails',
         thumbs: {
-          orientation: 'vertical'
+          orientation: 'vertical',
+          paddingBottom: 4,
+          appendSpan: true
         },
         transitionType:'fade',
         autoScaleSlider: true, 
         autoScaleSliderWidth: 960,     
-        autoScaleSliderHeight: 520,
+        autoScaleSliderHeight: 600,
         loop: true,
         arrowsNav: false,
         keyboardNavEnabled: true,
@@ -61,63 +64,95 @@ jGalHome(document).ready(function() {
             enabled: true,
             pauseOnHover: true,
             delay: 5000
-        }
+        }        
     });
-});
+}
 </script>
 <?php } ?>
 
 <?php if($sc_galeria==true){ ?>
 <!-- GALERIA INFERIOR -->
-<link href="libs/royalslider/royalslider/royalslider.css" rel="stylesheet">
-<link href="libs/royalslider/royalslider/default/rs-default.css" rel="stylesheet">
-<link href="libs/royalslider/preview-assets/css/smoothness/jquery-ui-1.8.22.custom.css" rel="stylesheet">
-<link href="libs/royalslider/preview-assets/css/github.css" rel="stylesheet">
-<script src="libs/royalslider/preview-assets/js/highlight.pack.js"></script>
-<script src="libs/royalslider/preview-assets/js/jquery-ui-1.8.22.custom.min.js"></script>
-<script> hljs.initHighlightingOnLoad(); </script>
-<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<script src="libs/royalslider/royalslider/jquery.royalslider.min.js"></script>
+<script src="libs/royalslider/jquery-1.8.3.min.js"></script>
+<script src="libs/royalslider/jquery.royalslider.min.js"></script>
+<link href="libs/royalslider/royalslider.css" rel="stylesheet">
+<link href="libs/royalslider/skins/universal/rs-universal.css" rel="stylesheet">
 <script>
-var jGalHome = jQuery.noConflict();
+var jGalInf = jQuery.noConflict();
 
-jGalHome(document).ready(function() {
-    jGalHome('#galeria').royalSlider({
+jGalInf(document).on("ready", startGalSelect);
+
+function startGalSelect(){
+    jGalInf('#galeria').royalSlider({
+        fullscreen: {
+          enabled: true,
+          nativeFS: true
+        },
         controlNavigation: 'thumbnails',
         autoScaleSlider: true, 
         autoScaleSliderWidth: 960,     
         autoScaleSliderHeight: 850,
         loop: false,
-        numImagesToPreload:4,
-        arrowsNavAutohide: true,
+        imageScaleMode: 'fit-if-smaller',
+        navigateByClick: true,
+        numImagesToPreload:2,
+        arrowsNav:true,
+        arrowsNavAutoHide: true,
         arrowsNavHideOnTouch: true,
         keyboardNavEnabled: true,
-        autoPlay: {
-            enabled: true,
-            pauseOnHover: true,
-            delay: 5000
+        fadeinLoadedSlide: true,
+        globalCaption: true,
+        globalCaptionInside: false,
+        thumbs: {
+          appendSpan: true,
+          firstMargin: true,
+          paddingBottom: 4
         }
     });
-});
+}
 </script>
 <?php } ?>
 
 <?php if($sc_videos==true){ ?>
 <!-- VIDEOS - SECCION -->
-<script src="libs/caroufredsel/jquery-1.8.2.min.js"></script>
-<script src="libs/caroufredsel/jquery.carouFredSel-6.1.0-packed.js"></script>
+<script src="libs/royalslider/jquery-1.8.3.min.js"></script>
+<script src="libs/royalslider/jquery.royalslider.min.js"></script>
+<link href="libs/royalslider/royalslider.css" rel="stylesheet">
+<link href="libs/royalslider/skins/default/rs-default.css" rel="stylesheet">
 <script>
 var jVideos = jQuery.noConflict();
 jVideos(document).on("ready", startVideos);
 
 function startVideos(){
-    jVideos('#video-lista').carouFredSel({
-        auto: false,
-        prev: '#prev-video',
-        next: '#next-video',
-        pagination: false,
-        items: 3
-    });
+    jVideos('#video-gallery').royalSlider({
+        arrowsNav: false,
+        fadeinLoadedSlide: true,
+        controlNavigationSpacing: 0,
+        controlNavigation: 'thumbnails',
+        thumbs: {
+            autoCenter: false,
+            fitInViewport: true,
+            orientation: 'vertical',
+            spacing: 0,
+            paddingBottom: 0
+        },
+        keyboardNavEnabled: false,
+        imageScaleMode: 'fill',
+        imageAlignCenter:true,
+        slidesSpacing: 0,
+        loop: true,
+        loopRewind: true,
+        numImagesToPreload: 3,
+        video: {
+            autoHideArrows:true,
+            autoHideControlNav:false,
+            autoHideBlocks: true
+        }, 
+        autoScaleSlider: true, 
+        autoScaleSliderWidth: 960,     
+        autoScaleSliderHeight: 450,
+        imgWidth: 640,
+        imgHeight: 360
+      });
 }
 </script>
 <?php } ?>
