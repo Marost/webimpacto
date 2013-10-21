@@ -2,24 +2,25 @@
 session_start();
 include("../../conexion/conexion.php");
 include("../../conexion/funciones.php");
-require_once('../../js/plugins/thumbs/ThumbLib.inc.php');
 
 //DECLARACION DE VARIABLES
 $id=$_REQUEST["id"];
-$fecha=$_POST["pub_fecha"];
-$anio=substr($fecha,0,4);
-$mes=substr($fecha,5,2);
-$revista=$_POST["contenido"];
-$pdf=$_POST["pdf"];
-$pdf_carpeta=$_POST["pdf_carpeta"];
+$edicion_nombre=$_POST["edicion_nombre"];
+$edicion_numero=$_POST["edicion_numero"];
+
+//FECHA Y HORA
+$pub_fecha=$_POST["pub_fecha"];
+$pub_hora=$_POST["pub_hora"];
+$fecha_publicacion=$pub_fecha." ".$pub_hora;
+
+//IMAGEN
 $imagen=$_POST["imagen"];
-$imagen_carpeta=$_POST["imagen_carpeta"];
 
 //SUBIR PORTADA
 if($_FILES['fileInput']['name']!=""){
 	if(is_uploaded_file($_FILES['fileInput']['tmp_name'])){ 
 		$fileName=$_FILES['fileInput']['name'];
-		$uploadDir="../../../imagenes/upload/".fechaCarpeta()."/";
+		$uploadDir="../../../imagenes/revista/";
 		$uploadFile=$uploadDir.$fileName;
 		$num = 0;
 		$name = $fileName;
@@ -31,8 +32,7 @@ if($_FILES['fileInput']['name']!=""){
 			$name = $onlyName."".$num.".".$extension; 
 		}
 		$uploadFile = $uploadDir.$name; 
-		move_uploaded_file($_FILES['fileInput']['tmp_name'], $uploadFile);  
-		$name;
+		move_uploaded_file($_FILES['fileInput']['tmp_name'], $uploadFile);
 		$carpeta_imagen=fechaCarpeta()."/";
 	}
 }else{
@@ -40,30 +40,11 @@ if($_FILES['fileInput']['name']!=""){
 	$carpeta_imagen=$imagen_carpeta;
 }
 
-//SUBIR PDF
-if($_POST['uploader_pdf_0_tmpname']<>""){
-	$archivo_tmp=$_POST['uploader_pdf_0_tmpname'];
-	$archivo_tmp_extension=end(explode('.',$archivo_tmp));
-	$archivo_tmp_nombre=substr($archivo_tmp,0,strlen($archivo_tmp)-(strlen($archivo_tmp_extension)+1));
-	
-	$archivo_name=$_POST['uploader_pdf_0_name'];	
-	$archivo_name_extension=end(explode('.',$archivo_name));
-	$archivo_name_nombre=substr($archivo_name,0,strlen($archivo_name)-(strlen($archivo_name_extension)+1));
-	$archivo_name_prmlnk=getUrlAmigable($archivo_name_nombre);
-	$archivo_name_total=$archivo_name_prmlnk.".".$archivo_name_extension;
-	
-	$ruta_archivo="../../../pdf/".fechaCarpeta()."/";
-	if(file_exists($ruta_archivo.$archivo_tmp)){
-		rename($ruta_archivo.$archivo_tmp, $ruta_archivo.$archivo_name_total);
-	}
-	$carpeta_pdf=fechaCarpeta()."/";
-}elseif($pdf!=""){
-	$archivo_name_total=$pdf;
-	$carpeta_pdf=$pdf_carpeta;
-}
-
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_portada SET imagen='$name', fecha='$fecha', numero_mes=$mes, anio=$anio, pdf='$archivo_name_total', revista='$revista', imagen_carpeta='$carpeta_imagen', pdf_carpeta='$carpeta_pdf' WHERE id=$id;", $conexion);
+$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_edicion SET titulo='$edicion_numero',
+	nombre_edicion='$edicion_nombre',
+	imagen='$name',
+	fecha_publicacion='$fecha_publicacion' WHERE id=$id;", $conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
