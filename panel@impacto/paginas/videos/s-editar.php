@@ -7,17 +7,40 @@ require_once('../../js/plugins/thumbs/ThumbLib.inc.php');
 //DECLARACION DE VARIABLES
 $nota_id=$_REQUEST["id"];
 $titulo=$_POST["titulo"];
+$url=getUrlAmigable(eliminarTextoURL($titulo));
 $video=$_POST["video"];
+$publicar=1;
+
+//FECHA
 $pub_fecha=$_POST["pub_fecha"];
 $pub_hora=$_POST["pub_hora"];
 $fecha_publicacion=$pub_fecha." ".$pub_hora;
+
+//SUBIR IMAGEN
+$upload_imagen=$_POST["uploader_0_tmpname"];
+
+//IMAGEN
+if($upload_imagen<>""){
+	$imagen=$_POST["uploader_0_tmpname"];
+	$imagen_carpeta=fechaCarpeta()."/";	
+	$thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
+	$thumb->adaptiveResize(770,464);
+	$thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
+}else{
+	$imagen=$_POST["imagen"];
+	$imagen_carpeta=$_POST["imagen_carpeta"];	
+	$thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
+	$thumb->adaptiveResize(770,464);
+	$thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
+}
 
 //PUBLICAR
 if ($_POST["publicar"]<>""){ $publicar=$_POST["publicar"]; }else{ $publicar=0; }
 
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_videos SET titulo='".htmlspecialchars($titulo)."', youtube='$video', 
-	fecha_publicacion='$fecha_publicacion', publicar=$publicar WHERE id=$nota_id;", $conexion);
+$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_videos SET titulo='".htmlspecialchars($titulo)."', video='$video',
+	imagen='$imagen', 
+	imagen_carpeta='$imagen_carpeta', fecha_publicacion='$fecha_publicacion', publicar=$publicar WHERE id=$nota_id;", $conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
