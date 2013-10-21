@@ -75,7 +75,7 @@ function startGalHome(){
 <script src="libs/royalslider/jquery-1.8.3.min.js"></script>
 <script src="libs/royalslider/jquery.royalslider.min.js"></script>
 <link href="libs/royalslider/royalslider.css" rel="stylesheet">
-<link href="libs/royalslider/skins/universal/rs-universal.css" rel="stylesheet">
+<link href="libs/royalslider/skins/default/rs-default.css" rel="stylesheet">
 <script>
 var jGalInf = jQuery.noConflict();
 
@@ -90,7 +90,7 @@ function startGalSelect(){
         controlNavigation: 'thumbnails',
         autoScaleSlider: true, 
         autoScaleSliderWidth: 960,     
-        autoScaleSliderHeight: 850,
+        autoScaleSliderHeight: 600,
         loop: false,
         imageScaleMode: 'fit-if-smaller',
         navigateByClick: true,

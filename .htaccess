@@ -342,6 +342,7 @@ FileETag None
 RewriteRule ^noticia/([0-9]*)-(.*)$             /nota.php?id=$1&url=$2
 RewriteRule ^categoria/([0-9]*)/(.*)$             /categoria.php?id=$1&url=$2
 RewriteRule ^galeria/([0-9]*)-(.*)$             /galeria.php?id=$1&url=$2
+RewriteRule ^galerias$                          /galeria-all.php
 RewriteRule ^buscar$                          /buscar.php
 #RewriteRule ^nosotros$                          /nosotros.php
 #RewriteRule ^entrevista/([0-9]*)-(.*)$             /entrevista.php?id=$1&url=$2

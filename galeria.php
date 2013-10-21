@@ -27,7 +27,6 @@ $rst_noticia_img=mysql_query("SELECT * FROM iev_galeria_slide WHERE noticia=$id_
 
 //VARIABLES
 $url_final=$web."galeria/".$id_url."-".$url;
-$url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
 
 ?>
 <!DOCTYPE html>
@@ -80,29 +79,30 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
                             
                             <div class="titulo">
                                 <h2><?php echo $noticia_titulo; ?></h2>
-                                <?php echo cortarTextoRH($noticia_contenido,1,0,150); ?>
+
+                                <div class="addthis_toolbox addthis_default_style ">
+                                    <a class="addthis_button_tweet" tw:count="horizontal"></a>
+                                    <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
+                                    <a class="addthis_counter addthis_pill_style"></a>
+                                </div>
+
+                                <?php echo $noticia_contenido; ?>
                             </div>  
                             
-                            <div class="addthis_toolbox addthis_default_style ">
-                                <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-                                <a class="addthis_button_tweet" tw:count="horizontal"></a>
-                                <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
-                                <a class="addthis_button_pinterest_pinit" 
-                                pi:pinit:url="<?php echo $web; ?>nota/<?php echo $nota_id."-".$nota_url; ?>" 
-                                pi:pinit:media="<?php echo $web; ?>upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" 
-                                pi:pinit:layout="horizontal"></a>
-                                <a class="addthis_counter addthis_pill_style"></a>
-                            </div>
-                            
-                            <div id="galeria" class="royalSlider rsDefault fwImage">
+                            <div id="galeria" class="royalSlider rsDefault">
                                 <?php while($fila_noticia_img=mysql_fetch_array($rst_noticia_img)){
                                         $galeria_imagen=$fila_noticia_img["imagen"];
-                                        $galeria_imagen_carpeta=$fila_noticia_img["carpeta"];
+                                        $galeria_imagen_carpeta=$fila_noticia_img["imagen_carpeta"];
+
+                                        //URL
+                                        $galeria_UrlImg=$web."imagenes/galeria/".$galeria_imagen_carpeta."".$galeria_imagen;
+                                        $galeria_UrlImgThumb=$web."imagenes/galeria/".$galeria_imagen_carpeta."thumb/".$galeria_imagen;
                                 ?>
-                                <a class="rsImg"  data-rsDelay="1000" 
-                                    data-rsBigImg="imagenes/galeria/<?php echo $galeria_imagen_carpeta."".$galeria_imagen; ?>">
-                                    <img width="75" height="75" class="rsTmb" 
-                                        src="imagenes/galeria/<?php echo $galeria_imagen_carpeta."thumb75/".$galeria_imagen; ?>" /></a>
+
+                                <div>
+                                    <img class="rsImg" data-rsbigimg="<?php echo $galeria_UrlImg; ?>" src="<?php echo $galeria_UrlImg; ?>" />
+                                    <img width="96" height="72" class="rsTmb" src="<?php echo $galeria_UrlImgThumb; ?>">
+                                </div>
                                 <?php } ?>
                             </div>
 

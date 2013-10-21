@@ -196,21 +196,21 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
 
                                     //VARIABLES
                                     $galimagen_imagen=$fila_galimagen["imagen"];
-                                    $galimagen_imagen_carpeta=$fila_galimagen["carpeta"];
+                                    $galimagen_imagen_carpeta=$fila_galimagen["imagen_carpeta"];
 
                                     //URL
                                     $galeria_UrlWeb=$web."galeria/".$galeria_id."-".$galeria_url;
                                     $galeria_UrlImg=$web."imagenes/galeria/".$galimagen_imagen_carpeta."".$galimagen_imagen;
-                                    $galeria_UrlImg75=$web."imagenes/galeria/".$galimagen_imagen_carpeta."thumb75/".$galimagen_imagen;
+                                    $galeria_UrlImgThumb=$web."imagenes/galeria/".$galimagen_imagen_carpeta."thumb/".$galimagen_imagen;
                             ?>
                             <div>
-                                <img class="rsImg" data-rsbigimg="<?php echo $galeria_UrlImg75; ?>" src="<?php echo $galeria_UrlImg; ?>" />
+                                <img class="rsImg" data-rsbigimg="<?php echo $galeria_UrlImg; ?>" src="<?php echo $galeria_UrlImg; ?>" />
                                 <figure class="rsCaption">
                                     <a href="<?php echo $galeria_UrlWeb; ?>" title="<?php echo $galeria_titulo; ?>">
                                         <?php echo $galeria_titulo; ?>
                                     </a>
                                 </figure>
-                                <img width="96" height="72" class="rsTmb" src="<?php echo $galeria_UrlImg75; ?>">
+                                <img width="96" height="72" class="rsTmb" src="<?php echo $galeria_UrlImgThumb; ?>">
                             </div>
                             <?php } ?>
 
