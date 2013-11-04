@@ -17,12 +17,11 @@ $edicion_imagen_carpeta=$fila_edicion["carpeta_imagen"];
         <div class="datos">
             <h3>Edición del mes</h3>
             <h3 class="numedicion">N° <?php echo $edicion_url; ?></h3>
-            <p>Click Aquí</p>
         </div>
 
         <div class="imagen">
             <a href="revista/<?php echo $edicion_url; ?>/index.html" title="<?php echo $edicion_titulo; ?>" target="_blank">
-                <img src="imagenes/revista/<?php echo $edicion_imagen_carpeta."".$edicion_imagen; ?>" alt="<?php echo $edicion_titulo; ?>" width="155">
+                <img src="imagenes/revista/<?php echo $edicion_imagen_carpeta."".$edicion_imagen; ?>" alt="<?php echo $edicion_titulo; ?>" width="185">
             </a>
         </div>
 

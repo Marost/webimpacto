@@ -4,9 +4,9 @@ $rst_columnista=mysql_query("SELECT * FROM iev_columnista WHERE publicar=1 ORDER
 ?>
 <aside>
                             
-    <div class="columnistas">
+    <div class="sidebar" id="columnistas">
         
-        <h3><span></span>COLUMNISTAS</h3>
+        <h3><span></span>EDITORIAL</h3>
 
         <?php while($fila_columnista=mysql_fetch_array($rst_columnista)){
                 $columnista_id=$fila_columnista["id"];

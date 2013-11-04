@@ -1,5 +1,6 @@
 <aside>
     <div class="titulo">
-        <h3><span></span>INFOGRAFIAS</h3>
+        <h3><span></span>ESCRIBENOS A:</h3>
+        <p>cartas@impactoevangelistico.net</p>
     </div>
 </aside>

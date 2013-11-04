@@ -11,7 +11,10 @@ $sc_saludos=true;
 $sc_slider=true;
 
 //NOTICIA INFERIORES
-$rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND destacada=2 AND publicar=1 ORDER BY fecha_publicacion DESC LIMIT 2", $conexion);
+$rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND destacada=2 AND publicar=1 AND categoria=12 ORDER BY fecha_publicacion DESC LIMIT 2", $conexion);
+
+//DEVOCIONALES
+$rst_devoc=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND destacada=2 AND publicar=1 AND categoria=7 ORDER BY fecha_publicacion DESC LIMIT 1", $conexion);
 
 //EVENTOS
 $rst_eventos=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND destacada=2 AND publicar=1 AND categoria=8 ORDER BY fecha_publicacion DESC LIMIT 1", $conexion);
@@ -59,15 +62,9 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
 
                         <?php require_once("w-portada.php"); ?>
 
+                        <?php require_once("w-idiomas.php"); ?>
+
                         <?php require_once("w-columnistas.php"); ?>
-
-                        <aside>
-
-                            <div class="publicidad">
-                                
-                            </div>
-                            
-                        </aside>
                     
                     </div>
 
@@ -123,6 +120,54 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
 
                         <section>
 
+                            <h3>DEVOCIONALES</h3>
+
+                            <?php while($fila_devoc=mysql_fetch_array($rst_devoc)){
+                                    $devoc_id=$fila_devoc["id"];
+                                    $devoc_url=$fila_devoc["url"];
+                                    $devoc_urlFinal=$web."noticia/".$devoc_id."-".$devoc_url;
+                                    $devoc_titulo=$fila_devoc["titulo"];
+                                    $devoc_imagen=$fila_devoc["imagen"];
+                                    $devoc_imagen_carpeta=$fila_devoc["imagen_carpeta"];
+                                    $devoc_contenido=primerParrafo($fila_devoc["contenido"]);
+                                    $fechaPubNoticia=$fila_devoc["fecha_publicacion"];
+                                    $fechaNoticia=explode(" ", $fechaPubNoticia);
+                                    $fechaExpNoticia=explode("-", $fechaNoticia[0]);
+                                    $devoc_fecha=nombreFechaTotal($fechaExpNoticia[0],$fechaExpNoticia[1],$fechaExpNoticia[2]);
+                            ?>
+
+                            <article>
+
+                                <div class="imagen">
+                                    <img src="imagenes/upload/<?php echo $devoc_imagen_carpeta."thumb/".$devoc_imagen; ?>" 
+                                    alt="<?php echo $devoc_titulo; ?>" width="290" height="220">
+                                </div>
+
+                                <div class="datos">
+                                    <h2><a href="<?php echo $devoc_urlFinal; ?>" title="<?php echo $devoc_titulo; ?>">
+                                        <?php echo $devoc_titulo; ?></a></h2>
+                                    <?php echo $devoc_contenido; ?>
+                                </div>
+
+                                <div class="fecha_social">
+                                    <p><?php echo $devoc_fecha; ?></p>
+
+                                    <!-- COMPARTIR -->
+                                    <div class="addthis_toolbox addthis_default_style"
+                                        addthis:url="<?php echo $devoc_urlFinal; ?>" addthis:title="<?php echo $devoc_titulo; ?>">
+                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                        <a class="addthis_button_tweet"></a>
+                                    </div>                                  
+                                </div>
+                                
+                            </article>
+
+                            <?php } ?>
+                            
+                        </section>
+
+                        <section>
+
                             <h3>EVENTOS</h3>
 
                             <?php while($fila_eventos=mysql_fetch_array($rst_eventos)){
@@ -157,7 +202,7 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
 
                                     <!-- COMPARTIR -->
                                     <div class="addthis_toolbox addthis_default_style"
-                                        addthis:url="<?php echo $noticias_urlFinal; ?>" addthis:title="<?php echo $noticias_titulo; ?>">
+                                        addthis:url="<?php echo $eventos_urlFinal; ?>" addthis:title="<?php echo $eventos_titulo; ?>">
                                         <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
                                         <a class="addthis_button_tweet"></a>
                                     </div>                                  
@@ -218,9 +263,6 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
                     </div>
 
                     <div class="nwder">
-                        
-                        <?php require_once("w-escriben.php"); ?>
-
                         <?php require_once("w-saludos.php"); ?>
 
                         <?php require_once("w-infografias.php"); ?>

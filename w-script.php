@@ -169,7 +169,7 @@ function startSaludo(){
     jSald('.wg_saludos').bxSlider({
         auto: true,
         pause: 10000,
-        displaySlideQty: 4,
+        displaySlideQty: 10,
         moveSlideQty: 4,
         mode: 'vertical'
     });
