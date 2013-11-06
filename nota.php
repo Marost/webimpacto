@@ -133,10 +133,6 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
 
                         <?php require_once("w-columnistas.php"); ?>
 
-                        <?php require_once("w-publicidad-sb.php"); ?>
-
-                        <?php require_once("w-escriben.php"); ?>
-
                         <?php require_once("w-saludos.php"); ?>
 
                         <?php require_once("w-infografias.php"); ?>
