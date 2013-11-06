@@ -1011,20 +1011,20 @@ footer{
         width: 970px;
         background-color: #000;
         padding: 20px 10px;
+        height: 300px;
     }
 
     .logo{
-        width: 415px;
+        width: 355px;
         float: left;
     }
 
     .datos{
-        width: 555px;
+        width: 605px;
         float: left;
 
         aside{
             display: block;
-            width: 185px;
             float: left;
 
             h2{
@@ -1033,34 +1033,40 @@ footer{
             }
 
             ul{
+                margin: 0;
+                padding: 0;
 
                 li{
-                    list-style: 0;
+                    list-style: none;
                     margin: 0;
                     padding: 0;
 
                     a{
                         text-decoration: none;
                         color: #fff;
+                        float: left;
+                        display: block;
+                        
                     }
                 }
             }
         }
 
         aside.social-media{
+            width: 160px;
 
             ul{
 
                 li{
 
                     a{
-
-                        width: 100px;
-                        height: 50px;
-                        float: left;
-                        display: block;
                         background-image: url(../imagenes/icon-footer.png);
                         background-repeat: no-repeat;
+                        width: 100px;
+                        height: 40px;
+                        padding: 20px 0 0 60px;
+                        font-size: 14px;
+                        font-weight: bold;
                     }
 
                     a.fb{ background-position: 0 0; }
@@ -1070,7 +1076,28 @@ footer{
                     a.rss{ background-position: 0 -120px; }
                 }
             }
+        }
 
+        aside.enlaces{
+            width: 170px;
+
+            ul{
+
+                li{
+                    display: block;
+                    float: left;
+                    margin-bottom: 25px;
+
+                    a{
+                        width: 130px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        aside.contactenos{
+            width: 275px;
         }
     }
 }
