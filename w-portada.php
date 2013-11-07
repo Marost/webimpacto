@@ -28,7 +28,10 @@ $edicion_imagen_carpeta=$fila_edicion["carpeta_imagen"];
     </div>
 
     <div class="edanterior">
-        <h3>EDICIONES ANTERIORES</h3>
+        <h3><a href="edicion-anterior-es">
+            EDICIONES ANTERIORES
+            </a>
+        </h3>
     </div>
     
 </aside>
