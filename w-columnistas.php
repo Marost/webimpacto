@@ -26,7 +26,7 @@ $rst_columnista=mysql_query("SELECT * FROM iev_columnista WHERE publicar=1 ORDER
         <article>
             
             <div class="imagen">
-                <img src="imagenes/upload/rev-gustavo.png" alt="">
+                <img src="imagenes/columnistas/8fbxl3tpxildqtsjy74i.png" alt="">
             </div>
 
             <div class="datos">
