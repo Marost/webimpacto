@@ -118,11 +118,9 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_galeria WHERE fecha_publicacion
 
                         <?php require_once("w-portada.php"); ?>
 
+                        <?php require_once("w-idiomas.php"); ?>
+
                         <?php require_once("w-columnistas.php"); ?>
-
-                        <?php require_once("w-publicidad-sb.php"); ?>
-
-                        <?php require_once("w-escriben.php"); ?>
 
                         <?php require_once("w-saludos.php"); ?>
 

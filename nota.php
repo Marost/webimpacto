@@ -130,6 +130,8 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
                     <div class="nwizq notawder">
 
                         <?php require_once("w-portada.php"); ?>
+                        
+                        <?php require_once("w-idiomas.php"); ?>
 
                         <?php require_once("w-columnistas.php"); ?>
 

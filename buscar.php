@@ -137,11 +137,9 @@ if($buscar==""){
 
                         <?php require_once("w-portada.php"); ?>
 
+                        <?php require_once("w-idiomas.php"); ?>
+
                         <?php require_once("w-columnistas.php"); ?>
-
-                        <?php require_once("w-publicidad-sb.php"); ?>
-
-                        <?php require_once("w-escriben.php"); ?>
 
                         <?php require_once("w-saludos.php"); ?>
 

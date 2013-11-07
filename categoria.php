@@ -130,6 +130,8 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_noticia WHERE categoria=$id_url
 
                         <?php require_once("w-portada.php"); ?>
 
+                        <?php require_once("w-idiomas.php"); ?>
+
                         <?php require_once("w-columnistas.php"); ?>
 
                         <?php require_once("w-saludos.php"); ?>
