@@ -9,7 +9,7 @@ $mensaje=$_REQUEST["msj"];
 $reqColum=$_REQUEST["colum"];
 
 //COLUMNISTA
-$rst_columnista=mysql_query("SELECT * FROM dr_columnista WHERE id=$reqColum", $conexion);
+$rst_columnista=mysql_query("SELECT * FROM ".$tabla_suf."_columnista WHERE id=$reqColum", $conexion);
 $fila_columnista=mysql_fetch_array($rst_columnista);
 
 //VARIABLES
@@ -34,7 +34,7 @@ include_once('../../js/plugins/creative_table/creativeTable.php');
 $ct=new CreativeTable();
 
 // Data Gathering
-$params['sql_query']        = "SELECT id,titulo,fecha FROM ".$tabla_suf."_columnista_columna WHERE columnista=$reqColum ORDER BY fecha DESC, id DESC";
+$params['sql_query']        = "SELECT id,titulo,fecha_publicacion FROM ".$tabla_suf."_columnista_columna WHERE columnista=$reqColum ORDER BY fecha_publicacion DESC, id DESC";
 //$params['search']                   = $search;
 $params['multiple_search']  = $multiple_search;
 $params['items_per_page']   = $items_per_page;
@@ -43,7 +43,7 @@ $params['page']             = $page;
 $params['total_items']      = $total_items;
 
 $params['header']           = 'ID,Registro,Fecha';
-$params['width']            = '30,750,100';
+$params['width']            = '30,650,200';
 
 /* ORDENAR POR CAMPOS */
 $params['sort_init'] = false;  // sort all fields

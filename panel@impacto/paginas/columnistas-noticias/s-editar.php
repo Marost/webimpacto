@@ -12,10 +12,10 @@ $url=getUrlAmigable(eliminarTextoURL($nombre));
 $contenido=$_POST["contenido"];
 
 //FECHA Y HORA
-$pub_fecha=$_POST["pub_fecha"];
+$pub_fecha=$_POST["pub_fecha"]." 00:00:00";
 
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_columnista_columna SET url='$url', titulo='".htmlspecialchars($nombre)."', contenido='$contenido', fecha='$pub_fecha' WHERE id=$nota_id;", $conexion);
+$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_columnista_columna SET url='$url', titulo='".htmlspecialchars($nombre)."', contenido='$contenido', fecha_publicacion='$pub_fecha' WHERE id=$nota_id;", $conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();

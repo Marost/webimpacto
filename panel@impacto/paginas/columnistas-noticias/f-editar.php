@@ -9,7 +9,7 @@ $id_url=$_REQUEST["id"];
 $reqColum=$_REQUEST["colum"];
 
 //COLUMNISTA
-$rst_columnista=mysql_query("SELECT * FROM dr_columnista WHERE id=$reqColum", $conexion);
+$rst_columnista=mysql_query("SELECT * FROM ".$tabla_suf."_columnista WHERE id=$reqColum", $conexion);
 $fila_columnista=mysql_fetch_array($rst_columnista);
 
 //VARIABLES
@@ -23,7 +23,11 @@ $fila_nota=mysql_fetch_array($rst_nota);
 $nota_nombre=$fila_nota["titulo"];
 $nota_contenido=$fila_nota["contenido"];
 $nota_publicar=$fila_nota["publicar"];
-$nota_fecha_pub=$fila_nota["fecha"];
+
+//FECHA
+$nota_fecha_pub=explode(" ", $fila_nota["fecha_publicacion"]);
+$nota_pub_fecha=$nota_fecha_pub[0];
+$nota_pub_hora=$nota_fecha_pub[1];
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -86,7 +90,7 @@ $nota_fecha_pub=$fila_nota["fecha"];
                     <div class="formRow">
                         <div class="grid3"><label>Fecha de publicación:</label></div>
                         <div class="grid4">
-                            <input type="text" class="datepicker" name="pub_fecha" value="<?php echo $nota_fecha_pub; ?>" /></div>
+                            <input type="text" class="datepicker" name="pub_fecha" value="<?php echo $nota_pub_fecha; ?>" /></div>
                     </div>
                     
                     <div class="formRow">

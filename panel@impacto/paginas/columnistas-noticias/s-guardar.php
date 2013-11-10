@@ -11,10 +11,10 @@ $url=getUrlAmigable(eliminarTextoURL($nombre));
 $contenido=$_POST["contenido"];
 
 //FECHA Y HORA
-$pub_fecha=$_POST["pub_fecha"];
+$pub_fecha=$_POST["pub_fecha"]." 00:00:00";
 
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_columnista_columna (url, titulo, contenido, fecha, columnista) VALUES('$url', '".htmlspecialchars($nombre)."', '$contenido', '$pub_fecha', $reqColum);",$conexion);
+$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_columnista_columna (url, titulo, contenido, fecha_publicacion, columnista) VALUES('$url', '".htmlspecialchars($nombre)."', '$contenido', '$pub_fecha', $reqColum);",$conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();

@@ -9,7 +9,7 @@ $reqColum=$_REQUEST["colum"];
 $pub_fecha=date("Y-m-d");
 
 //COLUMNISTA
-$rst_columnista=mysql_query("SELECT * FROM dr_columnista WHERE id=$reqColum", $conexion);
+$rst_columnista=mysql_query("SELECT * FROM ".$tabla_suf."_columnista WHERE id=$reqColum", $conexion);
 $fila_columnista=mysql_fetch_array($rst_columnista);
 
 //VARIABLES
