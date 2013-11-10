@@ -12,7 +12,7 @@
         	<h2>Conectate</h2>
 
         	<ul>
-        		<li><a class="fb" href="">Facebook</a></li>
+        		<li><a class="fb" href="https://www.facebook.com/impactoevangelistico">Facebook</a></li>
         		<li><a class="yb" href="">Youtube</a></li>
         		<li><a class="rss" href="">RSS</a></li>
         	</ul>
