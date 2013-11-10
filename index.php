@@ -11,7 +11,7 @@ $sc_saludos=true;
 $sc_slider=true;
 
 //NOTICIA INFERIORES
-$rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND destacada=2 AND publicar=1 AND categoria=12 ORDER BY fecha_publicacion DESC LIMIT 2", $conexion);
+$rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND destacada=2 AND publicar=1 AND categoria=12 ORDER BY fecha_publicacion DESC LIMIT 4", $conexion);
 
 //DEVOCIONALES
 $rst_devoc=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND destacada=2 AND publicar=1 AND categoria=7 ORDER BY fecha_publicacion DESC LIMIT 1", $conexion);
@@ -65,6 +65,8 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
                         <?php require_once("w-idiomas.php"); ?>
 
                         <?php require_once("w-columnistas.php"); ?>
+
+                        <?php require_once("w-facebook.php"); ?>
                     
                     </div>
 
