@@ -30,9 +30,9 @@ $rst_columnista=mysql_query("SELECT * FROM iev_columnista WHERE publicar=1 ORDER
             </div>
 
             <div class="datos">
-                <h2><a href="editorial/<?php echo $columna_id."".$columna_url; ?>">
+                <h2><a href="editorial/<?php echo $columna_id."-".$columna_url; ?>">
                     <?php echo $columna_titulo; ?></a></h2>
-                <p><a href="columnista/<?php echo $columnista_id."".$columnista_url; ?>">
+                <p><a href="columnista/<?php echo $columnista_id."-".$columnista_url; ?>">
                     <?php echo $columnista_titulo; ?></a></p>
             </div>
 
