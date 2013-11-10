@@ -190,7 +190,7 @@ function startSaludo(){
         tpj.fn.css = tpj.fn.cssOriginal;
         tpj('.fullwidthbanner').revolution(
             {
-                delay:9000,
+                delay:13000,
                 startwidth:990,
                 startheight:360,
                 onHoverStop:"on",
