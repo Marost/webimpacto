@@ -351,6 +351,8 @@ RewriteRule ^edicion-anterior-en$            /edicion-anterior-en.php
 RewriteRule ^edicion-anterior-pr$            /edicion-anterior-pr.php
 RewriteRule ^edicion-anterior-it$            /edicion-anterior-it.php
 RewriteRule ^edicion-anterior-fr$            /edicion-anterior-fr.php
+RewriteRule ^edicion-anterior-al$            /edicion-anterior-al.php
+RewriteRule ^edicion-anterior-ch$            /edicion-anterior-ch.php
 
 # ----------------------------------------------------------------------
 # Suppress or force the "www." at the beginning of URLs
