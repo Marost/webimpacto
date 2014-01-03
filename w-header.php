@@ -4,6 +4,12 @@ $rst_menu=mysql_query("SELECT * FROM iev_noticia_categoria WHERE id<>11 AND id<>
 
 ?>
 <div class="interior">
+
+    <div class="publicidad-960">
+        <object data="/flash/banner-960.swf" type="application/x-shockwave-flash" width="960">
+            <param movie="/flash/banner-960.swf" />
+        </object>
+    </div>
                 
     <h1>
         <a href="/" title="Impacto Evangelistico">Impacto Evangelístico</a>
@@ -13,10 +19,10 @@ $rst_menu=mysql_query("SELECT * FROM iev_noticia_categoria WHERE id<>11 AND id<>
         
         <div id="social">
             <ul>
-                <li><a href="#" class="youtube" title="Youtube">Youtube</a></li>
-                <li><a href="#" class="google" title="Google+">Google+</a></li>
-                <li><a href="#" class="twitter" title="Twitter">Twitter</a></li>
-                <li><a href="#" class="facebook" title="Facebook">Facebook</a></li>                            
+                <li><a href="javascript:;" class="youtube" title="Youtube">Youtube</a></li>
+                <li><a href="javascript:;" class="google" title="Google+">Google+</a></li>
+                <li><a href="javascript:;" class="twitter" title="Twitter">Twitter</a></li>
+                <li><a href="https://www.facebook.com/impactoevangelistico" class="facebook" title="Facebook">Facebook</a></li>                            
             </ul>
         </div>
 

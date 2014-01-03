@@ -16,3 +16,9 @@
 	</div>
 	
 </aside>
+
+<aside>
+	<object data="/flash/usa.swf" type="application/x-shockwave-flash" width="290" height="380">
+		<param movie="/flash/usa.swf" />
+	</object>
+</aside>

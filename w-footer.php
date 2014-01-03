@@ -24,13 +24,12 @@
         	<h2>Enlaces</h2>
 
         	<ul>
-        		<li><a class="mmm" href="">
-                    <img src="/imagenes/icon-footer-mmm.png" alt="MMM">
-                    PÁGINA OFICIAL DEL MOVIMIENTO MISIONERO MUNDIAL</a>
-                </li>
         		<li><a class="bethel" href="">
-                    <img src="/imagenes/icon-footer-bethel.png" alt="MMM">
-                    PÁGINA OFICIAL DE BETHEL TELEVISIÓNA</a>
+                        <img src="/imagenes/icon-footer-bethel.png" alt="Bethel" width="70px">
+                        <p>
+                            PÁGINA OFICIAL DE BETHEL TELEVISIÓNA
+                        </p>
+                    </a>
                 </li>
         	</ul>
             
