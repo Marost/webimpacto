@@ -116,12 +116,13 @@ header{
     h1{
 
         a{
-            background: url("../imagenes/logo.png");
+            background: url("../imagenes/logo-b.png");
             float: left;
-            height: 125px;
+            height: 81px;
             display: block;
             text-indent: -1000em;
             width: 350px;
+            margin-top: 25px;
         }
     }
 
@@ -189,7 +190,7 @@ header{
 
     nav{
         float: left;
-        background: #FF1D25;
+        background: #972021;
         height: 35px;
         width: 100%;
         margin-top: 10px;
@@ -225,20 +226,31 @@ header{
 }
 
 /* ==========================================================================
-   SLIDER
+   SLIDER - HEADER
    ========================================================================== */
 
 section#slider{
-    max-height: 360px;
+    max-height: 700px;
     background: #CCC;
     margin-bottom: 5px;
 
-    .fullwidthbanner-container{
+    .tp-banner-container{
         width:100% !important;
         position:relative;
         padding:0;
-        max-height:360px !important;
+        max-height:700px !important;
         overflow:hidden;
+    }
+}
+
+.header-slider-opt{
+    position: relative;
+
+    .header-opt{
+        position: absolute;
+        z-index: 1000;
+        width: 100%;
+        background-image: url(../imagenes/fondo-trans.png);
     }
 }
 

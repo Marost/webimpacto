@@ -180,22 +180,22 @@ function startSaludo(){
 <?php if($sc_slider==true){ ?>
 <!-- SLIDER -->
 <link rel="stylesheet" type="text/css" href="libs/revolution-slider/css/settings.css" media="screen" />
-<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="libs/revolution-slider/js/jquery.themepunch.plugins.min.js"></script>
 <script src="libs/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
 <script>
-    var tpj=jQuery.noConflict();
+    /*var tpj=jQuery.noConflict();
     tpj(document).ready(function() {
     if (tpj.fn.cssOriginal!=undefined)
         tpj.fn.css = tpj.fn.cssOriginal;
-        tpj('.fullwidthbanner').revolution(
+        tpj('.tb-banner').revolution(
             {
                 delay:13000,
                 startwidth:990,
-                startheight:360,
+                startheight:700,
                 onHoverStop:"on",
                 hideThumbs:0,
-                navigationType:"bullet",
+                navigationType:"none",
                 navigationArrows:"verticalcentered",
                 navigationStyle:"round",
                 touchenabled:"on",
@@ -209,7 +209,37 @@ function startSaludo(){
                 fullWidth:"on",
                 shadow:0
             });
-    });
+    });*/
+
+    var revapi;
+    var tpj=jQuery.noConflict();
+
+    tpj(document).ready(function() {
+
+           revapi = tpj('.tp-banner').revolution(
+            {
+                delay:13000,
+                startwidth:990,
+                startheight:700,
+                onHoverStop:"on",
+                hideThumbs:0,
+                navigationType:"none",
+                navigationArrows:"verticalcentered",
+                navigationStyle:"round",
+                touchenabled:"on",
+                navOffsetHorizontal:0,
+                navOffsetVertical:20,
+                stopAtSlide:-1,
+                stopAfterLoops:-1,
+                hideCaptionAtLimit:0,
+                hideAllCaptionAtLilmit:0,
+                hideSliderAtLimit:0,
+                fullWidth:"on",
+                shadow:0
+            });
+
+    }); //ready
+
 </script>
 <?php } ?>
 
