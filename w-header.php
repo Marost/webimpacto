@@ -72,43 +72,125 @@ $rst_menu=mysql_query("SELECT * FROM iev_noticia_categoria WHERE id<>11 AND id<>
                     
                             <img src="/imagenes/slide/slide1.jpg" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
                                                     
-                            <div class="tp-caption small_thin_grey customin customout" data-x="80" data-y="240" data-speed="500" data-start="1300" data-endspeed="500">Claro ejemplo del poder del Creador 
+                            <div class="tp-caption slider_titulo"
+                                data-x="100"
+                                data-y="550"
+                                data-start="1000"
+                                data-speed="600"
+                                data-easing="Linear.easeNone"
+                                data-end="9000"
+                                data-endspeed="600"
+                                data-endeasing="Linear.easeNone"
+                                >El maravilloso universo
                             </div>
 
-                            <div class="tp-caption small_thin_grey customin customout" data-x="80" data-y="240" data-speed="500" data-start="1300" data-endspeed="500">Claro ejemplo del poder del Creador 
+                            <div class="tp-caption slider_contenido"
+                                data-x="100"
+                                data-y="590"
+
+                                data-start="1000"
+                                data-speed="600"
+                                data-easing="Linear.easeNone"
+
+                                data-end="9000"
+                                data-endspeed="600"
+                                data-endeasing="Linear.easeNone"
+                                >Claro ejemplo del poder del Creador
                             </div>
                                                     
                         </li>
                         
                         <li data-transition="fade" data-slotamount="15" data-masterspeed="300" data-delay="9400">
-                            <img src="/imagenes/slide/slide2.jpg" >
-                                                    
-                            <!-- <div class="caption very_big_white lfl stl" data-x="0" data-y="100" data-speed="300" data-start="500" 
-                            data-easing="easeOutExpo" data-end="6000" data-endspeed="300" data-endeasing="easeInSine" >
-                            El mensaje llegó de la India</div> -->
-                                                    
+                            <img src="/imagenes/slide/slide2.jpg" >                                                    
+
+                            <div class="tp-caption slider_titulo"
+                                data-x="100"
+                                data-y="550"
+                                data-start="1000"
+                                data-speed="600"
+                                data-easing="Linear.easeNone"
+                                data-end="9000"
+                                data-endspeed="600"
+                                data-endeasing="Linear.easeNone"
+                                >Los libros Apócrifos
+                            </div>
+
+                            <div class="tp-caption slider_contenido"
+                                data-x="100"
+                                data-y="590"
+
+                                data-start="1000"
+                                data-speed="600"
+                                data-easing="Linear.easeNone"
+
+                                data-end="9000"
+                                data-endspeed="600"
+                                data-endeasing="Linear.easeNone"
+                                >¿Tiene la Iglesia Romana y las Sociedades Bíblicas algún argumento de peso a <br> favor de los libros apócrifos?
+                            </div>
+
                         </li>
                         
                         <li data-transition="fade" data-slotamount="15" data-masterspeed="300" data-delay="9400">
                             <img src="/imagenes/slide/slide3.jpg" >
-                                                    
-                            <!-- <div class="caption very_big_white lfl stl" data-x="0" data-y="100" data-speed="300" data-start="500" 
-                            data-easing="easeOutExpo" data-end="6000" data-endspeed="300" data-endeasing="easeInSine" >
-                            Avivamiento!!!</div> -->
-                                                    
+
+                            <div class="tp-caption slider_titulo"
+                                data-x="100"
+                                data-y="550"
+                                data-start="1000"
+                                data-speed="600"
+                                data-easing="Linear.easeNone"
+                                data-end="9000"
+                                data-endspeed="600"
+                                data-endeasing="Linear.easeNone"
+                                >40 años preso y Dios lo liberó
+                            </div>
+
+                            <div class="tp-caption slider_contenido"
+                                data-x="100"
+                                data-y="590"
+
+                                data-start="1000"
+                                data-speed="600"
+                                data-easing="Linear.easeNone"
+
+                                data-end="9000"
+                                data-endspeed="600"
+                                data-endeasing="Linear.easeNone"
+                                >Juan Carlos Cedillo fue un temido asaltante mas Dios extendió sus manos para rescatarlo.
+                            </div>
+
                         </li>
 
                         <li data-transition="fade" data-slotamount="15" data-masterspeed="300" data-delay="9400">
                             <img src="/imagenes/slide/slide4.jpg" >
-                                                    
-                            <!-- <div class="caption very_big_white lfl stl" data-x="0" data-y="100" data-speed="300" data-start="500" 
-                            data-easing="easeOutExpo" data-end="6000" data-endspeed="300" data-endeasing="easeInSine" >
-                            Los cielos cuentan la Gloria de Dios</div>
 
-                            <div class="caption big_white lfl stl" data-x="0" data-y="150" data-speed="300" data-start="800" 
-                            data-easing="easeOutExpo" data-end="6000" data-endspeed="300" data-endeasing="easeInSine" >
-                            Salmos 19:1</div> -->
-                                                    
+                            <div class="tp-caption slider_titulo"
+                                data-x="100"
+                                data-y="550"
+                                data-start="1000"
+                                data-speed="600"
+                                data-easing="Linear.easeNone"
+                                data-end="9000"
+                                data-endspeed="600"
+                                data-endeasing="Linear.easeNone"
+                                >El Matrimonio, Institución Divina
+                            </div>
+
+                            <div class="tp-caption slider_contenido"
+                                data-x="100"
+                                data-y="590"
+
+                                data-start="1000"
+                                data-speed="600"
+                                data-easing="Linear.easeNone"
+
+                                data-end="9000"
+                                data-endspeed="600"
+                                data-endeasing="Linear.easeNone"
+                                >“Y dijo Jehová Dios: No es bueno que el hombre esté solo; le haré ayuda idónea para él… <br> Jehová Dios… hizo una mujer, y la trajo al hombre” (Génesis 2:18-24).
+                            </div>
+
                         </li>
                 
                     
