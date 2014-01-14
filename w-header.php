@@ -7,6 +7,19 @@ $rst_menu=mysql_query("SELECT * FROM iev_noticia_categoria WHERE id<>11 AND id<>
 
     <div class="header-opt">
 
+        <div id="social">
+
+            <div class="interior">
+                <ul>
+                    <li><a href="javascript:;" class="youtube" title="Youtube">Youtube</a></li>
+                    <li><a href="javascript:;" class="google" title="Google+">Google+</a></li>
+                    <li><a href="javascript:;" class="twitter" title="Twitter">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/impactoevangelistico" class="facebook" title="Facebook">Facebook</a></li>                            
+                </ul>
+            </div>
+            
+        </div>
+
         <div class="interior">
 
             <!-- <div class="publicidad-960">
@@ -21,15 +34,6 @@ $rst_menu=mysql_query("SELECT * FROM iev_noticia_categoria WHERE id<>11 AND id<>
 
             <div class="der">
                 
-                <div id="social">
-                    <ul>
-                        <li><a href="javascript:;" class="youtube" title="Youtube">Youtube</a></li>
-                        <li><a href="javascript:;" class="google" title="Google+">Google+</a></li>
-                        <li><a href="javascript:;" class="twitter" title="Twitter">Twitter</a></li>
-                        <li><a href="https://www.facebook.com/impactoevangelistico" class="facebook" title="Facebook">Facebook</a></li>                            
-                    </ul>
-                </div>
-
                 <div id="busqueda">
                     <form action="buscar" class="search-form noframe inbtn rsmall lblue" method="get">
                         <input type="text" name="buscar" class="search-input" placeholder="Buscar..." />
