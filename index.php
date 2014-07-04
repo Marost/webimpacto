@@ -227,7 +227,7 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
 
                         <div id="galeria-datos">
                             <h3><span></span>GALERIA DE IMÁGENES</h3>
-                            <p>Más Galerías</Mas>
+                            <p><a href="galerias">Más Galerías</a></p>
                         </div>
 
                         <div id="galeria-contenido" class="royalSlider rsUni">
