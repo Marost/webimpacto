@@ -5,6 +5,7 @@ $rst_videos=mysql_query("SELECT * FROM iev_videos WHERE publicar=1 ORDER BY fech
                         
     <div class="titulo">
         <h3><span></span>VIDEOS</h3>
+        <p><a href="/videos-all.php">Más Videos</a></p>
     </div>
 
     <div class="contenido">
