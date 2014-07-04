@@ -18,6 +18,18 @@
 
 }
 
+@font-face {
+    font-family: 'aachen_btbold';
+    src: url('/fonts/aachenb/aachenb-webfont.eot');
+    src: url('/fonts/aachenb/aachenb-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/aachenb/aachenb-webfont.woff') format('woff'),
+         url('/fonts/aachenb/aachenb-webfont.ttf') format('truetype'),
+         url('/fonts/aachenb/aachenb-webfont.svg#aachen_btbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /*
  * HTML5 Boilerplate
  *
@@ -109,6 +121,10 @@ footer{
 /* ==========================================================================
    HEADER
    ========================================================================== */
+
+header#interno{
+    height: 195px;
+}
 
 header{
     margin-bottom: 5px;
@@ -279,6 +295,12 @@ section#slider{
    NEWS
    ========================================================================== */
 
+#paginacion{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
 section#news{
 
     #nws, #nwm, #nwi{
@@ -343,7 +365,7 @@ section#news{
 
                 .edanterior{
                     float: left;
-                    padding: 10px;
+                    padding: 5px 10px;
                     background-color: #00B2FF;
                     width: 93.4%;
 
@@ -354,8 +376,9 @@ section#news{
 
                     h3{
                         color: #fff;
-                        font-size: 18px;
+                        font-size: 16px;
                         font-weight: 600;
+
                         border-bottom: 1px dashed white;
 
                         a{
@@ -553,10 +576,11 @@ section#news{
                 float: left;
 
                 h3{
-                    font-size: 40px;
+                    font-size: 36px;
                     margin: 0;
                     padding: 0;
                     border-top: 5px solid black;
+                    font-family: 'aachen_btbold';
                 }
 
                 article{
@@ -576,7 +600,7 @@ section#news{
 
                         h2{
                             font-weight: 600;
-                            font-size: 25px;
+                            font-size: 20px;
                             line-height: 120%;
                             margin: 0;
 
@@ -658,9 +682,9 @@ section#news{
                     
                     h2{
                         color: #0080B7;
-                        font-size: 30px;
+                        font-size: 26px;
                         font-weight: normal;
-                        font-family: 'Open Sans', sans-serif;
+                        font-family: 'aachen_btbold';
                         margin: 0;
                         padding: 0;
                     }
@@ -741,12 +765,6 @@ section#news{
 
                 .imagen{
                     text-align: center;
-                }
-
-                #paginacion{
-                    width: 100%;
-                    text-align: center;
-                    margin: 10px 0;
                 }
             }
 
@@ -867,6 +885,11 @@ section#news{
                     float: left;
                     font-size: 12px;
                     font-weight: bold;
+
+                    a{
+                        text-decoration: none;
+                        color: #000;
+                    }
                 }
             }
 
@@ -968,6 +991,19 @@ section#news{
                         float: left;
                         margin-right: 5px;
                         margin-top: 5px;
+                    }
+                }
+
+                p{
+                    margin: 10px 0 0 0;
+                    padding: 0;
+                    float: left;
+                    font-size: 12px;
+                    font-weight: bold;
+
+                    a{
+                        text-decoration: none;
+                        color: #000;
                     }
                 }
             }
