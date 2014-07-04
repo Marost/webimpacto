@@ -315,6 +315,21 @@ $(function() {
 		]
 	});
 
+	//===== File uploader: SLIDER SUPERIOR =====//
+	
+	$("#uploader_slide").pluploadQueue({
+		runtimes : 'html5,html4',
+		url : '/panel@impacto/php/upload_slide.php',
+		max_file_size : '100mb',
+		chunk_size : '1mb',
+		unique_names : true,
+		dragdrop: false,
+		resize: {width: 1950, height: 950, quality: 90},
+		filters : [
+			{title : "Imagenes", extensions : "jpg"}
+		]
+	});
+
 	//===== File uploader: GALERIA =====//
 	
 	$("#uploader_galeria").pluploadQueue({

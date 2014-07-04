@@ -8,31 +8,14 @@ require_once("../../conexion/verificar_sesion.php");
 $id_url=$_REQUEST["id"];
 
 //EDITAR
-$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_noticia WHERE id=$id_url;", $conexion);
+$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_slide_superior WHERE id=$id_url;", $conexion);
 $fila_nota=mysql_fetch_array($rst_nota);
 
 //VARIABLES
-$nota_nombre=$fila_nota["titulo"];
+$nota_titulo=$fila_nota["titulo"];
+$nota_contenido=$fila_nota["contenido"];
 $nota_imagen=$fila_nota["imagen"];
 $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
-$nota_contenido=$fila_nota["contenido"];
-$nota_video=$fila_nota["video"];
-$nota_video_tipo=$fila_nota["tipo_video"];
-$nota_categoria=$fila_nota["categoria"];
-$nota_destacada=$fila_nota["destacada"];
-$nota_publicar=$fila_nota["publicar"];
-
-/* FECHA */
-$nota_fecha_pub=explode(" ", $fila_nota["fecha_publicacion"]);
-$nota_pub_fecha=$nota_fecha_pub[0];
-$nota_pub_hora=$nota_fecha_pub[1];
-
-//CATEGORIA
-$rst_cat=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_categoria ORDER BY categoria ASC;", $conexion);
-
-//TAGS
-$tags=explode(",", $fila_nota["tags"]);    //SEPARACION DE ARRAY CON COMAS
-$rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre ASC;", $conexion);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -52,18 +35,21 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
 <?php require_once("../../w-topline.php"); ?>
 <!-- Top line ends -->
 
+
 <!-- Sidebar begins -->
 <div id="sidebar">
     
     <?php require_once("../../w-sidebarmenu.php"); ?>
     
-</div><!-- Sidebar ends -->    
+</div>
+<!-- Sidebar ends -->    
 	
     
 <!-- Content begins -->
 <div id="content">
     <div class="contentTop">
-        <span class="pageTitle"><span class="icon-screen"></span>Noticias</span>
+        <span class="pageTitle"><span class="icon-screen"></span>Slide Superior</span>
+
     </div>
     
     <!-- Breadcrumbs line -->
@@ -81,115 +67,33 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                 <div class="widget fluid">
                     
                     <div class="whead"><h6>Editar</h6></div>
-                    
+
                     <div class="formRow">
                         <div class="grid3"><label>Titulo:</label></div>
-                        <div class="grid9"><input type="text" name="nombre" value="<?php echo $nota_nombre; ?>" /></div>
+                        <div class="grid9"><input type="text" name="titulo" value="<?php echo $nota_titulo; ?>"/></div>
                     </div>
 
                     <div class="widget">
-                        <div class="whead"><h6>Contenido</h6></div>
-                        <textarea class="ckeditor" name="contenido" /><?php echo $nota_contenido; ?></textarea>
+                        <div class="whead"><h6>Descripcion</h6></div>
+                        <textarea class="" name="contenido" /><?php echo $nota_contenido; ?></textarea>
                     </div>
-
+                    
                     <div class="formRow">
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
-                            <div class="floatL">
-                                <a href="../../../imagenes/upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" class="lightbox">
-                                    <img src="../../../imagenes/upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" width="100" >
+                            <div class="without floatL">
+                                <a href="/imagenes/slide/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" class="lightbox">
+                                    <img src="/imagenes/slide/<?php echo $nota_imagen_carpeta."thumb/".$nota_imagen; ?>" width="100" >
                                 </a>
                             </div>
                             <div class="widget floarL width60 margin1020">    
-                                <div id="uploader">Tu navegador no soporta HTML5.</div>
-                                <input type="hidden" name="imagen" value="<?php echo $nota_imagen; ?>">
+                                <div id="uploader_slide">Tu navegador no soporta HTML5.</div>
+                                <input type="hidden" name="imagen_actual" value="<?php echo $nota_imagen; ?>">
                                 <input type="hidden" name="imagen_carpeta" value="<?php echo $nota_imagen_carpeta; ?>">
                             </div>
                         </div>
                     </div>
 
-                    <div class="formRow">
-                        <div class="grid3"><label>Video (Youtube):</label> </div>
-                        <div class="grid9">http://www.youtube.com/watch?v=
-                            <input type="text" name="video_youtube" value="<?php echo $nota_video; ?>" style="width: 300px;">
-                        </div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Categoria:</label></div>
-                        <div class="grid9">
-                            <select name="categoria" class="styled">
-                                <option>Selecciona</option>
-                                <?php while($fila_cat=mysql_fetch_array($rst_cat)){
-                                        $cat_id=$fila_cat["id"];
-                                        $cat_nombre=$fila_cat["categoria"];
-
-                                        if ($nota_categoria==$cat_id){
-                                ?>
-                                <option value="<?php echo $cat_id; ?>" selected><?php echo $cat_nombre; ?></option>
-                                <?php }else{ ?>
-                                <option value="<?php echo $cat_id; ?>"><?php echo $cat_nombre; ?></option>
-                                <?php }} ?>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Tipo de noticia: </label></div>
-                        <div class="grid9 yes_no">
-                            <div class="floatL mr10">Destacada
-                                <?php if($nota_destacada==1){ ?>
-                                <input type="radio" name="tipo_noticia" value="not_destacada" checked />
-                                <?php }else{ ?>
-                                <input type="radio" name="tipo_noticia" value="not_destacada" />
-                                <?php } ?>
-                            </div>
-                            <div class="floatL mr10">Normal
-                                <?php if($nota_destacada<>1){ ?>
-                                <input type="radio" name="tipo_noticia" value="not_normal" checked />
-                                <?php }else{ ?>
-                                <input type="radio" name="tipo_noticia" value="not_normal" />
-                                <?php } ?>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Etiquetas:</label></div>
-                        <div class="grid9">
-                            <select class="selectMultiple" multiple="multiple" tabindex="6" name="tags[]">
-                                <?php while($fila_tags=mysql_fetch_array($rst_tags)){
-                                        $tags_id=$fila_tags["id"];
-                                        $tags_nombre=$fila_tags["nombre"];
-                                        if(in_array($tags_id, $tags)){
-                                ?>
-                                <option value="<?php echo $tags_id; ?>" selected><?php echo $tags_nombre; ?></option>
-                                <?php }else{ ?>
-                                <option value="<?php echo $tags_id; ?>"><?php echo $tags_nombre; ?></option>
-                                <?php }}  ?>
-
-                            </select>  
-                        </div>             
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Fecha de publicación:</label></div>
-                        <div class="grid4"><input type="text" class="datepicker" name="pub_fecha" value="<?php echo $nota_pub_fecha; ?>" /></div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Hora de publicación:</label></div>
-                        <div class="grid4"><input type="text" class="timepicker" name="pub_hora" size="10" value="<?php echo $nota_pub_hora; ?>" />
-                            <span class="ui-datepicker-append">Utilice la rueda del ratón y el teclado</span></div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Publicar: </label></div>
-                        <div class="grid9 enabled_disabled">
-                            <div class="floatL mr10"><input type="checkbox" id="check4" <?php if($nota_publicar==1){ ?>checked<?php } ?> value="1" name="publicar" /></div>
-                        </div>
-                    </div>
-                    
                     <div class="formRow">
                         <div class="body" align="center">
                             <a href="lista.php" class="buttonL bBlack">Cancelar</a>

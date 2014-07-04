@@ -6,8 +6,9 @@ require_once('../../js/plugins/thumbs/ThumbLib.inc.php');
 
 //DECLARACION DE VARIABLES
 $id=$_REQUEST["id"];
+$noticia=$_REQUEST["not"];
 
-mysql_query("DELETE FROM ".$tabla_suf."_noticia WHERE id=$id;", $conexion);
+mysql_query("DELETE FROM ".$tabla_suf."_slide_superior WHERE id=$id;", $conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();

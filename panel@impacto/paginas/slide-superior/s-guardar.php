@@ -4,73 +4,39 @@ include("../../conexion/conexion.php");
 include("../../conexion/funciones.php");
 require_once('../../js/plugins/thumbs/ThumbLib.inc.php');
 
+//VARIABLES
+$noticia=$_REQUEST["not"];
+
 //DECLARACION DE VARIABLES
-$nombre=$_POST["nombre"];
-$url=getUrlAmigable(eliminarTextoURL($nombre));
-$contenido=$_POST["contenido"];
-$categoria=$_POST["categoria"];
-$tipo_noticia=$_POST["tipo_noticia"];
+$imagen_carpeta=fechaCarpeta()."/";
 
-//FECHA Y HORA
-$pub_fecha=$_POST["pub_fecha"];
-$pub_hora=$_POST["pub_hora"];
-$fecha_publicacion=$pub_fecha." ".$pub_hora;
-$publicar=1;
+//CONSULTA PARA SABER SI EXISTEN IMAGENES
+$rst_notgaleria=mysql_query("SELECT * FROM ".$tabla_suf."_slide_superior", $conexion);
+$num_notgaleria=mysql_num_rows($rst_notgaleria);
 
-//TAGS
-$tags=$_POST["tags"];
-if($tags==""){ $union_tags=0; }
-elseif($tags<>""){ $union_tags=implode(",", $tags);}
-
-//SUBIR IMAGEN
-$upload_imagen=$_POST["uploader_0_tmpname"];
-
-//SUBIR VIDEO
-$video_youtube=$_POST["video_youtube"];
-$video_upload=$_POST["uploader_video_0_tmpname"];
-
-//IMAGEN
-if ($tipo_noticia=="not_destacada") {
-	$destacada=1; 
-	if($upload_imagen<>""){
-		$imagen=$upload_imagen;
-		$imagen_carpeta=fechaCarpeta()."/";	
-		$mostrar_imagen=1;
-		$thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
-		$thumb->adaptiveResize(480,220);
-		$thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
-	}else{
-		$imagen=""; $imagen_carpeta="";
+if($num_notgaleria>0){
+	$cont=0;
+	$cont_img=$num_notgaleria;
+	while($_POST['uploader_slide_'.$cont.'_tmpname']<>""){
+		$imagen=$_POST['uploader_slide_'.$cont.'_tmpname'];
+		$thumb{$cont}=PhpThumbFactory::create("../../../imagenes/slide/".$imagen_carpeta."".$imagen."");
+		$thumb{$cont}->adaptiveResize(110,110);
+		$thumb{$cont}->save("../../../imagenes/slide/".$imagen_carpeta."thumb/".$imagen."", "jpg");
+		mysql_query("INSERT INTO ".$tabla_suf."_slide_superior(imagen, imagen_carpeta, orden) VALUES ('$imagen', '$imagen_carpeta', $cont_img)",$conexion);
+		$cont++; $cont_img++;
 	}
-}elseif($tipo_noticia=="not_normal"){
-	$destacada=2;
-	if($upload_imagen<>""){
-		$imagen=$upload_imagen;
-		$imagen_carpeta=fechaCarpeta()."/";	
-		$mostrar_imagen=1;
-		$thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
-		$thumb->adaptiveResize(290,220);
-		$thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
-	}else{
-		$imagen=""; $imagen_carpeta="";
+}elseif($num_notgaleria==0){
+	$cont=0;
+	while($_POST['uploader_slide_'.$cont.'_tmpname']<>""){
+		$imagen=$_POST['uploader_slide_'.$cont.'_tmpname'];
+		$thumb{$cont}=PhpThumbFactory::create("../../../imagenes/slide/".$imagen_carpeta."".$imagen."");
+		$thumb{$cont}->adaptiveResize(110,110);
+		$thumb{$cont}->save("../../../imagenes/slide/".$imagen_carpeta."thumb/".$imagen."", "jpg");
+		$imagen=$_POST['uploader_slide_'.$cont.'_tmpname'];
+		mysql_query("INSERT INTO ".$tabla_suf."_slide_superior(imagen, imagen_carpeta, orden) VALUES ('$imagen', '$imagen_carpeta', $cont)",$conexion);
+		$cont++;
 	}
 }
-
-//VIDEO YOUTUBE
-if($video_youtube<>""){
-	$mostrar_video=1;
-	$tipo_video="youtube";
-	$video=$video_youtube;
-	$video_carpeta="";
-}elseif($video_youtube==""){
-	$mostrar_video=0;
-	$tipo_video="";
-	$video="";
-	$video_carpeta="";
-}
-
-//INSERTANDO DATOS
-$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_noticia (url, titulo, contenido, imagen, imagen_carpeta, fecha_publicacion, publicar, destacada, categoria, tags, video, tipo_video, mostrar_video) VALUES('$url', '".htmlspecialchars($nombre)."', '$contenido', '$imagen', '$imagen_carpeta', '$fecha_publicacion', $publicar, $destacada, $categoria, '0,$union_tags,0', '$video', '$tipo_video', '$mostrar_video');",$conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();

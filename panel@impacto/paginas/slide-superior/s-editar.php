@@ -5,90 +5,28 @@ include("../../conexion/funciones.php");
 require_once('../../js/plugins/thumbs/ThumbLib.inc.php');
 
 //DECLARACION DE VARIABLES
-$nota_id=$_REQUEST["id"];
-$nombre=$_POST["nombre"];
-$url=getUrlAmigable(eliminarTextoURL($nombre));
+$id=$_REQUEST["id"];
+$titulo=$_POST["titulo"];
 $contenido=$_POST["contenido"];
-$categoria=$_POST["categoria"];
-$tipo_noticia=$_POST["tipo_noticia"];
-$tags=$_POST["tags"];
-
-//FECHA Y HORA
-$pub_fecha=$_POST["pub_fecha"];
-$pub_hora=$_POST["pub_hora"];
-$fecha_publicacion=$pub_fecha." ".$pub_hora;
-
-//TAGS
-$tags=$_POST["tags"];
-if($tags==""){ $union_tags=0; }
-elseif($tags<>""){ $union_tags=implode(",", $tags);}
-
-//PUBLICAR
-if ($_POST["publicar"]<>""){ $publicar=$_POST["publicar"]; }else{ $publicar=0; }
-
-//VIDEO
-$video_youtube=$_POST["video_youtube"];
-//$video_upload=$_POST["uploader_video_0_tmpname"];
+$noticia=$_POST["not"];
 
 //IMAGEN
-if ($tipo_noticia=="not_destacada") {
-	$destacada=1; 
-	if($_POST['uploader_0_tmpname']<>""){
-		$imagen=$_POST["uploader_0_tmpname"];
-		$imagen_carpeta=fechaCarpeta()."/";	
-		$thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
-		$thumb->adaptiveResize(480,220);
-		$thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
-	}else{
-		$imagen=$_POST["imagen"];
-		$imagen_carpeta=$_POST["imagen_carpeta"];	
-		$thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
-		$thumb->adaptiveResize(480,220);
-		$thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
-	}
-}elseif($tipo_noticia=="not_normal"){
-	$destacada=2; 
-	if($_POST['uploader_0_tmpname']<>""){
-		$imagen=$_POST["uploader_0_tmpname"];
-		$imagen_carpeta=fechaCarpeta()."/";	
-		$thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
-		$thumb->adaptiveResize(290,210);
-		$thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
-	}else{
-		$imagen=$_POST["imagen"];
-		$imagen_carpeta=$_POST["imagen_carpeta"];	
-		$thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
-		$thumb->adaptiveResize(290,210);
-		$thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
-	}
-}
-
-//VIDEO YOUTUBE
-if($video_youtube<>""){
-	$mostrar_video=1;
-	$tipo_video="youtube";
-	$video=$video_youtube;
-	$video_carpeta="";
-}elseif($video_youtube==""){
-	$mostrar_video=0;
-	$tipo_video="";
-	$video="";
-	$video_carpeta="";
+if($_POST['uploader_slide_0_tmpname']==""){
+	$imagen=$_POST["imagen_actual"];
+	$imagen_carpeta=$_POST["imagen_carpeta"];
+}else{
+	$imagen_carpeta=fechaCarpeta()."/";
+	$imagen=$_POST['uploader_slide_0_tmpname'];
+	$thumb=PhpThumbFactory::create("../../../imagenes/slide/".$imagen_carpeta."".$imagen."");
+	$thumb->adaptiveResize(110,110);
+	$thumb->save("../../../imagenes/slide/".$imagen_carpeta."thumb/".$imagen."", "jpg");
 }
 
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_noticia SET url='$url', titulo='".htmlspecialchars($nombre)."', 
-	contenido='$contenido', 
+$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_slide_superior SET titulo='".htmlspecialchars($titulo)."',
+	contenido='".htmlspecialchars($contenido)."',
 	imagen='$imagen', 
-	imagen_carpeta='$imagen_carpeta', 
-	fecha_publicacion='$fecha_publicacion', 
-	publicar=$publicar, 
-	destacada=$destacada, 
-	categoria=$categoria, 
-	tags='0,$union_tags,0', 
-	video='$video', 
-	tipo_video='$tipo_video', 
-	mostrar_video=$mostrar_video WHERE id=$nota_id;", $conexion);
+	imagen_carpeta='$imagen_carpeta' WHERE id=$id;", $conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();

@@ -4,10 +4,6 @@ require_once("../../conexion/conexion.php");
 require_once("../../conexion/funciones.php");
 require_once("../../conexion/verificar_sesion.php");
 
-//VARIABLES
-$pub_fecha=date("Y-m-d");
-$pub_hora=date("H:i:s");
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,13 +28,14 @@ $pub_hora=date("H:i:s");
     
     <?php require_once("../../w-sidebarmenu.php"); ?>
     
-</div><!-- Sidebar ends -->      
+</div><!-- Sidebar ends --> 
 	
     
 <!-- Content begins -->
 <div id="content">
     <div class="contentTop">
-        <span class="pageTitle"><span class="icon-screen"></span>Noticias</span>
+        <span class="pageTitle"><span class="icon-screen"></span>Slide Superior</span>
+
     </div>
     
     <!-- Breadcrumbs line -->
@@ -50,7 +47,7 @@ $pub_hora=date("H:i:s");
     <!-- Main content -->
     <div class="wrapper">
 
-        <form id="validate" class="main" method="POST" action="s-guardar.php">
+        <form id="submit-form" class="main" method="POST" action="s-guardar.php">
 
             <fieldset>
                 <div class="widget fluid">
@@ -58,35 +55,14 @@ $pub_hora=date("H:i:s");
                     <div class="whead"><h6>Agregar</h6></div>
                     
                     <div class="formRow">
-                        <div class="grid3"><label>Titulo:</label></div>
-                        <div class="grid9"><input type="text" name="nombre" class="validate[required]" /></div>
-                    </div>
-
-                    <div class="widget">
-                        <div class="whead"><h6>Contenido</h6></div>
-                        <textarea class="validate[required] ckeditor" name="contenido" /></textarea>
-                    </div>
-
-                    <div class="formRow">
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
                             <div class="widget nomargin">    
-                                <div id="uploader_galeria">Tu navegador no soporta HTML5.</div>                    
+                                <div id="uploader_slide">Tu navegador no soporta HTML5.</div>                    
                             </div>
                         </div>
                     </div>
 
-                    <div class="formRow">
-                        <div class="grid3"><label>Fecha de publicación:</label></div>
-                        <div class="grid4"><input type="text" class="datepicker" name="pub_fecha" value="<?php echo $pub_fecha; ?>" /></div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Hora de publicación:</label></div>
-                        <div class="grid4"><input type="text" class="timepicker" name="pub_hora" size="10" value="<?php echo $pub_hora; ?>" />
-                            <span class="ui-datepicker-append">Utilice la rueda del ratón y el teclado</span></div>
-                    </div>
-                    
                     <div class="formRow">
                         <div class="body" align="center">
                             <a href="lista.php" class="buttonL bBlack">Cancelar</a>
