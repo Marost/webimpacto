@@ -8,6 +8,8 @@ require_once('../../js/plugins/thumbs/ThumbLib.inc.php');
 $id=$_REQUEST["id"];
 $titulo=$_POST["titulo"];
 $contenido=$_POST["contenido"];
+$edicion=$_POST["edicion"];
+$edicion_pagina=$_POST["edicion_pagina"];
 $noticia=$_POST["not"];
 
 //IMAGEN
@@ -25,6 +27,8 @@ if($_POST['uploader_slide_0_tmpname']==""){
 //INSERTANDO DATOS
 $rst_guardar=mysql_query("UPDATE ".$tabla_suf."_slide_superior SET titulo='".htmlspecialchars($titulo)."',
 	contenido='".htmlspecialchars($contenido)."',
+	edicion='$edicion',
+	edicion_pagina='$edicion_pagina',
 	imagen='$imagen', 
 	imagen_carpeta='$imagen_carpeta' WHERE id=$id;", $conexion);
 
