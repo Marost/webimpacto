@@ -77,8 +77,6 @@ if($buscar==""){
             
         </header>
 
-        <?php require_once("w-slider.php"); ?>
-
         <section id="news">
             
             <div class="interior">

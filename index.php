@@ -49,8 +49,6 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
             
         </header>
 
-        <?php require_once("w-slider.php"); ?>
-
         <section id="news">
             
             <div class="interior">

@@ -64,8 +64,6 @@ $url_final=$web."galeria/".$id_url."-".$url;
             
         </header>
 
-        <?php require_once("w-slider.php"); ?>
-
         <section id="news">
             
             <div class="interior">

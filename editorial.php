@@ -67,8 +67,6 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
             
         </header>
 
-        <?php require_once("w-slider.php"); ?>
-
         <section id="news">
             
             <div class="interior">

@@ -58,8 +58,6 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_galeria WHERE fecha_publicacion
             
         </header>
 
-        <?php require_once("w-slider.php"); ?>
-
         <section id="news">
             
             <div class="interior">
