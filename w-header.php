@@ -78,7 +78,7 @@ $rst_sliderSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC"
 
                         <?php while($fila_sliderSup=mysql_fetch_array($rst_sliderSup)){
                                 $SliderSup_titulo=$fila_sliderSup["titulo"];
-                                $SliderSup_contenido=$fila_sliderSup["contenido"];
+                                $SliderSup_contenido=explode("---", $fila_sliderSup["contenido"]);
                                 $SliderSup_edicion=$fila_sliderSup["edicion"];
                                 $SliderSup_edicion_pagina=$fila_sliderSup["edicion_pagina"];
                                 $SliderSup_imagen=$fila_sliderSup["imagen"];
@@ -117,7 +117,7 @@ $rst_sliderSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC"
                                 data-end="9000"
                                 data-endspeed="600"
                                 data-endeasing="Linear.easeNone"
-                                ><p><?php echo $SliderSup_contenido; ?></p>
+                                ><p><?php echo $SliderSup_contenido[0]."<br>".$SliderSup_contenido[1]; ?></p>
                             </div>
                                                     
                         </li>
