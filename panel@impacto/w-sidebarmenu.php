@@ -19,7 +19,7 @@
         <li><a href="<?php echo $url_admin; ?>paginas/portada-pr/lista.php" title=""><span class="icos-frames"></span>Edición Impresa - Portugués</a></li>
         <li><a href="<?php echo $url_admin; ?>paginas/portada-al/lista.php" title=""><span class="icos-frames"></span>Edición Impresa - Alemán</a></li>
         <li><a href="<?php echo $url_admin; ?>paginas/portada-ch/lista.php" title=""><span class="icos-frames"></span>Edición Impresa - Chino</a></li>
-        <li><a href="<?php echo $url_admin; ?>paginas/slider-superior/lista.php" title=""><span class="icos-frames"></span>Slider Superior</a></li>
+        <li><a href="<?php echo $url_admin; ?>paginas/slide-superior/lista.php" title=""><span class="icos-frames"></span>Slider Superior</a></li>
         <li><a href="<?php echo $url_admin; ?>paginas/usuarios/lista.php" title=""><span class="icos-frames"></span>Usuarios</a></li>
     </ul>
 
