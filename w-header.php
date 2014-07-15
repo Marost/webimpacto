@@ -79,10 +79,13 @@ $rst_sliderSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC"
                         <?php while($fila_sliderSup=mysql_fetch_array($rst_sliderSup)){
                                 $SliderSup_titulo=$fila_sliderSup["titulo"];
                                 $SliderSup_contenido=$fila_sliderSup["contenido"];
+                                $SliderSup_edicion=$fila_sliderSup["edicion"];
+                                $SliderSup_edicion_pagina=$fila_sliderSup["edicion_pagina"];
                                 $SliderSup_imagen=$fila_sliderSup["imagen"];
                                 $SliderSup_imagen_carpeta=$fila_sliderSup["imagen_carpeta"];
 
                                 //URL
+                                $SliderSup_UrlWeb="http://impactoevangelistico.net/revista/".$SliderSup_edicion."/index.html?pageNumber=".$SliderSup_edicion_pagina;
                                 $SliderSup_UrlImg=$web."imagenes/slide/".$SliderSup_imagen_carpeta."".$SliderSup_imagen;
                         ?>
 
@@ -99,7 +102,8 @@ $rst_sliderSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC"
                                 data-end="9000"
                                 data-endspeed="600"
                                 data-endeasing="Linear.easeNone"
-                                ><?php echo $SliderSup_titulo; ?>
+                                ><a href="<?php echo $SliderSup_UrlWeb; ?>" target="_blank">
+                                    <?php echo $SliderSup_titulo; ?></a>
                             </div>
 
                             <div class="tp-caption slider_contenido"
