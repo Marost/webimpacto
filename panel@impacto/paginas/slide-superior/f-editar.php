@@ -14,7 +14,8 @@ $fila_nota=mysql_fetch_array($rst_nota);
 //VARIABLES
 $nota_titulo=$fila_nota["titulo"];
 $nota_contenido=$fila_nota["contenido"];
-$nota_pagina=$fila_nota["pagina"];
+$nota_edicion=$fila_nota["edicion"];
+$nota_edicion_pagina=$fila_nota["edicion_pagina"];
 $nota_imagen=$fila_nota["imagen"];
 $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
 
@@ -76,7 +77,8 @@ $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
 
                     <div class="widget">
                         <div class="whead"><h6>Descripcion</h6></div>
-                        <textarea class="" name="contenido" /><?php echo $nota_contenido; ?></textarea>
+                        <textarea class="" name="contenido" ><?php echo $nota_contenido; ?></textarea>
+                        <p>Agregar 3 guiones (---) para salto de linea.</p>
                     </div>
 
                     <div class="formRow">
