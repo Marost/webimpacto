@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("panel@impacto/conexion/conexion.php");
 require_once("panel@impacto/conexion/funciones.php");
 
@@ -21,6 +22,32 @@ $rst_eventos=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$f
 
 //GALERIA
 $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $conexion);
+
+//VERIFICACION DE USUARIO
+$proceso=$_POST["uslogin_proc"];
+if($proceso=="enviar"){
+    if (!empty($_POST['captcha'])) {
+        $saludo_nombre=$_POST["uslogin_de"];
+        $saludo_pais=$_POST["uslogin_pais"];
+        $saludo_mensaje=$_POST["uslogin_carta"];
+        $saludo_fecha=$fechaActual;
+        $saludo_ip=getRealIP();
+        $saludo_estado="A";
+        $palabra="<a href=";
+
+        if (empty($_SESSION['captcha']) || trim(strtolower($_POST['captcha'])) != $_SESSION['captcha']) {
+            header ("Location:saludos");
+        } else {
+            if(!ereg($palabra, $saludo_mensaje)){
+                //GUARDAR
+                mysql_query("INSERT INTO iev_saludos(nombre, pais, contenido, fecha, registro_ip, estado_saludo)
+				VALUES('$saludo_nombre', '$saludo_pais', '$saludo_mensaje', '$saludo_fecha', '$saludo_ip', '$saludo_estado');", $conexion);
+                header("Location: ".$web);
+            }
+        }
+
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -65,6 +92,8 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria ORDER BY id DESC LIMIT 4", $
                         <?php require_once("w-columnistas.php"); ?>
 
                         <?php require_once("w-facebook.php"); ?>
+
+                        <?php require_once("w-saludos-escriben.php"); ?>
                     
                     </div>
 
