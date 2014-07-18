@@ -37,6 +37,9 @@ $categoria_titulo=$fila_categoria["categoria"];
 $url_final=$web."nota/".$id_url."-".$url;
 $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
 
+//NOTICIAS RELACIONADAS
+$rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND publicar=1 AND categoria=$noticia_categoria AND id<>$id_url ORDER BY fecha_publicacion DESC LIMIT 3", $conexion);
+
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -120,6 +123,33 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
                             <div class="info">
                                 <?php echo cortarTextoRH($noticia_contenido,0,1,0); ?>
                             </div>
+
+                        </section>
+
+                        <section class="nota-relacionada">
+
+                            <h4>Noticias relacionadas</h4>
+
+                            <ul>
+                                <?php while($fila_NotRel=mysql_fetch_array($rst_NotRel)){
+                                        $NotRel_id=$fila_NotRel["id"];
+                                        $NotRel_url=$fila_NotRel["url"];
+                                        $NotRel_titulo=$fila_NotRel["titulo"];
+                                        $NotRel_imagen=$fila_NotRel["imagen"];
+                                        $NotRel_imagen_carpeta=$fila_NotRel["imagen_carpeta"];
+
+                                        //URL
+                                        $NotRel_UrlWeb=$web."noticia/".$NotRel_id."-".$NotRel_url;
+                                        $NotRel_UrlImg=$web."imagenes/upload/".$NotRel_imagen_carpeta."thumb/".$NotRel_imagen;
+                                ?>
+                                <li>
+                                    <a href="<?php echo $NotRel_UrlWeb; ?>">
+                                        <span class="imagen"><img width="190" height="150" src="<?php echo $NotRel_UrlImg; ?>" alt="<?php echo $NotRel_titulo; ?>"/></span>
+                                        <span class="titulo"><?php echo $NotRel_titulo; ?></span>
+                                    </a>
+                                </li>
+                                <?php } ?>
+                            </ul>
 
                         </section>
                         
