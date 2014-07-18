@@ -152,6 +152,21 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fe
                             </ul>
 
                         </section>
+
+                        <section>
+
+                            <div id="fb-root"></div>
+                            <script>(function(d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                    if (d.getElementById(id)) return;
+                                    js = d.createElement(s); js.id = id;
+                                    js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=1456294131292438&version=v2.0";
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));</script>
+
+                            <div data-width="624" class="fb-comments" data-href="<?php echo $NotRel_UrlWeb; ?>" data-numposts="5" data-colorscheme="light"></div>
+
+                        </section>
                         
                     </div>
 
