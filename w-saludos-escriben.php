@@ -19,10 +19,10 @@
 
     <div id="uslogin_contenido">
 
-        <form action="index.php" method="post" id="form_login" >
+        <form action="/" method="post" id="form_login" >
             <fieldset>
                 <label>De:</label>
-                <input name="uslogin_de" type="text" id="uslogin_de" maxlength="12" />
+                <input name="uslogin_de" type="text" id="uslogin_de" maxlength="50" />
             </fieldset>
 
             <fieldset>
@@ -40,13 +40,6 @@
                           <input name="countdown" type="text" style="border:none; background:none;" value="100" size="3" readonly id="countdown">
                       </strong>
                   </span>
-            </fieldset>
-
-            <fieldset class="captcha">
-                <legend>Captcha</legend>
-                <img src="captcha/captcha.php" id="captcha" />
-                <a href="javascript:;" onclick="document.getElementById('captcha').src='captcha/captcha.php?'+Math.random();" id="change-image"><i class="fa fa-refresh fa-2x"></i></a><br/>
-                <input type="text" name="captcha" id="captcha-form" />
             </fieldset>
 
             <fieldset>
