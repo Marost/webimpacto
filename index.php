@@ -11,7 +11,7 @@ $sc_saludos=true;
 $sc_slider=true;
 
 //NOTICIA INFERIORES
-$rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND destacada=2 AND publicar=1 AND categoria=12 ORDER BY fecha_publicacion DESC LIMIT 4", $conexion);
+$rst_noticias=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND destacada=2 AND publicar=1 AND categoria<>7 AND categoria<>8 ORDER BY fecha_publicacion DESC LIMIT 4", $conexion);
 
 //DEVOCIONALES
 $rst_devoc=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND destacada=2 AND publicar=1 AND categoria=7 ORDER BY fecha_publicacion DESC LIMIT 1", $conexion);
@@ -91,13 +91,14 @@ if($proceso=="enviar"){
 
                         <section>
 
-                            <h3>NOTICIAS</h3>
+                            <h3></h3>
 
                             <?php while($fila_noticias=mysql_fetch_array($rst_noticias)){
                                     $noticias_id=$fila_noticias["id"];
                                     $noticias_url=$fila_noticias["url"];
                                     $noticias_urlFinal=$web."noticia/".$noticias_id."-".$noticias_url;
                                     $noticias_titulo=$fila_noticias["titulo"];
+                                    $noticias_categoria=$fila_noticias["categoria"];
                                     $noticias_imagen=$fila_noticias["imagen"];
                                     $noticias_imagen_carpeta=$fila_noticias["imagen_carpeta"];
                                     $noticias_contenido=primerParrafo($fila_noticias["contenido"]);
@@ -105,6 +106,12 @@ if($proceso=="enviar"){
                                     $fechaNoticia=explode(" ", $fechaPubNoticia);
                                     $fechaExpNoticia=explode("-", $fechaNoticia[0]);
                                     $noticias_fecha=nombreFechaTotal($fechaExpNoticia[0],$fechaExpNoticia[1],$fechaExpNoticia[2]);
+
+                                    //CATEGORIA
+                                    $rst_Cat=mysql_query("SELECT * FROM iev_noticia_categoria WHERE id=$noticias_categoria", $conexion);
+                                    $fila_Cat=mysql_fetch_array($rst_Cat);
+                                    //VARIABLES
+                                    $Cat_titulo=$fila_Cat["categoria"];
                             ?>
 
                             <article>
@@ -115,20 +122,23 @@ if($proceso=="enviar"){
                                 </div>
 
                                 <div class="datos">
+                                    <span class="categoria"><?php echo $Cat_titulo; ?></span>
+
                                     <h2><a href="<?php echo $noticias_urlFinal; ?>" title="<?php echo $noticias_titulo; ?>">
                                         <?php echo $noticias_titulo; ?></a></h2>
                                     <?php echo $noticias_contenido; ?>
-                                </div>
 
-                                <div class="fecha_social">
-                                    <p><?php echo $noticias_fecha; ?></p>
+                                    <div class="fecha_social">
+                                        <p><?php echo $noticias_fecha; ?></p>
 
-                                    <!-- COMPARTIR -->
-                                    <div class="addthis_toolbox addthis_default_style"
-                                        addthis:url="<?php echo $noticias_urlFinal; ?>" addthis:title="<?php echo $noticias_titulo; ?>">
-                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-                                        <a class="addthis_button_tweet"></a>
+                                        <!-- COMPARTIR -->
+                                        <div class="addthis_toolbox addthis_default_style"
+                                             addthis:url="<?php echo $noticias_urlFinal; ?>" addthis:title="<?php echo $noticias_titulo; ?>">
+                                            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                            <a class="addthis_button_tweet"></a>
+                                        </div>
                                     </div>
+
                                 </div>
                                 
                             </article>
