@@ -7,7 +7,7 @@ $rst_saludos=mysql_query("SELECT * FROM iev_saludos WHERE estado_saludo='A' ORDE
         <h3><span></span>ENVÍA TUS SALUDOS</h3>
     </div>
 
-    <div class="contenido">
+    <div class="contenido contenido_wg_saludos">
         
         <div class="wg_saludos">
             <?php while($fila_saludos=mysql_fetch_array($rst_saludos)){ ?>
