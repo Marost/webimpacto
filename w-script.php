@@ -3,6 +3,7 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
 
 <!-- ESTILOS -->
+<link rel="stylesheet" href="libs/fontawesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/estilos.css">
 
