@@ -27,7 +27,17 @@
          url('/fonts/aachenb/aachenb-webfont.svg#aachen_btbold') format('svg');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'aachen_mediumregular';
+    src: url('/fonts/aachenm/aachen_medium_plain-webfont.eot');
+    src: url('/fonts/aachenm/aachen_medium_plain-webfont.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/aachenm/aachen_medium_plain-webfont.woff') format('woff'),
+    url('/fonts/aachenm/aachen_medium_plain-webfont.ttf') format('truetype'),
+    url('/fonts/aachenm/aachen_medium_plain-webfont.svg#aachen_mediumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /*
@@ -319,10 +329,10 @@ section#news{
     #nws{        
 
         .nwizq{
-            width: 290px;
+            width: 285px;
             float: left;
             border-right: 1px solid #ccc;
-            padding-right: 39px;
+            padding-right: 25px;
 
             aside{
                 width: 290px;
@@ -579,10 +589,10 @@ section#news{
         }
 
         .nwder{
-            width: 620px;
+            width: 625px;
             float: left;
             border-left: 1px solid #ccc;
-            padding-left: 39px;
+            padding-left: 25px;
 
             section{
                 float: left;
@@ -607,24 +617,35 @@ section#news{
 
                     .datos{
                         float: left;
-                        width: 315px;
+                        width: 320px;
                         height: 170px;
 
+                        span.categoria{
+                            font-size: 14px;
+                            color: #000;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                            font-family: Arial, Helvetica, sans-serif;
+                        }
+
                         h2{
-                            font-weight: 600;
-                            font-size: 20px;
+                            font-stretch: normal;
+                            color: #828282;
+                            font-family: "aachen_mediumregular";
                             line-height: 120%;
+                            font-weight: 400;
+                            font-size: 20px;
                             margin: 0;
 
                             a{
-                                color: #000;
+                                color: #828282;
                                 text-decoration: none;
                             }
                         }
 
                         p{
                             font-size: 12px;
-                            color: #808080;
+                            color: #000;
                         }
                     }
 
@@ -676,6 +697,7 @@ section#news{
                         font-weight: bold;
                         width: 110px;
                         text-align: center;
+                        text-transform: uppercase;
                     }
 
                     .fecha{
@@ -693,10 +715,10 @@ section#news{
                 .titulo{
                     
                     h2{
-                        color: #0080B7;
+                        color: #828282;
                         font-size: 26px;
                         font-weight: normal;
-                        font-family: 'aachen_btbold';
+                        font-family: 'aachen_mediumregular';
                         margin: 0;
                         padding: 0;
                     }
@@ -725,6 +747,53 @@ section#news{
                     border-bottom: 1px dashed #CCC;
                     border-top: 1px dashed #CCC;
                     height: 20px;
+                }
+            }
+
+            .nota-relacionada{
+                margin: 0 0 30px 0;
+                width: 100%;
+
+                h4{
+                    width: 96%;
+                    padding: 5px 2%;
+                    background-color: #f5f5f5;
+                    border-top: 1px dotted #000;
+                    border-bottom: 1px dotted #000;
+                    margin: 0 0 10px 0;
+                }
+
+                ul{
+                    list-style: none;
+                    margin: 0 0 0 3px;
+                    padding: 0;
+                    width: 624px;
+
+                    li{
+                        display: block;
+                        float: left;
+                        width: 202px;
+                        margin-right: 6px;
+
+                        a{
+                            text-decoration: none;
+
+                            span.imagen{
+                                width: 190px;
+                                padding: 5px;
+                                border: 1px dotted #000;
+                                background-color: #f5f5f5;
+                                display: block;
+                            }
+
+                            span.titulo{
+                                font-size: 12px;
+                                text-align: center;
+                                width: 202px;
+                                display: block;
+                            }
+                        }
+                    }
                 }
             }
 
