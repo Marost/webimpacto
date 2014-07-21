@@ -50,7 +50,6 @@ if($proceso=="enviar"){
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Impacto Evangelistico</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
 
         <?php require_once("w-script.php"); ?>
 
@@ -66,14 +65,14 @@ if($proceso=="enviar"){
             
         </header>
 
-        <section id="news">
+        <section id="news" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             
-            <div class="interior">
+            <div class="container">
                 
-                <!-- SECCION SUPERIOR -->
+                <!-- SECCION SIDEBAR -->
                 <section id="nws">
 
-                    <div class="nwizq">
+                    <div class="nwizq col-md-4 col-sm-5 ">
 
                         <?php require_once("w-portada.php"); ?>
 
@@ -87,9 +86,9 @@ if($proceso=="enviar"){
                     
                     </div>
 
-                    <div class="nwder">
+                    <div class="nwder col-md-8 col-sm-7">
 
-                        <section>
+                        <section class="col-md-12">
 
                             <h3></h3>
 
@@ -114,19 +113,21 @@ if($proceso=="enviar"){
                                     $Cat_titulo=$fila_Cat["categoria"];
                             ?>
 
-                            <article>
+                            <article class="col-sm-12">
 
-                                <div class="imagen">
+                                <div class="imagen col-sm-5">
                                     <img src="imagenes/upload/<?php echo $noticias_imagen_carpeta."thumb/".$noticias_imagen; ?>" 
-                                    alt="<?php echo $noticias_titulo; ?>" width="290" height="220">
+                                    alt="<?php echo $noticias_titulo; ?>" width="" height="">
                                 </div>
 
-                                <div class="datos">
+                                <div class="datos col-sm-7">
                                     <span class="categoria"><?php echo $Cat_titulo; ?></span>
 
                                     <h2><a href="<?php echo $noticias_urlFinal; ?>" title="<?php echo $noticias_titulo; ?>">
                                         <?php echo $noticias_titulo; ?></a></h2>
+
                                     <?php echo $noticias_contenido; ?>
+
 
                                     <div class="fecha_social">
                                         <p><?php echo $noticias_fecha; ?></p>
@@ -147,7 +148,7 @@ if($proceso=="enviar"){
 
                         </section>
 
-                        <section>
+                        <section class="col-md-12">
 
                             <h3>DEVOCIONALES</h3>
 
@@ -165,28 +166,30 @@ if($proceso=="enviar"){
                                     $devoc_fecha=nombreFechaTotal($fechaExpNoticia[0],$fechaExpNoticia[1],$fechaExpNoticia[2]);
                             ?>
 
-                            <article>
+                            <article class="col-sm-12">
 
-                                <div class="imagen">
+                                <div class="imagen col-sm-5">
                                     <img src="imagenes/upload/<?php echo $devoc_imagen_carpeta."thumb/".$devoc_imagen; ?>" 
-                                    alt="<?php echo $devoc_titulo; ?>" width="290" height="220">
+                                    alt="<?php echo $devoc_titulo; ?>" width="" height="">
                                 </div>
 
-                                <div class="datos">
+                                <div class="datos col-sm-7">
                                     <h2><a href="<?php echo $devoc_urlFinal; ?>" title="<?php echo $devoc_titulo; ?>">
                                         <?php echo $devoc_titulo; ?></a></h2>
+
                                     <?php echo $devoc_contenido; ?>
-                                </div>
 
-                                <div class="fecha_social">
-                                    <p><?php echo $devoc_fecha; ?></p>
+                                    <div class="fecha_social">
+                                        <p><?php echo $devoc_fecha; ?></p>
 
-                                    <!-- COMPARTIR -->
-                                    <div class="addthis_toolbox addthis_default_style"
-                                        addthis:url="<?php echo $devoc_urlFinal; ?>" addthis:title="<?php echo $devoc_titulo; ?>">
-                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-                                        <a class="addthis_button_tweet"></a>
-                                    </div>                                  
+                                        <!-- COMPARTIR -->
+                                        <div class="addthis_toolbox addthis_default_style"
+                                             addthis:url="<?php echo $devoc_urlFinal; ?>" addthis:title="<?php echo $devoc_titulo; ?>">
+                                            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                            <a class="addthis_button_tweet"></a>
+                                        </div>
+                                    </div>
+
                                 </div>
                                 
                             </article>
@@ -195,7 +198,7 @@ if($proceso=="enviar"){
                             
                         </section>
 
-                        <section>
+                        <section class="col-md-12">
 
                             <h3>EVENTOS</h3>
 
@@ -213,28 +216,30 @@ if($proceso=="enviar"){
                                     $eventos_fecha=nombreFechaTotal($fechaExpNoticia[0],$fechaExpNoticia[1],$fechaExpNoticia[2]);
                             ?>
 
-                            <article>
+                            <article class="col-sm-12">
 
-                                <div class="imagen">
+                                <div class="imagen col-sm-5">
                                     <img src="imagenes/upload/<?php echo $eventos_imagen_carpeta."thumb/".$eventos_imagen; ?>" 
                                     alt="<?php echo $eventos_titulo; ?>" width="290" height="220">
                                 </div>
 
-                                <div class="datos">
+                                <div class="datos col-sm-7">
                                     <h2><a href="<?php echo $eventos_urlFinal; ?>" title="<?php echo $eventos_titulo; ?>">
                                         <?php echo $eventos_titulo; ?></a></h2>
+
                                     <?php echo $eventos_contenido; ?>
-                                </div>
 
-                                <div class="fecha_social">
-                                    <p><?php echo $eventos_fecha; ?></p>
+                                    <div class="fecha_social">
+                                        <p><?php echo $eventos_fecha; ?></p>
 
-                                    <!-- COMPARTIR -->
-                                    <div class="addthis_toolbox addthis_default_style"
-                                        addthis:url="<?php echo $eventos_urlFinal; ?>" addthis:title="<?php echo $eventos_titulo; ?>">
-                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-                                        <a class="addthis_button_tweet"></a>
-                                    </div>                                  
+                                        <!-- COMPARTIR -->
+                                        <div class="addthis_toolbox addthis_default_style"
+                                             addthis:url="<?php echo $eventos_urlFinal; ?>" addthis:title="<?php echo $eventos_titulo; ?>">
+                                            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                            <a class="addthis_button_tweet"></a>
+                                        </div>
+                                    </div>
+
                                 </div>
                                 
                             </article>
@@ -246,11 +251,12 @@ if($proceso=="enviar"){
                     </div>
 
                 </section>
-                <!-- SECCION SUPERIOR FIN -->
+                <!-- SECCION SIDEBAR FIN -->
 
-                <!-- SECCION CENTRO -->
-                <section id="nwm">
-                    <div class="nwizq">
+                <!-- SECCION GALERIA FOTOS - SALUDOS -->
+                <section id="nwm" class="visible-lg visible-md">
+
+                    <div class="nwizq col-lg-8 col-md-9">
 
                         <div id="galeria-datos">
                             <h3><span></span>GALERIA DE IMÁGENES</h3>
@@ -291,7 +297,7 @@ if($proceso=="enviar"){
                         </div>
                     </div>
 
-                    <div class="nwder">
+                    <div class="nwder col-lg-4 col-md-3">
                         <?php require_once("w-saludos.php"); ?>
 
                         <?php require_once("w-infografias.php"); ?>
@@ -299,15 +305,15 @@ if($proceso=="enviar"){
                     </div>
 
                 </section>
-                <!-- SECCION CENTRO FIN -->
+                <!-- SECCION GALERIA FOTOS - SALUDOS FIN -->
 
-                <!-- SECCION INFERIOR -->
-                <section id="nwi">
+                <!-- SECCION VIDEOS -->
+                <section id="nwi" class="visible-lg visible-md col-lg-12 col-md-12">
 
                     <?php require_once("w-videos.php"); ?>
 
                 </section>
-                <!-- SECCION INFERIOR FIN -->
+                <!-- SECCION VIDEOS FIN -->
 
             </div>
 
