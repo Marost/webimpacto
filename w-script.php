@@ -1,11 +1,19 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 <!-- FONT -->
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
 
 <!-- ESTILOS -->
 <link rel="stylesheet" href="libs/fontawesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<!-- BOOTSTRAP -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="libs/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- MODERNIZR -->
 <script src="js/vendor/modernizr-2.6.2.min.js"></script>
