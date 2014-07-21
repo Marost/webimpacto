@@ -21,6 +21,7 @@ $fila_noticia=mysql_fetch_array($rst_noticia);
 $noticia_titulo=$fila_noticia["titulo"];
 $noticia_contenido=$fila_noticia["contenido"];
 $noticia_categoria=$fila_noticia["categoria"];
+$noticia_tags=$fila_noticia["tags"];
 $noticia_imagen=$fila_noticia["imagen"];
 $noticia_imagen_carpeta=$fila_noticia["imagen_carpeta"];
 $noticia_fechatotal=explode(" ", $fila_noticia["fecha_publicacion"]);
@@ -39,6 +40,10 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
 
 //NOTICIAS RELACIONADAS
 $rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fechaActual' AND publicar=1 AND categoria=$noticia_categoria AND id<>$id_url ORDER BY fecha_publicacion DESC LIMIT 3", $conexion);
+
+//TAGS
+$tags=explode(",", $noticia_tags);    //SEPARACION DE ARRAY CON COMAS
+$rst_tags=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY nombre ASC;", $conexion);
 
 ?>
 <!DOCTYPE html>
@@ -181,6 +186,34 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE fecha_publicacion<='$fe
                         <?php require_once("w-saludos.php"); ?>
 
                         <?php require_once("w-infografias.php"); ?>
+
+                        <aside>
+
+                            <div class="sidebar" id="noticia-tags">
+
+                                <h3><span></span>ETIQUETAS DE LA NOTICIA</h3>
+
+                                <ul>
+
+                                <?php while($fila_tags=mysql_fetch_array($rst_tags)){
+                                    $tags_id=$fila_tags["id"];
+                                    $tags_url=$fila_tags["url"];
+                                    $tags_nombre=$fila_tags["nombre"];
+
+                                    //URL
+                                    $tags_WebURL=$web."tags/".$tags_id."/".$tags_url;
+                                    if(in_array($tags_id, $tags)){
+                                ?>
+                                    <li>
+                                        <a href="<?php echo $tags_WebURL; ?>"><?php echo $tags_nombre; ?></a>
+                                    </li>
+                                <?php }} ?>
+
+                                </ul>
+
+                            </div>
+
+                        </aside>
                     
                     </div>
 
