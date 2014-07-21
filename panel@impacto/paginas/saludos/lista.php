@@ -26,7 +26,7 @@ include_once('../../js/plugins/creative_table/creativeTable.php');
 $ct=new CreativeTable();
 
 // Data Gathering
-$params['sql_query']                = "SELECT sal.id,sal.nombre,sal.pais,sal.fecha,sal.estado_saludo FROM ".$tabla_suf."_saludos AS sal ORDER BY fecha DESC, id DESC";
+$params['sql_query']                = "SELECT sal.id,sal.nombre,sal.contenido,sal.pais,sal.fecha,sal.estado_saludo FROM ".$tabla_suf."_saludos AS sal ORDER BY fecha DESC, id DESC";
 //$params['search']                   = $search;
 $params['multiple_search']          = $multiple_search;
 $params['items_per_page']           = $items_per_page;
@@ -34,8 +34,8 @@ $params['sort']                     = $sort;
 $params['page']                     = $page;
 $params['total_items']              = $total_items;
 
-$params['header']                   = 'ID,Nombre,Pais,Fecha publicación,Estado';
-$params['width']                    = '30,650,100,140,70';
+$params['header']                   = 'ID,Nombre,Contenido,Pais,Fecha publicación,Estado';
+$params['width']                    = '30,250,400,80,150,40';
 
 /* ORDENAR POR CAMPOS */
 $params['sort_init'] = false;  // sort all fields
