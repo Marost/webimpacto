@@ -11,42 +11,46 @@
     }
 </script>
 
-<div id="usuario_login">
+<aside>
 
-    <div id="uslogin_cabecera">
-        <h2>Escribe tus saludos</h2>
-    </div>
+    <div id="usuario_login">
 
-    <div id="uslogin_contenido">
+        <div id="uslogin_cabecera">
+            <h2>Escribe tus saludos</h2>
+        </div>
 
-        <form action="/" method="post" id="form_login" >
-            <fieldset>
-                <label>De:</label>
-                <input name="uslogin_de" type="text" id="uslogin_de" maxlength="50" />
-            </fieldset>
+        <div id="uslogin_contenido">
 
-            <fieldset>
-                <label>Pais:</label>
-                <input name="uslogin_pais" type="text" id="uslogin_pais" />
-            </fieldset>
+            <form action="/" method="post" id="form_login" >
+                <fieldset>
+                    <label>De:</label>
+                    <input name="uslogin_de" type="text" id="uslogin_de" />
+                </fieldset>
 
-            <fieldset>
-                <label>Saludos:</label>
-                  <span id="txt_mensaje">
-                  	<textarea name="uslogin_carta" cols="80" rows="3" id="uslogin_carta" onkeydown="limitText(this.form.uslogin_carta,this.form.countdown,100);" onkeyup="limitText(this.form.uslogin_carta,this.form.countdown,100);"></textarea><br />
-                  </span>
-                  <span id="txt_contador">Caracteres permitidos
-                      <strong>
-                          <input name="countdown" type="text" style="border:none; background:none;" value="100" size="3" readonly id="countdown">
-                      </strong>
-                  </span>
-            </fieldset>
+                <fieldset>
+                    <label>Pais:</label>
+                    <input name="uslogin_pais" type="text" id="uslogin_pais" />
+                </fieldset>
 
-            <fieldset>
-                <input name="uslogin_btn_enviar" type="submit" id="uslogin_btn_enviar" value="Enviar saludo" />
-                <input name="uslogin_proc" type="hidden" id="uslogin_proc" value="enviar" />
-            </fieldset>
-        </form>
+                <fieldset>
+                    <label>Saludos:</label>
+                      <span id="txt_mensaje">
+                        <textarea name="uslogin_carta" rows="3" id="uslogin_carta" onkeydown="limitText(this.form.uslogin_carta,this.form.countdown,100);" onkeyup="limitText(this.form.uslogin_carta,this.form.countdown,100);"></textarea><br />
+                      </span>
+                      <span id="txt_contador">Caracteres permitidos
+                          <strong>
+                              <input name="countdown" type="text" style="border:none; background:none;" value="100" size="3" readonly id="countdown">
+                          </strong>
+                      </span>
+                </fieldset>
 
-    </div>
-</div><!-- FIN PANEL USUARIO LOGIN -->
+                <fieldset>
+                    <input name="uslogin_btn_enviar" type="submit" id="uslogin_btn_enviar" value="Enviar saludo" />
+                    <input name="uslogin_proc" type="hidden" id="uslogin_proc" value="enviar" />
+                </fieldset>
+            </form>
+
+        </div>
+    </div><!-- FIN PANEL USUARIO LOGIN -->
+
+</aside>

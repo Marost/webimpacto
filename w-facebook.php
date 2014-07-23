@@ -1,4 +1,4 @@
-<aside>
+<aside class="visible-lg visible-md">
                             
     <div class="sidebar">
 
