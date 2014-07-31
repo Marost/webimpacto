@@ -2,7 +2,7 @@
 //COLUMNISTAS
 $rst_columnista=mysql_query("SELECT * FROM iev_columnista WHERE publicar=1 ORDER BY orden ASC", $conexion);
 ?>
-<aside class="visible-lg visible-md">
+<aside>
                             
     <div class="sidebar" id="columnistas">
         

@@ -1,128 +1,6 @@
 /* RESPONSIVE DESIGN - IMPACTO EVANGELISTICO */
 /* Note: Design for a width of 768px */
-
-@media (min-width: 1200px) {
-
-    .logo{
-        text-align: left !important;
-    }
-
-    section{
-
-        &#news{
-
-            #nws{
-
-                .nwizq{
-                    width: 290px;
-
-                    padding-right: 25px;
-                }
-
-                .nwder{
-                    padding-left: 25px;
-                    border-left: 1px solid #CCC;
-                    width: 829px;
-                }
-            }
-
-            #nwm{
-
-                .nwizq{
-                    width: 745px;
-                    padding-right: 25px;
-                    border-right: 1px solid #C6C6C6;
-                }
-
-                .nwder{
-                    padding-left: 25px;
-                    width: 374px;
-                    border-left: none;
-
-                    aside{
-
-                        .contenido{
-                            width: 355px;
-                            height: 435px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .navbar-nav{
-
-        li{
-
-            a{
-                font-size: 16px;
-            }
-        }
-    }
-}
-
-
-
-@media (min-width: 992px) {
-
-    .logo{
-        text-align: left !important;
-    }
-
-    section{
-
-        &#nwm{
-
-            .nwder{
-                padding-left: 40px;
-                border-left: 1px solid #C6C6C6;
-
-                aside{
-
-                    .contenido{
-                        width: 310px;
-                        height: 321px;
-                    }
-                }
-            }
-
-            .nwizq{
-                padding-right: 40px;
-            }
-        }
-    }
-
-    .navbar{
-        margin-top: 15px;
-    }
-
-    .navbar-nav{
-
-        li{
-
-            a{
-                font-size: 13px;
-            }
-        }
-    }
-
-    .header-slider-opt{
-
-        .header-opt{
-            position: absolute;
-        }
-    }
-}
-
-
-
 @media (min-width: 768px) {
-
-    .logo{
-        text-align: center;
-    }
-
     section{
 
         &#news{
@@ -130,11 +8,13 @@
             #nws{
 
                 .nwizq{
-
+                    padding-right: 0px;
+                    border-right: none;
                 }
 
                 .nwder{
-
+                    padding-left: 0px;
+                    border-left: none;
 
                     section{
 
@@ -158,22 +38,13 @@
             }
         }
     }
-
-    .navbar-nav{
-
-        li{
-
-            a{
-                font-size: 16px;
-            }
-        }
-    }
-
-    .header-slider-opt{
-
-        .header-opt{
-            position: relative;
-        }
-    }
 }
 
+/* Note: Design for a width of 320px */
+@media only screen and (max-width: 767px) {}
+
+/* Note: Design for a width of 480px */
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {}

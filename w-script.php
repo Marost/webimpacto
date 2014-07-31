@@ -57,7 +57,7 @@ function startGalHome(){
         controlNavigation: 'thumbnails',
         thumbs: {
           orientation: 'vertical',
-          paddingBottom: 6,
+          paddingBottom: 4,
           appendSpan: true
         },
         transitionType:'fade',
@@ -193,6 +193,32 @@ function startSaludo(){
 <script src="libs/revolution-slider/js/jquery.themepunch.plugins.min.js"></script>
 <script src="libs/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
 <script>
+    /*var tpj=jQuery.noConflict();
+    tpj(document).ready(function() {
+    if (tpj.fn.cssOriginal!=undefined)
+        tpj.fn.css = tpj.fn.cssOriginal;
+        tpj('.tb-banner').revolution(
+            {
+                delay:13000,
+                startwidth:990,
+                startheight:700,
+                onHoverStop:"on",
+                hideThumbs:0,
+                navigationType:"none",
+                navigationArrows:"verticalcentered",
+                navigationStyle:"round",
+                touchenabled:"on",
+                navOffsetHorizontal:0,
+                navOffsetVertical:20,
+                stopAtSlide:-1,
+                stopAfterLoops:-1,
+                hideCaptionAtLimit:0,
+                hideAllCaptionAtLilmit:0,
+                hideSliderAtLimit:0,
+                fullWidth:"on",
+                shadow:0
+            });
+    });*/
 
     var revapi;
     var tpj=jQuery.noConflict();

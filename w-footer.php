@@ -1,58 +1,54 @@
-<div class="container">
-
-    <div class="interior">
+<div class="interior">
                 
-        <div class="logo col-lg-4 col-md-4 col-sm-12">
-            <img src="imagenes/logo-b.png" alt="" height="60">
-            <p>© 2013. Todos los derechos reservados.</p>
-        </div>
+    <div class="logo">
+        <img src="imagenes/logo-b.png" alt="" height="60">
+        <p>© 2013. Todos los derechos reservados.</p>
+    </div>
 
-        <div class="datos col-lg-8 col-md-8 col-sm-12">
+    <div class="datos">
+        
+        <aside class="social-media">
 
-            <aside class="col-lg-4 col-md-4 col-sm-4 social-media">
+        	<h2>Conectate</h2>
 
-                <h2>Conectate</h2>
+        	<ul>
+        		<li><a class="fb" href="https://www.facebook.com/impactoevangelistico">Facebook</a></li>
+        		<li><a class="yb" href="">Youtube</a></li>
+        		<li><a class="rss" href="">RSS</a></li>
+        	</ul>
+            
+        </aside>
 
-                <ul>
-                    <li><a href="https://www.facebook.com/impactoevangelistico"><i class="fa fa-facebook fa-2x"></i> Facebook</a></li>
-                    <li><a href=""><i class="fa fa-youtube fa-2x"></i> Youtube</a></li>
-                    <li><a href=""><i class="fa fa-rss fa-2x"></i> RSS</a></li>
-                </ul>
+        <aside class="enlaces">
 
-            </aside>
+        	<h2>Enlaces</h2>
 
-            <aside class="col-lg-4 col-md-4 col-sm-4 enlaces">
+        	<ul>
+        		<li><a class="bethel" href="">
+                        <img src="/imagenes/icon-footer-bethel.png" alt="Bethel" width="70px">
+                        <p>
+                            PÁGINA OFICIAL DE BETHEL TELEVISIÓNA
+                        </p>
+                    </a>
+                </li>
+        	</ul>
+            
+        </aside>
 
-                <h2>Enlaces</h2>
+        <aside class="contactanos">
 
-                <ul>
-                    <li><a class="bethel" href="">
-                            <img src="/imagenes/icon-footer-bethel.png" alt="Bethel" width="70px">
-                            <p>
-                                PÁGINA OFICIAL DE BETHEL TELEVISIÓN
-                            </p>
-                        </a>
-                    </li>
-                </ul>
+        	<h2>Contactanos</h2>
 
-            </aside>
+        	<p>MOVIMIENTO MISIONERO MUNDIAL INC. </p>
+        	<p>|| Copyright © 2013</p>
+        	<p>P.O. BOX 363644 || E-mail :</p>
+        	<p>escribanos@impactoevangelistico.net</p>
+        	<p>San Juan, Puerto Rico 00936-3644</p>
+        	<p>Telf. (787) 761-8806 | 761-8805 | 7618903</p>
 
-            <aside class="col-lg-4 col-md-4 col-sm-4 contactanos">
-
-                <h2>Contactanos</h2>
-
-                <p>MOVIMIENTO MISIONERO MUNDIAL INC. </p>
-                <p>|| Copyright © 2013</p>
-                <p>P.O. BOX 363644 || E-mail :</p>
-                <p>escribanos@impactoevangelistico.net</p>
-                <p>San Juan, Puerto Rico 00936-3644</p>
-                <p>Telf. (787) 761-8806 | 761-8805 | 7618903</p>
-
-                <span>Resolución Recomendada 1024x768</span>
-
-            </aside>
-
-        </div>
+        	<span>Resolución Recomendada 1024x768</span>
+            
+        </aside>
 
     </div>
 

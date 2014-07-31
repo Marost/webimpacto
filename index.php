@@ -72,7 +72,7 @@ if($proceso=="enviar"){
                 <!-- SECCION SIDEBAR -->
                 <section id="nws">
 
-                    <div class="nwizq col-lg-4 col-md-4 col-sm-5 ">
+                    <div class="nwizq col-md-4 col-sm-5 ">
 
                         <?php require_once("w-portada.php"); ?>
 
@@ -86,7 +86,7 @@ if($proceso=="enviar"){
                     
                     </div>
 
-                    <div class="nwder col-lg-8 col-md-8 col-sm-7">
+                    <div class="nwder col-md-8 col-sm-7">
 
                         <section class="col-md-12">
 
@@ -126,9 +126,8 @@ if($proceso=="enviar"){
                                     <h2><a href="<?php echo $noticias_urlFinal; ?>" title="<?php echo $noticias_titulo; ?>">
                                         <?php echo $noticias_titulo; ?></a></h2>
 
-                                    <div class="visible-lg visible-md">
                                     <?php echo $noticias_contenido; ?>
-                                    </div>
+
 
                                     <div class="fecha_social">
                                         <p><?php echo $noticias_fecha; ?></p>
@@ -171,16 +170,14 @@ if($proceso=="enviar"){
 
                                 <div class="imagen col-sm-5">
                                     <img src="imagenes/upload/<?php echo $devoc_imagen_carpeta."thumb/".$devoc_imagen; ?>" 
-                                    alt="<?php echo $devoc_titulo; ?>" >
+                                    alt="<?php echo $devoc_titulo; ?>" width="" height="">
                                 </div>
 
                                 <div class="datos col-sm-7">
                                     <h2><a href="<?php echo $devoc_urlFinal; ?>" title="<?php echo $devoc_titulo; ?>">
                                         <?php echo $devoc_titulo; ?></a></h2>
 
-                                    <div class="visible-lg visible-md">
                                     <?php echo $devoc_contenido; ?>
-                                    </div>
 
                                     <div class="fecha_social">
                                         <p><?php echo $devoc_fecha; ?></p>
@@ -223,16 +220,14 @@ if($proceso=="enviar"){
 
                                 <div class="imagen col-sm-5">
                                     <img src="imagenes/upload/<?php echo $eventos_imagen_carpeta."thumb/".$eventos_imagen; ?>" 
-                                    alt="<?php echo $eventos_titulo; ?>">
+                                    alt="<?php echo $eventos_titulo; ?>" width="290" height="220">
                                 </div>
 
                                 <div class="datos col-sm-7">
                                     <h2><a href="<?php echo $eventos_urlFinal; ?>" title="<?php echo $eventos_titulo; ?>">
                                         <?php echo $eventos_titulo; ?></a></h2>
 
-                                    <div class="visible-lg visible-md">
                                     <?php echo $eventos_contenido; ?>
-                                    </div>
 
                                     <div class="fecha_social">
                                         <p><?php echo $eventos_fecha; ?></p>
@@ -261,7 +256,7 @@ if($proceso=="enviar"){
                 <!-- SECCION GALERIA FOTOS - SALUDOS -->
                 <section id="nwm" class="visible-lg visible-md">
 
-                    <div class="nwizq col-md-7">
+                    <div class="nwizq col-lg-8 col-md-9">
 
                         <div id="galeria-datos">
                             <h3><span></span>GALERIA DE IMÁGENES</h3>
@@ -302,7 +297,7 @@ if($proceso=="enviar"){
                         </div>
                     </div>
 
-                    <div class="nwder col-md-4">
+                    <div class="nwder col-lg-4 col-md-3">
                         <?php require_once("w-saludos.php"); ?>
 
                         <?php require_once("w-infografias.php"); ?>

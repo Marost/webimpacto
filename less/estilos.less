@@ -119,10 +119,12 @@ section#slider,
 section#news,
 footer{
     position: relative;
+    float: left;
     width: 100%;
 }
 
 .interior{
+    width: 990px;
     margin: 0 auto;
 }
 
@@ -199,7 +201,8 @@ header{
     }
 
     .der{
-        float: right;
+        width: 640px;
+        float: left;
 
         #busqueda{
             float: left;
@@ -326,7 +329,10 @@ section#news{
     #nws{        
 
         .nwizq{
+            /*width: 285px;*/
             float: left;
+            border-right: 1px solid #ccc;
+            padding-right: 25px;
 
             aside{
                 width: 290px;
@@ -615,7 +621,10 @@ section#news{
         }
 
         .nwder{
+            /*width: 625px;*/
             float: left;
+            border-left: 1px solid #ccc;
+            padding-left: 25px;
 
             section{
                 float: left;
@@ -953,7 +962,10 @@ section#news{
         padding-bottom: 10px;
 
         .nwizq{
+            width: 574px;
             float: left;
+            padding-right: 21px;
+            border-right: 1px solid #ccc;
             
             #galeria-datos{
                 width: 100%;
@@ -982,7 +994,7 @@ section#news{
                 p{
                     margin: 10px 0 0 0;
                     padding: 0;
-                    float: right;
+                    float: left;
                     font-size: 12px;
                     font-weight: bold;
 
@@ -1000,11 +1012,15 @@ section#news{
         }
 
         .nwder{
+            width: 372px;
             float: left;
+            padding-left: 21px;
+            border-left: 1px solid #ccc;
 
             aside{
                 border-top: 5px solid #000;
                 float: left;
+                width: 372px;
 
                 .titulo{
                     width: 100%;
@@ -1038,6 +1054,8 @@ section#news{
                 .contenido{
                     font-size: 12px;
                     margin: 10px;
+                    height: 321px;
+                    width: 352px;
                     float: left;
                     overflow: hidden;
 
@@ -1066,7 +1084,7 @@ section#news{
 
             .titulo{
                 width: 100%;
-                float: right;
+                float: left;
                 border-bottom: 1px dashed #ccc;
                 margin-bottom: 15px;
 
@@ -1301,20 +1319,20 @@ footer{
     float: left;
     position: relative;
 
-    .container{
+    .interior{
+        width: 970px;
         background-color: #000;
-        padding-bottom: 20px;
-
-        .interior{
-            padding: 20px 10px;
-        }
+        padding: 20px 10px;
+        height: 300px;
     }
 
     .logo{
+        width: 355px;
         float: left;
     }
 
     .datos{
+        width: 605px;
         float: left;
 
         aside{
@@ -1347,14 +1365,18 @@ footer{
         }
 
         aside.social-media{
+            width: 160px;
 
             ul{
 
                 li{
 
                     a{
-                        width: 100%;
+                        background-image: url(../imagenes/icon-footer.png);
+                        background-repeat: no-repeat;
+                        width: 100px;
                         height: 40px;
+                        padding: 20px 0 0 60px;
                         font-size: 14px;
                         font-weight: bold;
                     }
@@ -1369,6 +1391,7 @@ footer{
         }
 
         aside.enlaces{
+            width: 170px;
 
             ul{
 
