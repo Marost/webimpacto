@@ -20,7 +20,7 @@ $edicion_imagen_carpeta=$fila_edicion["carpeta_imagen"];
         </div>
 
         <div class="imagen">
-            <a href="revista/<?php echo $edicion_url; ?>/index.html" title="<?php echo $edicion_titulo; ?>" target="_blank">
+            <a href="http://issuu.com/impactoevangelistico.net/docs/<?php echo $edicion_url; ?>" title="<?php echo $edicion_titulo; ?>" target="_blank">
                 <img src="imagenes/revista/<?php echo $edicion_imagen_carpeta."".$edicion_imagen; ?>" alt="<?php echo $edicion_titulo; ?>" width="185">
             </a>
         </div>
