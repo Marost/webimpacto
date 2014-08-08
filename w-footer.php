@@ -2,14 +2,14 @@
 
     <div class="interior">
                 
-        <div class="logo col-lg-4 col-md-4 col-sm-12">
+        <div class="logo col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <img src="imagenes/logo-b.png" alt="" height="60">
             <p>© 2013. Todos los derechos reservados.</p>
         </div>
 
-        <div class="datos col-lg-8 col-md-8 col-sm-12">
+        <div class="datos col-lg-8 col-md-8 col-sm-12 col-xs-12">
 
-            <aside class="col-lg-4 col-md-4 col-sm-4 social-media">
+            <aside class="col-lg-4 col-md-4 col-sm-4 col-xs-6 social-media">
 
                 <h2>Conectate</h2>
 
@@ -21,7 +21,7 @@
 
             </aside>
 
-            <aside class="col-lg-4 col-md-4 col-sm-4 enlaces">
+            <aside class="col-lg-4 col-md-4 col-sm-4 col-xs-6 enlaces">
 
                 <h2>Enlaces</h2>
 
@@ -37,7 +37,7 @@
 
             </aside>
 
-            <aside class="col-lg-4 col-md-4 col-sm-4 contactanos">
+            <aside class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contactanos">
 
                 <h2>Contactanos</h2>
 

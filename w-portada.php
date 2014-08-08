@@ -10,24 +10,24 @@ $edicion_titulo=$fila_edicion["titulo"];
 $edicion_imagen=$fila_edicion["imagen"];
 $edicion_imagen_carpeta=$fila_edicion["carpeta_imagen"];
 ?>
-<aside>
+<aside class="col-lg-12 col-md-11">
 
-    <div class="edimpreso">
+    <div class="edimpreso col-xs-12">
         
-        <div class="datos">
+        <div class="datos col-xs-3">
             <h3>Edición del mes</h3>
             <h3 class="numedicion">N° <?php echo $edicion_url; ?></h3>
         </div>
 
-        <div class="imagen">
+        <div class="imagen col-xs-8">
             <a href="revista/<?php echo $edicion_url; ?>/index.html" title="<?php echo $edicion_titulo; ?>" target="_blank">
-                <img src="imagenes/revista/<?php echo $edicion_imagen_carpeta."".$edicion_imagen; ?>" alt="<?php echo $edicion_titulo; ?>" width="185">
+                <img class="col-xs-12" src="imagenes/revista/<?php echo $edicion_imagen_carpeta."".$edicion_imagen; ?>" alt="<?php echo $edicion_titulo; ?>" width="185">
             </a>
         </div>
 
     </div>
 
-    <div class="edanterior">
+    <div class="edanterior col-lg-12 col-md-12">
         <h3><a href="edicion-anterior-es">
             EDICIONES ANTERIORES
             </a>

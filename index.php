@@ -86,7 +86,7 @@ if($proceso=="enviar"){
                     
                     </div>
 
-                    <div class="nwder col-lg-8 col-md-8 col-sm-7">
+                    <div class="nwder col-lg-8 col-md-8 col-sm-7 col-xs-12">
 
                         <section class="col-md-12">
 
@@ -113,14 +113,14 @@ if($proceso=="enviar"){
                                     $Cat_titulo=$fila_Cat["categoria"];
                             ?>
 
-                            <article class="col-sm-12">
+                            <article class="col-sm-12 col-xs-12">
 
-                                <div class="imagen col-sm-5">
+                                <div class="imagen col-sm-5 col-xs-12">
                                     <img src="imagenes/upload/<?php echo $noticias_imagen_carpeta."thumb/".$noticias_imagen; ?>" 
                                     alt="<?php echo $noticias_titulo; ?>" width="" height="">
                                 </div>
 
-                                <div class="datos col-sm-7">
+                                <div class="datos col-sm-7 col-xs-12">
                                     <span class="categoria"><?php echo $Cat_titulo; ?></span>
 
                                     <h2><a href="<?php echo $noticias_urlFinal; ?>" title="<?php echo $noticias_titulo; ?>">
@@ -134,7 +134,7 @@ if($proceso=="enviar"){
                                         <p><?php echo $noticias_fecha; ?></p>
 
                                         <!-- COMPARTIR -->
-                                        <div class="addthis_toolbox addthis_default_style"
+                                        <div class="hidden-xs addthis_toolbox addthis_default_style"
                                              addthis:url="<?php echo $noticias_urlFinal; ?>" addthis:title="<?php echo $noticias_titulo; ?>">
                                             <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
                                             <a class="addthis_button_tweet"></a>
@@ -167,14 +167,14 @@ if($proceso=="enviar"){
                                     $devoc_fecha=nombreFechaTotal($fechaExpNoticia[0],$fechaExpNoticia[1],$fechaExpNoticia[2]);
                             ?>
 
-                            <article class="col-sm-12">
+                            <article class="col-sm-12 col-xs-12">
 
-                                <div class="imagen col-sm-5">
+                                <div class="imagen col-sm-5 col-xs-12">
                                     <img src="imagenes/upload/<?php echo $devoc_imagen_carpeta."thumb/".$devoc_imagen; ?>" 
                                     alt="<?php echo $devoc_titulo; ?>" >
                                 </div>
 
-                                <div class="datos col-sm-7">
+                                <div class="datos col-sm-7 col-xs-12">
                                     <h2><a href="<?php echo $devoc_urlFinal; ?>" title="<?php echo $devoc_titulo; ?>">
                                         <?php echo $devoc_titulo; ?></a></h2>
 
@@ -186,7 +186,7 @@ if($proceso=="enviar"){
                                         <p><?php echo $devoc_fecha; ?></p>
 
                                         <!-- COMPARTIR -->
-                                        <div class="addthis_toolbox addthis_default_style"
+                                        <div class="hidden-xs addthis_toolbox addthis_default_style"
                                              addthis:url="<?php echo $devoc_urlFinal; ?>" addthis:title="<?php echo $devoc_titulo; ?>">
                                             <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
                                             <a class="addthis_button_tweet"></a>
@@ -221,12 +221,12 @@ if($proceso=="enviar"){
 
                             <article class="col-sm-12">
 
-                                <div class="imagen col-sm-5">
+                                <div class="imagen col-sm-5 col-xs-12">
                                     <img src="imagenes/upload/<?php echo $eventos_imagen_carpeta."thumb/".$eventos_imagen; ?>" 
                                     alt="<?php echo $eventos_titulo; ?>">
                                 </div>
 
-                                <div class="datos col-sm-7">
+                                <div class="datos col-sm-7 col-xs-12">
                                     <h2><a href="<?php echo $eventos_urlFinal; ?>" title="<?php echo $eventos_titulo; ?>">
                                         <?php echo $eventos_titulo; ?></a></h2>
 
@@ -238,7 +238,7 @@ if($proceso=="enviar"){
                                         <p><?php echo $eventos_fecha; ?></p>
 
                                         <!-- COMPARTIR -->
-                                        <div class="addthis_toolbox addthis_default_style"
+                                        <div class="hidden-xs addthis_toolbox addthis_default_style"
                                              addthis:url="<?php echo $eventos_urlFinal; ?>" addthis:title="<?php echo $eventos_titulo; ?>">
                                             <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
                                             <a class="addthis_button_tweet"></a>
