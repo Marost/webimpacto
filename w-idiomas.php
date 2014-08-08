@@ -1,4 +1,4 @@
-<aside class="col-lg-12 col-md-11 idioma">
+<aside class="col-lg-12 col-md-11 col-sm-11 idioma">
                             
     <div class="sidebar" id="idiomas">
         

@@ -116,8 +116,10 @@ if($proceso=="enviar"){
                             <article class="col-sm-12 col-xs-12">
 
                                 <div class="imagen col-sm-5 col-xs-12">
-                                    <img src="imagenes/upload/<?php echo $noticias_imagen_carpeta."thumb/".$noticias_imagen; ?>" 
-                                    alt="<?php echo $noticias_titulo; ?>" width="" height="">
+                                    <a href="<?php echo $noticias_urlFinal; ?>" title="<?php echo $noticias_titulo; ?>">
+                                        <img src="imagenes/upload/<?php echo $noticias_imagen_carpeta."thumb/".$noticias_imagen; ?>"
+                                    alt="<?php echo $noticias_titulo; ?>">
+                                    </a>
                                 </div>
 
                                 <div class="datos col-sm-7 col-xs-12">
@@ -149,7 +151,7 @@ if($proceso=="enviar"){
 
                         </section>
 
-                        <section class="col-md-12">
+                        <section class="col-md-12 col-xs-12">
 
                             <h3>DEVOCIONALES</h3>
 
@@ -170,8 +172,9 @@ if($proceso=="enviar"){
                             <article class="col-sm-12 col-xs-12">
 
                                 <div class="imagen col-sm-5 col-xs-12">
-                                    <img src="imagenes/upload/<?php echo $devoc_imagen_carpeta."thumb/".$devoc_imagen; ?>" 
-                                    alt="<?php echo $devoc_titulo; ?>" >
+                                    <a href="<?php echo $devoc_urlFinal; ?>" title="<?php echo $devoc_titulo; ?>">
+                                        <img src="imagenes/upload/<?php echo $devoc_imagen_carpeta."thumb/".$devoc_imagen; ?>" alt="<?php echo $devoc_titulo; ?>" />
+                                        </a>
                                 </div>
 
                                 <div class="datos col-sm-7 col-xs-12">
@@ -201,7 +204,7 @@ if($proceso=="enviar"){
                             
                         </section>
 
-                        <section class="col-md-12">
+                        <section class="col-md-12 col-xs-12">
 
                             <h3>EVENTOS</h3>
 
@@ -219,11 +222,12 @@ if($proceso=="enviar"){
                                     $eventos_fecha=nombreFechaTotal($fechaExpNoticia[0],$fechaExpNoticia[1],$fechaExpNoticia[2]);
                             ?>
 
-                            <article class="col-sm-12">
+                            <article class="col-sm-12 col-xs-12">
 
                                 <div class="imagen col-sm-5 col-xs-12">
-                                    <img src="imagenes/upload/<?php echo $eventos_imagen_carpeta."thumb/".$eventos_imagen; ?>" 
-                                    alt="<?php echo $eventos_titulo; ?>">
+                                    <a href="<?php echo $eventos_urlFinal; ?>" title="<?php echo $eventos_titulo; ?>">
+                                        <img src="imagenes/upload/<?php echo $eventos_imagen_carpeta."thumb/".$eventos_imagen; ?>" alt="<?php echo $eventos_titulo; ?>" />
+                                    </a>
                                 </div>
 
                                 <div class="datos col-sm-7 col-xs-12">

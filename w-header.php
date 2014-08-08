@@ -49,7 +49,9 @@ $rst_sliderSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC"
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand visible-xs" href="#">Impacto Evangelístico</a>
+                        <a class="navbar-brand visible-xs" href="#">
+                            <img src="imagenes/logo-b.png" alt="Impacto Evangelistico" width="130"/>
+                        </a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">

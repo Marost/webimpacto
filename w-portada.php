@@ -10,7 +10,7 @@ $edicion_titulo=$fila_edicion["titulo"];
 $edicion_imagen=$fila_edicion["imagen"];
 $edicion_imagen_carpeta=$fila_edicion["carpeta_imagen"];
 ?>
-<aside class="col-lg-12 col-md-11">
+<aside class="col-lg-12 col-md-11 col-sm-11">
 
     <div class="edimpreso col-xs-12">
         
@@ -27,7 +27,7 @@ $edicion_imagen_carpeta=$fila_edicion["carpeta_imagen"];
 
     </div>
 
-    <div class="edanterior col-lg-12 col-md-12">
+    <div class="edanterior col-xs-12">
         <h3><a href="edicion-anterior-es">
             EDICIONES ANTERIORES
             </a>

@@ -11,7 +11,7 @@
     }
 </script>
 
-<aside class="col-lg-12 col-md-11 hidden-xs">
+<aside class="col-lg-12 col-md-11 col-sm-11 hidden-xs">
 
     <div id="usuario_login">
 
