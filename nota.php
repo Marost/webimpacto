@@ -84,12 +84,12 @@ $rst_tags=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY nombre ASC;", $co
 
         <section id="news">
             
-            <div class="interior">
+            <div class="container">
                 
                 <!-- SECCION SUPERIOR -->
                 <section id="nws">
 
-                    <div class="nwder notawizq">
+                    <div class="nwder col-lg-8 col-md-8 col-sm-7 col-xs-12 notawizq">
 
                         <section class="nota">
                             
@@ -175,7 +175,7 @@ $rst_tags=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY nombre ASC;", $co
                         
                     </div>
 
-                    <div class="nwizq notawder">
+                    <div class="nwizq col-lg-4 col-md-4 col-sm-5 notawder">
 
                         <?php require_once("w-portada.php"); ?>
                         
