@@ -107,8 +107,8 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_noticia WHERE categoria=$id_url
                                     <!-- COMPARTIR -->
                                     <div class="hidden-sm hidden-xs addthis_toolbox addthis_default_style"
                                         addthis:url="<?php echo $noticia_urlFinal; ?>" addthis:title="<?php echo $noticia_titulo; ?>">
-                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-                                        <a class="addthis_button_tweet"></a>
+                                        <a class="addthis_button_tweet" tw:count="horizontal"></a>
+                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
                                     </div>
                                 </div>
 

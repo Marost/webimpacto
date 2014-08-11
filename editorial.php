@@ -41,7 +41,6 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title><?php echo $noticia_titulo; ?></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
         <base href="<?php echo $web; ?>">
 
         <!-- OPEN GRAPH -->
@@ -61,7 +60,7 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <header>
+        <header id="interno">
 
             <?php require_once("w-header.php"); ?>
             
@@ -69,12 +68,12 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
 
         <section id="news">
             
-            <div class="interior">
+            <div class="container">
                 
                 <!-- SECCION SUPERIOR -->
                 <section id="nws">
 
-                    <div class="nwder notawizq">
+                    <div class="nwder col-lg-8 col-md-8 col-sm-7 col-xs-12 notawizq">
 
                         <section class="nota">
                             
@@ -110,7 +109,7 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
                         
                     </div>
 
-                    <div class="nwizq notawder">
+                    <div class="nwizq col-lg-4 col-md-4 col-sm-5 hidden-xs notawder">
 
                         <?php require_once("w-portada.php"); ?>
                         

@@ -57,7 +57,6 @@ if($buscar==""){
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Buscar: <?php echo $buscar; ?></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
         <base href="<?php echo $web; ?>">
 
         <!-- PAGINACION -->
@@ -71,7 +70,7 @@ if($buscar==""){
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <header>
+        <header id="interno">
 
             <?php require_once("w-header.php"); ?>
             
@@ -79,12 +78,12 @@ if($buscar==""){
 
         <section id="news">
             
-            <div class="interior">
+            <div class="container">
                 
                 <!-- SECCION SUPERIOR -->
                 <section id="nws">
 
-                    <div class="nwder notawizq">
+                    <div class="nwder col-lg-8 col-md-8 col-sm-7 col-xs-12 notawizq">
 
                         <section class="categoria">
 
@@ -101,19 +100,20 @@ if($buscar==""){
                                     $noticia_fechapub=explode("-", $noticia_fechatotal[0]);
                             ?>
 
-                            <article>
-                                
-                                <div class="imagen">
+                            <article class="col-lg-12">
+
+                                <div class="imagen col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                     <img src="imagenes/upload/<?php echo $noticia_imagen_carpeta."thumb/".$noticia_imagen; ?>" 
                                             alt="<?php echo $noticia_titulo; ?>" width="150">
                                 </div>
 
-                                <div class="datos">
+                                <div class="datos col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                     <h2><a href="noticia/<?php echo $noticia_id."-".$noticia_url; ?>" title="">
                                         <?php echo $noticia_titulo; ?></a></h2>
                                     <?php echo cortarTextoRH($noticia_contenido,1,0,150); ?>
 
-                                    <div class="addthis_toolbox addthis_default_style ">
+                                    <div class="hidden-sm hidden-xs addthis_toolbox addthis_default_style"
+                                         addthis:url="<?php echo $noticia_urlFinal; ?>" addthis:title="<?php echo $noticia_titulo; ?>">
                                         <a class="addthis_button_tweet" tw:count="horizontal"></a>
                                         <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
                                     </div>
@@ -131,7 +131,7 @@ if($buscar==""){
                         
                     </div>
 
-                    <div class="nwizq notawder">
+                    <div class="nwizq col-lg-4 col-md-4 col-sm-5 hidden-xs notawder">
 
                         <?php require_once("w-portada.php"); ?>
 

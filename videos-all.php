@@ -5,7 +5,7 @@ require_once("panel@impacto/conexion/funciones.php");
 //VARIABLES DE URL
 $id_url=$_REQUEST["id"];
 $url=$_REQUEST["url"];
-$url_web=$web."video-all.php";
+$url_web=$web."videos-all.php";
 
 //WIDGETS
 $sc_addthis=true;
@@ -41,14 +41,12 @@ $rst_videos=mysql_query("SELECT * FROM iev_videos WHERE fecha_publicacion<='$fec
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Videos</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
         <base href="<?php echo $web; ?>">
 
         <!-- PAGINACION -->
         <link rel="stylesheet" href="/libs/pagination/pagination.css" media="screen">
 
-        <?php require_once("demo/w-script2.php"); ?>       
-       
+        <?php require_once("w-script.php"); ?>
         
         <!-- Magnific Popup core CSS file -->
     	<link rel="stylesheet" href="css/magnific-popup.css"> 
@@ -116,8 +114,7 @@ $rst_videos=mysql_query("SELECT * FROM iev_videos WHERE fecha_publicacion<='$fec
 
         <section id="news">
             
-            <div class="interior">
-                
+            <div class="container">
 
                 <section id="nws">
 
