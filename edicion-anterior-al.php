@@ -52,7 +52,7 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_edicion_al WHERE fecha_publicac
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <header>
+        <header id="interno">
 
             <?php require_once("w-header.php"); ?>
             
@@ -60,7 +60,7 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_edicion_al WHERE fecha_publicac
 
         <section id="news">
             
-            <div class="interior">
+            <div class="container">
                 
                 <!-- SECCION SUPERIOR -->
                 <section id="edicion-anterior">

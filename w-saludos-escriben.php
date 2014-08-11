@@ -29,66 +29,70 @@
     }
 </script>
 
-<div id="usuario_login">
+<aside class="col-lg-12 col-md-11 col-sm-11 hidden-xs">
 
-    <div class="smart-forms">
+    <div id="usuario_login">
 
-        <div class="form-header">
-            <h4><i class="fa fa-comments"></i>Envía tu saludo</h4>
-        </div><!-- end .form-header section -->
+        <div class="smart-forms">
 
-        <form method="post" action="libs/smartform/php/smartprocess.php" id="smart-form">
-            <div class="form-body">
+            <div class="form-header">
+                <h4><i class="fa fa-comments"></i>Envía tu saludo</h4>
+            </div><!-- end .form-header section -->
 
-                <div class="section">
-                    <label for="names" class="field-label">De:</label>
-                    <label class="field prepend-icon">
-                        <input type="text" name="sendername" id="sendername" class="gui-input" placeholder="Nombre...">
-                        <label class="field-icon"><i class="fa fa-user"></i></label>
-                    </label>
-                </div><!-- end section -->
+            <form method="post" action="libs/smartform/php/smartprocess.php" id="smart-form">
+                <div class="form-body">
 
-                <div class="section">
-                    <label for="names" class="field-label">País</label>
-                    <label class="field prepend-icon">
-                        <input type="text" name="sendersubject" id="sendersubject" class="gui-input" placeholder="País...">
-                        <label class="field-icon"><i class="fa fa-lightbulb-o"></i></label>
-                    </label>
-                </div><!-- end section -->
-
-                <div class="section">
-                    <label for="names" class="field-label">Mensaje</label>
-                    <label class="field prepend-icon">
-                        <textarea class="gui-textarea" id="sendermessage" name="sendermessage" placeholder="Mensaje..." onkeydown="limitText(this.form.sendermessage,this.form.countdown,100);" onkeyup="limitText(this.form.sendermessage,this.form.countdown,100);"></textarea>
-                        <label class="field-icon"><i class="fa fa-comments"></i></label>
-                        <span class="input-hint">
-                            Caracteres permitidos
-                            <strong>
-                                <input name="countdown" type="text" style="border:none; background:none;" value="100" size="3" readonly id="countdown">
-                            </strong>
-                        </span>
-                    </label>
-                </div><!-- end section -->
-
-                <div class="section">
-                    <div class="smart-widget sm-left sml-120">
-                        <label class="field">
-                            <input type="text" name="securitycode" id="securitycode" class="gui-input sfcode" placeholder="Ingresa código">
+                    <div class="section">
+                        <label for="names" class="field-label">De:</label>
+                        <label class="field prepend-icon">
+                            <input type="text" name="sendername" id="sendername" class="gui-input" placeholder="Nombre...">
+                            <label class="field-icon"><i class="fa fa-user"></i></label>
                         </label>
-                        <label for="securitycode" class="button captcode">
-                            <img src="libs/smartform/php/captcha.php" id="captcha" alt="Captcha"/>
-                            <span class="refresh-captcha"><i class="fa fa-refresh"></i></span>
+                    </div><!-- end section -->
+
+                    <div class="section">
+                        <label for="names" class="field-label">País</label>
+                        <label class="field prepend-icon">
+                            <input type="text" name="sendersubject" id="sendersubject" class="gui-input" placeholder="País...">
+                            <label class="field-icon"><i class="fa fa-lightbulb-o"></i></label>
                         </label>
-                    </div><!-- end .smart-widget section -->
-                </div><!-- end section -->
+                    </div><!-- end section -->
 
-                <div class="result"></div><!-- end .result  section -->
+                    <div class="section">
+                        <label for="names" class="field-label">Mensaje</label>
+                        <label class="field prepend-icon">
+                            <textarea class="gui-textarea" id="sendermessage" name="sendermessage" placeholder="Mensaje..." onkeydown="limitText(this.form.sendermessage,this.form.countdown,100);" onkeyup="limitText(this.form.sendermessage,this.form.countdown,100);"></textarea>
+                            <label class="field-icon"><i class="fa fa-comments"></i></label>
+                            <span class="input-hint">
+                                Caracteres permitidos
+                                <strong>
+                                    <input name="countdown" type="text" style="border:none; background:none;" value="100" size="3" readonly id="countdown">
+                                </strong>
+                            </span>
+                        </label>
+                    </div><!-- end section -->
 
-            </div><!-- end .form-body section -->
-            <div class="form-footer">
-                <button type="submit" class="button btn-primary">Enviar</button>
-            </div><!-- end .form-footer section -->
-        </form>
+                    <div class="section">
+                        <div class="smart-widget sm-left sml-120">
+                            <label class="field">
+                                <input type="text" name="securitycode" id="securitycode" class="gui-input sfcode" placeholder="Ingresa código">
+                            </label>
+                            <label for="securitycode" class="button captcode">
+                                <img src="libs/smartform/php/captcha.php" id="captcha" alt="Captcha"/>
+                                <span class="refresh-captcha"><i class="fa fa-refresh"></i></span>
+                            </label>
+                        </div><!-- end .smart-widget section -->
+                    </div><!-- end section -->
 
-    </div><!-- end .smart-forms section -->
-</div><!-- FIN PANEL USUARIO LOGIN -->
+                    <div class="result"></div><!-- end .result  section -->
+
+                </div><!-- end .form-body section -->
+                <div class="form-footer">
+                    <button type="submit" class="button btn-primary">Enviar</button>
+                </div><!-- end .form-footer section -->
+            </form>
+
+        </div><!-- end .smart-forms section -->
+    </div><!-- FIN PANEL USUARIO LOGIN -->
+
+</aside>

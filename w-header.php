@@ -46,14 +46,27 @@ $rst_sliderSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC"
 
             </div>
 
-            <nav>
-                <div class="interior">
-                    <ul>
-                        <li><a href="/" title="">Inicio</a></li>
-                        <li><a href="categoria/11/portada" title="">Portada</a></li>
-                        <li><a href="categoria/12/noticias" title="">Noticias</a></li>
-                        <li><a href="edicion-anterior-es" title="">Ediciones</a></li>
-                        <?php while($fila_menu=mysql_fetch_array($rst_menu)){
+
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Menú</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand visible-xs" href="#">
+                            <img src="imagenes/logo-b.png" alt="Impacto Evangelistico" width="130"/>
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/" title="">Inicio</a></li>
+                            <li><a href="categoria/11/portada" title="">Portada</a></li>
+                            <li><a href="categoria/12/noticias" title="">Noticias</a></li>
+                            <li><a href="edicion-anterior-es" title="">Ediciones</a></li>
+                            <?php while($fila_menu=mysql_fetch_array($rst_menu)){
                                 $menu_id=$fila_menu["id"];
                                 $menu_url=$fila_menu["url"];
                                 $menu_titulo=$fila_menu["categoria"];

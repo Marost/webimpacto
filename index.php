@@ -87,7 +87,7 @@ if($proceso=="enviar"){
                     
                     </div>
 
-                    <div class="nwder">
+                    <div class="nwder col-lg-8 col-md-8 col-sm-7 col-xs-12">
 
                         <section>
 
@@ -114,14 +114,17 @@ if($proceso=="enviar"){
                                     $Cat_titulo=$fila_Cat["categoria"];
                             ?>
 
-                            <article>
+                            <article class="col-sm-12 col-xs-12">
 
-                                <div class="imagen">
-                                    <img src="imagenes/upload/<?php echo $noticias_imagen_carpeta."thumb/".$noticias_imagen; ?>" 
-                                    alt="<?php echo $noticias_titulo; ?>" width="290" height="220">
+                                <div class="imagen col-sm-5 col-xs-12">
+                                    <a href="<?php echo $noticias_urlFinal; ?>" title="<?php echo $noticias_titulo; ?>">
+                                        <img src="imagenes/upload/<?php echo $noticias_imagen_carpeta."thumb/".$noticias_imagen; ?>"
+                                    alt="<?php echo $noticias_titulo; ?>">
+                                    </a>
                                 </div>
 
-                                <div class="datos">
+                                <div class="datos col-sm-7 col-xs-12">
+
                                     <span class="categoria"><?php echo $Cat_titulo; ?></span>
 
                                     <h2><a href="<?php echo $noticias_urlFinal; ?>" title="<?php echo $noticias_titulo; ?>">
@@ -132,7 +135,7 @@ if($proceso=="enviar"){
                                         <p><?php echo $noticias_fecha; ?></p>
 
                                         <!-- COMPARTIR -->
-                                        <div class="addthis_toolbox addthis_default_style"
+                                        <div class="hidden-xs addthis_toolbox addthis_default_style"
                                              addthis:url="<?php echo $noticias_urlFinal; ?>" addthis:title="<?php echo $noticias_titulo; ?>">
                                             <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
                                             <a class="addthis_button_tweet"></a>
@@ -147,7 +150,7 @@ if($proceso=="enviar"){
 
                         </section>
 
-                        <section>
+                        <section class="col-md-12 col-xs-12">
 
                             <h3>DEVOCIONALES</h3>
 
@@ -165,28 +168,30 @@ if($proceso=="enviar"){
                                     $devoc_fecha=nombreFechaTotal($fechaExpNoticia[0],$fechaExpNoticia[1],$fechaExpNoticia[2]);
                             ?>
 
-                            <article>
+                            <article class="col-sm-12 col-xs-12">
 
-                                <div class="imagen">
-                                    <img src="imagenes/upload/<?php echo $devoc_imagen_carpeta."thumb/".$devoc_imagen; ?>" 
-                                    alt="<?php echo $devoc_titulo; ?>" width="290" height="220">
+                                <div class="imagen col-sm-5 col-xs-12">
+                                    <a href="<?php echo $devoc_urlFinal; ?>" title="<?php echo $devoc_titulo; ?>">
+                                        <img src="imagenes/upload/<?php echo $devoc_imagen_carpeta."thumb/".$devoc_imagen; ?>" alt="<?php echo $devoc_titulo; ?>" />
+                                        </a>
                                 </div>
 
-                                <div class="datos">
+                                <div class="datos col-sm-7 col-xs-12">
+
                                     <h2><a href="<?php echo $devoc_urlFinal; ?>" title="<?php echo $devoc_titulo; ?>">
                                         <?php echo $devoc_titulo; ?></a></h2>
                                     <?php echo $devoc_contenido; ?>
-                                </div>
 
-                                <div class="fecha_social">
-                                    <p><?php echo $devoc_fecha; ?></p>
+                                    <div class="fecha_social">
+                                        <p><?php echo $devoc_fecha; ?></p>
+                                        <!-- COMPARTIR -->
+                                        <div class="hidden-xs addthis_toolbox addthis_default_style"
+                                             addthis:url="<?php echo $devoc_urlFinal; ?>" addthis:title="<?php echo $devoc_titulo; ?>">
+                                            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                            <a class="addthis_button_tweet"></a>
+                                        </div>
+                                    </div>
 
-                                    <!-- COMPARTIR -->
-                                    <div class="addthis_toolbox addthis_default_style"
-                                        addthis:url="<?php echo $devoc_urlFinal; ?>" addthis:title="<?php echo $devoc_titulo; ?>">
-                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-                                        <a class="addthis_button_tweet"></a>
-                                    </div>                                  
                                 </div>
                                 
                             </article>
@@ -195,7 +200,7 @@ if($proceso=="enviar"){
                             
                         </section>
 
-                        <section>
+                        <section class="col-md-12 col-xs-12">
 
                             <h3>EVENTOS</h3>
 
@@ -213,30 +218,33 @@ if($proceso=="enviar"){
                                     $eventos_fecha=nombreFechaTotal($fechaExpNoticia[0],$fechaExpNoticia[1],$fechaExpNoticia[2]);
                             ?>
 
-                            <article>
+                            <article class="col-sm-12 col-xs-12">
 
-                                <div class="imagen">
-                                    <img src="imagenes/upload/<?php echo $eventos_imagen_carpeta."thumb/".$eventos_imagen; ?>" 
-                                    alt="<?php echo $eventos_titulo; ?>" width="290" height="220">
+                                <div class="imagen col-sm-5 col-xs-12">
+                                    <a href="<?php echo $eventos_urlFinal; ?>" title="<?php echo $eventos_titulo; ?>">
+                                        <img src="imagenes/upload/<?php echo $eventos_imagen_carpeta."thumb/".$eventos_imagen; ?>" alt="<?php echo $eventos_titulo; ?>" />
+                                    </a>
                                 </div>
 
-                                <div class="datos">
+                                <div class="datos col-sm-7 col-xs-12">
+
                                     <h2><a href="<?php echo $eventos_urlFinal; ?>" title="<?php echo $eventos_titulo; ?>">
                                         <?php echo $eventos_titulo; ?></a></h2>
                                     <?php echo $eventos_contenido; ?>
+
+                                    <div class="fecha_social">
+                                        <p><?php echo $eventos_fecha; ?></p>
+
+                                        <!-- COMPARTIR -->
+                                        <div class="hidden-xs addthis_toolbox addthis_default_style"
+                                             addthis:url="<?php echo $eventos_urlFinal; ?>" addthis:title="<?php echo $eventos_titulo; ?>">
+                                            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                            <a class="addthis_button_tweet"></a>
+                                        </div>
+                                    </div>
+
                                 </div>
 
-                                <div class="fecha_social">
-                                    <p><?php echo $eventos_fecha; ?></p>
-
-                                    <!-- COMPARTIR -->
-                                    <div class="addthis_toolbox addthis_default_style"
-                                        addthis:url="<?php echo $eventos_urlFinal; ?>" addthis:title="<?php echo $eventos_titulo; ?>">
-                                        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-                                        <a class="addthis_button_tweet"></a>
-                                    </div>                                  
-                                </div>
-                                
                             </article>
 
                             <?php } ?>

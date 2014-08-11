@@ -220,7 +220,7 @@ function startSaludo(){
            revapi = tpj('.tp-banner').revolution(
             {
                 delay:13000,
-                startwidth:990,
+                startwidth:1200,
                 startheight:700,
                 onHoverStop:"on",
                 hideThumbs:0,

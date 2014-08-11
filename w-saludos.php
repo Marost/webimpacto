@@ -2,7 +2,7 @@
 //SALUDOS
 $rst_saludos=mysql_query("SELECT * FROM iev_saludos WHERE estado_saludo='A' ORDER BY fecha DESC LIMIT 12", $conexion);
 ?>
-<aside>
+<aside class="col-lg-12 col-md-11 col-sm-11">
     <div class="titulo">
         <h3><span></span>ENVÍA TUS SALUDOS</h3>
     </div>
