@@ -22,9 +22,9 @@
     font-family: 'aachen_btbold';
     src: url('/fonts/aachenb/aachenb-webfont.eot');
     src: url('/fonts/aachenb/aachenb-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/aachenb/aachenb-webfont.woff') format('woff'),
-         url('/fonts/aachenb/aachenb-webfont.ttf') format('truetype'),
-         url('/fonts/aachenb/aachenb-webfont.svg#aachen_btbold') format('svg');
+    url('/fonts/aachenb/aachenb-webfont.woff') format('woff'),
+    url('/fonts/aachenb/aachenb-webfont.ttf') format('truetype'),
+    url('/fonts/aachenb/aachenb-webfont.svg#aachen_btbold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -119,12 +119,10 @@ section#slider,
 section#news,
 footer{
     position: relative;
-    float: left;
     width: 100%;
 }
 
 .interior{
-    width: 990px;
     margin: 0 auto;
 }
 
@@ -190,14 +188,13 @@ header{
 
                 a.facebook{
                     background-position: -147px 0;
-                }                    
+                }
             }
         }
     }
 
     .der{
-        width: 640px;
-        float: left;
+        float: right;
 
         #busqueda{
             float: left;
@@ -238,7 +235,7 @@ header{
                 }
             }
         }
-        
+
     }
 
 }
@@ -284,11 +281,11 @@ section#slider{
     border-style:none;
 
     a{
-      color: #fff;
+        color: #fff;
     }
 
     a:hover{
-      color: #a8a8a8;
+        color: #a8a8a8;
     }
 }
 
@@ -321,13 +318,10 @@ section#news{
         float: left;
     }
 
-    #nws{        
+    #nws{
 
         .nwizq{
-            width: 285px;
             float: left;
-            border-right: 1px solid #ccc;
-            padding-right: 25px;
 
             aside{
                 float: left;
@@ -433,7 +427,7 @@ section#news{
                             width: 185px;
 
                             h2, p{
-                                margin: 0; 
+                                margin: 0;
                                 padding: 0;
                             }
 
@@ -560,7 +554,7 @@ section#news{
 
                     .wg_saludos{
                         width: 100%;
-                        float: left;                        
+                        float: left;
                     }
 
                     .bx-prev, .bx-next{
@@ -611,10 +605,7 @@ section#news{
         }
 
         .nwder{
-            width: 625px;
             float: left;
-            border-left: 1px solid #ccc;
-            padding-left: 25px;
 
             section{
                 float: left;
@@ -639,7 +630,6 @@ section#news{
 
                     .datos{
                         float: left;
-                        width: 320px;
                         height: 170px;
 
                         span.categoria{
@@ -737,7 +727,7 @@ section#news{
                 }
 
                 .titulo{
-                    
+
                     h2{
                         color: #828282;
                         font-size: 26px;
@@ -843,7 +833,7 @@ section#news{
 
                 .datos{
                     height: auto;
-                    
+
                     h2{
                         color: #0080B7;
                         font-size: 18px;
@@ -896,11 +886,11 @@ section#news{
                             background: #000;
                             margin: 0;
 
-                            
+
                         }
                     }
 
-                    
+
                 }
             }
         }
@@ -960,11 +950,8 @@ section#news{
         padding-bottom: 10px;
 
         .nwizq{
-            width: 574px;
             float: left;
-            padding-right: 21px;
-            border-right: 1px solid #ccc;
-            
+
             #galeria-datos{
                 width: 100%;
                 padding: 7px 0 5px 0;
@@ -992,7 +979,7 @@ section#news{
                 p{
                     margin: 10px 0 0 0;
                     padding: 0;
-                    float: left;
+                    float: right;
                     font-size: 12px;
                     font-weight: bold;
 
@@ -1010,15 +997,11 @@ section#news{
         }
 
         .nwder{
-            width: 372px;
             float: left;
-            padding-left: 21px;
-            border-left: 1px solid #ccc;
 
             aside{
                 border-top: 5px solid #000;
                 float: left;
-                width: 372px;
 
                 .titulo{
                     width: 100%;
@@ -1052,8 +1035,6 @@ section#news{
                 .contenido{
                     font-size: 12px;
                     margin: 10px;
-                    height: 321px;
-                    width: 352px;
                     float: left;
                     overflow: hidden;
 
@@ -1064,7 +1045,7 @@ section#news{
 
                     .wg_saludos{
                         width: 100%;
-                        float: left;                        
+                        float: left;
                     }
 
                     .bx-prev, .bx-next{
@@ -1082,7 +1063,7 @@ section#news{
 
             .titulo{
                 width: 100%;
-                float: left;
+                float: right;
                 border-bottom: 1px dashed #ccc;
                 margin-bottom: 15px;
 
@@ -1156,7 +1137,7 @@ section#news{
                             }
                         }
                     }
-                }                
+                }
 
                 .prev {
                     position: absolute;
@@ -1317,20 +1298,20 @@ footer{
     float: left;
     position: relative;
 
-    .interior{
-        width: 970px;
+    .container{
         background-color: #000;
-        padding: 20px 10px;
-        height: 300px;
+        padding-bottom: 20px;
+
+        .interior{
+            padding: 20px 10px;
+        }
     }
 
     .logo{
-        width: 355px;
         float: left;
     }
 
     .datos{
-        width: 605px;
         float: left;
 
         aside{
@@ -1356,25 +1337,21 @@ footer{
                         color: #fff;
                         float: left;
                         display: block;
-                        
+
                     }
                 }
             }
         }
 
         aside.social-media{
-            width: 160px;
 
             ul{
 
                 li{
 
                     a{
-                        background-image: url(../imagenes/icon-footer.png);
-                        background-repeat: no-repeat;
-                        width: 100px;
+                        width: 100%;
                         height: 40px;
-                        padding: 20px 0 0 60px;
                         font-size: 14px;
                         font-weight: bold;
                     }
@@ -1389,7 +1366,6 @@ footer{
         }
 
         aside.enlaces{
-            width: 170px;
 
             ul{
 
