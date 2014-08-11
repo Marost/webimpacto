@@ -56,7 +56,6 @@ $rst_tags=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY nombre ASC;", $co
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title><?php echo $noticia_titulo; ?></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
         <base href="<?php echo $web; ?>">
 
         <!-- OPEN GRAPH -->
@@ -91,7 +90,7 @@ $rst_tags=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY nombre ASC;", $co
 
                     <div class="nwder col-lg-8 col-md-8 col-sm-7 col-xs-12 notawizq">
 
-                        <section class="nota">
+                        <section class="nota col-lg-12 col-sm-12 col-xs-12">
                             
                             <div class="datos">
 
@@ -131,7 +130,7 @@ $rst_tags=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY nombre ASC;", $co
 
                         </section>
 
-                        <section class="nota-relacionada">
+                        <section class="nota-relacionada col-lg-12 col-md-12 hidden-sm hidden-xs">
 
                             <h4>Noticias relacionadas</h4>
 
@@ -147,7 +146,7 @@ $rst_tags=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY nombre ASC;", $co
                                         $NotRel_UrlWeb=$web."noticia/".$NotRel_id."-".$NotRel_url;
                                         $NotRel_UrlImg=$web."imagenes/upload/".$NotRel_imagen_carpeta."thumb/".$NotRel_imagen;
                                 ?>
-                                <li>
+                                <li class="col-lg-4 col-md-4 col-xs-4">
                                     <a href="<?php echo $NotRel_UrlWeb; ?>">
                                         <span class="imagen"><img width="190" height="150" src="<?php echo $NotRel_UrlImg; ?>" alt="<?php echo $NotRel_titulo; ?>"/></span>
                                         <span class="titulo"><?php echo $NotRel_titulo; ?></span>
@@ -158,7 +157,7 @@ $rst_tags=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY nombre ASC;", $co
 
                         </section>
 
-                        <section>
+                        <section class="nota-comentarios col-lg-12 col-md-12 hidden-sm hidden-xs">
 
                             <div id="fb-root"></div>
                             <script>(function(d, s, id) {
@@ -175,7 +174,7 @@ $rst_tags=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY nombre ASC;", $co
                         
                     </div>
 
-                    <div class="nwizq col-lg-4 col-md-4 col-sm-5 notawder">
+                    <div class="nwizq col-lg-4 col-md-4 col-sm-5 hidden-xs notawder">
 
                         <?php require_once("w-portada.php"); ?>
                         
@@ -187,7 +186,7 @@ $rst_tags=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY nombre ASC;", $co
 
                         <?php require_once("w-infografias.php"); ?>
 
-                        <aside>
+                        <aside class="col-lg-12 col-md-11 col-sm-11">
 
                             <div class="sidebar" id="noticia-tags">
 

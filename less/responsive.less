@@ -97,6 +97,21 @@
                         }
                     }
                 }
+
+                &.notawizq{
+                    border-right: none;
+                    padding-right: 0;
+
+                    .nota{
+
+                        .imagen{
+
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -170,10 +185,17 @@
                             }
                         }
                     }
+
+                    &.notawder{
+                        padding-left: 0;
+
+                        aside{
+                            float: right;
+                        }
+                    }
                 }
 
                 .nwder{
-
 
                     section{
 
@@ -190,6 +212,21 @@
 
                             .datos{
                                 height: auto;
+                            }
+                        }
+                    }
+
+                    &.notawizq{
+                        border-right: none;
+                        padding-right: 0;
+
+                        .nota{
+
+                            .imagen{
+
+                                img{
+                                    width: 100%;
+                                }
                             }
                         }
                     }
@@ -220,6 +257,10 @@
                 float: none;
                 margin: 0 auto;
             }
+        }
+
+        &#interno{
+            height: 190px;
         }
     }
 
@@ -254,9 +295,15 @@
                     }
                 }
             }
+        }
 
-            .nwizq{
-                padding-right: 40px;
+        &#news{
+
+            #nws{
+
+                .nwizq{
+                    padding-right: 40px;
+                }
             }
         }
     }
@@ -288,8 +335,11 @@
 
             a{
                 float: left;
-                margin: 25px 0 0 0;
             }
+        }
+
+        &#interno{
+            height: 205px;
         }
     }
 }
@@ -309,14 +359,22 @@
 
                 .nwizq{
                     width: 290px;
-
                     padding-right: 25px;
+
+                    &.notawder{
+                        padding-left: 25px;
+                    }
                 }
 
                 .nwder{
                     padding-left: 25px;
                     border-left: 1px solid #CCC;
                     width: 829px;
+
+                    &.notawizq{
+                        border-right: 1px solid #CCC;
+                        padding-right: 25px;
+                    }
                 }
             }
 
@@ -355,5 +413,11 @@
         }
     }
 
+    header{
+
+        &#interno{
+            height: 205px;
+        }
+    }
 
 }

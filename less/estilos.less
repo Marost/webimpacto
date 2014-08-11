@@ -130,10 +130,6 @@ footer{
    HEADER
    ========================================================================== */
 
-header#interno{
-    height: 205px;
-}
-
 header{
     margin-bottom: 5px;
 
@@ -151,7 +147,6 @@ header{
     }
 
     #social{
-        float: left;
         padding: 10px 0;
         width: 100%;
         background-color: #000;
@@ -203,7 +198,7 @@ header{
 
         #busqueda{
             float: left;
-            padding: 65px 0 0 330px;
+            padding: 25px 0 0 330px;
 
         }
     }
@@ -691,11 +686,12 @@ section#news{
             }
         }
 
-        .notawizq{
-            border-right: 1px solid #ccc !important;
-            padding-right: 39px !important;
-            border-left: none !important;
-            padding-left: 0 !important;
+        .nwder.notawizq{
+            border-right: 1px solid #ccc;
+            padding-right: 25px;
+            border-left: none;
+            padding-left: 0;
+            margin-bottom: 10px;
 
             .nota{
                 float: left;
@@ -705,7 +701,8 @@ section#news{
                 }
 
                 .datos{
-                    padding-left: 300px;
+                    float: right;
+                    margin-bottom: 15px;
 
                     .categoria{
                         float: left;
@@ -768,7 +765,7 @@ section#news{
             }
 
             .nota-relacionada{
-                margin: 0 0 30px 0;
+                margin: 0 0 15px 0;
                 width: 100%;
 
                 h4{
@@ -782,15 +779,12 @@ section#news{
 
                 ul{
                     list-style: none;
-                    margin: 0 0 0 3px;
+                    margin: 0;
                     padding: 0;
-                    width: 624px;
 
                     li{
                         display: block;
                         float: left;
-                        width: 202px;
-                        margin-right: 6px;
 
                         a{
                             text-decoration: none;
@@ -801,16 +795,25 @@ section#news{
                                 border: 1px dotted #000;
                                 background-color: #f5f5f5;
                                 display: block;
+                                margin: 0px auto;
                             }
 
                             span.titulo{
                                 font-size: 12px;
                                 text-align: center;
-                                width: 202px;
                                 display: block;
                             }
                         }
                     }
+                }
+            }
+
+            .nota-comentarios{
+
+                .fb-comments{
+                    width: 624px;
+                    margin: 0 auto;
+                    display: block;
                 }
             }
 
@@ -821,7 +824,7 @@ section#news{
                     font-size: 40px;
                     margin: 0;
                     padding: 0;
-                    border: none !important;
+                    border: none;
                 }
 
                 div{
@@ -829,8 +832,7 @@ section#news{
                 }
 
                 .datos{
-                    width: 455px;
-                    height: auto !important;
+                    height: auto;
                     
                     h2{
                         color: #0080B7;
@@ -848,7 +850,7 @@ section#news{
                     }
 
                     p{
-                        font-size: 12px;
+                        font-size: 14px;
                         text-align: justify;
                         margin: 10px 0 0 0;
                     }
@@ -893,11 +895,11 @@ section#news{
             }
         }
 
-        .notawder{
-            border-left: 1px solid #ccc !important;
-            padding-left: 39px !important;
-            border-right: none !important;
-            padding-right: 0 !important;
+        .nwizq.notawder{
+            //border-left: 1px solid #ccc;
+            padding-left: 25px;
+            border-right: none;
+            padding-right: 0;
         }
 
         .nota-galeria{
@@ -1179,7 +1181,7 @@ section#news{
     margin: 0 auto;
     background-image: url(../imagenes/fondo-edicion-anterior.png);
     background-repeat: no-repeat;
-    background-position-y: 200px;
+    background-position: 0px 200px;
     padding: 0 100px;
 
     .categoria{
