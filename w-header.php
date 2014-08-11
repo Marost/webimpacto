@@ -10,9 +10,9 @@ $rst_sliderSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC"
 
     <div class="header-opt">
 
-        <div id="social">
+        <div id="social" class="visible-lg visible-md">
 
-            <div class="interior">
+            <div class="container">
                 <ul>
                     <li><a href="javascript:;" class="youtube" title="Youtube">Youtube</a></li>
                     <li><a href="javascript:;" class="google" title="Google+">Google+</a></li>
@@ -23,19 +23,13 @@ $rst_sliderSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC"
             
         </div>
 
-        <div class="interior">
-
-            <!-- <div class="publicidad-960">
-                <object data="/flash/banner-960.swf" type="application/x-shockwave-flash" width="960">
-                    <param movie="/flash/banner-960.swf" />
-                </object>
-            </div> -->
+        <div class="container">
                         
-            <h1>
+            <h1 class="visible-lg visible-md visible-sm">
                 <a href="/" title="Impacto Evangelistico">Impacto Evangelístico</a>
             </h1>
 
-            <div class="der">
+            <div class="der visible-lg visible-md">
                 
                 <div id="busqueda">
                     <form action="buscar" class="search-form noframe inbtn rsmall lblue" method="get">
@@ -45,7 +39,6 @@ $rst_sliderSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC"
                 </div>
 
             </div>
-
 
             <div class="navbar navbar-default" role="navigation">
                 <div class="container">
@@ -70,20 +63,21 @@ $rst_sliderSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC"
                                 $menu_id=$fila_menu["id"];
                                 $menu_url=$fila_menu["url"];
                                 $menu_titulo=$fila_menu["categoria"];
-                        ?>
-                        <li><a href="categoria/<?php echo $menu_id."/".$menu_url; ?>" title="<?php echo $menu_titulo; ?>">
-                            <?php echo $menu_titulo; ?></a></li>
-                        <?php } ?>
-                    </ul>
+                                ?>
+                                <li><a href="categoria/<?php echo $menu_id."/".$menu_url; ?>" title="<?php echo $menu_titulo; ?>">
+                                        <?php echo $menu_titulo; ?></a></li>
+                            <?php } ?>
+                        </ul>
+                    </div><!--/.nav-collapse -->
                 </div>
-            </nav>
+            </div>
 
         </div>
 
     </div> <!-- FIN DE OPCIONES DE HEADER -->
 
     <?php if($sc_slider==true){ ?>
-    <section id="slider">
+    <section id="slider" class="visible-lg visible-md visible-sm">
             
         <div class="tp-banner-container">
                 <div class="tp-banner">
@@ -98,7 +92,7 @@ $rst_sliderSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC"
                                 $SliderSup_imagen_carpeta=$fila_sliderSup["imagen_carpeta"];
 
                                 //URL
-                                $SliderSup_UrlWeb="http://issuu.com/impactoevangelistico.net/docs/".$SliderSup_edicion."/".$SliderSup_edicion_pagina;
+                                $SliderSup_UrlWeb="http://impactoevangelistico.net/revista/".$SliderSup_edicion."/index.html?pageNumber=".$SliderSup_edicion_pagina;
                                 $SliderSup_UrlImg=$web."imagenes/slide/".$SliderSup_imagen_carpeta."".$SliderSup_imagen;
                         ?>
 
