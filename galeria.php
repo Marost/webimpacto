@@ -70,7 +70,7 @@ $url_final=$web."galeria/".$id_url."-".$url;
                 <!-- SECCION SUPERIOR -->
                 <section id="nws">
 
-                    <div class="nwder nota-galeria">
+                    <div class="nwder col-lg-12 col-md-12 col-sm-12 nota-galeria">
 
                         <section class="nota">
                             

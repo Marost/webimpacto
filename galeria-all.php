@@ -5,7 +5,7 @@ require_once("panel@impacto/conexion/funciones.php");
 //VARIABLES DE URL
 $id_url=$_REQUEST["id"];
 $url=$_REQUEST["url"];
-$url_web=$web."categoria/".$id_url."/".$url;
+$url_web=$web."galerias";
 
 //WIDGETS
 $sc_addthis=true;
@@ -23,9 +23,9 @@ $page           = (isset($_GET['page'])) ? intval($_GET['page']) : 1;
 $rst_noticias   = mysql_query("SELECT COUNT(*) as count FROM iev_galeria WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC;", $conexion);
 $row            = mysql_fetch_assoc($rst_noticias);
 $generated      = intval($row['count']);
-$pagination     = new Pagination("10", $generated, $page, $url_web."&page", 1, 0);
+$pagination     = new Pagination("15", $generated, $page, $url_web."?page", 1, 0);
 $start          = $pagination->prePagination();
-$rst_noticias   = mysql_query("SELECT * FROM iev_galeria WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT $start, 10", $conexion);
+$rst_noticias   = mysql_query("SELECT * FROM iev_galeria WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT $start, 15", $conexion);
 
 ?>
 <!DOCTYPE html>
@@ -64,9 +64,9 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_galeria WHERE fecha_publicacion
                 <!-- SECCION SUPERIOR -->
                 <section id="nws">
 
-                    <div class="nwder notawizq">
+                    <div class="nwder col-lg-8 col-md-8 col-sm-7 col-xs-12 notawizq">
 
-                        <section class="galeria">
+                        <section class="galeria col-lg-12 col-sm-12 col-xs-12">
 
                             <h3>Galería de Fotos</h3>
 
@@ -90,13 +90,19 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_galeria WHERE fecha_publicacion
                                     $noticia_urlImg=$web."imagenes/galeria/".$noticia_imagen_carpeta."thumb/".$noticia_imagen;
                             ?>
 
-                            <article>
-                                
-                                <div class="imagen">
-                                    <a href="<?php echo $noticia_urlFinal; ?>" title="">
-                                        <img src="<?php echo $noticia_urlImg; ?>" alt="<?php echo $noticia_titulo; ?>" width="290" height="210">
-                                        <h2><?php echo $noticia_titulo; ?></h2>
+                            <article class="col-lg-4 col-md-4 col-sm-6">
+
+                                <div class="imagen col-lg-12">
+                                    <a href="<?php echo $noticia_urlFinal; ?>" title="<?php echo $noticia_titulo; ?>">
+                                        <img src="<?php echo $noticia_urlImg; ?>" alt="<?php echo $noticia_titulo; ?>">
                                     </a>
+                                    <div class="titulo">
+                                        <h2>
+                                            <a href="<?php echo $noticia_urlFinal; ?>" title="<?php echo $noticia_titulo; ?>">
+                                                <?php echo $noticia_titulo; ?>
+                                            </a>
+                                        </h2>
+                                    </div>
                                 </div>
 
                             </article>
@@ -111,7 +117,7 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_galeria WHERE fecha_publicacion
                         
                     </div>
 
-                    <div class="nwizq notawder">
+                    <div class="nwizq col-lg-4 col-md-4 col-sm-5 hidden-xs notawder">
 
                         <?php require_once("w-portada.php"); ?>
 

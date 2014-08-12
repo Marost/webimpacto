@@ -214,6 +214,24 @@
                                 height: auto;
                             }
                         }
+
+                        &.galeria{
+
+                            article{
+
+                                .imagen{
+
+                                    .titulo{
+                                        width: 177px;
+                                        left: 11px;
+
+                                        h2{
+                                            font-size: 13px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
 
                     &.notawizq{
@@ -280,6 +298,36 @@
     }
 
     section{
+
+        &#news{
+
+            .nwder{
+
+                &.notawizq{
+
+                    section{
+
+                        &.galeria{
+
+                            article{
+
+                                .imagen{
+
+                                    .titulo{
+                                        width: 178px;
+                                        left: 11px;
+
+                                        h2{
+                                            font-size: 12px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         &#nwm{
 
@@ -361,9 +409,54 @@
                     border-left: 1px solid #CCC;
                     width: 829px;
 
+                    &.nota-galeria{
+                        width: 100%;
+                        padding-left: 0;
+                    }
+
+                    section{
+
+                        article{
+
+                            .imagen{
+                                text-align: center;
+                                margin: 0px;
+
+                                img{
+                                    width: 250px;
+                                }
+                            }
+
+                            .datos{
+                                height: auto;
+                            }
+                        }
+                    }
+
                     &.notawizq{
                         border-right: 1px solid #CCC;
                         padding-right: 25px;
+
+                        section{
+
+                            &.galeria{
+
+                                article{
+
+                                    .imagen{
+
+                                        .titulo{
+                                            width: 230px;
+                                            left: 13px;
+
+                                            h2{
+                                                font-size: 14px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

@@ -870,27 +870,34 @@ section#news{
 
             section.galeria{
                 float: left;
+                margin: 0;
 
-                .imagen{
-                    position: relative;
-                    width: 290px;
-                    height: 210px;
+                h3{
+                    border: none;
+                }
 
-                    a{
-                        color: #fff;
+                article{
+                    border: none;
 
-                        h2{
+                    .imagen{
+                        position: relative;
+
+                        .titulo{
                             position: absolute;
+                            margin: 0 auto;
                             bottom: 0;
-                            font-size: 14px;
-                            background: #000;
-                            margin: 0;
+                            padding: 5px 10px;
+                            background-image: url("http://impactoevangelistico.net/imagenes/fondo-trans.png");
 
+                            h2{
+                                margin: 0;
 
+                                a{
+                                    color: #fff;
+                                }
+                            }
                         }
                     }
-
-
                 }
             }
         }
@@ -903,13 +910,12 @@ section#news{
         }
 
         .nota-galeria{
-            width: 990px !important;
             border-left: none !important;
-            padding-left: 0 !important;
             margin-bottom: 15px;
 
             .nota{
                 width: 100%;
+                margin-top: 0;
 
                 .titulo{
 
@@ -1217,8 +1223,6 @@ section#news{
 #usuario_login{
     width:100%;
     float:left;
-    padding:0 0 10px 0;
-    border-bottom:1px solid #D4D4D4;
 
     #uslogin_cabecera{
         width: 90%;
