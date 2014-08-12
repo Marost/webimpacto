@@ -62,7 +62,7 @@ require_once("../../../panel@impacto/conexion/funciones.php");
 	if(isset($_POST["securitycode"])){
 		if (!$securitycode) {
 			$errors[] = "Ingresa el codigo";
-		} else if (md5($securitycode) != $_SESSION['smartCheck']['securitycode']) {
+		} else if ($securitycode<>16) {
 			$errors[] = "El codigo es incorrecto";
 		}
 	}

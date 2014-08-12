@@ -1,15 +1,10 @@
 	$(function() {
 			   
 				/* @reload captcha
-				------------------------------------------- */			   
-				function reloadCaptcha(){
-					$("#captcha").attr("src","libs/smartform/php/captcha.php?r=" + Math.random());
-				}
-				
-				$('.captcode').click(function(e){
-					e.preventDefault();
-					reloadCaptcha();
-				});				
+				------------------------------------------- */
+                $.validator.methods.smartCaptcha = function(value, element, param) {
+                    return value == param;
+                };
 			   
 				$( "#smart-form" ).validate({
 				
@@ -38,8 +33,9 @@
                                         maxlength: 100
 								},
 								securitycode:{
-										required:true
-								}
+                                        required:true,
+                                        smartCaptcha:16
+                                }
 						},
 						
 					
@@ -57,7 +53,8 @@
 										minlength: 'Mínimo 10 caracteres'
 								},															
 								securitycode:{
-										required: 'Ingresa el código'
+										required: 'Ingresa el código',
+                                        smartCaptcha: 'Ingresar el codigo correcto'
 								}
 						},
 
@@ -78,27 +75,25 @@
 						},
 						
 						/* @ajax form submition 
-						---------------------------------------------------- */						
-						submitHandler:function(form) {
-							$(form).ajaxSubmit({
-								    target:'.result',			   
-									beforeSubmit:function(){ 
-											$('.form-footer').addClass('progress');
-									},
-									error:function(){
-											$('.form-footer').removeClass('progress');
-									},
-									 success:function(){
-											$('.form-footer').removeClass('progress');
-											$('.alert-success').show().delay(10000).fadeOut();
-											$('.field').removeClass("state-error, state-success");
-											if( $('.alert-error').length == 0){
-												$('#smart-form').resetForm();
-												reloadCaptcha();
-											}
-									 }
-							  });
-						}
+						---------------------------------------------------- */
+                        submitHandler:function(form) {
+                            $(form).ajaxSubmit({
+                                target:'.result',
+                                beforeSubmit:function(){
+                                    $('.form-footer').addClass('progress');
+                                },
+                                error:function(){
+                                    $("div.form-msg").show().delay(7000).fadeOut();
+                                    $('.form-footer').removeClass('progress');
+                                },
+                                success:function(){
+                                    $('.form-msg').show().delay(7000).fadeOut();
+                                    $('.form-footer').removeClass('progress');
+                                    $('.field').removeClass("state-error, state-success");
+                                    $('#smart-form').resetForm();
+                                }
+                            });
+                        }
 						// end submitHandler:
 				});		
 		
