@@ -5,11 +5,11 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
 
 <!-- ESTILOS -->
-<link rel="stylesheet" href="libs/fontawesome/css/font-awesome.min.css?update=11082014">
-<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css?update=11082014">
-<link rel="stylesheet" href="css/normalize.css?update=11082014">
-<link rel="stylesheet" href="css/estilos.css?update=11082014">
-<link rel="stylesheet" href="css/responsive.css?update=11082014">
+<link rel="stylesheet" href="libs/fontawesome/css/font-awesome.min.css?update=<?php echo date("YmdHi") ?>">
+<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css?update=<?php echo date("YmdHi") ?>">
+<link rel="stylesheet" href="css/normalize.css?update=<?php echo date("YmdHi") ?>">
+<link rel="stylesheet" href="css/estilos.css?update=<?php echo date("YmdHi") ?>">
+<link rel="stylesheet" href="css/responsive.css?update=<?php echo date("YmdHi") ?>">
 
 <!-- BOOTSTRAP -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
