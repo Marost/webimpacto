@@ -5,7 +5,7 @@ include("../../conexion/funciones.php");
 
 //DECLARACION DE VARIABLES
 $edicion_nombre=$_POST["edicion_nombre"];
-$edicion_numero=$_POST["edicion_numero"];
+$url=$_POST["url"];
 
 //FECHA Y HORA
 $pub_fecha=$_POST["pub_fecha"];
@@ -32,8 +32,8 @@ if(is_uploaded_file($_FILES['fileInput']['tmp_name'])){
 }
 
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_edicion_al (url, titulo, nombre_edicion, imagen, fecha_publicacion) 
-	VALUES('$edicion_numero', '$edicion_numero', '$edicion_nombre', '$name', '$fecha_publicacion');",$conexion);
+$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_edicion_al (url, nombre_edicion, imagen, fecha_publicacion)
+	VALUES('$url', '$edicion_nombre', '$name', '$fecha_publicacion');",$conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();

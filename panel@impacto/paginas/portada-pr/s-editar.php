@@ -6,7 +6,7 @@ include("../../conexion/funciones.php");
 //DECLARACION DE VARIABLES
 $id=$_REQUEST["id"];
 $edicion_nombre=$_POST["edicion_nombre"];
-$edicion_numero=$_POST["edicion_numero"];
+$url=$_POST["url"];
 
 //FECHA Y HORA
 $pub_fecha=$_POST["pub_fecha"];
@@ -41,7 +41,7 @@ if($_FILES['fileInput']['name']!=""){
 }
 
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_edicion_pr SET titulo='$edicion_numero',
+$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_edicion_pr SET url='$url',
 	nombre_edicion='$edicion_nombre',
 	imagen='$name',
 	fecha_publicacion='$fecha_publicacion' WHERE id=$id;", $conexion);

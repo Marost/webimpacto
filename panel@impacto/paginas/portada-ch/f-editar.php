@@ -12,7 +12,7 @@ $rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_edicion_ch WHERE id=$id_url;
 $fila_nota=mysql_fetch_array($rst_nota);
 
 //VARIABLES
-$nota_titulo=$fila_nota["titulo"];
+$nota_url=$fila_nota["url"];
 $nota_nombre=$fila_nota["nombre_edicion"];
 $nota_imagen=$fila_nota["imagen"];
 
@@ -68,15 +68,15 @@ $nota_pub_hora=$nota_fecha_pub[1];
                 <div class="widget fluid">
                     
                     <div class="whead"><h6>Editar</h6></div>
-                    
-                    <div class="formRow">
-                        <div class="grid3"><label>Número Edición:</label></div>
-                        <div class="grid4"><input type="text" name="edicion_numero" value="<?php echo $nota_titulo; ?>" /></div>
-                    </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Nombre Edición:</label></div>
                         <div class="grid4"><input type="text" name="edicion_nombre" value="<?php echo $nota_nombre ?>" /></div>
+                    </div>
+
+                    <div class="formRow">
+                        <div class="grid3"><label>URL de Issuu:</label></div>
+                        <div class="grid4"><input type="text" name="url" value="<?php echo $nota_url; ?>" /></div>
                     </div>
 
                     <div class="formRow">

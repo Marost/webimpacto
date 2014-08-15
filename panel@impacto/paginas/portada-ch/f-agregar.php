@@ -56,15 +56,15 @@ $pub_hora=date("H:i:s");
                 <div class="widget fluid">
                     
                     <div class="whead"><h6>Agregar</h6></div>
-                    
-                    <div class="formRow">
-                        <div class="grid3"><label>Número Edición:</label></div>
-                        <div class="grid4"><input type="text" name="edicion_numero" /></div>
-                    </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Nombre Edición:</label></div>
                         <div class="grid4"><input type="text" name="edicion_nombre" /></div>
+                    </div>
+
+                    <div class="formRow">
+                        <div class="grid3"><label>URL de Issuu:</label></div>
+                        <div class="grid4"><input type="text" name="url" /></div>
                     </div>
 
                     <div class="formRow">
