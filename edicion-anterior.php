@@ -32,9 +32,9 @@ $page           = (isset($_GET['page'])) ? intval($_GET['page']) : 1;
 $rst_noticias   = mysql_query("SELECT COUNT(*) as count FROM iev_edicion$pr WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC;", $conexion);
 $row            = mysql_fetch_assoc($rst_noticias);
 $generated      = intval($row['count']);
-$pagination     = new Pagination("15", $generated, $page, $url_web."&page", 1, 0);
+$pagination     = new Pagination("12", $generated, $page, $url_web."&page", 1, 0);
 $start          = $pagination->prePagination();
-$rst_noticias   = mysql_query("SELECT * FROM iev_edicion$pr WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT $start, 15", $conexion);
+$rst_noticias   = mysql_query("SELECT * FROM iev_edicion$pr WHERE fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT $start, 12", $conexion);
 
 ?>
 <!DOCTYPE html>
@@ -72,9 +72,9 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_edicion$pr WHERE fecha_publicac
             <div class="container">
                 
                 <!-- SECCION SUPERIOR -->
-                <section id="edicion-anterior" class="col-lg-12 col-md-12 col-sm-12">
+                <section id="edicion-anterior" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                    <section class="categoria col-lg-8 col-md-8 col-sm-9">
+                    <section class="categoria col-lg-8 col-md-8 col-sm-9 col-xs-12">
 
                         <?php while($fila_noticias=mysql_fetch_array($rst_noticias)){
                                 $noticia_id=$fila_noticias["id"];
@@ -88,10 +88,10 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_edicion$pr WHERE fecha_publicac
 
                                 //URL
                                 $noticia_urlFinal=$web."revista".$pr."/".$noticia_titulo."/index.html";
-                                $noticia_urlImg=$web."imagenes/revista".$pr."/".$noticia_imagen_carpeta."".$noticia_imagen;
+                                $noticia_urlImg=$web."imagenes/revista/".$noticia_imagen_carpeta."".$noticia_imagen;
                         ?>
 
-                        <article class="col-lg-4 col-md-4 col-sm-4">
+                        <article class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                             <a href="<?php echo $noticia_urlFinal; ?>" target="_blank">
                                 <img src="<?php echo $noticia_urlImg; ?>" alt="<?php echo $nombre_edicion; ?>" width="130">
                             </a>
