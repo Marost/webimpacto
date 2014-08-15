@@ -79,7 +79,6 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_edicion$pr WHERE fecha_publicac
                         <?php while($fila_noticias=mysql_fetch_array($rst_noticias)){
                                 $noticia_id=$fila_noticias["id"];
                                 $noticia_url=$fila_noticias["url"];
-                                $noticia_titulo=stripslashes($fila_noticias["titulo"]);
                                 $noticia_nombre=$fila_noticias["nombre_edicion"];
                                 $noticia_imagen=$fila_noticias["imagen"];
                                 $noticia_imagen_carpeta=$fila_noticias["carpeta_imagen"];
@@ -87,20 +86,17 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_edicion$pr WHERE fecha_publicac
                                 $noticia_fechapub=explode("-", $noticia_fechatotal[0]);
 
                                 //URL
-                                $noticia_urlFinal=$web."revista".$pr."/".$noticia_titulo."/index.html";
                                 $noticia_urlImg=$web."imagenes/revista/".$noticia_imagen_carpeta."".$noticia_imagen;
                         ?>
 
                         <article class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
-                            <a href="<?php echo $noticia_urlFinal; ?>" target="_blank">
-                                <img src="<?php echo $noticia_urlImg; ?>" alt="<?php echo $nombre_edicion; ?>" width="130">
+                            <a href="<?php echo $noticia_url; ?>" target="_blank">
+                                <img src="<?php echo $noticia_urlImg; ?>" alt="<?php echo $noticia_nombre; ?>" width="130">
                             </a>
 
                         </article>
 
                         <?php } ?>
-
-
 
                     </section>
 
