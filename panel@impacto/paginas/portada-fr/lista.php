@@ -26,7 +26,7 @@ include_once('../../js/plugins/creative_table/creativeTable.php');
 $ct=new CreativeTable();
 
 // Data Gathering
-$params['sql_query']                = "SELECT id, nombre_edicion FROM ".$tabla_suf."_edicion_fr AS noti ORDER BY fecha_publicacion DESC, id DESC";
+$params['sql_query']                = "SELECT id, titulo, nombre_edicion FROM ".$tabla_suf."_edicion_fr AS noti ORDER BY fecha_publicacion DESC, id DESC";
 //$params['search']                   = $search;
 $params['multiple_search']          = $multiple_search;
 $params['items_per_page']           = $items_per_page;
@@ -34,8 +34,8 @@ $params['sort']                     = $sort;
 $params['page']                     = $page;
 $params['total_items']              = $total_items;
 
-$params['header']                   = 'ID,Registro';
-$params['width']                    = '30,850';
+$params['header']                   = 'ID,Número,Registro';
+$params['width']                    = '30,150,850';
 
 /* ORDENAR POR CAMPOS */
 $params['sort_init'] = false;  // sort all fields

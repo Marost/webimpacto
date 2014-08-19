@@ -63,6 +63,11 @@ $pub_hora=date("H:i:s");
                     </div>
 
                     <div class="formRow">
+                        <div class="grid3"><label>Número Edición:</label></div>
+                        <div class="grid4"><input type="text" name="edicion_numero" /></div>
+                    </div>
+
+                    <div class="formRow">
                         <div class="grid3"><label>URL de Issuu:</label></div>
                         <div class="grid4"><input type="text" name="url" /></div>
                     </div>
