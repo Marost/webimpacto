@@ -16,11 +16,11 @@ $edicion_imagen_carpeta=$fila_edicion["carpeta_imagen"];
         
         <div class="datos col-xs-3">
             <h3>Edición del mes</h3>
-            <h3 class="numedicion">N° <?php echo $edicion_url; ?></h3>
+            <h3 class="numedicion">N° <?php echo $edicion_titulo; ?></h3>
         </div>
 
         <div class="imagen col-xs-8">
-            <a href="http://issuu.com/impactoevangelistico.net/docs/<?php echo $edicion_url; ?>" title="<?php echo $edicion_titulo; ?>" target="_blank">
+            <a href="<?php echo $edicion_url; ?>" title="<?php echo $edicion_titulo; ?>" target="_blank">
                 <img class="col-xs-12" src="imagenes/revista/<?php echo $edicion_imagen_carpeta."".$edicion_imagen; ?>" alt="<?php echo $edicion_titulo; ?>" width="185">
             </a>
         </div>
