@@ -75,11 +75,22 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
 
                     <div class="nwder col-lg-8 col-md-8 col-sm-7 col-xs-12 notawizq">
 
-                        <section class="nota">
+                        <section class="nota editorial">
                             
-                            <div class="datos">
+                            <div class="datos col-lg-12">
 
-                                <div class="fecha">
+                                <div id="social-media" class="col-lg-9 visible-lg addthis_toolbox addthis_default_style ">
+                                    <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+                                    <a class="addthis_button_tweet" tw:count="horizontal"></a>
+                                    <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
+                                    <a class="addthis_button_pinterest_pinit"
+                                       pi:pinit:url="<?php echo $web; ?>nota/<?php echo $nota_id."-".$nota_url; ?>"
+                                       pi:pinit:media="<?php echo $web; ?>upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>"
+                                       pi:pinit:layout="horizontal"></a>
+                                    <a class="addthis_counter addthis_pill_style"></a>
+                                </div>
+
+                                <div class="col-lg-3 fecha">
                                     <?php echo nombreFechaTotal($noticia_fechapub[0], $noticia_fechapub[1], $noticia_fechapub[2]); ?>
                                 </div>
                                     
@@ -88,17 +99,6 @@ $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
                             <div class="titulo">
                                 <h2><?php echo $noticia_titulo; ?></h2>
                                 <?php echo cortarTextoRH($noticia_contenido,1,0,150); ?>
-                            </div>
-
-                            <div class="addthis_toolbox addthis_default_style ">
-                                <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-                                <a class="addthis_button_tweet" tw:count="horizontal"></a>
-                                <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:width="120"></a>
-                                <a class="addthis_button_pinterest_pinit" 
-                                pi:pinit:url="<?php echo $web; ?>nota/<?php echo $nota_id."-".$nota_url; ?>" 
-                                pi:pinit:media="<?php echo $web; ?>upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" 
-                                pi:pinit:layout="horizontal"></a>
-                                <a class="addthis_counter addthis_pill_style"></a>
                             </div>
 
                             <div class="info">
