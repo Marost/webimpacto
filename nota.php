@@ -35,7 +35,7 @@ $fila_categoria=mysql_fetch_array($rst_categoria);
 $categoria_titulo=$fila_categoria["categoria"];
 
 //VARIABLES
-$url_final=$web."nota/".$id_url."-".$url;
+$url_final=$web."noticia/".$id_url."-".$url;
 $url_imagen=$web."imagenes/upload/".$noticia_imagen_carpeta."".$noticia_imagen;
 
 //NOTICIAS RELACIONADAS
@@ -168,7 +168,7 @@ $rst_tags=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY nombre ASC;", $co
                                     fjs.parentNode.insertBefore(js, fjs);
                                 }(document, 'script', 'facebook-jssdk'));</script>
 
-                            <div data-width="624" class="fb-comments" data-href="<?php echo $NotRel_UrlWeb; ?>" data-numposts="5" data-colorscheme="light"></div>
+                            <div data-width="624" class="fb-comments" data-href="<?php echo $url_final; ?>" data-numposts="5" data-colorscheme="light"></div>
 
                         </section>
                         
