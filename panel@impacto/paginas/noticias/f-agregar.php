@@ -160,7 +160,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                         <div class="grid9">
 
                             <span class="grid5" style="margin-bottom: 10px;margin-right: 10px;">
-                                <input id="refreshInput" type="text" required="required" />
+                                <input id="refreshInput" type="text" />
 
                             </span>
                             <span class="gri5" style="font-weight: bold;font-size: 14px;">
