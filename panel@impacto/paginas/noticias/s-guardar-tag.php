@@ -9,10 +9,10 @@ $titulo=$_POST["input"];
 $url=getUrlAmigable(eliminarTextoURL($titulo));
 
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("INSERT INTO iev_noticia_tags (url, nombre) VALUES('$url', '$titulo')", $conexion);
+$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_noticia_tags (url, nombre) VALUES('$url', '$titulo')", $conexion);
 
 //CONSULTAR
-$rst=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY id DESC LIMIT 1", $conexion);
+$rst=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY id DESC LIMIT 1", $conexion);
 $fila=mysql_fetch_array($rst);
 $id=$fila["id"];
 
