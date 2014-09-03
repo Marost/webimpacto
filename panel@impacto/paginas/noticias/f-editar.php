@@ -44,6 +44,45 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
 
 <?php require_once("../../w-scripts.php"); ?>
 
+    <!-- AGREGANDO NUEVO TAG -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.min.js"></script>
+    <script type="text/javascript">
+        var jMulSl = jQuery.noConflict();
+
+        jMulSl(document).on("ready", function(){
+
+            jMulSl("#refreshAdd").on("click", function() {
+
+                var $select = jMulSl("select.selectMultiple"),
+                    $input = jMulSl("#refreshInput"),
+                    value = jMulSl.trim($input.val())
+
+
+                jMulSl.ajax({
+                    type: "POST",
+                    url: "s-guardar-tag.php",
+                    data: {"input": $input.val()},
+                    success:function(response){
+                        if (!value) {
+                            $input.focus();
+                            return;
+                        }
+
+                        var data = jMulSl.parseJSON(response)
+
+                        var $opt = jMulSl("<option />", {
+                            value: data.id,
+                            text: data.titulo
+                        });
+
+                        $input.val("");
+                        $select.append($opt);
+                    }
+                });
+            });
+        });
+    </script>
+
 </head>
 
 <body>
@@ -157,6 +196,15 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                     <div class="formRow">
                         <div class="grid3"><label>Etiquetas:</label></div>
                         <div class="grid9">
+
+                            <span class="grid5" style="margin-bottom: 10px;margin-right: 10px;">
+                                <input id="refreshInput" type="text" />
+
+                            </span>
+                            <span class="gri5" style="font-weight: bold;font-size: 14px;">
+                                <a id="refreshAdd" href="javascript:;">Agregar nueva Etiqueta</a>
+                            </span>
+
                             <select class="selectMultiple" multiple="multiple" tabindex="6" name="tags[]">
                                 <?php while($fila_tags=mysql_fetch_array($rst_tags)){
                                         $tags_id=$fila_tags["id"];
@@ -168,8 +216,8 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                                 <option value="<?php echo $tags_id; ?>"><?php echo $tags_nombre; ?></option>
                                 <?php }}  ?>
 
-                            </select>  
-                        </div>             
+                            </select>
+                        </div>
                     </div>
 
                     <div class="formRow">
