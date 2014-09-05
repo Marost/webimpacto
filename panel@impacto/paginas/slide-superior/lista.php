@@ -25,12 +25,11 @@ $rst_galeria=mysql_query("SELECT * FROM ".$tabla_suf."_slide_superior ORDER BY o
     var jq = jQuery.noConflict();
     jq(document).ready(function() {
         jq("#lista-galeria").sortable({
-          handle : '.handle',
-          update : function () {
-            var order = jq('#lista-galeria').sortable('serialize');
-            var noticia = <?php echo $reqId; ?>;
-            jq("#info").load("s-ordenar.php?not="+noticia+"&"+order);
-          }
+            handle : '.handle',
+            update : function () {
+                var order = jq('#lista-galeria').sortable('serialize');
+                jq("#info").load("s-ordenar.php?"+order);
+            }
         });
     });
 </script>
@@ -110,9 +109,9 @@ function eliminarRegistro(registro, noticia) {
                             <img src="/imagenes/slide/<?php echo $galeria_imagen_carpeta."thumb/".$galeria_imagen; ?>" alt="" />
                         </a>
                         <div class="actions">
-                            <a href="f-editar.php?id=<?php echo $galeria_id; ?>&not=<?php echo $reqId; ?>" title="" class="edit">
+                            <a href="f-editar.php?id=<?php echo $galeria_id; ?>" title="" class="edit">
                                 <img src="../../images/icons/update.png" alt="" /></a>
-                            <a href="s-eliminar.php?id=<?php echo $galeria_id; ?>&not=<?php echo $reqId; ?>" title="" class="remove">
+                            <a href="s-eliminar.php?id=<?php echo $galeria_id; ?>" title="" class="remove">
                                 <img src="../../images/icons/delete.png" alt="" /></a>
                             <a href="" title="" class="move handle">
                                 <img src="../../images/icons/move.png" alt="" />
