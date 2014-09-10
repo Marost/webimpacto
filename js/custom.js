@@ -363,6 +363,7 @@ jQuery(document).ready(function () {
                 var sync2 = jQuery(".kopa-sync-carousel-widget .sync2");
 
                 sync1.owlCarousel({
+                    items: 4,
                     singleItem: true,
                     slideSpeed: 1000,
                     afterAction: syncPosition,
@@ -371,7 +372,7 @@ jQuery(document).ready(function () {
 
 
                 sync2.owlCarousel({
-                    items: 3,
+                    items: 4,
                     itemsDesktop: [1199, 3],
                     itemsDesktopSmall: [979, 3],
                     itemsTablet: [768, 3],
@@ -438,6 +439,7 @@ jQuery(document).ready(function () {
                 var sync2 = jQuery(".kopa-single-gallery-widget .sync2");
 
                 sync1.owlCarousel({
+                    items: 4,
                     singleItem: true,
                     pagination: false,
                     navigation: true,
