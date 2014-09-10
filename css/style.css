@@ -39,12 +39,12 @@ Tags: black, blue, green, white, responsive-layout, custom-colors, custom-menu, 
 .container {
     width: 1214px;
 }
- :: selection {
+ ::selection {
     background: #fbbd2c;
     color: #fff;
     text-shadow: none;
 }
-:: -moz-selection {
+::-moz-selection {
     background: #fbbd2c;
     color: #fff;
     text-shadow: none;
@@ -68,7 +68,7 @@ input[type="submit"] {
     margin-bottom: 10px;
     position: relative;
 }
-:: -webkit-input-placeholder {
+::-webkit-input-placeholder {
     color: #727272;
 }
 :-moz-placeholder {
@@ -624,7 +624,7 @@ li > ul, li > ol {
     display: block;
     max-width: 100%;
     height: auto;
-    margin-top: 30px;
+    margin-top: 5px;
     margin-left: 0;
 }
 #kopa-header .kopa-menu {
@@ -655,14 +655,14 @@ li > ul, li > ol {
     background: rgba(255, 255, 255, 0.5);
 }
 .header-1 .kopa-header-middle {
-    height: 110px;
-    min-height: 110px;
+    height: 65px;
+    min-height: 65px;
     position: relative;
 }
 .header-1 .menu-second {
     margin-left: 60px;
     padding: 0 19.5px;
-    background: #272319;
+    background-image: url("../imagenes/fondo-trans.png");
     background: rgba(0, 0, 0, 0.8);
 }
 .header-1 .menu-second ul a {
@@ -674,18 +674,18 @@ li > ul, li > ol {
     color: #504d4d;
 }
 .header-1 .main-menu {
-    float: left;
-    background: #343434;
-    height: 110px;
-    padding-top: 40px;
+    float: right;
+    background-image: url("../imagenes/fondo-trans.png");
+    height: 65px;
+    padding-top: 20px;
     margin-left: 0;
     position: relative;
 }
 .header-1 .main-menu:before {
     content: '';
-    height: 110px;
+    height: 65px;
     width: 1000px;
-    background: #343434;
+    background-image: url("../imagenes/fondo-trans.png");
     display: block;
     position: absolute;
     right: -1000px;
@@ -693,6 +693,8 @@ li > ul, li > ol {
 }
 .header-1 .kopa-logo {
     margin-right: 20px;
+    position: absolute;
+    z-index: 5;
 }
 .header-1 .kopa-menu {
     padding: 0 15px;
@@ -713,7 +715,7 @@ li > ul, li > ol {
     text-transform: uppercase;
     padding: 10px 20px;
     white-space: normal;
-    font-size: 18px;
+    font-size: 15px;
 }
 .header-1 .kopa-menu.sf-menu > li {
     border-left: 1px solid #e4e3f0;
@@ -745,7 +747,7 @@ li > ul, li > ol {
 .header-1 .kopa-head-line .kopa-list-news-carousel-widget .widget-title {
     width: 244px;
     text-align: center;
-    background: #272319;
+    background-image: url("../imagenes/fondo-trans.png");
     background: rgba(0, 0, 0, 0.8);
 }
 .header-1 .kopa-head-line .kopa-list-news-carousel-widget .kp-headline {
@@ -768,7 +770,6 @@ li > ul, li > ol {
     content: '';
     height: 36px;
     width: 1000px;
-    background: #131313;
     display: block;
     position: absolute;
     right: -1000px;
@@ -863,7 +864,6 @@ li > ul, li > ol {
     margin-bottom: 40px;
 }
 .kopa-head-line {
-    background: #000;
     height: 36px;
     overflow: hidden;
     position: relative;
@@ -1819,6 +1819,9 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     top: 0;
     right: -15px;
 }
+.kopa-full-width-carousel-widget{
+    border-bottom: 10px solid #FBBD2C;
+}
 .kopa-full-width-carousel-widget .widget-header {
     display: none;
 }
@@ -2142,8 +2145,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     position: absolute;
     top: 386px;
     left: 0;
-    width: 100%;
-    padding-left: 40%;
+    width: 60%;
     z-index: 99;
 }
 .kopa-grid-posts-widget .widget-header i {
@@ -2161,7 +2163,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 }
 .kopa-grid-posts-widget .item.pull-left {
     width: 40%;
-    background: #131313;
+    background: #3474a2;
 }
 .kopa-grid-posts-widget .item.pull-left .post-thumb, .kopa-grid-posts-widget .item.pull-left .item-content {
     width: 50%;
@@ -2197,10 +2199,10 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     float: right;
 }
 .kopa-grid-posts-widget .item.item2 {
-    background: #343434;
+    background: #4187ba;
 }
 .kopa-grid-posts-widget .item.item3 {
-    background: #686868;
+    background: #335d8f;
 }
 .kopa-grid-posts-widget .latest-post {
     width: 60%;
@@ -2208,13 +2210,11 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 }
 .kopa-grid-posts-widget .latest-post .item-content {
     padding-left: 30px;
-    border: 1px solid #f0f0f0;
     padding-top: 20px;
-    padding-bottom: 23px;
 }
 .kopa-grid-posts-widget .latest-post .post-title {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 32px;
 }
 .kopa-grid-posts-widget .latest-post .post-title p {
     margin-bottom: 15px;
@@ -2231,18 +2231,18 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 .kopa-grid-posts-widget .latest-post .kopa-readmore:hover {
     background: none;
 }
-.widget-area-3 .widget-header, .widget-area-3 .entry-header, .widget-area-4 .widget-header, .widget-area-4 .entry-header, .widget-area-5 .widget-header, .widget-area-5 .entry-header, .widget-area-6 .widget-header, .widget-area-6 .entry-header, .widget-area-7 .widget-header, .widget-area-7 .entry-header, .widget-area-8 .widget-header, .widget-area-8 .entry-header, .widget-area-9 .widget-header, .widget-area-9 .entry-header, .widget-area-10 .widget-header, .widget-area-10 .entry-header, .widget-area-11 .widget-header, .widget-area-11 .entry-header, .widget-area-12 .widget-header, .widget-area-12 .entry-header, .widget-area-13 .widget-header, .widget-area-13 .entry-header, .widget-area-26 .widget-header, .widget-area-26 .entry-header, .widget-area-22 .widget-header, .widget-area-22 .entry-header, .widget-area-23 .widget-header, .widget-area-23 .entry-header, .widget-area-24 .widget-header, .widget-area-24 .entry-header, .widget-area-25 .widget-header, .widget-area-25 .entry-header, .widget-area-27 .widget-header, .widget-area-27 .entry-header, .widget-area-18 .widget-header, .widget-area-18 .entry-header, .widget-area-19 .widget-header, .widget-area-19 .entry-header, #main-content .widget .widget-header, #main-content .widget .entry-header, .single-page-content .widget-header, .single-page-content .entry-header {
-    border-bottom: 2px solid #e4e3f0;
+.widget-area-2 .widget-header, .widget-area-2 .entry-header, .widget-area-3 .widget-header, .widget-area-3 .entry-header, .widget-area-4 .widget-header, .widget-area-4 .entry-header, .widget-area-5 .widget-header, .widget-area-5 .entry-header, .widget-area-6 .widget-header, .widget-area-6 .entry-header, .widget-area-7 .widget-header, .widget-area-7 .entry-header, .widget-area-8 .widget-header, .widget-area-8 .entry-header, .widget-area-9 .widget-header, .widget-area-9 .entry-header, .widget-area-10 .widget-header, .widget-area-10 .entry-header, .widget-area-11 .widget-header, .widget-area-11 .entry-header, .widget-area-12 .widget-header, .widget-area-12 .entry-header, .widget-area-13 .widget-header, .widget-area-13 .entry-header, .widget-area-26 .widget-header, .widget-area-26 .entry-header, .widget-area-22 .widget-header, .widget-area-22 .entry-header, .widget-area-23 .widget-header, .widget-area-23 .entry-header, .widget-area-24 .widget-header, .widget-area-24 .entry-header, .widget-area-25 .widget-header, .widget-area-25 .entry-header, .widget-area-27 .widget-header, .widget-area-27 .entry-header, .widget-area-18 .widget-header, .widget-area-18 .entry-header, .widget-area-19 .widget-header, .widget-area-19 .entry-header, #main-content .widget .widget-header, #main-content .widget .entry-header, .single-page-content .widget-header, .single-page-content .entry-header {
+    border-bottom: 4px solid #e4e3f0;
     position: relative;
     margin-bottom: 30px;
 }
-.widget-area-3 .widget-header i, .widget-area-3 .entry-header i, .widget-area-4 .widget-header i, .widget-area-4 .entry-header i, .widget-area-5 .widget-header i, .widget-area-5 .entry-header i, .widget-area-6 .widget-header i, .widget-area-6 .entry-header i, .widget-area-7 .widget-header i, .widget-area-7 .entry-header i, .widget-area-8 .widget-header i, .widget-area-8 .entry-header i, .widget-area-9 .widget-header i, .widget-area-9 .entry-header i, .widget-area-10 .widget-header i, .widget-area-10 .entry-header i, .widget-area-11 .widget-header i, .widget-area-11 .entry-header i, .widget-area-12 .widget-header i, .widget-area-12 .entry-header i, .widget-area-13 .widget-header i, .widget-area-13 .entry-header i, .widget-area-26 .widget-header i, .widget-area-26 .entry-header i, .widget-area-22 .widget-header i, .widget-area-22 .entry-header i, .widget-area-23 .widget-header i, .widget-area-23 .entry-header i, .widget-area-24 .widget-header i, .widget-area-24 .entry-header i, .widget-area-25 .widget-header i, .widget-area-25 .entry-header i, .widget-area-27 .widget-header i, .widget-area-27 .entry-header i, .widget-area-18 .widget-header i, .widget-area-18 .entry-header i, .widget-area-19 .widget-header i, .widget-area-19 .entry-header i, #main-content .widget .widget-header i, #main-content .widget .entry-header i, .single-page-content .widget-header i, .single-page-content .entry-header i {
+.widget-area-2 .widget-header i, .widget-area-2 .entry-header i, .widget-area-3 .widget-header i, .widget-area-3 .entry-header i, .widget-area-4 .widget-header i, .widget-area-4 .entry-header i, .widget-area-5 .widget-header i, .widget-area-5 .entry-header i, .widget-area-6 .widget-header i, .widget-area-6 .entry-header i, .widget-area-7 .widget-header i, .widget-area-7 .entry-header i, .widget-area-8 .widget-header i, .widget-area-8 .entry-header i, .widget-area-9 .widget-header i, .widget-area-9 .entry-header i, .widget-area-10 .widget-header i, .widget-area-10 .entry-header i, .widget-area-11 .widget-header i, .widget-area-11 .entry-header i, .widget-area-12 .widget-header i, .widget-area-12 .entry-header i, .widget-area-13 .widget-header i, .widget-area-13 .entry-header i, .widget-area-26 .widget-header i, .widget-area-26 .entry-header i, .widget-area-22 .widget-header i, .widget-area-22 .entry-header i, .widget-area-23 .widget-header i, .widget-area-23 .entry-header i, .widget-area-24 .widget-header i, .widget-area-24 .entry-header i, .widget-area-25 .widget-header i, .widget-area-25 .entry-header i, .widget-area-27 .widget-header i, .widget-area-27 .entry-header i, .widget-area-18 .widget-header i, .widget-area-18 .entry-header i, .widget-area-19 .widget-header i, .widget-area-19 .entry-header i, #main-content .widget .widget-header i, #main-content .widget .entry-header i, .single-page-content .widget-header i, .single-page-content .entry-header i {
     position: absolute;
     right: 0;
     top: 5px;
     font-size: 16px;
 }
-.widget-area-3 .widget-title, .widget-area-3 .entry-title, .widget-area-4 .widget-title, .widget-area-4 .entry-title, .widget-area-5 .widget-title, .widget-area-5 .entry-title, .widget-area-6 .widget-title, .widget-area-6 .entry-title, .widget-area-7 .widget-title, .widget-area-7 .entry-title, .widget-area-8 .widget-title, .widget-area-8 .entry-title, .widget-area-9 .widget-title, .widget-area-9 .entry-title, .widget-area-10 .widget-title, .widget-area-10 .entry-title, .widget-area-11 .widget-title, .widget-area-11 .entry-title, .widget-area-12 .widget-title, .widget-area-12 .entry-title, .widget-area-13 .widget-title, .widget-area-13 .entry-title, .widget-area-26 .widget-title, .widget-area-26 .entry-title, .widget-area-22 .widget-title, .widget-area-22 .entry-title, .widget-area-23 .widget-title, .widget-area-23 .entry-title, .widget-area-24 .widget-title, .widget-area-24 .entry-title, .widget-area-25 .widget-title, .widget-area-25 .entry-title, .widget-area-27 .widget-title, .widget-area-27 .entry-title, .widget-area-18 .widget-title, .widget-area-18 .entry-title, .widget-area-19 .widget-title, .widget-area-19 .entry-title, #main-content .widget .widget-title, #main-content .widget .entry-title, .single-page-content .widget-title, .single-page-content .entry-title {
+.widget-area-2 .widget-title, .widget-area-2 .entry-title, .widget-area-3 .widget-title, .widget-area-3 .entry-title, .widget-area-4 .widget-title, .widget-area-4 .entry-title, .widget-area-5 .widget-title, .widget-area-5 .entry-title, .widget-area-6 .widget-title, .widget-area-6 .entry-title, .widget-area-7 .widget-title, .widget-area-7 .entry-title, .widget-area-8 .widget-title, .widget-area-8 .entry-title, .widget-area-9 .widget-title, .widget-area-9 .entry-title, .widget-area-10 .widget-title, .widget-area-10 .entry-title, .widget-area-11 .widget-title, .widget-area-11 .entry-title, .widget-area-12 .widget-title, .widget-area-12 .entry-title, .widget-area-13 .widget-title, .widget-area-13 .entry-title, .widget-area-26 .widget-title, .widget-area-26 .entry-title, .widget-area-22 .widget-title, .widget-area-22 .entry-title, .widget-area-23 .widget-title, .widget-area-23 .entry-title, .widget-area-24 .widget-title, .widget-area-24 .entry-title, .widget-area-25 .widget-title, .widget-area-25 .entry-title, .widget-area-27 .widget-title, .widget-area-27 .entry-title, .widget-area-18 .widget-title, .widget-area-18 .entry-title, .widget-area-19 .widget-title, .widget-area-19 .entry-title, #main-content .widget .widget-title, #main-content .widget .entry-title, .single-page-content .widget-title, .single-page-content .entry-title {
     font-size: 25px;
     text-transform: uppercase;
     position: relative;
@@ -2251,7 +2251,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     margin-bottom: 0;
     line-height: 22px;
 }
-.widget-area-3 .widget-title:before, .widget-area-3 .entry-title:before, .widget-area-4 .widget-title:before, .widget-area-4 .entry-title:before, .widget-area-5 .widget-title:before, .widget-area-5 .entry-title:before, .widget-area-6 .widget-title:before, .widget-area-6 .entry-title:before, .widget-area-7 .widget-title:before, .widget-area-7 .entry-title:before, .widget-area-8 .widget-title:before, .widget-area-8 .entry-title:before, .widget-area-9 .widget-title:before, .widget-area-9 .entry-title:before, .widget-area-10 .widget-title:before, .widget-area-10 .entry-title:before, .widget-area-11 .widget-title:before, .widget-area-11 .entry-title:before, .widget-area-12 .widget-title:before, .widget-area-12 .entry-title:before, .widget-area-13 .widget-title:before, .widget-area-13 .entry-title:before, .widget-area-26 .widget-title:before, .widget-area-26 .entry-title:before, .widget-area-22 .widget-title:before, .widget-area-22 .entry-title:before, .widget-area-23 .widget-title:before, .widget-area-23 .entry-title:before, .widget-area-24 .widget-title:before, .widget-area-24 .entry-title:before, .widget-area-25 .widget-title:before, .widget-area-25 .entry-title:before, .widget-area-27 .widget-title:before, .widget-area-27 .entry-title:before, .widget-area-18 .widget-title:before, .widget-area-18 .entry-title:before, .widget-area-19 .widget-title:before, .widget-area-19 .entry-title:before, #main-content .widget .widget-title:before, #main-content .widget .entry-title:before, .single-page-content .widget-title:before, .single-page-content .entry-title:before {
+.widget-area-2 .widget-title:before, .widget-area-2 .entry-title:before, .widget-area-3 .widget-title:before, .widget-area-3 .entry-title:before, .widget-area-4 .widget-title:before, .widget-area-4 .entry-title:before, .widget-area-5 .widget-title:before, .widget-area-5 .entry-title:before, .widget-area-6 .widget-title:before, .widget-area-6 .entry-title:before, .widget-area-7 .widget-title:before, .widget-area-7 .entry-title:before, .widget-area-8 .widget-title:before, .widget-area-8 .entry-title:before, .widget-area-9 .widget-title:before, .widget-area-9 .entry-title:before, .widget-area-10 .widget-title:before, .widget-area-10 .entry-title:before, .widget-area-11 .widget-title:before, .widget-area-11 .entry-title:before, .widget-area-12 .widget-title:before, .widget-area-12 .entry-title:before, .widget-area-13 .widget-title:before, .widget-area-13 .entry-title:before, .widget-area-26 .widget-title:before, .widget-area-26 .entry-title:before, .widget-area-22 .widget-title:before, .widget-area-22 .entry-title:before, .widget-area-23 .widget-title:before, .widget-area-23 .entry-title:before, .widget-area-24 .widget-title:before, .widget-area-24 .entry-title:before, .widget-area-25 .widget-title:before, .widget-area-25 .entry-title:before, .widget-area-27 .widget-title:before, .widget-area-27 .entry-title:before, .widget-area-18 .widget-title:before, .widget-area-18 .entry-title:before, .widget-area-19 .widget-title:before, .widget-area-19 .entry-title:before, #main-content .widget .widget-title:before, #main-content .widget .entry-title:before, .single-page-content .widget-title:before, .single-page-content .entry-title:before {
     content: '';
     display: block;
     width: 100%;
@@ -2259,7 +2259,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     background: #fbbd2c;
     position: absolute;
     left: 0;
-    bottom: -2px;
+    bottom: -4px;
 }
 .kopa-list-posts-thumb-big-small-widget .item {
     border-top: 1px solid #e4e3f0;
@@ -2377,14 +2377,16 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     overflow: hidden;
 }
 .kopa-list-posts-carousel-2-widget .widget-content {
-    margin: 0 -15px;
+    /*margin: 0 -15px;*/
+    padding-left: 0;
+    padding-right: 0;
 }
 .kopa-list-posts-carousel-2-widget .item {
     margin: 0 15px;
 }
 .kopa-list-posts-carousel-2-widget .post-thumb {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 .kopa-list-posts-carousel-2-widget .post-thumb .kopa-metadata {
     position: absolute;
@@ -2404,7 +2406,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     font-size: 12px;
 }
 .kopa-list-posts-carousel-2-widget .kopa-num {
-    font-size: 95px;
+    font-size: 85px;
     line-height: 95px;
     color: #292929;
     margin-right: 20px;
@@ -2511,7 +2513,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     position: absolute;
     width: 100%;
     left: 0;
-    bottom: 90px;
+    bottom: 20px;
     padding: 0 160px 0 25px;
 }
 .kopa-sync-carousel-widget .sync1 .item .kopa-rate {
@@ -2524,7 +2526,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 }
 .kopa-sync-carousel-widget .sync1 .owl-controls {
     position: absolute;
-    bottom: -142px;
+    bottom: -150px;
     width: 100%;
     left: 0;
 }
@@ -4329,7 +4331,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     font-size: 12px;
     color: #fff;
 }
-.copy-right p: last-child {
+.copy-right p:last-child {
     margin-bottom: 0;
 }
 .back-to-top {
@@ -4347,4 +4349,100 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 }
 .back-to-top:hover {
     background: #fbbd2c;
+}
+
+/* CLASES AGREGADAS */
+section#home-notprin{
+    width: 40%;
+    float: right;
+}
+
+.latest-post{
+    float: left;
+}
+
+.kopa-num-pag{
+    float: left;
+    font-weight: bold;
+    color: #000;
+    padding-top: 70px;
+}
+
+.kopa-list-posts-carousel-2-widget .owl-carousel.owl-theme{
+    left: -15px;
+}
+
+.kopa-list-posts-carousel-2-widget .owl-carousel.owl-theme .owl-wrapper-outer{
+    z-index: 5;
+}
+.kopa-list-posts-carousel-2-widget .owl-carousel.owl-theme .owl-controls{
+    position: absolute;
+    top: 119px;
+    left: 0;
+    z-index: 4;
+}
+
+.kopa-list-posts-carousel-2-widget .owl-carousel.owl-theme .owl-controls .owl-buttons .owl-prev{
+    float: left;
+    margin-left: -15px;
+}
+
+.kopa-list-posts-carousel-2-widget .owl-carousel.owl-theme .owl-controls .owl-buttons .owl-next{
+    float: right;
+    margin-right: -27px;
+}
+
+.edicion-impresa{
+    padding: 0;
+    z-index: 3;
+}
+
+.edicion-impresa .portada{
+    float: left;
+    margin-right: 10px;
+}
+
+.edicion-impresa .idiomas{
+    float: left;
+}
+
+.edicion-impresa .idiomas ul li{
+    margin-bottom: 9px;
+}
+
+.edicion-impresa .idiomas ul li:last-child{
+    margin-bottom: 0;
+}
+
+.edicion-impresa .idiomas ul li a{
+    text-indent: 10000em;
+    width: 50px;
+    height: 34px;
+    background: url("../imagenes/icon-idiomas.png");
+    border-radius: 5px;
+    display: block;
+}
+
+.edicion-impresa .idiomas ul li a.en{
+    background-position: 0 0;
+}
+
+.edicion-impresa .idiomas ul li a.al{
+    background-position: 0 -41px;
+}
+
+.edicion-impresa .idiomas ul li a.it{
+    background-position: 0 -82px;
+}
+
+.edicion-impresa .idiomas ul li a.fr{
+    background-position: 0 -122px;
+}
+
+.edicion-impresa .idiomas ul li a.pr{
+    background-position: 0 -163px;
+}
+
+.edicion-impresa .idiomas ul li a.ch{
+    background-position: 0 -203px;
 }
