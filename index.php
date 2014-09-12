@@ -53,7 +53,18 @@
                         <span class="mobile-menu-icon fa fa-align-justify"></span>
                         <ul class="kopa-menu sf-menu">
                             <li><a href="index.php">Inicio</a></li>
-                            <li><a href="#">Noticias</a></li>
+                            <li><a href="#">Noticias</a>
+                                <ul>
+                                    <li><a href="#">Noticias 1</a></li>
+                                    <li><a href="#">Noticias 1</a></li>
+                                    <li><a href="#">Noticias 1</a></li>
+                                    <li><a href="#">Noticias 1</a></li>
+                                    <li><a href="#">Noticias 1</a></li>
+                                    <li><a href="#">Noticias 1</a></li>
+                                    <li><a href="#">Noticias 1</a></li>
+                                    <li><a href="#">Noticias 1</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#">Internacional</a></li>
                             <li><a href="#">Economía</a></li>
                             <li><a href="#">Literatura</a></li>
@@ -91,7 +102,7 @@
                                 <form action="/" method="post" class="search-form">
                                     <input type="text"  name="search-text" onBlur="if (this.value == '')
                                         this.value = this.defaultValue;" onFocus="if (this.value == this.defaultValue)
-                                        this.value = '';" value="Search this site" >
+                                        this.value = '';" value="Buscar" >
                                     <span class="fa fa-search"></span>
                                     <button type="submit" class="fa fa-search"></button>
                                 </form>
@@ -120,7 +131,7 @@
                     <div class="owl-carousel">
                         <div class="item">
                             <div class="post-thumb img-responsive">
-                                <img src="http://lorempixel.com/1366/717/" alt="">
+                                <img src="http://lorempixel.com/1800/800/" alt="">
                             </div>
                             <div class="item-content">
                                 <h4 class="post-cat"><a href="#">Informe</a></h4>
@@ -131,7 +142,7 @@
                         <!-- item -->
                         <div class="item">
                             <div class="post-thumb img-responsive">
-                                <img src="http://lorempixel.com/1366/717/" alt="">
+                                <img src="http://lorempixel.com/1800/800/" alt="">
                             </div>
                             <div class="item-content">
                                 <h4 class="post-cat"><a href="#">Informe</a></h4>
@@ -195,7 +206,7 @@
                                     </div>
                                     <!-- metadata -->
 
-                                    <a href="#" class="kopa-readmore">Read more</a>
+                                    <a href="#" class="kopa-readmore">Leer nota</a>
 
                                 </div>
                             </div>
@@ -265,6 +276,7 @@
 
 
             <div class="widget-area-6">
+
                 <div class="widget kopa-list-posts-carousel-2-widget">
                     <header class="widget-header">
                         <h3 class="widget-title">EDICIÓN IMPRESA</h3>
@@ -307,6 +319,16 @@
                                     <div class="post-content item-right">
                                         <h4 class="post-title"><a href="#">Tips To Play Angry Birds Effectively</a></h4>
                                     </div>
+
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-volume-up fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
+                                    </span>
+
                                     <!-- post content -->
                                 </div>
                             </div>
@@ -325,6 +347,16 @@
                                     <div class="post-content item-right">
                                         <h4 class="post-title"><a href="#">Tips To Play Angry Birds Effectively</a></h4>
                                     </div>
+
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-volume-up fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
+                                    </span>
+
                                     <!-- post content -->
                                 </div>
                             </div>
@@ -343,6 +375,16 @@
                                     <div class="post-content item-right">
                                         <h4 class="post-title"><a href="#">Tips To Play Angry Birds Effectively</a></h4>
                                     </div>
+
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-volume-up fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
+                                    </span>
+
                                     <!-- post content -->
                                 </div>
                             </div>
@@ -361,6 +403,16 @@
                                     <div class="post-content item-right">
                                         <h4 class="post-title"><a href="#">Tips To Play Angry Birds Effectively</a></h4>
                                     </div>
+
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-volume-up fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
+                                    </span>
+
                                     <!-- post content -->
                                 </div>
                             </div>
@@ -394,20 +446,21 @@
                                         <header>
                                             <h4 class="post-title">
                                                 <a href="#">British Government: Flood Crisis Consistent With Global Warming</a>
-                                                <span class="kopa-rate">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                </span>
                                             </h4>
                                         </header>
                                         <div class="post-content">
                                             <div class="kopa-metadata-border">
-                                                <span><i class="fa fa-eye"></i> 26</span>
-                                                <a href="#"><i class="fa fa-comment"></i> 350</a>
-                                                <span><i class="fa fa-heart"></i> 50</span>
+                                                <!-- AddThis -->
+                                                <div class="addthis_native_toolbox col-lg-7"></div>
+                                                <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63"></script>
+
+                                                <span class="kopa-rate">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </span>
                                             </div>
                                             <!-- metadata -->
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget lorem iaculis, condimentum orci eget, scelerisque metus.Praesent vestibulum diam nec purus gravida rhoncus...</p>
@@ -447,20 +500,21 @@
                                         <header>
                                             <h4 class="post-title">
                                                 <a href="#">British Government: Flood Crisis Consistent With Global Warming</a>
-                                                <span class="kopa-rate">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                </span>
                                             </h4>
                                         </header>
                                         <div class="post-content">
                                             <div class="kopa-metadata-border">
-                                                <span><i class="fa fa-eye"></i> 26</span>
-                                                <a href="#"><i class="fa fa-comment"></i> 350</a>
-                                                <span><i class="fa fa-heart"></i> 50</span>
+                                                <!-- AddThis -->
+                                                <div class="addthis_native_toolbox col-lg-7"></div>
+                                                <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63"></script>
+
+                                                <span class="kopa-rate">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                </span>
                                             </div>
                                             <!-- metadata -->
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget lorem iaculis, condimentum orci eget, scelerisque metus.Praesent vestibulum diam nec purus gravida rhoncus...</p>
@@ -679,40 +733,9 @@
                             </header>
                             <div class="widget-content">
                                 <div class="item item-latest clearfix">
-                                    <div class="post-thumb">
-                                        <a href="#" class="img-responsive"><img src="placeholders/posts/7.jpg" alt=""></a>
-                                    </div>
-                                    <!-- thumb -->
-                                    <div class="item-content">
-                                        <header>
-                                            <h4 class="post-title">
-                                                <a href="#">British Government: Flood Crisis Consistent With Global Warming</a>
-                                                <span class="kopa-rate">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                </span>
-                                            </h4>
-                                        </header>
-                                        <div class="post-content">
-                                            <div class="kopa-metadata-border">
-                                                <span><i class="fa fa-eye"></i> 26</span>
-                                                <a href="#"><i class="fa fa-comment"></i> 350</a>
-                                                <span><i class="fa fa-heart"></i> 50</span>
-                                            </div>
-                                            <!-- metadata -->
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget lorem iaculis, condimentum orci eget, scelerisque metus.Praesent vestibulum diam nec purus gravida rhoncus...</p>
-                                        </div>
-                                    </div>
-                                    <!-- item content -->
-                                    <div class="kopa-date-box">
 
-                                        <span class="kopa-mon">Fer</span>
-                                        <span class="kopa-day">08</span>
-                                        <span class="kopa-yea">2014</span>
-                                    </div>
+                                    <img src="imagenes/prueba/video.jpg" alt=""/>
+                                    
                                 </div>
                                 <!-- item latest -->
                             </div>
@@ -780,7 +803,7 @@
                         <div class="widget-area-14">
                             <div class="widget kopa-ads-widget">
                                 <div class="widget-content">
-                                    <a href="#"><img src="placeholders/logo-2.png" alt=""></a>
+                                    <a href="#"><img src="imagenes/logo-b.png" alt=""></a>
                                 </div>
                             </div>
 
@@ -798,22 +821,9 @@
                                     <div class="kopa-social clearfix">
                                         <a href="#" class="fa fa-facebook"></a>
                                         <a href="#" class="fa fa-twitter"></a>
-                                        <a href="#" class="fa fa-google-plus"></a>
-                                        <a href="#" class="fa fa-pinterest-square"></a>
-                                        <a href="#" class="fa fa-skype"></a>
                                         <a href="#" class="fa fa-youtube"></a>
                                     </div>
                                     <!-- social -->
-                                </div>
-                            </div>
-                            <div class="widget kopa-newletter-widget">
-                                <div class="widget-content">
-                                    <form action="/" method="post" class="form-news-letter">
-                                        <input type="text"  name="search-text" onBlur="if (this.value == '')
-                            this.value = this.defaultValue;" onFocus="if (this.value == this.defaultValue)
-                            this.value = '';" value="Your email here..." >
-                                        <button type="submit" class="fa fa-envelope"></button>
-                                    </form>
                                 </div>
                             </div>
                         </div>
