@@ -624,7 +624,6 @@ li > ul, li > ol {
     display: block;
     max-width: 100%;
     height: auto;
-    margin-top: 5px;
     margin-left: 0;
 }
 #kopa-header .kopa-menu {
@@ -646,22 +645,22 @@ li > ul, li > ol {
 .header-1 .kopa-header-top {
     height: 36px;
     background: #766c59;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.35);
 }
 .header-1 .kopa-header-bottom {
     height: 36px;
     position: relative;
     background: #766c59;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.35);
 }
 .header-1 .kopa-header-middle {
-    height: 65px;
-    min-height: 65px;
+    height: 66px;
+    min-height: 66px;
     position: relative;
 }
 .header-1 .menu-second {
-    margin-left: 60px;
-    padding: 0 19.5px;
+    /*margin-left: 60px;*/
+    padding: 0 48px;
     background-image: url("../imagenes/fondo-trans.png");
     background: rgba(0, 0, 0, 0.8);
 }
@@ -674,27 +673,29 @@ li > ul, li > ol {
     color: #504d4d;
 }
 .header-1 .main-menu {
-    float: right;
-    background-image: url("../imagenes/fondo-trans.png");
+    float: left;
+    /*background-image: url("../imagenes/fondo-trans.png");*/
     height: 65px;
     padding-top: 20px;
     margin-left: 0;
     position: relative;
+    background: rgba(0,0,0,0.65);
 }
 .header-1 .main-menu:before {
     content: '';
     height: 65px;
     width: 1000px;
-    background-image: url("../imagenes/fondo-trans.png");
+    /*background-image: url("../imagenes/fondo-trans.png");*/
     display: block;
     position: absolute;
     right: -1000px;
     top: 0;
+    background: rgba(0,0,0,0.65);
 }
 .header-1 .kopa-logo {
-    margin-right: 20px;
-    position: absolute;
     z-index: 5;
+    float: left;
+    max-width: 244px;
 }
 .header-1 .kopa-menu {
     padding: 0 15px;
@@ -733,7 +734,7 @@ li > ul, li > ol {
     padding-right: 40px;
 }
 .header-1 .kopa-menu.sf-menu ul {
-    top: 70px;
+    /*top: 70px;*/
 }
 .header-1 .mobile-menu-icon {
     right: -456px;
@@ -742,7 +743,7 @@ li > ul, li > ol {
     background: none;
 }
 .header-1 .kopa-head-line .kopa-list-news-carousel-widget {
-    margin-left: 60px;
+    /*margin-left: 60px;*/
 }
 .header-1 .kopa-head-line .kopa-list-news-carousel-widget .widget-title {
     width: 244px;
@@ -1179,8 +1180,9 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     padding-bottom: 5px; }
 
 .kopa-metadata-border {
-  overflow: hidden;
-  margin-bottom: 15px; }
+    overflow: hidden;
+    padding: 0;
+}
   .kopa-metadata-border > a, .kopa-metadata-border span {
     display: inline-block;
     border: 1px solid #e4e3f0;
@@ -2232,7 +2234,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     background: none;
 }
 .widget-area-2 .widget-header, .widget-area-2 .entry-header, .widget-area-3 .widget-header, .widget-area-3 .entry-header, .widget-area-4 .widget-header, .widget-area-4 .entry-header, .widget-area-5 .widget-header, .widget-area-5 .entry-header, .widget-area-6 .widget-header, .widget-area-6 .entry-header, .widget-area-7 .widget-header, .widget-area-7 .entry-header, .widget-area-8 .widget-header, .widget-area-8 .entry-header, .widget-area-9 .widget-header, .widget-area-9 .entry-header, .widget-area-10 .widget-header, .widget-area-10 .entry-header, .widget-area-11 .widget-header, .widget-area-11 .entry-header, .widget-area-12 .widget-header, .widget-area-12 .entry-header, .widget-area-13 .widget-header, .widget-area-13 .entry-header, .widget-area-26 .widget-header, .widget-area-26 .entry-header, .widget-area-22 .widget-header, .widget-area-22 .entry-header, .widget-area-23 .widget-header, .widget-area-23 .entry-header, .widget-area-24 .widget-header, .widget-area-24 .entry-header, .widget-area-25 .widget-header, .widget-area-25 .entry-header, .widget-area-27 .widget-header, .widget-area-27 .entry-header, .widget-area-18 .widget-header, .widget-area-18 .entry-header, .widget-area-19 .widget-header, .widget-area-19 .entry-header, #main-content .widget .widget-header, #main-content .widget .entry-header, .single-page-content .widget-header, .single-page-content .entry-header {
-    border-bottom: 4px solid #e4e3f0;
+    border-bottom: 2px solid #e4e3f0;
     position: relative;
     margin-bottom: 30px;
 }
@@ -2259,7 +2261,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     background: #fbbd2c;
     position: absolute;
     left: 0;
-    bottom: -4px;
+    bottom: -2px;
 }
 .kopa-list-posts-thumb-big-small-widget .item {
     border-top: 1px solid #e4e3f0;
@@ -4392,6 +4394,7 @@ section#home-notprin{
     margin-right: -27px;
 }
 
+/* EDICION IMPRSA */
 .edicion-impresa{
     padding: 0;
     z-index: 3;
@@ -4445,4 +4448,21 @@ section#home-notprin{
 
 .edicion-impresa .idiomas ul li a.ch{
     background-position: 0 -203px;
+}
+
+/* LOGO */
+.header-1 .kopa-header-middle{
+    background: rgba(255, 255, 255, 0.35);
+}
+
+/* SOCIAL MEDIA */
+.addthis_native_toolbox{
+    padding: 0;
+}
+
+.addthis_native_toolbox span{
+    padding: 0;
+    border: none;
+    line-height: normal;
+    margin: 0;
 }
