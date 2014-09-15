@@ -131,7 +131,7 @@
                     <div class="owl-carousel">
                         <div class="item">
                             <div class="post-thumb img-responsive">
-                                <img src="http://lorempixel.com/1800/800/" alt="">
+                                <img src="imagenes/prueba/01.jpg" alt="">
                             </div>
                             <div class="item-content">
                                 <h4 class="post-cat"><a href="#">Informe</a></h4>
@@ -140,9 +140,22 @@
                             </div>
                         </div>
                         <!-- item -->
+
                         <div class="item">
                             <div class="post-thumb img-responsive">
-                                <img src="http://lorempixel.com/1800/800/" alt="">
+                                <img src="imagenes/prueba/02.jpg" alt="">
+                            </div>
+                            <div class="item-content">
+                                <h4 class="post-cat"><a href="#">Informe</a></h4>
+                                <h4 class="post-title"><a href="#">La verdad sobre Hamas</a></h4>
+                                <a href="#" class="kopa-readmore">LEER MÁS</a>
+                            </div>
+                        </div>
+                        <!-- item -->
+
+                        <div class="item">
+                            <div class="post-thumb img-responsive">
+                                <img src="imagenes/prueba/03.jpg" alt="">
                             </div>
                             <div class="item-content">
                                 <h4 class="post-cat"><a href="#">Informe</a></h4>
@@ -185,7 +198,7 @@
 
                             <div class="item-content">
                                 <header>
-                                    <h4 class="post-title"><a href="#">British Government: Flood Crisis Consistent With Global Warming</a> </h4>
+                                    <h4 class="post-title"><a href="#">British Government: Flood Crisis Consistent With Global Warming With Global Warming</a> </h4>
                                 </header>
                                 <div class="post-content">
                                     <p>Behind the couch chew foot so hunt anything that moves flop over hunt anything that moves intently stare at the same spot or cat snacks. Hide when guests come over. Inspect anything brought into the house give attitude and stretch, so burrow under covers chew foot...</p>
