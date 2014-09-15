@@ -1,27 +1,3 @@
-/*
-Theme Name: Karo
-Theme URI: http://kopatheme.com
-Author: Kopatheme
-Author URI: http://kopatheme.com
-Description: Karo theme is designed for magazine, news with flexible layout. The theme is based on KOPATHEME layout manager technique that will let you flexibility choose layout options of every pages within your site. It is very helpful when you are experimenting with visual hierarchy. You can define unlimited sidebar for widget areas, and with powerful custom widgets, the theme provides you more flexibility and ease-of-use for your site
-Version: 1.0.0
-License:
-License URI:
-Tags: black, blue, green, white, responsive-layout, custom-colors, custom-menu, editor-style, featured-images, post-formats, threaded-comments, sticky-post, theme-options, translation-ready
-*/
-/*------------------------------------------------------------------
-[Table of contents]
-
-1. Body
-2. Header / #kopa-header
-3. Navigation
-4. Content 
-5. Sidebar / #sidebar
-6. Search
-7. Advertisements / .kopa-ads-widget
-8. Footer / #kopa-footer
--------------------------------------------------------------------*/
-
 /**
  * 1. Body
  * -----------------------------------------------------------------------------
@@ -2165,7 +2141,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 }
 .kopa-grid-posts-widget .item.pull-left {
     width: 40%;
-    background: #3474a2;
+    background: #131313;
 }
 .kopa-grid-posts-widget .item.pull-left .post-thumb, .kopa-grid-posts-widget .item.pull-left .item-content {
     width: 50%;
@@ -2201,18 +2177,22 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     float: right;
 }
 .kopa-grid-posts-widget .item.item2 {
-    background: #4187ba;
+    background: #343434;
 }
 .kopa-grid-posts-widget .item.item3 {
-    background: #335d8f;
+    background: #686868;
 }
 .kopa-grid-posts-widget .latest-post {
     width: 60%;
     position: relative;
 }
 .kopa-grid-posts-widget .latest-post .item-content {
-    padding-left: 30px;
-    padding-top: 20px;
+    padding-left: 20px;
+    padding-top: 15px;
+    max-height: 226px;
+    border-left: 1px solid #E4E3F0;
+    border-bottom: 1px solid #E4E3F0;
+    height: 226px;
 }
 .kopa-grid-posts-widget .latest-post .post-title {
     font-size: 24px;
