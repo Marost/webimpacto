@@ -35,8 +35,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
 
                 var $select = jMulSl("select.selectMultiple"),
                     $input = jMulSl("#refreshInput"),
-                    value = jMulSl.trim($input.val())
-
+                    value = jMulSl.trim($input.val());
 
                 jMulSl.ajax({
                     type: "POST",
@@ -48,7 +47,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                             return;
                         }
 
-                        var data = jMulSl.parseJSON(response)
+                        var data = jMulSl.parseJSON(response);
 
                         var $opt = jMulSl("<option />", {
                             value: data.id,
@@ -95,7 +94,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
     <!-- Main content -->
     <div class="wrapper">
 
-        <form id="validate" class="main" method="POST" action="s-guardar.php">
+        <form id="validate" class="main" method="POST" action="#">
 
             <fieldset>
                 <div class="widget fluid">
@@ -104,12 +103,12 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                     
                     <div class="formRow">
                         <div class="grid3"><label>Titulo:</label></div>
-                        <div class="grid9"><input type="text" name="nombre" class="validate[required]" /></div>
+                        <div class="grid9"><input id="titulo" type="text" name="nombre" /></div>
                     </div>
 
                     <div class="widget">
                         <div class="whead"><h6>Contenido</h6></div>
-                        <textarea class="validate[required] ckeditor" name="contenido" /></textarea>
+                        <textarea id="contenido" class="ckeditor" name="contenido"></textarea>
                     </div>
 
                     <div class="formRow">
@@ -124,14 +123,14 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                     <div class="formRow">
                         <div class="grid3"><label>Video (Youtube):</label> </div>
                         <div class="grid9">http://www.youtube.com/watch?v=
-                            <input type="text" name="video_youtube" value="" style="width: 300px;">
+                            <input id="video" type="text" name="video_youtube" value="" style="width: 300px;">
                         </div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Categoria:</label></div>
                         <div class="grid9">
-                            <select name="categoria" class="validate[required] styled">
+                            <select id="categoria" name="categoria" class="styled">
                                 <option>Selecciona</option>
                                 <?php while($fila_cat=mysql_fetch_array($rst_cat)){
                                         $notCat_id=$fila_cat["id"];
@@ -147,9 +146,9 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                         <div class="grid3"><label>Tipo de noticia: </label></div>
                         <div class="grid9 yes_no">
                             <div class="floatL mr10">Destacada
-                                <input type="radio" name="tipo_noticia" value="not_destacada" /></div>
+                                <input id="tipo" type="radio" name="tipo_noticia" value="not_destacada" /></div>
                             <div class="floatL mr10">Normal
-                                <input type="radio" name="tipo_noticia" value="not_normal" checked="checked" /></div>
+                                <input id="tipo" type="radio" name="tipo_noticia" value="not_normal" checked="checked" /></div>
                         </div>
                     </div>
 
@@ -167,7 +166,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                                 <a id="refreshAdd" href="javascript:;">Agregar nueva Etiqueta</a>
                             </span>
 
-                            <select class="selectMultiple" multiple="multiple" tabindex="6" name="tags[]">
+                            <select id="etiquetas" class="selectMultiple" multiple="multiple" tabindex="6" name="tags[]">
                                 <option></option>
                                 <?php while($fila_tags=mysql_fetch_array($rst_tags)){
                                         $notTag_id=$fila_tags["id"];
@@ -181,19 +180,22 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
 
                     <div class="formRow">
                         <div class="grid3"><label>Fecha de publicación:</label></div>
-                        <div class="grid4"><input type="text" class="datepicker" name="pub_fecha" value="<?php echo $pub_fecha; ?>" /></div>
+                        <div class="grid4"><input id="fecha" type="text" class="datepicker" name="pub_fecha" value="<?php echo $pub_fecha; ?>" /></div>
                     </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Hora de publicación:</label></div>
-                        <div class="grid4"><input type="text" class="timepicker" name="pub_hora" size="10" value="<?php echo $pub_hora; ?>" />
+                        <div class="grid4"><input id="hora" type="text" class="timepicker" name="pub_hora" size="10" value="<?php echo $pub_hora; ?>" />
                             <span class="ui-datepicker-append">Utilice la rueda del ratón y el teclado</span></div>
                     </div>
                     
                     <div class="formRow">
                         <div class="body" align="center">
+                            <input formtarget="_blank" type="submit" value="Vista previa de la Noticia" class="buttonL bBlue" onclick="this.form.action='../../../nota-preview.php'; this.form.submit();" />
+                        </div>
+                        <div class="body" align="center">
                             <a href="lista.php" class="buttonL bBlack">Cancelar</a>
-                            <input type="submit" class="buttonL bGreen" name="btn-guardar" value="Guardar datos">
+                            <input type="submit" name="btn-guardar" class="buttonL bGreen" value="Guardar datos" onclick="this.form.action='s-guardar.php'; this.form.submit();" />
                         </div>
                     </div>
                     
