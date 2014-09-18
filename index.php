@@ -191,17 +191,17 @@
 
                             <div class="post-thumb">
                                 <a href="#" class="img-responsive">
-                                    <img src="http://lorempixel.com/729/452/" alt="">
+                                    <img src="imagenes/prueba/img1.jpg" alt="">
                                 </a>
                             </div>
                             <!-- post thumb -->
 
                             <div class="item-content">
                                 <header>
-                                    <h4 class="post-title"><a href="#">British Government: Flood Crisis Consistent With Global Warming With Global Warming</a> </h4>
+                                    <h4 class="post-title"><a href="#">Venezuela: Ministerios realizarán I Congreso de Uniformados Cristianos</a></h4>
                                 </header>
                                 <div class="post-content">
-                                    <p>Behind the couch chew foot so hunt anything that moves flop over hunt anything that moves intently stare at the same spot or cat snacks. Hide when guests come over. Inspect anything brought into the house give attitude and stretch, so burrow under covers chew foot...</p>
+                                    <p>Este evento es realizado por la Asociación Ministerial de Uniformados Cristianos Evangélicos de Venezuela (AMUCEV), el Consejo Evangélico de Venezuela (CEV) y por la Confederación Evangélica Pentecostal de Venezuela ( CEPV).</p>
 
                                     <div class="kopa-metadata-border col-lg-9">
 
@@ -239,11 +239,11 @@
                             <div class="item pull-left">
                                 <div class="item-content">
                                     <span class="kopa-date">January 1, 2014</span>
-                                    <h4 class="post-title"><a href="#">Ted Baker To Offer Up Complimentary Movember Grooming</a></h4>
+                                    <h4 class="post-title"><a href="#">Iglesias escocesas unidas por la reconciliación post-referéndum</a></h4>
                                 </div>
                                 <div class="post-thumb">
                                     <a href="#" class="img-responsive">
-                                    <img src="http://lorempixel.com/243/226/" alt="">
+                                    <img src="imagenes/prueba/img2.jpg" alt="">
                                     </a>
                                 </div>
                                 <!-- post thumb -->
@@ -253,11 +253,11 @@
                             <div class="item pull-left item-rtl">
                                 <div class="item-content">
                                     <span class="kopa-date">January 1, 2014</span>
-                                    <h4 class="post-title"><a href="#">Ted Baker To Offer Up Complimentary Movember Grooming</a></h4>
+                                    <h4 class="post-title"><a href="#">Trece cristianos, liberados por el EI</a></h4>
                                 </div>
                                 <div class="post-thumb">
                                     <a href="#" class="img-responsive">
-                                    <img src="http://lorempixel.com/243/226/" alt="">
+                                    <img src="imagenes/prueba/img3.jpg" alt="">
                                     </a>
                                 </div>
                                 <!-- post thumb -->
@@ -267,11 +267,11 @@
                             <div class="item pull-left">
                                 <div class="item-content">
                                     <span class="kopa-date">January 1, 2014</span>
-                                    <h4 class="post-title"><a href="#">Ted Baker To Offer Up Complimentary Movember Grooming</a></h4>
+                                    <h4 class="post-title"><a href="#">Una de cada 10 niñas ha sufrido abusos antes de cumplir los 20 años</a></h4>
                                 </div>
                                 <div class="post-thumb">
                                     <a href="#" class="img-responsive">
-                                    <img src="http://lorempixel.com/243/226/" alt="">
+                                    <img src="imagenes/prueba/img4.jpg" alt="">
                                     </a>
                                 </div>
                                 <!-- post thumb -->
@@ -320,7 +320,7 @@
 
                             <div class="item">
                                 <div class="post-thumb">
-                                    <a href="#" class="img-responsive"><img src="placeholders/posts/13.jpg" alt=""></a>
+                                    <a href="#" class="img-responsive"><img src="imagenes/prueba/img5.jpg" alt=""></a>
                                     <div class="kopa-metadata">
                                         <span class="kopa-date"> Fer 20, 2014</span>
                                     </div>
@@ -329,8 +329,8 @@
                                 <div class="item-content clearfix">
                                     <span class="kopa-num-pag">Pág.</span>
                                     <span class="kopa-num pull-left">01</span>
-                                    <div class="post-content item-right">
-                                        <h4 class="post-title"><a href="#">Tips To Play Angry Birds Effectively</a></h4>
+                                    <div class="post-content edimpresa-titulo">
+                                        <h4 class="post-title"><a href="#">Los adolescentes protegen más su privacidad que los adultos</a></h4>
                                     </div>
 
                                     <span class="fa-stack fa-lg">
@@ -348,7 +348,7 @@
 
                             <div class="item">
                                 <div class="post-thumb">
-                                    <a href="#" class="img-responsive"><img src="placeholders/posts/14.jpg" alt=""></a>
+                                    <a href="#" class="img-responsive"><img src="imagenes/prueba/img6.jpg" alt=""></a>
                                     <div class="kopa-metadata">
                                         <span class="kopa-date"> Fer 20, 2014</span>
                                     </div>
@@ -357,8 +357,8 @@
                                 <div class="item-content clearfix">
                                     <span class="kopa-num-pag">Pág.</span>
                                     <span class="kopa-num pull-left">02</span>
-                                    <div class="post-content item-right">
-                                        <h4 class="post-title"><a href="#">Tips To Play Angry Birds Effectively</a></h4>
+                                    <div class="post-content edimpresa-titulo">
+                                        <h4 class="post-title"><a href="#">Panamá capital mundial de la fe</a></h4>
                                     </div>
 
                                     <span class="fa-stack fa-lg">
@@ -376,7 +376,7 @@
 
                             <div class="item">
                                 <div class="post-thumb">
-                                    <a href="#" class="img-responsive"><img src="placeholders/posts/15.jpg" alt=""></a>
+                                    <a href="#" class="img-responsive"><img src="imagenes/prueba/img7.jpg" alt=""></a>
                                     <div class="kopa-metadata">
                                         <span class="kopa-date"> Fer 20, 2014</span>
                                     </div>
@@ -385,8 +385,8 @@
                                 <div class="item-content clearfix">
                                     <span class="kopa-num-pag">Pág.</span>
                                     <span class="kopa-num pull-left">03</span>
-                                    <div class="post-content item-right">
-                                        <h4 class="post-title"><a href="#">Tips To Play Angry Birds Effectively</a></h4>
+                                    <div class="post-content edimpresa-titulo">
+                                        <h4 class="post-title"><a href="#">¿Por qué es tan malo el pecado?</a></h4>
                                     </div>
 
                                     <span class="fa-stack fa-lg">
@@ -404,7 +404,7 @@
 
                             <div class="item">
                                 <div class="post-thumb">
-                                    <a href="#" class="img-responsive"><img src="placeholders/posts/15.jpg" alt=""></a>
+                                    <a href="#" class="img-responsive"><img src="imagenes/prueba/img8.jpg" alt=""></a>
                                     <div class="kopa-metadata">
                                         <span class="kopa-date"> Fer 20, 2014</span>
                                     </div>
@@ -413,8 +413,8 @@
                                 <div class="item-content">
                                     <span class="kopa-num-pag">Pág.</span>
                                     <span class="kopa-num pull-left">04</span>
-                                    <div class="post-content item-right">
-                                        <h4 class="post-title"><a href="#">Tips To Play Angry Birds Effectively</a></h4>
+                                    <div class="post-content edimpresa-titulo">
+                                        <h4 class="post-title"><a href="#">Cinco décadas evangelizando</a></h4>
                                     </div>
 
                                     <span class="fa-stack fa-lg">
@@ -452,13 +452,13 @@
                             <div class="widget-content">
                                 <div class="item item-latest clearfix">
                                     <div class="post-thumb">
-                                        <a href="#" class="img-responsive"><img src="http://lorempixel.com/384/250/" alt=""></a>
+                                        <a href="#" class="img-responsive"><img src="imagenes/prueba/img9.jpg" alt=""></a>
                                     </div>
                                     <!-- thumb -->
                                     <div class="item-content">
                                         <header>
                                             <h4 class="post-title">
-                                                <a href="#">British Government: Flood Crisis Consistent With Global Warming</a>
+                                                <a href="#">Peleando la buena batalla</a>
                                             </h4>
                                         </header>
                                         <div class="post-content">
@@ -476,7 +476,7 @@
                                                 </span>
                                             </div>
                                             <!-- metadata -->
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget lorem iaculis, condimentum orci eget, scelerisque metus.Praesent vestibulum diam nec purus gravida rhoncus...</p>
+                                            <p>Rev. Gustavo Martínez Garavito: “He peleado la buena batalla, he acabado la carrera, he guardado la fe. Por lo demás, me está guardada la corona de justicia, la cual me dará el Señor... "</p>
                                         </div>
                                     </div>
                                     <!-- item content -->
@@ -506,13 +506,13 @@
                             <div class="widget-content">
                                 <div class="item item-latest clearfix">
                                     <div class="post-thumb">
-                                        <a href="#" class="img-responsive"><img src="http://lorempixel.com/384/250/" alt=""></a>
+                                        <a href="#" class="img-responsive"><img src="imagenes/prueba/img10.jpg" alt=""></a>
                                     </div>
                                     <!-- thumb -->
                                     <div class="item-content">
                                         <header>
                                             <h4 class="post-title">
-                                                <a href="#">British Government: Flood Crisis Consistent With Global Warming</a>
+                                                <a href="#">Evangelización en la selva de Mitú, Vaupés</a>
                                             </h4>
                                         </header>
                                         <div class="post-content">
@@ -530,7 +530,7 @@
                                                 </span>
                                             </div>
                                             <!-- metadata -->
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget lorem iaculis, condimentum orci eget, scelerisque metus.Praesent vestibulum diam nec purus gravida rhoncus...</p>
+                                            <p>Autoridades civiles y militares reconocen la encomiable labor del MMM en Vaupés, Colombia. Los resultados han sido cuantiosos para el avance del Evangelio en la población.</p>
                                         </div>
                                     </div>
                                     <!-- item content -->
@@ -550,23 +550,36 @@
                 <!-- col-4 -->
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="widget-area-5">
-                        <div class="widget kopa-social-4-widget">
+
+                        <div class="widget kopa-list-post-small-thumb-widget no-cat">
                             <header class="widget-header">
                                 <h3 class="widget-title">EDITORIAL</h3>
                                 <i class="fa fa-plus-square-o"></i>
 
                             </header>
                             <div class="widget-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget lorem iaculis, condimentum orci eget, scelerisque metus.</p>
-                                <div class="link-social-3">
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-youtube"></i></a>
-                                    <a href="#"><i class="fa fa-android"></i></a>
-                                    <a href="#"><i class="fa fa-apple"></i></a>
-                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="clearfix">
+                                        <div class="item-left">
+                                            <!-- metadata -->
+                                            <h4 class="post-title">
+                                                <a href="#">Venid con todo vuestro corazón</a>
+                                            </h4>
+
+                                            <span>
+                                                <p><strong>Rev. Gustavo Martinez</strong></p>
+                                                <p>Vicepresidente Internacional del M.M.M.</p>
+                                            </span>
+                                        </div>
+
+                                        <a href="#" class="post-thumb pull-left">
+                                            <img src="placeholders/posts/28.jpg" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
+
                         <div class="widget kopa-list-post-small-thumb-widget no-cat">
                             <header class="widget-header">
                                 <h3 class="widget-title">LA PALÁBRA</h3>
@@ -579,21 +592,15 @@
                                         <img src="placeholders/posts/28.jpg" alt="">
                                         </a>
                                         <div class="item-right">
-                                            <h4 class="post-cat"><a href="#">entertainment</a></h4>
-                                            <div class="kopa-metadata">
-                                                <span class="kopa-date"> Fer 20, 2014</span>
-                                            </div>
                                             <!-- metadata -->
                                             <h4 class="post-title">
-                                                <a href="#">British Government: Flood Crisis Consistent With Global Warming</a>
-                                                <span class="kopa-rate">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                </span>
+                                                <a href="#">Venid con todo vuestro corazón</a>
                                             </h4>
+
+                                            <span>
+                                                <p><strong>Rev. José Soto</strong></p>
+                                                <p>Vicepresidente Internacional del M.M.M.</p>
+                                            </span>
                                         </div>
                                     </li>
                                     <li class="clearfix">
@@ -601,21 +608,16 @@
                                         <img src="placeholders/posts/28.jpg" alt="">
                                         </a>
                                         <div class="item-right">
-                                            <h4 class="post-cat"><a href="#">entertainment</a></h4>
-                                            <div class="kopa-metadata">
-                                                <span class="kopa-date"> Fer 20, 2014</span>
-                                            </div>
                                             <!-- metadata -->
                                             <h4 class="post-title">
-                                                <a href="#">British Government: Flood Crisis Consistent With Global Warming</a>
-                                                <span class="kopa-rate">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                </span>
+                                                <a href="#">Venid con todo vuestro corazón</a>
                                             </h4>
+
+                                            <span>
+                                                <p><strong>Rev. Rodolfo González</strong></p>
+                                                <p>Tesorero Internacional del M.M.M.</p>
+                                            </span>
+
                                         </div>
                                     </li>
                                 </ul>
@@ -643,12 +645,12 @@
                                 <div class="sync1 owl-carousel">
                                     <div class="item">
                                         <div class="post-thumb">
-                                            <a href="#" class="img-responsive"><img src="http://placehold.it/696x350" alt=""></a>
+                                            <a href="#" class="img-responsive"><img src="imagenes/prueba/img11.jpg" alt=""></a>
                                         </div>
                                         <!-- thumb -->
                                         <div class="item-content">
                                             <h4 class="post-title">
-                                                <a href="#">12 Cool Hidden Features Of iOS 7</a>
+                                                <a href="#">Gran Cruzada Evangelística en Barcelona</a>
                                                 <span class="kopa-rate">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -663,12 +665,12 @@
                                     <!-- item -->
                                     <div class="item">
                                         <div class="post-thumb">
-                                            <a href="#" class="img-responsive"><img src="http://placehold.it/696x350" alt=""></a>
+                                            <a href="#" class="img-responsive"><img src="imagenes/prueba/img12.jpg" alt=""></a>
                                         </div>
                                         <!-- thumb -->
                                         <div class="item-content">
                                             <h4 class="post-title">
-                                                <a href="#">12 Cool Hidden Features Of iOS 7</a>
+                                                <a href="#">Campaña Evangelística en Cassano d Adda</a>
                                                 <span class="kopa-rate">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -683,12 +685,12 @@
                                     <!-- item -->
                                     <div class="item">
                                         <div class="post-thumb">
-                                            <a href="#" class="img-responsive"><img src="http://placehold.it/696x350" alt=""></a>
+                                            <a href="#" class="img-responsive"><img src="imagenes/prueba/img13.jpg" alt=""></a>
                                         </div>
                                         <!-- thumb -->
                                         <div class="item-content">
                                             <h4 class="post-title">
-                                                <a href="#">12 Cool Hidden Features Of iOS 7</a>
+                                                <a href="#">Confraternidad de Damas en Iquique</a>
                                                 <span class="kopa-rate">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -703,12 +705,12 @@
                                     <!-- item -->
                                     <div class="item">
                                         <div class="post-thumb">
-                                            <a href="#" class="img-responsive"><img src="http://placehold.it/696x350" alt=""></a>
+                                            <a href="#" class="img-responsive"><img src="imagenes/prueba/img14.jpg" alt=""></a>
                                         </div>
                                         <!-- thumb -->
                                         <div class="item-content">
                                             <h4 class="post-title">
-                                                <a href="#">12 Cool Hidden Features Of iOS 7</a>
+                                                <a href="#">Cuarto Aniversario de la Iglesia de Amberes, Bélgica</a>
                                                 <span class="kopa-rate">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -723,10 +725,10 @@
                                     <!-- item -->
                                 </div>
                                 <div class="sync2 owl-carousel">
-                                    <div class="item img-responsive"><img src="http://placehold.it/120x90" alt=""></div>
-                                    <div class="item img-responsive"><img src="http://placehold.it/120x90" alt=""></div>
-                                    <div class="item img-responsive"><img src="http://placehold.it/120x90" alt=""></div>
-                                    <div class="item img-responsive"><img src="http://placehold.it/120x90" alt=""></div>
+                                    <div class="item img-responsive"><img src="imagenes/prueba/img15.jpg" alt=""></div>
+                                    <div class="item img-responsive"><img src="imagenes/prueba/img16.jpg" alt=""></div>
+                                    <div class="item img-responsive"><img src="imagenes/prueba/img17.jpg" alt=""></div>
+                                    <div class="item img-responsive"><img src="imagenes/prueba/img18.jpg" alt=""></div>
                                 </div>
                             </div>
                             <!-- widget content -->

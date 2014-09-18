@@ -79,7 +79,19 @@ input[type="submit"] {
 }
 .item-right {
     overflow: hidden;
+    width: 269px;
+    height: 100px;
+    position: relative;
 }
+
+.item-left {
+    overflow: hidden;
+    width: 269px;
+    height: 100px;
+    position: relative;
+    float: left;
+}
+
 .hide {
     display: none !important;
 }
@@ -2910,10 +2922,50 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     color: #292929;
 }
 .kopa-list-post-small-thumb-widget .post-title {
-    font-size: 14px;
-    margin-top: 5px;
+    font-size: 18px;
+    line-height: 26px;
     margin-bottom: 0;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
+
+.kopa-list-post-small-thumb-widget span{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.kopa-list-post-small-thumb-widget span p{
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+.kopa-list-post-small-thumb-widget .item-left .post-title {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 0;
+    text-align: left;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.kopa-list-post-small-thumb-widget .item-left span{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+}
+
+.kopa-list-post-small-thumb-widget .item-left span p{
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+
+
 .kopa-list-post-small-thumb-widget .post-title .kopa-rate {
     font-size: 13px;
     width: 90px;
@@ -4428,6 +4480,14 @@ section#home-notprin{
 
 .edicion-impresa .idiomas ul li a.ch{
     background-position: 0 -203px;
+}
+
+.edimpresa-titulo{
+    overflow: hidden !important;
+}
+
+.edimpresa-titulo h4{
+    font-size: 13px !important;
 }
 
 /* LOGO */
