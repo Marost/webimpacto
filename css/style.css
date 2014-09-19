@@ -79,17 +79,6 @@ input[type="submit"] {
 }
 .item-right {
     overflow: hidden;
-    width: 269px;
-    height: 100px;
-    position: relative;
-}
-
-.item-left {
-    overflow: hidden;
-    width: 269px;
-    height: 100px;
-    position: relative;
-    float: left;
 }
 
 .hide {
@@ -788,7 +777,7 @@ li > ul, li > ol {
 }
 .header-2 .kopa-header-bottom {
     height: 38px;
-    background: #272727;
+    background: #232323;
 }
 .header-2 .main-menu {
     position: relative;
@@ -832,7 +821,7 @@ li > ul, li > ol {
     top: 13px;
 }
 .header-2 .main-menu .kopa-menu.sf-menu > li:first-child > a {
-    padding-left: 0;
+    /*padding-left: 0;*/
 }
 .header-2 .main-menu .kopa-menu.sf-menu > li:first-child > a:before {
     display: none;
@@ -2897,6 +2886,22 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 .kopa-list-post-small-thumb-widget .widget-content > ul > li:first-child {
     margin-top: 0;
 }
+
+.kopa-list-post-small-thumb-widget .item-right {
+    overflow: hidden;
+    width: 269px;
+    height: 100px;
+    position: relative;
+}
+
+.kopa-list-post-small-thumb-widget .item-left {
+    overflow: hidden;
+    width: 269px;
+    height: 100px;
+    position: relative;
+    float: left;
+}
+
 .kopa-list-post-small-thumb-widget .post-thumb {
     width: 100px;
     margin-right: 15px;
@@ -4505,4 +4510,9 @@ section#home-notprin{
     border: none;
     line-height: normal;
     margin: 0;
+}
+
+/* CLASSES */
+.dpnone{
+    display: none;
 }
