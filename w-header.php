@@ -1,4 +1,20 @@
-<header id="kopa-header" class="header-1">
+<?php
+if(isset($header)){
+    if($header=="home"){
+        $header_class="header-1";
+        $ocultar="dpnone";
+        $mostrar="";
+        $cambioMB="middle";
+    }elseif($header=="interno"){
+        $header_class="header-2";
+        $ocultar="";
+        $mostrar="dpnone";
+        $cambioMB="bottom";
+    }
+}
+?>
+<header id="kopa-header" class="<?php echo $header_class; ?>">
+
     <div class="kopa-header-top">
         <div class="container">
             <div class="menu-second pull-left">
@@ -17,24 +33,39 @@
         </div>
     </div>
     <!-- kopa header top -->
-    <div class="kopa-header-middle">
+
+    <div class="kopa-header-middle <?php echo $ocultar; ?>">
         <div class="container">
-            <div class="kopa-logo">
+
+            <div class="kopa-logo pull-left">
+                <a href="/"><img src="imagenes/logo.png" alt=""></a>
+            </div>
+            <!-- logo -->
+
+            <div class="kopa-baner pull-right">
+                <a href="#"><img src="placeholders/ads/3.jpg" alt=""></a>
+            </div>
+            <!-- banner -->
+
+        </div>
+        <!-- container -->
+    </div>
+    <!-- kopa header -->
+
+    <div class="kopa-header-<?php echo $cambioMB; ?>">
+        <div class="container">
+
+            <div class="kopa-logo <?php echo $mostrar; ?>">
                 <a href="#"><img src="imagenes/logo.png" alt=""></a>
             </div>
             <!-- logo -->
+
             <div class="main-menu">
                 <span class="mobile-menu-icon fa fa-align-justify"></span>
                 <ul class="kopa-menu sf-menu">
-                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="/">Inicio</a></li>
                     <li><a href="#">Noticias</a>
                         <ul>
-                            <li><a href="#">Noticias 1</a></li>
-                            <li><a href="#">Noticias 1</a></li>
-                            <li><a href="#">Noticias 1</a></li>
-                            <li><a href="#">Noticias 1</a></li>
-                            <li><a href="#">Noticias 1</a></li>
-                            <li><a href="#">Noticias 1</a></li>
                             <li><a href="#">Noticias 1</a></li>
                             <li><a href="#">Noticias 1</a></li>
                         </ul>
@@ -62,14 +93,20 @@
         </div>
         <!-- container -->
     </div>
-    <!-- kopa header middle -->
+    <!-- kopa header -->
+
+    <?php if(isset($mostrar)){ if($mostrar==""){ ?>
     <div class="kopa-header-bottom">
+        <?php }} ?>
 
         <div class="kopa-head-line clearfix">
             <div class="container">
-                <div class="kopa-list-news-carousel-widget">
-                    <h3 class="widget-title">&nbsp</h3>
-                </div>
+
+                <?php if(isset($mostrar)){ if($mostrar==""){ ?>
+                    <div class="kopa-list-news-carousel-widget">
+                        <h3 class="widget-title">&nbsp</h3>
+                    </div>
+                <?php }} ?>
 
                 <!-- widget news carousel -->
                 <div class="kopa-search-box">
@@ -89,7 +126,11 @@
         </div>
         <!-- kopa head line -->
 
-    </div>
-    <!-- kopa header bottom -->
+        <?php if(isset($mostrar)){ if($mostrar==""){ ?>
+    </div><!-- kopa header -->
+<?php }} ?>
+
 </header>
 <!-- page header -->
+
+
