@@ -1,3 +1,7 @@
+<?php
+//VARIABLES
+$header="home";
+?>
 <!DOCTYPE html>
 <html lang="es" class="no-js">
 
