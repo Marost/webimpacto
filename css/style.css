@@ -125,7 +125,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .h1 a:ho
     color: #fbbd2c;
 }
 h1 {
-    font-size: 26px;
+    font-size: 34px;
     line-height: 1.3846153846;
 }
 h2 {
@@ -977,7 +977,7 @@ ul.page-numbers li a:hover, ul.page-numbers li span.current {
     border-bottom: 2px solid #e4e3f0;
     padding-bottom: 7px;
     margin-bottom: 14px;
-    margin-top: 43px;
+    margin-top: 10px;
 }
 .kopa-breadcrumb > span {
     font-size: 14px;
@@ -1390,12 +1390,16 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 }
 .single-post-content .post-thumb {
     margin-bottom: 20px;
+    padding: 15px 0;
+    border-top: 1px dashed #272727;
+    border-bottom: 1px dashed #272727;
 }
 .single-post-content .entry-content p {
     margin-bottom: 25px;
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 24px;
 }
-.single-post-content .entry-content p: last-child {
+.single-post-content .entry-content p:last-child {
     margin-bottom: 0;
 }
 .single-post-content .entry-content ul, .single-post-content .entry-content ol {
