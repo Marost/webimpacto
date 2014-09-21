@@ -223,44 +223,47 @@ $header="interno";
 
                     <div id="sidebar" class="widget-area-26">
 
-                        <div class="widget kopa-tab-widget">
+                        <div class="widget widget-sidebar kopa-tab-widget">
 
                             <header class="widget-header">
                                 <h3 class="widget-title">Datos de Noticia</h3>
                             </header>
 
-                            <div class="clearfix">
-                                <h5 class="post-cat">Categoría: <a href="#">Internacional</a></h5>
-                                <h5 class="post-cat">Publicación: 18 de Septiembre del 2014</h5>
-                            </div>
+                            <div class="widget-contenido">
 
-                            <div class="user-rating">
-                                <header>
-                                    <h3>Califica la Noticia</h3>
+                                <div class="clearfix">
+                                    <h5 class="post-cat">Categoría: <a href="#">Internacional</a></h5>
+                                    <h5 class="post-cat">Publicación: 18 de Septiembre del 2014</h5>
+                                </div>
+
+                                <div class="user-rating">
+                                    <header>
+                                        <h3>Califica la Noticia</h3>
                                         <span class="kopa-rate">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star fa-3x"></i>
+                                            <i class="fa fa-star fa-3x"></i>
+                                            <i class="fa fa-star fa-3x"></i>
+                                            <i class="fa fa-star fa-3x"></i>
+                                            <i class="fa fa-star-o fa-3x"></i>
                                         </span>
-                                </header>
-                            </div>
-                            <!-- user rating -->
+                                    </header>
+                                </div>
+                                <!-- user rating -->
 
-                            <div class="link-social-2">
-                                <a href="#"><i class="fa fa-twitter"></i>Twitter</a>
-                                <a href="#"><i class="fa fa-facebook"></i>Facebook</a>
-                                <a href="#"><i class="fa fa-google-plus"></i>Google +</a>
-                            </div>
+                                <div class="link-social-2">
+                                    <div class="addthis_sharing_toolbox"></div>
+                                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63"></script>
+                                </div>
 
-                            <div class="tags-link">
-                                <span>Tags:</span>
-                                <a href="#">cinema</a>,
-                                <a href="#">sky</a>,
-                                <a href="#">Design</a>,
-                                <a href="#">Fashion</a>,
-                                <a href="#">Life style</a>
+                                <div class="tags-link">
+                                    <span>Tags:</span>
+                                    <a href="#">cinema</a>,
+                                    <a href="#">sky</a>,
+                                    <a href="#">Design</a>,
+                                    <a href="#">Fashion</a>,
+                                    <a href="#">Life style</a>
+                                </div>
+
                             </div>
 
                         </div>
