@@ -1,12 +1,54 @@
 <?php
+require_once("panel@impacto/conexion/conexion.php");
+require_once("panel@impacto/conexion/funciones.php");
+
+//VARIABLES DE URL
+$Req_Id=$_REQUEST["id"];
+$Req_Url=$_REQUEST["url"];
+
 //VARIABLES
 $header="interno";
+
+//NOTICIA
+$rst_noticia=mysql_query("SELECT * FROM iev_noticia WHERE id=$Req_Id AND publicar=1 AND fecha_publicacion<='$fechaActual';", $conexion);
+$fila_noticia=mysql_fetch_array($rst_noticia);
+
+//VARIABLES DE NOTICIA
+$Noticia_id=$fila_noticia["id"];
+$Noticia_url=$fila_noticia["url"];
+$Noticia_titulo=$fila_noticia["titulo"];
+$Noticia_contenido=$fila_noticia["contenido"];
+$Noticia_categoria=$fila_noticia["categoria"];
+$Noticia_fechaPub=$fila_noticia["fecha_publicacion"];
+$Noticia_imagen=$fila_noticia["imagen"];
+$Noticia_imagen_carpeta=$fila_noticia["imagen_carpeta"];
+
+//SEPARACION FECHA
+$Noticia_fechaPubSep=explode(" ", $Noticia_fechaPub);
+$Noticia_fecha=explode("-", $Noticia_fechaPubSep[0]);
+$NoticiaFecha=nombreFechaTotal($Noticia_fecha[0], $Noticia_fecha[1], $Noticia_fecha[2]);
+
+//URLS
+$Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imagen;
+
+//NOTICIA - CATEGORIA
+$rst_notCat=mysql_query("SELECT * FROM iev_noticia_categoria WHERE id=$Noticia_categoria;", $conexion);
+$fila_notCat=mysql_fetch_array($rst_notCat);
+
+//VARIABLES DE NOTICIA - CATEGORIA
+$NotCat_id=$fila_notCat["id"];
+$NotCat_url=$fila_notCat["url"];
+$NotCat_titulo=$fila_notCat["categoria"];
+
+//NOTICIAS RELACIONADAS
+$rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE id<>$Req_Id AND categoria=$Noticia_categoria AND publicar=1 AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 6;", $conexion);
+
 ?>
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>Karo</title>
+        <title><?php echo $Noticia_titulo; ?></title>
 
         <?php require_once("w-header-script.php"); ?>
 
@@ -24,42 +66,23 @@ $header="interno";
                     <div id="main-content">
                         <article class="single-post-content">
 
-                            <h1 class="entry-title">MANY DESKTOP PUBLISHING PACKAGES AND WEB PAGE EDITORS NOW USE</h1>
+                            <h1 class="entry-title"><?php echo $Noticia_titulo; ?></h1>
 
                             <div class="clearfix">
 
                                 <div class="article-content">
 
                                     <div class="entry-content">
-                                        <p>Etiam varius dui eget lorem elementum eget mattis sapien interdum. In hac habitasse platea dictumst. Morbi sed nisi est, vitae convallis nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <?php echo primerParrafo($Noticia_contenido); ?>
                                     </div>
 
                                     <div class="post-thumb">
-                                        <img src="http://lorempixel.com/800/500/" alt="">
+                                        <img src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
                                     </div>
                                     <!-- post thumb -->
 
                                     <div class="entry-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus leo ante, consectetur sit amet vulputate vel, dapibus sit amet lectus. Etiam varius dui eget lorem elementum eget mattis sapien interdum. In hac habitasse platea dictumst. Morbi sed nisi est, vitae convallis nulla.</p>
-                                        <p>Etiam varius dui eget lorem elementum eget mattis sapien interdum. In hac habitasse platea dictumst. Morbi sed nisi est, vitae convallis nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus leo ante, consectetur sit amet vulputate vel, dapibus sit amet lectus. Etiam varius dui eget lorem elementum eget mattis sapien interdum. In hac habitasse platea dictumst. Morbi sed nisi est, vitae convallis nulla. Vivamus leo ante, consectetur sit amet vulputate vel, dapibus sit amet lectus. Etiam varius dui eget lorem elementum eget mattis sapien interdum. In hac habitasse platea dictumst. Morbi sed nisi est, vitae convallis nulla.</p>
-                                        <ul>
-                                            <li>platea dictumst. Morbi sed</li>
-                                            <li>platea dictumst. Morbi sed
-                                                <ul>
-                                                    <li>platea dictumst. Morbi sed</li>
-                                                    <li>platea dictumst. Morbi sed</li>
-                                                    <li>platea dictumst. Morbi sed
-                                                        <ul>
-                                                            <li>platea dictumst. Morbi sed</li>
-                                                            <li>platea dictumst. Morbi sed</li>
-                                                            <li>platea dictumst. Morbi sed</li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>platea dictumst. Morbi sed</li>
-                                        </ul>
+                                        <?php echo siguienteParrafo($Noticia_contenido); ?>
                                     </div>
                                     <!-- entry-content -->
                                 </div>
@@ -77,6 +100,7 @@ $header="interno";
                         </div>
                         <!-- comments -->
 
+                        <!-- NOTICIAS RELACIONADAS -->
                         <div class="widget kopa-list-posts-carousel-4-widget">
                             <header class="widget-header">
                                 <h3 class="widget-title">Articulos relacionados</h3>
@@ -84,42 +108,24 @@ $header="interno";
                             </header>
                             <div class="widget-content">
                                 <div class="owl-carousel">
-                                    <div class="item">
-                                        <div class="post-thumb">
-                                            <a href="#" class="img-responsive">
-                                                <img src="placeholders/posts/42.jpg" alt="">
-                                            </a>
-                                            <footer>
-                                                <h4 class="post-cat"><a href="#">culture</a></h4>
-                                                <span class="kopa-date">January 1, 2014</span>
-                                            </footer>
-                                        </div>
-                                        <!-- post-thumb -->
-                                        <div class="item-content">
-                                            <h4 class="post-title">
-                                                <a href="#">Live Now: Convene Founder Answers Questions via Video. </a>
-                                                <span class="kopa-rate">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </span>
-                                            </h4>
 
-                                            <div class="kopa-metadata-border">
-                                                <span><i class="fa fa-eye"></i> 26</span>
-                                                <a href="#"><i class="fa fa-comment"></i> 350</a>
-                                                <span><i class="fa fa-heart"></i> 50</span>
-                                            </div>
-                                        </div>
-                                        <!-- item content -->
-                                    </div>
-                                    <!-- item -->
+                                    <?php while($fila_NotRel=mysql_fetch_array($rst_NotRel)){
+                                            $NotRel_id=$fila_NotRel["id"];
+                                            $NotRel_url=$fila_NotRel["url"];
+                                            $NotRel_titulo=$fila_NotRel["titulo"];
+                                            $NotRel_imagen=$fila_NotRel["imagen"];
+                                            $NotRel_imagen_carpeta=$fila_NotRel["imagen_carpeta"];
+                                            $NotRel_categoria=$fila_NotRel["categoria"];
+                                            $NotRel_fechaPub=$fila_NotRel["fecha_publicacion"];
+
+                                            //URL
+                                            $NotRel_UrlWeb=$web."noticia/".$NotRel_id."-".$NotRel_url;
+                                            $NotRel_UrlImg=$web."imagenes/upload/".$NotRel_imagen_carpeta."thumb/".$NotRel_imagen;
+                                    ?>
                                     <div class="item">
                                         <div class="post-thumb">
                                             <a href="#" class="img-responsive">
-                                                <img src="placeholders/posts/43.jpg" alt="">
+                                                <img src="<?php echo $NotRel_UrlImg; ?>" alt="<?php echo $NotRel_titulo; ?>">
                                             </a>
                                             <footer>
                                                 <h4 class="post-cat"><a href="#">culture</a></h4>
@@ -129,7 +135,7 @@ $header="interno";
                                         <!-- post-thumb -->
                                         <div class="item-content">
                                             <h4 class="post-title">
-                                                <a href="#">Live Now: Convene Founder Answers Questions via Video. </a>
+                                                <a href="<?php echo $NotRel_UrlWeb; ?>"><?php echo $NotRel_titulo; ?></a>
                                                 <span class="kopa-rate">
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
@@ -138,83 +144,19 @@ $header="interno";
                                                     <i class="fa fa-star-o"></i>
                                                 </span>
                                             </h4>
-                                            <div class="kopa-metadata-border">
-                                                <span><i class="fa fa-eye"></i> 26</span>
-                                                <a href="#"><i class="fa fa-comment"></i> 350</a>
-                                                <span><i class="fa fa-heart"></i> 50</span>
-                                            </div>
                                         </div>
                                         <!-- item content -->
                                     </div>
                                     <!-- item -->
-                                    <div class="item">
-                                        <div class="post-thumb">
-                                            <a href="#" class="img-responsive">
-                                                <img src="placeholders/posts/44.jpg" alt="">
-                                            </a>
-                                            <footer>
-                                                <h4 class="post-cat"><a href="#">culture</a></h4>
-                                                <span class="kopa-date">January 1, 2014</span>
-                                            </footer>
-                                        </div>
-                                        <!-- post-thumb -->
-                                        <div class="item-content">
-                                            <h4 class="post-title">
-                                                <a href="#">Live Now: Convene Founder Answers Questions via Video. </a>
-                                                <span class="kopa-rate">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </span>
-                                            </h4>
-                                            <div class="kopa-metadata-border">
-                                                <span><i class="fa fa-eye"></i> 26</span>
-                                                <a href="#"><i class="fa fa-comment"></i> 350</a>
-                                                <span><i class="fa fa-heart"></i> 50</span>
-                                            </div>
-                                        </div>
-                                        <!-- item content -->
-                                    </div>
-                                    <!-- item -->
-                                    <div class="item">
-                                        <div class="post-thumb">
-                                            <a href="#" class="img-responsive">
-                                                <img src="placeholders/posts/42.jpg" alt="">
-                                            </a>
-                                            <footer>
-                                                <h4 class="post-cat"><a href="#">culture</a></h4>
-                                                <span class="kopa-date">January 1, 2014</span>
-                                            </footer>
-                                        </div>
-                                        <!-- post-thumb -->
-                                        <div class="item-content">
-                                            <h4 class="post-title">
-                                                <a href="#">Live Now: Convene Founder Answers Questions via Video. </a>
-                                                <span class="kopa-rate">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star-o"></i>
-                                                </span>
-                                            </h4>
-                                            <div class="kopa-metadata-border">
-                                                <span><i class="fa fa-eye"></i> 26</span>
-                                                <a href="#"><i class="fa fa-comment"></i> 350</a>
-                                                <span><i class="fa fa-heart"></i> 50</span>
-                                            </div>
-                                        </div>
-                                        <!-- item content -->
-                                    </div>
-                                    <!-- item -->
+                                    <?php } ?>
+
                                 </div>
                                 <!-- owl carousel -->
                             </div>
                             <!-- widget content -->
                         </div>
-                        <!-- kopa-list-posts-carousel-4-widget -->
+                        <!-- NOTICIAS RELACIONADAS -->
+
                     </div>
                     <!-- main content -->
                 </div>
@@ -232,8 +174,8 @@ $header="interno";
                             <div class="widget-contenido">
 
                                 <div class="clearfix">
-                                    <h5 class="post-cat">Categoría: <a href="#">Internacional</a></h5>
-                                    <h5 class="post-cat">Publicación: 18 de Septiembre del 2014</h5>
+                                    <h5 class="post-cat">Categoría: <a href="#"><?php echo $NotCat_titulo; ?></a></h5>
+                                    <h5 class="post-cat">Publicación: <?php echo $NoticiaFecha; ?></h5>
                                 </div>
 
                                 <div class="user-rating">
@@ -272,232 +214,13 @@ $header="interno";
                             <div class="widget-content">
                                 <div class="kopa-tabs">
                                     <ul>
-                                        <li><a href="#tabs-1">popular</a></li>
-                                        <li><a href="#tabs-2">recent</a></li>
-                                        <li><a href="#tabs-3">comment</a></li>
+                                        <li><a href="javascript:;">Lo más visitado</a></li>
                                     </ul>
-                                    <div id="tabs-1">
+                                    <div>
                                         <ul class="list-unstyled">
                                             <li class="clearfix item-post">
                                                 <a href="#" class="post-thumb pull-left img-responsive">
                                                 <img src="placeholders/posts/36.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/37.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/36.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/37.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div id="tabs-2">
-                                        <ul class="list-unstyled">
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/36.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/37.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/36.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/37.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div id="tabs-3">
-                                        <ul class="list-unstyled">
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/36.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now:   Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/37.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/36.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/37.jpg" alt="">
                                                 </a>
                                                 <div class="item-right">
                                                     <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
