@@ -1,3 +1,30 @@
+<?php
+//NOTICIA DESTACADA
+$rst_notDest=mysql_query("SELECT * FROM iev_noticia WHERE destacada=1 AND fecha_publicacion<='$fechaActual' AND publicar=1 ORDER BY fecha_publicacion DESC;", $conexion);
+$fila_notDest=mysql_fetch_array($rst_notDest);
+
+//VARIABLES
+$NotDest_id=$fila_notDest["id"];
+$NotDest_url=$fila_notDest["url"];
+$NotDest_titulo=$fila_notDest["titulo"];
+$NotDest_contenido=primerParrafo($fila_notDest["contenido"]);
+$NotDest_fechaPub=$fila_notDest["fecha_publicacion"];
+$NotDest_imagen=$fila_notDest["imagen"];
+$NotDest_imagen_carpeta=$fila_notDest["imagen_carpeta"];
+$NotDest_UrlImg=$web."imagenes/upload/".$NotDest_imagen_carpeta."thumb/".$NotDest_imagen;
+$NotDest_UrlWeb=$web."noticia/".$NotDest_id."-".$NotDest_url;
+
+//SEPARACION DE FECHA
+$fechaPubSep=explode(" ", $NotDest_fechaPub);
+$fechaSep=explode("-", $fechaPubSep[0]);
+$FechaDia=$fechaSep[2];
+$FechaMes=mesCorto($fechaSep[1]);
+$FechaAnio=$fechaSep[0];
+
+//NOTICIAS DERECHA
+$rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE noticia=1 AND fecha_publicacion<='$fechaActual' AND publicar=1 ORDER BY fecha_publicacion DESC LIMIT 3", $conexion);
+
+?>
 <div class="widget-area-2">
 
     <header class="widget-header">
@@ -8,21 +35,22 @@
 
         <div class="widget-content clearfix">
 
-            <div class="item latest-post">
+            <article class="item latest-post">
 
                 <div class="post-thumb">
-                    <a href="#" class="img-responsive">
-                        <img src="imagenes/prueba/img1.jpg" alt="">
+                    <a href="<?php echo $NotDest_UrlWeb; ?>" class="img-responsive">
+                        <img src="<?php echo $NotDest_UrlImg; ?>" alt="">
                     </a>
                 </div>
                 <!-- post thumb -->
 
                 <div class="item-content">
                     <header>
-                        <h4 class="post-title"><a href="#">Venezuela: Ministerios realizarán I Congreso de Uniformados Cristianos</a></h4>
+                        <h4 class="post-title">
+                            <a href="<?php echo $NotDest_UrlWeb; ?>"><?php echo $NotDest_titulo; ?></a></h4>
                     </header>
                     <div class="post-content">
-                        <p>Este evento es realizado por la Asociación Ministerial de Uniformados Cristianos Evangélicos de Venezuela (AMUCEV), el Consejo Evangélico de Venezuela (CEV) y por la Confederación Evangélica Pentecostal de Venezuela ( CEPV).</p>
+                        <?php echo $NotDest_contenido; ?>
 
                         <div class="kopa-metadata-border col-lg-9">
 
@@ -30,74 +58,65 @@
                             <div class="addthis_native_toolbox col-lg-7"></div>
                             <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63"></script>
 
-                                        <span class="kopa-rate">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </span>
+                            <span class="kopa-rate">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </span>
+
                         </div>
                         <!-- metadata -->
 
-                        <a href="#" class="kopa-readmore">Leer nota</a>
+                        <a href="<?php echo $NotDest_UrlWeb; ?>" class="kopa-readmore">Leer nota</a>
 
                     </div>
                 </div>
                 <!-- item content -->
 
                 <div class="kopa-date-box">
-                    <span class="kopa-mon">Fer</span>
-                    <span class="kopa-day">08</span>
-                    <span class="kopa-yea">2014</span>
+                    <span class="kopa-mon"><?php echo $FechaMes; ?></span>
+                    <span class="kopa-day"><?php echo $FechaDia; ?></span>
+                    <span class="kopa-yea"><?php echo $FechaAnio; ?></span>
                 </div>
 
-            </div>
+            </article>
             <!-- item -->
 
             <section class="home-notprin">
 
-                <div class="item pull-left">
-                    <div class="item-content">
-                        <span class="kopa-date">January 1, 2014</span>
-                        <h4 class="post-title"><a href="#">Iglesias escocesas unidas por la reconciliación post-referéndum</a></h4>
-                    </div>
-                    <div class="post-thumb">
-                        <a href="#" class="img-responsive">
-                            <img src="imagenes/prueba/img2.jpg" alt="">
-                        </a>
-                    </div>
-                    <!-- post thumb -->
-                </div>
-                <!-- item -->
+                <?php while($fila_notNor=mysql_fetch_array($rst_notNor)){
+                        $NotNor_id=$fila_notNor["id"];
+                        $NotNor_url=$fila_notNor["url"];
+                        $NotNor_titulo=$fila_notNor["titulo"];
+                        $NotNor_imagen=$fila_notNor["imagen"];
+                        $NotNor_imagen_carpeta=$fila_notNor["imagen_carpeta"];
+                        $NotNor_fechaPub=$fila_notNor["fecha_publicacion"];
+                        $NotNor_categoria=$fila_notNor["categoria"];
 
-                <div class="item pull-left item-rtl">
-                    <div class="item-content">
-                        <span class="kopa-date">January 1, 2014</span>
-                        <h4 class="post-title"><a href="#">Trece cristianos, liberados por el EI</a></h4>
-                    </div>
-                    <div class="post-thumb">
-                        <a href="#" class="img-responsive">
-                            <img src="imagenes/prueba/img3.jpg" alt="">
-                        </a>
-                    </div>
-                    <!-- post thumb -->
-                </div>
-                <!-- item -->
+                        //URLS
+                        $NotNor_UrlWeb=$web."noticia/".$NotNor_id."-".$NotNor_url;
+                        $NotNor_UrlImg=$web."imagenes/upload/".$NotNor_imagen."thumb/".$NotNor_imagen_carpeta;
+                ?>
 
-                <div class="item pull-left">
+                <article class="item pull-left">
                     <div class="item-content">
                         <span class="kopa-date">January 1, 2014</span>
-                        <h4 class="post-title"><a href="#">Una de cada 10 niñas ha sufrido abusos antes de cumplir los 20 años</a></h4>
+                        <h4 class="post-title">
+                            <a href="<?php echo $NotNor_UrlWeb; ?>"><?php echo $NotNor_titulo; ?></a>
+                        </h4>
                     </div>
                     <div class="post-thumb">
                         <a href="#" class="img-responsive">
-                            <img src="imagenes/prueba/img4.jpg" alt="">
+                            <img src="<?php echo $NotNor_UrlImg; ?>" alt="<?php echo $NotNor_titulo; ?>">
                         </a>
                     </div>
                     <!-- post thumb -->
-                </div>
-                <!-- item -->
+                </article>
+                <!-- item item-rtl -->
+
+                <?php } ?>
 
             </section>
 
