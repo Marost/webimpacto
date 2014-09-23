@@ -92,8 +92,13 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE noticia=1 AND fecha_pub
                         $NotNor_titulo=$fila_notNor["titulo"];
                         $NotNor_imagen=$fila_notNor["imagen"];
                         $NotNor_imagen_carpeta=$fila_notNor["imagen_carpeta"];
-                        $NotNor_fechaPub=$fila_notNor["fecha_publicacion"];
                         $NotNor_categoria=$fila_notNor["categoria"];
+
+                        //SEPARAR FECHA
+                        $NotNor_fechaPub=$fila_notNor["fecha_publicacion"];
+                        $NotNor_fechaPubSep=explode(" ", $NotNor_fechaPub);
+                        $NotNor_fecha=explode("-", $NotNor_fechaPubSep[0]);
+                        $NotNor_fechaPub=nombreFecha($NotNor_fecha[0], $NotNor_fecha[1], $NotNor_fecha[2]);
 
                         //URLS
                         $NotNor_UrlWeb=$web."noticia/".$NotNor_id."-".$NotNor_url;
@@ -102,7 +107,7 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE noticia=1 AND fecha_pub
 
                 <article class="item pull-left">
                     <div class="item-content">
-                        <span class="kopa-date">January 1, 2014</span>
+                        <span class="kopa-date"><?php echo $NotNor_fechaPub; ?></span>
                         <h4 class="post-title">
                             <a href="<?php echo $NotNor_UrlWeb; ?>"><?php echo $NotNor_titulo; ?></a>
                         </h4>
