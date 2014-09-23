@@ -339,7 +339,7 @@ FileETag None
 # RewriteBase /
 </IfModule>
 
-RewriteRule ^noticia/([0-9]*)-(.*)$           /nota.php?id=$1&url=$2
+RewriteRule ^noticia/([0-9]*)-(.*)$           /noticia.php?id=$1&url=$2
 RewriteRule ^editorial/([0-9]*)-(.*)$         /editorial.php?id=$1&url=$2
 RewriteRule ^categoria/([0-9]*)/(.*)$         /categoria.php?id=$1&url=$2
 RewriteRule ^tags/([0-9]*)/(.*)$              /etiquetas.php?id=$1&url=$2
