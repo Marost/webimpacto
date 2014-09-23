@@ -1,4 +1,7 @@
 <?php
+require_once("panel@impacto/conexion/conexion.php");
+require_once("panel@impacto/conexion/funciones.php");
+
 //VARIABLES
 $header="home";
 ?>
