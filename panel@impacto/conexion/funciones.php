@@ -162,13 +162,13 @@ function nombreFechaTotal($anio, $mes, $dia){
 function getUrlAmigable($s){
 
     $s = strtolower($s);
-    $s = ereg_replace("[áàâãäª@]","a",$s);
-    $s = ereg_replace("[éèêë]","e",$s);
-    $s = ereg_replace("[íìîï]","i",$s);
-    $s = ereg_replace("[óòôõºö]","o",$s);
-    $s = ereg_replace("[úùûü]","u",$s);
-    $s = ereg_replace("[ç]","c",$s);
-    $s = ereg_replace("[ñ]","n",$s);
+    $s = preg_replace("[áàâãäª@]","a",$s);
+    $s = preg_replace("[éèêë]","e",$s);
+    $s = preg_replace("[íìîï]","i",$s);
+    $s = preg_replace("[óòôõºö]","o",$s);
+    $s = preg_replace("[úùûü]","u",$s);
+    $s = preg_replace("[ç]","c",$s);
+    $s = preg_replace("[ñ]","n",$s);
     $s = preg_replace( "/[^a-zA-Z0-9\-]/", "-", $s );
     $s = preg_replace( array("`[^a-z0-9]`i","`[-]+`") , "-", $s);
 
@@ -177,23 +177,23 @@ function getUrlAmigable($s){
 
 function guardarArchivo($carpeta,$archivo){
 	if(is_uploaded_file($archivo['tmp_name']))
-	{ 
+	{
 		$fileName=$archivo['name'];
 		$uploadDir=$carpeta;
 		$uploadFile=$uploadDir.$fileName;
 		$num = 0;
 		$name = $fileName;
-		$extension = end(explode('.',$fileName));     
+		$extension = end(explode('.',$fileName));
 		$onlyName = substr($fileName,0,strlen($fileName)-(strlen($extension)+1));
 		$nombrese=codigoAleatorio(20, false, true, false);
 		$todo=$nombrese.".".$extension;
 		while(file_exists($uploadDir.$todo))
 		{
-			$num++;         
-			$todo = $nombrese."".$num.".".$extension; 
+			$num++;
+			$todo = $nombrese."".$num.".".$extension;
 		}
-		$uploadFile = $uploadDir.$todo; 
-		move_uploaded_file($archivo['tmp_name'], $uploadFile);  
+		$uploadFile = $uploadDir.$todo;
+		move_uploaded_file($archivo['tmp_name'], $uploadFile);
 		return $todo;
 	}
 }
@@ -202,23 +202,23 @@ function actualizarArchivo($carpeta,$archivo,$archivo_actual){
 	if($archivo['name']!="")
 	{
 		if(is_uploaded_file($archivo['tmp_name']))
-		{ 
+		{
 			$fileName=$archivo['name'];
 			$uploadDir=$carpeta;
 			$uploadFile=$uploadDir.$fileName;
 			$num = 0;
 			$name = $fileName;
-			$extension = end(explode('.',$fileName));     
+			$extension = end(explode('.',$fileName));
 			$onlyName = substr($fileName,0,strlen($fileName)-(strlen($extension)+1));
 			$nombrese=codigoAleatorio(20, false, true, false);
 			$todo=$nombrese.".".$extension;
 			while(file_exists($uploadDir.$todo))
 			{
-				$num++;         
-				$todo = $nombrese."".$num.".".$extension; 
+				$num++;
+				$todo = $nombrese."".$num.".".$extension;
 			}
-			$uploadFile = $uploadDir.$todo; 
-			move_uploaded_file($archivo['tmp_name'], $uploadFile);  
+			$uploadFile = $uploadDir.$todo;
+			move_uploaded_file($archivo['tmp_name'], $uploadFile);
 			$todo;
 		}
 	}else{
@@ -249,8 +249,8 @@ function errorComentario($codmensaje){
 
 function tipoVideo($tipo, $carpeta_video, $video, $imagen, $carpeta_imagen, $identificador, $ancho, $alto, $web){
 	if($tipo=='youtube'){
-		$codigo='<iframe width="'.$ancho.'" height="'.$alto.'" 
-		src="http://www.youtube.com/embed/'.$video.'?rel=0" 
+		$codigo='<iframe width="'.$ancho.'" height="'.$alto.'"
+		src="http://www.youtube.com/embed/'.$video.'?rel=0"
 		frameborder="0" allowfullscreen></iframe>';
 	}elseif($tipo=='flv'){
 		$codigo='<a href="'.$web.'video/'.$carpeta_video.''.$video.'" class="player"
@@ -261,26 +261,26 @@ function tipoVideo($tipo, $carpeta_video, $video, $imagen, $carpeta_imagen, $ide
 				</a>
 				<script>
 					flowplayer("player", "'.$web.'video/flowplayer-3.2.16.swf");
-				</script>';				
+				</script>';
 	}
 	return $codigo;
 }
 
 function VideoYoutube($video, $ancho, $alto){
-	$codigo='<iframe width="'.$ancho.'" height="'.$alto.'" 
-					src="http://www.youtube.com/embed/'.$video.'?wmode=transparent&autohide=1&egm=0&hd=1&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&showsearch=0&theme=light" 
+	$codigo='<iframe width="'.$ancho.'" height="'.$alto.'"
+					src="http://www.youtube.com/embed/'.$video.'?wmode=transparent&autohide=1&egm=0&hd=1&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&showsearch=0&theme=light"
 					frameborder="0" allowfullscreen></iframe>';
 	return $codigo;
 }
 
-function extraerArray($string){ 
-    $string = explode(",", $string); 
-    $salida = array(); 
-    foreach($string as $i){ 
-        $i = trim($i); 
-        if(!empty($i)) $salida[] = $i; 
-    } 
-    return $salida; //devuelve un array 
+function extraerArray($string){
+    $string = explode(",", $string);
+    $salida = array();
+    foreach($string as $i){
+        $i = trim($i);
+        if(!empty($i)) $salida[] = $i;
+    }
+    return $salida; //devuelve un array
 }
 
 function descativadoCasilla($elemento){
@@ -310,7 +310,7 @@ function AnteriorSiguienteOrden($orden, $campo, $idcampo, $tabla, $conexion, $an
 function cortarTexto($texto, $superior, $inferior, $caracteres){
 	$b_superior='<div style="page-break-after: always;">';
 	$b_inferior='<span style="display: none;">&nbsp;</span></div>';
-	if(ereg($b_superior, $texto) or ereg($b_inferior, $texto)){
+	if(preg_match($b_superior, $texto) or preg_match($b_inferior, $texto)){
 		if($superior==1){
 			$total=explode($b_superior, $texto);
 			return $total[0];}
@@ -329,7 +329,7 @@ function cortarTexto($texto, $superior, $inferior, $caracteres){
 
 function cortarTextoRH($texto, $superior, $inferior, $caracteres){
 	$b_superior="<hr />";
-	if(ereg($b_superior, $texto)){
+	if(preg_match($b_superior, $texto)){
 		if($superior==1){
 			$total=explode($b_superior, $texto);
 			return $total[0];}
@@ -367,7 +367,7 @@ function crearCarpeta(){
 
 function primerParrafo($texto){
 	$b_superior="</p>";
-	if(ereg($b_superior, $texto)){
+	if(preg_match($b_superior, $texto)){
 		$total=explode($b_superior, $texto);
 		return $total[0];
 	}
@@ -376,7 +376,7 @@ function primerParrafo($texto){
 function soloDescripcion($texto){
 	$b_superior="</p>";
 	$e_parrafo="<p>";
-	if(ereg($b_superior, $texto)){
+	if(preg_match($b_superior, $texto)){
 		$total=explode($b_superior, $texto);
 		$parrafo=explode($e_parrafo,$total[0]);
 		return $parrafo[1];
