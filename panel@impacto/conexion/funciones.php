@@ -80,7 +80,7 @@ function nombreMes($numero_mes){
 		case 05: return "Mayo"; break;
 		case 06: return "Junio"; break;
 		case 07: return "Julio"; break;
-		case 08: return "Agosto"; break;
+        case 08: return "Agosto"; break;
 		case 09: return "Septiembre"; break;
 		case 10: return "Octubre"; break;
 		case 11: return "Noviembre"; break;
@@ -145,6 +145,12 @@ function UserPass($cadena){
 		$base++;
 	}
 	return $cadena;
+}
+
+function mesCorto($mes){
+    $tmeses = array("ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC");
+    $nombrefecha = $tmeses[$mes-1];
+    return $nombrefecha;
 }
 
 function nombreFecha($anio, $mes, $dia){
@@ -371,6 +377,14 @@ function primerParrafo($texto){
 		$total=explode($b_superior, $texto);
 		return $total[0];
 	}
+}
+
+function siguienteParrafo($texto){
+    $b_superior="</p>";
+    if(preg_match($b_superior, $texto)){
+        $total=explode($b_superior, $texto);
+        return $total[1];
+    }
 }
 
 function soloDescripcion($texto){
