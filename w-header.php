@@ -110,8 +110,8 @@ if(isset($header)){
 
                 <!-- widget news carousel -->
                 <div class="kopa-search-box">
-                    <form action="/" method="post" class="search-form">
-                        <input type="text"  name="search-text" onBlur="if (this.value == '')
+                    <form action="noticia-buscar.php" method="get" class="search-form">
+                        <input type="text" name="buscar" onBlur="if (this.value == '')
                                         this.value = this.defaultValue;" onFocus="if (this.value == this.defaultValue)
                                         this.value = '';" value="Buscar" >
                         <span class="fa fa-search"></span>
