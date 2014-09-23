@@ -1380,6 +1380,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 }
 .single-post-content .entry-title {
     margin-top: 0;
+    text-transform: uppercase;
 }
 .single-post-content .post-thumb {
     margin: 15px 0;
@@ -4526,4 +4527,9 @@ section#home-notprin{
 
 .widget-sidebar .widget-contenido h5{
     margin: 0;
+}
+
+/* NOTICIA */
+.entry-content hr{
+    display: none;
 }
