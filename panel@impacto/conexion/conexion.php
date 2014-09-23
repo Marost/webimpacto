@@ -1,10 +1,13 @@
 <?php
 //CONEXION CON EL SERVIDOR
-$conexion=mysql_connect("localhost","marost2_admin","master@18073");
-mysql_select_db("marost2_impactoe_impevadwebmast",$conexion);
+$conexion=mysql_connect("localhost","root","") or die("no se puede conectar");
+mysql_select_db("impevadwebmast", $conexion) or die("no se puede seleccionar la BD");
 
 //ZONA HORARIA
 date_default_timezone_set('America/Lima');
+
+//ERROR REPORTING
+ini_set('error_reporting', E_ALL ^ E_NOTICE);
 
 //VARIABLES GLOBALES
 global $carpeta_admin;
@@ -37,11 +40,13 @@ $web_nombre=$fila_empresa["nombre"];
 //URL DE ARCHIVOS
 $url_admin=$web."".$carpeta_admin."/";
 
-if ($_SESSION["user-".$sesion_pre.""]<>""){
-	$usuario_user=$_SESSION["user-".$sesion_pre.""];
-	$usuario_nombre=$_SESSION["user_nombre-".$sesion_pre.""];
-	$usuario_apellido=$_SESSION["user_apellido-".$sesion_pre.""];
-	$usuario_email=$_SESSION["user_email-".$sesion_pre.""];
-}
+if(isset($_SESSION["user-".$sesion_pre.""])){
 
-?>
+    if($_SESSION["user-".$sesion_pre.""]<>""){
+        $usuario_user=$_SESSION["user-".$sesion_pre.""];
+        $usuario_nombre=$_SESSION["user_nombre-".$sesion_pre.""];
+        $usuario_apellido=$_SESSION["user_apellido-".$sesion_pre.""];
+        $usuario_email=$_SESSION["user_email-".$sesion_pre.""];
+    }
+
+}
