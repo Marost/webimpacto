@@ -82,7 +82,7 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE id<>$Req_Id AND categor
                                     <!-- post thumb -->
 
                                     <div class="entry-content">
-                                        <?php echo siguienteParrafo($Noticia_contenido); ?>
+                                        <?php echo $Noticia_contenido; ?>
                                     </div>
                                     <!-- entry-content -->
                                 </div>
