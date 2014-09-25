@@ -66,27 +66,70 @@ if(isset($header)){
                     <li><a href="/">Inicio</a></li>
                     <li><a href="#">Noticias</a>
                         <ul>
-                            <li><a href="#">Noticias 1</a></li>
-                            <li><a href="#">Noticias 1</a></li>
+                            <li><a href="#">Actualidad</a></li>
+                            <li><a href="#">Internacionales</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Internacional</a></li>
-                    <li><a href="#">Economía</a></li>
-                    <li><a href="#">Literatura</a></li>
-                    <li><a href="#">Testimonios</a></li>
-                    <li><a href="#">Héroes de la Fe</a></li>
-                    <li><a href="#">Eventos</a></li>
+                    <li><a href="#">Ediciones</a>
+                        <ul>
+                            <li><a href="#">Español</a></li>
+                            <li><a href="#">Ingles</a></li>
+                            <li><a href="#">Francés</a></li>
+                            <li><a href="#">Portugués</a></li>
+                            <li><a href="#">Alemán</a></li>
+                            <li><a href="#">Italiano</a></li>
+                            <li><a href="#">Chino</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Secciones</a>
+                        <ul>
+                            <li><a href="#">Portada</a></li>
+                            <li><a href="#">Historia</a></li>
+                            <li><a href="#">Literatura</a></li>
+                            <li><a href="#">Música</a></li>
+                            <li><a href="#">Héroes de la fe</a></li>
+                            <li><a href="#">Historias de vida</a></li>
+                            <li><a href="#">Devocional</a></li>
+                            <li><a href="#">Eventos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Videogalería</a></li>
+                    <li><a href="#">Contacto</a></li>
                 </ul>
 
                 <ul class="kopa-menu mobile-menu">
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="#">Noticias</a></li>
-                    <li><a href="#">Internacional</a></li>
-                    <li><a href="#">Economía</a></li>
-                    <li><a href="#">Literatura</a></li>
-                    <li><a href="#">Testimonios</a></li>
-                    <li><a href="#">Héroes de la Fe</a></li>
-                    <li><a href="#">Eventos</a></li>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="#">Noticias</a>
+                        <ul>
+                            <li><a href="#">Actualidad</a></li>
+                            <li><a href="#">Internacionales</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Ediciones</a>
+                        <ul>
+                            <li><a href="#">Español</a></li>
+                            <li><a href="#">Ingles</a></li>
+                            <li><a href="#">Francés</a></li>
+                            <li><a href="#">Portugués</a></li>
+                            <li><a href="#">Alemán</a></li>
+                            <li><a href="#">Italiano</a></li>
+                            <li><a href="#">Chino</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Secciones</a>
+                        <ul>
+                            <li><a href="#">Portada</a></li>
+                            <li><a href="#">Historia</a></li>
+                            <li><a href="#">Literatura</a></li>
+                            <li><a href="#">Música</a></li>
+                            <li><a href="#">Héroes de la fe</a></li>
+                            <li><a href="#">Historias de vida</a></li>
+                            <li><a href="#">Devocional</a></li>
+                            <li><a href="#">Eventos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Videogalería</a></li>
+                    <li><a href="#">Contacto</a></li>
                 </ul>
             </div>
             <!-- main-menu -->
