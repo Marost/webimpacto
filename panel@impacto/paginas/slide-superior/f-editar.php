@@ -13,6 +13,7 @@ $fila_nota=mysql_fetch_array($rst_nota);
 
 //VARIABLES
 $nota_titulo=$fila_nota["titulo"];
+$nota_url=$fila_nota["url"];
 $nota_contenido=$fila_nota["contenido"];
 $nota_edicion=$fila_nota["edicion"];
 $nota_edicion_pagina=$fila_nota["edicion_pagina"];
@@ -73,6 +74,11 @@ $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
                     <div class="formRow">
                         <div class="grid3"><label>Titulo:</label></div>
                         <div class="grid9"><input type="text" name="titulo" value="<?php echo $nota_titulo; ?>"/></div>
+                    </div>
+
+                    <div class="formRow">
+                        <div class="grid3"><label>URL:</label></div>
+                        <div class="grid9"><input type="text" name="url" value="<?php echo $nota_url; ?>"/></div>
                     </div>
 
                     <div class="widget">
