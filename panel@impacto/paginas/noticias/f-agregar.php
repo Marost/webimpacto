@@ -9,7 +9,7 @@ $pub_fecha=date("Y-m-d");
 $pub_hora=date("H:i:s");
 
 //CATEGORIA
-$rst_cat=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_categoria ORDER BY categoria ASC;", $conexion);
+$rst_cat=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_categoria WHERE publicar=1 ORDER BY categoria ASC;", $conexion);
 
 //ETIQUETAS
 $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre ASC;", $conexion);

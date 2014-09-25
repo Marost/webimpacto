@@ -35,31 +35,31 @@ if ($tipo_noticia=="not_destacada") {
 	$destacada=1; 
 	if($_POST['uploader_0_tmpname']<>""){
 		$imagen=$_POST["uploader_0_tmpname"];
-		$imagen_carpeta=fechaCarpeta()."/";	
-		$thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
-		$thumb->adaptiveResize(480,220);
-		$thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
+		$imagen_carpeta=fechaCarpeta()."/";
+
+        guardarImagen($imagen, $imagen_carpeta);
+
 	}else{
 		$imagen=$_POST["imagen"];
-		$imagen_carpeta=$_POST["imagen_carpeta"];	
-		$thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
-		$thumb->adaptiveResize(480,220);
-		$thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
+		$imagen_carpeta=$_POST["imagen_carpeta"];
+
+        guardarImagen($imagen, $imagen_carpeta);
+
 	}
 }elseif($tipo_noticia=="not_normal"){
-	$destacada=2; 
+	$destacada=0;
 	if($_POST['uploader_0_tmpname']<>""){
 		$imagen=$_POST["uploader_0_tmpname"];
-		$imagen_carpeta=fechaCarpeta()."/";	
-		$thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
-		$thumb->adaptiveResize(290,210);
-		$thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
+		$imagen_carpeta=fechaCarpeta()."/";
+
+        guardarImagen($imagen, $imagen_carpeta);
+
 	}else{
 		$imagen=$_POST["imagen"];
-		$imagen_carpeta=$_POST["imagen_carpeta"];	
-		$thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
-		$thumb->adaptiveResize(290,210);
-		$thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
+		$imagen_carpeta=$_POST["imagen_carpeta"];
+
+        guardarImagen($imagen, $imagen_carpeta);
+
 	}
 }
 

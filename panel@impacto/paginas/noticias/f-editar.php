@@ -28,7 +28,7 @@ $nota_pub_fecha=$nota_fecha_pub[0];
 $nota_pub_hora=$nota_fecha_pub[1];
 
 //CATEGORIA
-$rst_cat=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_categoria ORDER BY categoria ASC;", $conexion);
+$rst_cat=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_categoria WHERE publicar=1 ORDER BY categoria ASC;", $conexion);
 
 //TAGS
 $tags=explode(",", $fila_nota["tags"]);    //SEPARACION DE ARRAY CON COMAS

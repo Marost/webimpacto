@@ -36,21 +36,21 @@ if ($tipo_noticia=="not_destacada") {
 		$imagen=$upload_imagen;
 		$imagen_carpeta=fechaCarpeta()."/";	
 		$mostrar_imagen=1;
-		$thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
-		$thumb->adaptiveResize(480,220);
-		$thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
-	}else{
+
+        guardarImagen($imagen, $imagen_carpeta);
+
+    }else{
 		$imagen=""; $imagen_carpeta="";
 	}
 }elseif($tipo_noticia=="not_normal"){
-	$destacada=2;
+    $destacada=0;
 	if($upload_imagen<>""){
 		$imagen=$upload_imagen;
 		$imagen_carpeta=fechaCarpeta()."/";	
 		$mostrar_imagen=1;
-		$thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
-		$thumb->adaptiveResize(290,220);
-		$thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
+
+        guardarImagen($imagen, $imagen_carpeta);
+
 	}else{
 		$imagen=""; $imagen_carpeta="";
 	}
