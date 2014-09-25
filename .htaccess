@@ -351,6 +351,9 @@ RewriteRule ^panel@impacto/$                  /panel@impacto/login.php
 #EDICION ANTERIOS
 RewriteRule ^edicion-anterior-(.*)$            /edicion-anterior.php?url=$1
 
+#MES DE LA BIBLIA
+RewriteRule ^mes-biblia$                      /mes-biblia.php
+
 # ----------------------------------------------------------------------
 # Suppress or force the "www." at the beginning of URLs
 # ----------------------------------------------------------------------
