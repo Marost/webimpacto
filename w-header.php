@@ -98,7 +98,8 @@ $rst_sliderSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC"
                                 $SliderSup_imagen_carpeta=$fila_sliderSup["imagen_carpeta"];
 
                                 //URL
-                                $SliderSup_UrlWeb="http://issuu.com/impactoevangelistico.net/docs/".$SliderSup_edicion."/".$SliderSup_edicion_pagina;
+                                //$SliderSup_UrlWeb="http://issuu.com/impactoevangelistico.net/docs/".$SliderSup_edicion."/".$SliderSup_edicion_pagina;
+                                $SliderSup_UrlWeb=$fila_sliderSup["url"];
                                 $SliderSup_UrlImg=$web."imagenes/slide/".$SliderSup_imagen_carpeta."".$SliderSup_imagen;
                         ?>
 
