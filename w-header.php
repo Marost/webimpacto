@@ -26,7 +26,9 @@ $rst_sliderSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC"
         <div class="container posrel">
 
             <div id="mes-biblia-sup">
-                <img src="imagenes/biblia/banner.jpg">
+                <a href="mes-biblia">
+                    <img src="imagenes/biblia/banner.jpg">
+                </a>
             </div>
                         
             <h1 class="visible-lg visible-md visible-sm">
