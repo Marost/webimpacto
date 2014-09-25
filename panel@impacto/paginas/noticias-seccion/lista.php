@@ -26,7 +26,7 @@ include_once('../../js/plugins/creative_table/creativeTable.php');
 $ct=new CreativeTable();
 
 // Data Gathering
-$params['sql_query']                = "SELECT id,categoria FROM ".$tabla_suf."_noticia_categoria ORDER BY categoria ASC";
+$params['sql_query']                = "SELECT id,categoria, menu, publicar FROM ".$tabla_suf."_noticia_categoria ORDER BY categoria ASC";
 //$params['search']                   = $search;
 $params['multiple_search']          = $multiple_search;
 $params['items_per_page']           = $items_per_page;
@@ -34,8 +34,8 @@ $params['sort']                     = $sort;
 $params['page']                     = $page;
 $params['total_items']              = $total_items;
 
-$params['header']                   = 'ID,Registro';
-$params['width']                    = '30,800';
+$params['header']                   = 'ID,Registro, Menú, Publicar';
+$params['width']                    = '30,500, 50, 50';
 
 /* ORDENAR POR CAMPOS */
 $params['sort_init'] = false;  // sort all fields
@@ -47,7 +47,7 @@ $params['multiple_search_init'] = false;  // no advanced search
 $params['multiple_search_init'] = hide;  // all fields but in beginnig they are hidden
 $params['multiple_search_init'] = 'ftff';  // 3rd field only
 
-$arr_extra_cols[0]  = array(3,'Acciones','100','<div class="btn-group" style="display: inline-block; margin-bottom: -4px;">
+$arr_extra_cols[0]  = array(5,'Acciones','100','<div class="btn-group" style="display: inline-block; margin-bottom: -4px;">
                                 <a class="buttonS bDefault" data-toggle="dropdown" href="#">Acción<span class="caret"></span></a>
                                 <ul class="dropdown-menu pull-right">
                                     <li>

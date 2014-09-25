@@ -13,6 +13,8 @@ $fila_nota=mysql_fetch_array($rst_nota);
 
 //VARIABLES
 $nota_nombre=$fila_nota["categoria"];
+$nota_menu=$fila_nota["menu"];
+$nota_publicar=$fila_nota["publicar"];
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -66,6 +68,20 @@ $nota_nombre=$fila_nota["categoria"];
                     <div class="formRow">
                         <div class="grid3"><label>Nombre:</label></div>
                         <div class="grid9"><input type="text" name="nombre" value="<?php echo $nota_nombre; ?>" /></div>
+                    </div>
+
+                    <div class="formRow">
+                        <div class="grid3"><label>Menú:</label></div>
+                        <div class="grid9 enabled_disabled">
+                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($nota_menu==1){ ?>checked<?php } ?> name="menu" /></div>
+                        </div>
+                    </div>
+
+                    <div class="formRow">
+                        <div class="grid3"><label>Publicar:</label></div>
+                        <div class="grid9 enabled_disabled">
+                            <div class="floatL mr10"><input type="checkbox" value="1" <?php if($nota_publicar==1){ ?>checked<?php } ?> name="publicar" /></div>
+                        </div>
                     </div>
                     
                     <div class="formRow">
