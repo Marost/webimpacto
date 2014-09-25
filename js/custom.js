@@ -567,7 +567,7 @@ jQuery(document).ready(function () {
         jQuery(".kopa-grid-posts-widget .item").each(function (index) {
             jQuery(this).addClass('item' + index);
         });
-        jQuery(".kopa-grid-posts-widget .item:eq(1)").addClass("item-rtl");
+        jQuery(".kopa-grid-posts-widget .item:eq(2)").addClass("item-rtl");
     }
 
     if (jQuery(".kopa-list-item-carousel-widget").length > 0) {
