@@ -102,7 +102,7 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE noticia=1 AND fecha_pub
 
                         //URLS
                         $NotNor_UrlWeb=$web."noticia/".$NotNor_id."-".$NotNor_url;
-                        $NotNor_UrlImg=$web."imagenes/upload/".$NotNor_imagen."thumb/".$NotNor_imagen_carpeta;
+                        $NotNor_UrlImg=$web."imagenes/upload/".$NotNor_imagen_carpeta."thumb/".$NotNor_imagen;
                 ?>
 
                 <article class="item pull-left">
