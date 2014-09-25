@@ -18,8 +18,11 @@ include("../conexion/funciones.php");
 	header("Pragma: no-cache");
 
 	// Settings
-	$targetDir = "../../imagenes/upload/".fechaCarpeta();
-	$targetDirThumb = "../../imagenes/upload/".fechaCarpeta()."/thumb";
+	$targetDir = "../../imagenes/upload/".fechaCarpeta();                              //CARPETA PRINCIPAL
+	$targetDirThumb = "../../imagenes/upload/".fechaCarpeta()."/thumb";                //THUMB 290x210 - CATEGORIA - NOTICIAS RELACIONADAS
+    $targetDirThumbDest = "../../imagenes/upload/".fechaCarpeta()."/thumbdest";        //THUMB 728x452 - NOTICIA DESTACADA
+    $targetDirThumbNorV = "../../imagenes/upload/".fechaCarpeta()."/thumbnor";         //THUMB 243x225 - NOTICIA SUPERIOR Y VISTO (SIDEBAR)
+    $targetDirThumbDevEn = "../../imagenes/upload/".fechaCarpeta()."/thumbdeven";      //THUMB 385x250 - DEVOCIONAL - EVENTOS
 	$cleanupTargetDir = false; // Remove old files
 	$maxFileAge = 60 * 60; // Temp file age in seconds
 
@@ -51,9 +54,12 @@ include("../conexion/funciones.php");
 	}
 
 	// Create target dir
-	if (!file_exists($targetDir) or !file_exists($targetDirThumb)){
+	if (!file_exists($targetDir) or !file_exists($targetDirThumb) or !file_exists($targetDirThumbDest) or !file_exists($targetDirThumbNorV) or !file_exists($targetDirThumbDevEn)){
 		@mkdir($targetDir, 0777);
 		@mkdir($targetDirThumb, 0777);
+        @mkdir($targetDirThumbDest, 0777);
+        @mkdir($targetDirThumbNorV, 0777);
+        @mkdir($targetDirThumbDevEn, 0777);
 	}
 
 	// Remove old temp files
