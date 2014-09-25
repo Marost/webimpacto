@@ -23,7 +23,11 @@ $rst_sliderSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC"
             
         </div>
 
-        <div class="container">
+        <div class="container posrel">
+
+            <div id="mes-biblia-sup">
+                <img src="imagenes/biblia/banner.jpg">
+            </div>
                         
             <h1 class="visible-lg visible-md visible-sm">
                 <a href="/" title="Impacto Evangelistico">Impacto Evangelístico</a>
