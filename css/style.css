@@ -277,7 +277,6 @@ li > ul, li > ol {
 }
 .item.loading {
     min-height: 200px;
-    background: url(images/AjaxLoader.gif) no-repeat center center;
 }
 .kopa-readmore {
     font-family: "Oswald", sans-serif;
@@ -290,7 +289,7 @@ li > ul, li > ol {
 .kopa-blockquote p {
     font-size: 14px;
 }
-.kopa-blockquote p: last-child {
+.kopa-blockquote p:last-child {
     margin-bottom: 0;
 }
 .kopa-accordion .ui-accordion-header {
@@ -320,7 +319,7 @@ li > ul, li > ol {
     -ms-border-radius: 0;
     border-radius: 0;
 }
-.kopa-accordion .ui-accordion-content p: last-child {
+.kopa-accordion .ui-accordion-content p:last-child {
     margin-bottom: 0;
 }
 .kopa-accordion.style-2 .ui-accordion-header {
@@ -461,7 +460,7 @@ li > ul, li > ol {
 .link-social-1 i {
     display: inline-block;
     float: left;
-    margin: 0 7.5px 15px;
+    margin: 0 7px 15px;
     width: 45px;
     height: 45px;
     text-align: center;
@@ -1599,7 +1598,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     color: #969696;
     margin-bottom: 15px;
 }
-#bottom-sidebar .widget: last-child {
+#bottom-sidebar .widget:last-child {
     margin-bottom: 0;
 }
 #bottom-sidebar .widget .widget-title {
@@ -1656,7 +1655,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     padding-right: 50px;
 }
 .kopa-newletter-widget .form-news-letter button {
-    color: 767676;
+    color: #767676;
     position: absolute;
     top: 8px;
     right: 15px;
@@ -2148,7 +2147,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 }
 .kopa-grid-posts-widget .item.pull-left .item-content {
     padding-left: 20px;
-    height: 225.5px;
+    height: 225px;
     padding-top: 85px;
     border-bottom: 6px solid transparent;
 }
@@ -2738,7 +2737,6 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     position: absolute;
     height: 100%;
     width: 100%;
-    background: url(images/mask.png) no-repeat left bottom;
     opacity: 0;
     filter: Anpha(Opacity=0);
 }
@@ -2783,20 +2781,18 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     margin-top: 0;
 }
 .kopa-vertical-carousel-widget .widget-content .bx-controls-direction .bx-prev {
-    background: url(images/prev.png) no-repeat center center;
-    background: rgba(255, 255, 255, 0.2) url(images/prev.png) no-repeat center center;
+    background: rgba(255, 255, 255, 0.2) no-repeat center center;
     top: 12px;
 }
 .kopa-vertical-carousel-widget .widget-content .bx-controls-direction .bx-prev:hover {
-    background: rgba(251, 189, 44, 0.2) url(images/prev-hover.png) no-repeat center center;
+    background: rgba(251, 189, 44, 0.2) no-repeat center center;
 }
 .kopa-vertical-carousel-widget .widget-content .bx-controls-direction .bx-next {
-    background: url(images/next.png) no-repeat center center;
-    background: rgba(255, 255, 255, 0.2) url(images/next.png) no-repeat center center;
+    background: rgba(255, 255, 255, 0.2) no-repeat center center;
     bottom: 12px;
 }
 .kopa-vertical-carousel-widget .widget-content .bx-controls-direction .bx-next:hover {
-    background: rgba(251, 189, 44, 0.2) url(images/next-hover.png) no-repeat center center;
+    background: rgba(251, 189, 44, 0.2) no-repeat center center;
     border-color: #fbbd2c;
 }
 .kopa-thumb-big-carousel-widget .widget-header {
@@ -3181,7 +3177,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 .kopa-list-posts-thumb-big-small-5-widget .item {
     float: left;
     width: 33.333333%;
-    padding: 0 7.5px;
+    padding: 0 7px;
 }
 .kopa-list-posts-thumb-big-small-5-widget .post-cat {
     overflow: hidden;
@@ -3330,12 +3326,12 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 .kopa-list-posts-thumb-big-small-3-widget .item-post {
     float: left;
     width: 50%;
-    padding: 0 7.5px;
+    padding: 0 7px;
 }
 .kopa-list-posts-thumb-big-small-3-widget .item-post .post-content {
     padding: 15px 0;
 }
-.kopa-list-posts-thumb-big-small-3-widget .item-post: last-child .post-content {
+.kopa-list-posts-thumb-big-small-3-widget .item-post:last-child .post-content {
     border-bottom: none;
 }
 .kopa-list-posts-thumb-big-small-3-widget .item-post .kopa-date-box {
@@ -3371,7 +3367,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     position: absolute;
     width: 100%;
     padding: 0 20px;
-    left: 7.5px;
+    left: 7px;
     bottom: 33px;
 }
 .kopa-list-posts-thumb-big-small-3-widget .item-post.latest-post .item-right .kopa-metadata {
@@ -3380,7 +3376,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 .kopa-list-posts-thumb-big-small-3-widget .item-post.latest-post .kopa-date-box {
     display: block;
     top: 15px;
-    left: 7.5px;
+    left: 7px;
 }
 .kopa-list-posts-thumb-big-small-3-widget .item-post.latest-post .post-title {
     font-size: 18px;
@@ -3487,7 +3483,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 .kopa-list-posts-2-widget .item {
     float: left;
     width: 20%;
-    padding: 0 7.5px;
+    padding: 0 7px;
     margin-bottom: 20px;
 }
 .kopa-list-posts-2-widget .post-thumb {
@@ -3549,7 +3545,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 .kopa-list-post-tabs-widget .item-outer.item0, .kopa-list-post-tabs-widget .item-outer.item1, .kopa-list-post-tabs-widget .item-outer.item2, .kopa-list-post-tabs-widget .item-outer.item3 {
     border-top: none;
 }
-.kopa-list-post-tabs-widget .item-outer.item0 item, .kopa-list-post-tabs-widget .item-outer.item1 item, .kopa-list-post-tabs-widget .item-outer.item2 item, .kopa-list-post-tabs-widget .item-outer.item3 item {
+.kopa-list-post-tabs-widget .item-outer.item0 .item, .kopa-list-post-tabs-widget .item-outer.item1 .item, .kopa-list-post-tabs-widget .item-outer.item2 .item, .kopa-list-post-tabs-widget .item-outer.item3 .item {
     padding-top: 24px;
     margin-top: 1px;
 }
@@ -3729,7 +3725,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 }
 .kopa-list-posts-widget.style-2 .widget-content .item-outer {
     width: 49.999%;
-    padding: 0 7.5px;
+    padding: 0 7px;
     margin: 0 0 25px;
 }
 .kopa-list-posts-widget.style-2 .widget-content .post-thumb {
@@ -3747,7 +3743,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     margin: 0 -12.5px;
 }
 .kopa-list-posts-masonry-widget .item-outer {
-    padding: 0 12.5px;
+    padding: 0 12px;
     width: 33.333%;
 }
 .kopa-list-posts-masonry-widget .item {
@@ -3865,7 +3861,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 .kopa-single-gallery-widget .post-content {
     margin-top: 20px;
 }
-.kopa-single-gallery-widget .post-content p: last-child {
+.kopa-single-gallery-widget .post-content p:last-child {
     margin-bottom: 0;
 }
 .widget_calendar table {
@@ -3934,7 +3930,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 .widget_archive > ul ul li:first-child, .widget_categories > ul ul li:first-child, .widget_links > ul ul li:first-child, .widget_meta > ul ul li:first-child, .widget_nav_menu .menu ul li:first-child, .widget_pages > ul ul li:first-child, .widget_recent_comments > ul ul li:first-child, .widget_recent_entries > ul ul li:first-child {
     padding-top: 8px;
 }
-.widget_archive > ul ul li: last-child, .widget_categories > ul ul li: last-child, .widget_links > ul ul li: last-child, .widget_meta > ul ul li: last-child, .widget_nav_menu .menu ul li: last-child, .widget_pages > ul ul li: last-child, .widget_recent_comments > ul ul li: last-child, .widget_recent_entries > ul ul li: last-child {
+.widget_archive > ul ul li:last-child, .widget_categories > ul ul li:last-child, .widget_links > ul ul li:last-child, .widget_meta > ul ul li:last-child, .widget_nav_menu .menu ul li:last-child, .widget_pages > ul ul li:last-child, .widget_recent_comments > ul ul li:last-child, .widget_recent_entries > ul ul li:last-child {
     padding-bottom: 0;
     border-bottom: none;
 }
@@ -3953,10 +3949,10 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 .widget_rss li {
     margin-bottom: 18px;
 }
-.widget_rss li: last-child {
+.widget_rss li:last-child {
     margin-bottom: 0;
 }
-.widget_text > div >: last-child {
+.widget_text > div >:last-child {
     margin-bottom: 0;
 }
 .widget_tag_cloud .tagcloud {
@@ -4025,14 +4021,14 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     background: #686868;
 }
 .kopa-gallery-widget .widget-header {
-    margin-bottom: 22.5px !important;
+    margin-bottom: 22px !important;
 }
 .kopa-gallery-widget .widget-content {
     margin: 0 -7.5px;
     overflow: hidden;
 }
 .kopa-gallery-widget .widget-content a {
-    margin: 7.5px;
+    margin: 7px;
     position: relative;
     width: 118px;
     height: 118px;
@@ -4152,7 +4148,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 .kopa-list-posts-thumb-medium-widget .widget-content .item-post {
     float: left;
     width: 50%;
-    padding: 0 7.5px;
+    padding: 0 7px;
     margin-bottom: 15px;
     position: relative;
 }
@@ -4162,8 +4158,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 }
 .kopa-list-posts-thumb-medium-widget .widget-content .item-content {
     position: absolute;
-    widows: 100%;
-    padding: 0 22.5px;
+    padding: 0 22px;
     bottom: 10px;
     left: 0;
 }
@@ -4180,7 +4175,6 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     color: #fbbd2c;
 }
 .kopa-list-posts-thumb-medium-widget .widget-content .mask2 {
-    background: url(images/mask2.png) no-repeat;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -4351,7 +4345,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 #kopa-footer .menu-third ul li:first-child {
     border-left: none;
 }
-#kopa-footer .menu-third ul li: last-child {
+#kopa-footer .menu-third ul li:last-child {
     padding-right: 0;
 }
 #kopa-footer .menu-third ul li a {
