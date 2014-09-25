@@ -11,7 +11,7 @@ $NotDest_contenido=primerParrafo($fila_notDest["contenido"]);
 $NotDest_fechaPub=$fila_notDest["fecha_publicacion"];
 $NotDest_imagen=$fila_notDest["imagen"];
 $NotDest_imagen_carpeta=$fila_notDest["imagen_carpeta"];
-$NotDest_UrlImg=$web."imagenes/upload/".$NotDest_imagen_carpeta."thumb/".$NotDest_imagen;
+$NotDest_UrlImg=$web."imagenes/upload/".$NotDest_imagen_carpeta."thumbdest/".$NotDest_imagen;
 $NotDest_UrlWeb=$web."noticia/".$NotDest_id."-".$NotDest_url;
 
 //SEPARACION DE FECHA
@@ -22,7 +22,7 @@ $FechaMes=mesCorto($fechaSep[1]);
 $FechaAnio=$fechaSep[0];
 
 //NOTICIAS DERECHA
-$rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE noticia=1 AND fecha_publicacion<='$fechaActual' AND publicar=1 ORDER BY fecha_publicacion DESC LIMIT 3", $conexion);
+$rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE destacada=0 AND categoria<>7 AND categoria<>8 AND fecha_publicacion<='$fechaActual' AND publicar=1 ORDER BY fecha_publicacion DESC LIMIT 3", $conexion);
 
 ?>
 <div class="widget-area-2">
@@ -102,7 +102,7 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE noticia=1 AND fecha_pub
 
                         //URLS
                         $NotNor_UrlWeb=$web."noticia/".$NotNor_id."-".$NotNor_url;
-                        $NotNor_UrlImg=$web."imagenes/upload/".$NotNor_imagen_carpeta."thumb/".$NotNor_imagen;
+                        $NotNor_UrlImg=$web."imagenes/upload/".$NotNor_imagen_carpeta."thumbnor/".$NotNor_imagen;
                 ?>
 
                 <article class="item pull-left">
