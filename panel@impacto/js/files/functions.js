@@ -311,7 +311,7 @@ $(function() {
 		dragdrop: false,
 		resize: {width: 800, height: 500, quality: 80},
 		filters : [
-			{title : "Imagenes", extensions : "jpg"}
+			{title : "Imagenes", extensions : "jpg,gif"}
 		]
 	});
 
