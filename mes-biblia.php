@@ -39,7 +39,19 @@ $url_final=$web."mes-biblia";
 
         <?php require_once("w-script.php"); ?>
 
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <!-- FANCYBOX -->
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript" src="libs/fancybox/jquery.fancybox.js?v=2.1.5"></script>
+        <link rel="stylesheet" type="text/css" href="libs/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+        <script type="text/javascript">
+            var jFanBox = jQuery.noConflict();
+            jFanBox(document).ready(function() {
+                jFanBox('.fancybox').fancybox();
+            });
+        </script>
+
+        <!-- POSICION FIJA DE DESCARGAR APP -->
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.7.2.min.js"></script>
         <script type="text/javascript">
             var jScroll=jQuery.noConflict();jScroll(document).ready(function(){scroll_menu();})
             function scroll_menu(){var _c,_d,_dh,_dt,_ct,_ch;_d=jScroll('.app');if(!_d.length)return;_c=_d.parent();_dt=_d.offset().top;_dh=_d.outerHeight();_ct=_c.offset().top;_ch=_c.outerHeight();jScroll(window).bind('scroll',function(e){var _o=jScroll('html').scrollTop();_o=_o<1?jScroll('body').scrollTop():_o;var _mb=(_ct+_ch)-_dh;if(_o>(_dt)){_d.addClass('fixed');}else _d.removeClass('fixed');return;});jScroll(window).trigger('scroll');}
@@ -86,15 +98,15 @@ $url_final=$web."mes-biblia";
                                 </div>
 
                                 <ul>
-                                    <li><img src="imagenes/biblia/1-pentateuco.jpg" alt="Mes de la Biblia"/></li>
-                                    <li><img src="imagenes/biblia/2-historicos.jpg" alt="Mes de la Biblia"/></li>
-                                    <li><img src="imagenes/biblia/3-poeticos.jpg" alt="Mes de la Biblia"/></li>
-                                    <li><img src="imagenes/biblia/4-profeticos.jpg" alt="Mes de la Biblia"/></li>
-                                    <li><img src="imagenes/biblia/5-evangelios.jpg" alt="Mes de la Biblia"/></li>
-                                    <li><img src="imagenes/biblia/6-historicos.jpg" alt="Mes de la Biblia"/></li>
-                                    <li><img src="imagenes/biblia/7-paulinas.jpg" alt="Mes de la Biblia"/></li>
-                                    <li><img src="imagenes/biblia/8-generales.jpg" alt="Mes de la Biblia"/></li>
-                                    <li><img src="imagenes/biblia/9-profeticos.jpg" alt="Mes de la Biblia"/></li>
+                                    <li><a class="fancybox" href="imagenes/biblia/1-pentateuco.jpg?v"><img src="imagenes/biblia/thumb/1-pentateuco.jpg" alt="Mes de la Biblia"/></a></li>
+                                    <li><a class="fancybox" href="imagenes/biblia/2-historicos.jpg?v"><img src="imagenes/biblia/thumb/2-historicos.jpg" alt="Mes de la Biblia"/></a></li>
+                                    <li><a class="fancybox" href="imagenes/biblia/3-poeticos.jpg?v"><img src="imagenes/biblia/thumb/3-poeticos.jpg" alt="Mes de la Biblia"/></a></li>
+                                    <li><a class="fancybox" href="imagenes/biblia/4-profeticos.jpg?v"><img src="imagenes/biblia/thumb/4-profeticos.jpg" alt="Mes de la Biblia"/></a></li>
+                                    <li><a class="fancybox" href="imagenes/biblia/5-evangelios.jpg?v"><img src="imagenes/biblia/thumb/5-evangelios.jpg" alt="Mes de la Biblia"/></a></li>
+                                    <li><a class="fancybox" href="imagenes/biblia/6-historicos.jpg?v"><img src="imagenes/biblia/thumb/6-historicos.jpg" alt="Mes de la Biblia"/></a></li>
+                                    <li><a class="fancybox" href="imagenes/biblia/7-paulinas.jpg?v"><img src="imagenes/biblia/thumb/7-paulinas.jpg" alt="Mes de la Biblia"/></a></li>
+                                    <li><a class="fancybox" href="imagenes/biblia/8-generales.jpg?v"><img src="imagenes/biblia/thumb/8-generales.jpg" alt="Mes de la Biblia"/></a></li>
+                                    <li><a class="fancybox" href="imagenes/biblia/9-profeticos.jpg?v"><img src="imagenes/biblia/thumb/9-profeticos.jpg" alt="Mes de la Biblia"/></a></li>
                                 </ul>
 
                                 <div class="app">
