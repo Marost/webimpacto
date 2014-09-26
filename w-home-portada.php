@@ -1,3 +1,17 @@
+<?php
+//EDICION ESPAÑOL
+$rst_edEsp=mysql_query("SELECT * FROM iev_edicion ORDER BY fecha_publicacion DESC LIMIT 1", $conexion);
+$fila_edEsp=mysql_fetch_array($rst_edEsp);
+
+//VARIABLES
+$EdEsp_id=$fila_edEsp["id"];
+$EdEsp_url=$fila_edEsp["url"];
+$EdEsp_nombre_edicion=$fila_edEsp["nombre_edicion"];
+$EdEsp_imagen=$fila_edEsp["imagen"];
+
+$EdEsp_UrlImg=$web."imagenes/revista/".$EdEsp_imagen;
+
+?>
 <div class="widget-area-6">
 
     <div class="widget kopa-list-posts-carousel-2-widget">
@@ -10,7 +24,9 @@
             <div class="edicion-impresa col-lg-3">
 
                 <div class="portada">
-                    <img height="249" src="http://impactoevangelistico.net/imagenes/revista/728-es.jpg" alt=""/>
+                    <a href="<?php echo $EdEsp_url; ?>" title="<?php echo $EdEsp_nombre_edicion; ?>" target="_blank">
+                        <img height="249" src="<?php echo $EdEsp_UrlImg; ?>" alt="<?php echo $EdEsp_nombre_edicion; ?>"/>
+                    </a>
                 </div>
 
                 <div class="idiomas">
