@@ -3,7 +3,6 @@
         <div class="widget kopa-sync-carousel-widget">
             <header class="widget-header">
                 <h3 class="widget-title">GALERÍA DE IMÁGENES</h3>
-                <i class="fa fa-plus-square-o"></i>
             </header>
             <div class="widget-content">
                 <div class="sync1 owl-carousel">

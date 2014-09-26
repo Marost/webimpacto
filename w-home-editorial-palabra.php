@@ -4,8 +4,6 @@
         <div class="widget kopa-list-post-small-thumb-widget no-cat">
             <header class="widget-header">
                 <h3 class="widget-title">EDITORIAL</h3>
-                <i class="fa fa-plus-square-o"></i>
-
             </header>
             <div class="widget-content">
                 <ul class="list-unstyled">
@@ -33,7 +31,6 @@
         <div class="widget kopa-list-post-small-thumb-widget no-cat">
             <header class="widget-header">
                 <h3 class="widget-title">LA PALÁBRA</h3>
-                <i class="fa fa-plus-square-o"></i>
             </header>
             <div class="widget-content">
                 <ul class="list-unstyled">

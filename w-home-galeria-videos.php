@@ -3,7 +3,6 @@
         <div class="widget kopa-list-posts-thumb-big-small-widget">
             <header class="widget-header">
                 <h3 class="widget-title">VIDEOS</h3>
-                <i class="fa fa-plus-square-o"></i>
             </header>
             <div class="widget-content">
                 <div class="item item-latest clearfix">
