@@ -30,6 +30,7 @@ $EdEsp_UrlImg=$web."imagenes/revista/".$EdEsp_imagen;
                 </div>
 
                 <div class="idiomas">
+                    <audio id="idioma_audio" src="audio/idioma/es.mp3"></audio>
                     <ul>
                         <li><a class="en" href="">Ingles</a></li>
                         <li><a class="al" href="">Aleman</a></li>
