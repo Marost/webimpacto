@@ -6,21 +6,25 @@ require_once("../../conexion/verificar_sesion.php");
 
 //VARIABLES
 $id_url=$_REQUEST["id"];
+$Req_Not=$_REQUEST["not"];
 
 //EDITAR
-$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_noticia WHERE id=$id_url;", $conexion);
+$rst_nota=mysql_query("SELECT * FROM ".$tabla_suf."_edicion_noticia WHERE id=$id_url;", $conexion);
 $fila_nota=mysql_fetch_array($rst_nota);
 
 //VARIABLES
 $nota_nombre=$fila_nota["titulo"];
+$nota_pagina=$fila_nota["pagina"];
 $nota_imagen=$fila_nota["imagen"];
 $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
 $nota_contenido=$fila_nota["contenido"];
 $nota_video=$fila_nota["video"];
-$nota_video_tipo=$fila_nota["tipo_video"];
-$nota_categoria=$fila_nota["categoria"];
-$nota_destacada=$fila_nota["destacada"];
 $nota_publicar=$fila_nota["publicar"];
+
+
+//$nota_categoria=$fila_nota["categoria"];
+//$nota_destacada=$fila_nota["destacada"];
+
 
 /* FECHA */
 $nota_fecha_pub=explode(" ", $fila_nota["fecha_publicacion"]);
@@ -114,13 +118,18 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
     <!-- Main content -->
     <div class="wrapper">
 
-        <form id="submit-form" class="main" method="POST" action="s-editar.php?id=<?php echo $id_url; ?>">
+        <form id="submit-form" class="main" method="POST" action="s-editar.php?not=<?php echo $Req_Not; ?>&id=<?php echo $id_url; ?>">
 
             <fieldset>
                 <div class="widget fluid">
                     
                     <div class="whead"><h6>Editar</h6></div>
-                    
+
+                    <div class="formRow">
+                        <div class="grid3"><label>Página:</label></div>
+                        <div class="grid9"><input type="text" name="pagina" value="<?php echo $nota_pagina; ?>" /></div>
+                    </div>
+
                     <div class="formRow">
                         <div class="grid3"><label>Titulo:</label></div>
                         <div class="grid9"><input type="text" name="nombre" value="<?php echo $nota_nombre; ?>" /></div>
@@ -128,7 +137,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
 
                     <div class="widget">
                         <div class="whead"><h6>Contenido</h6></div>
-                        <textarea class="ckeditor" name="contenido" /><?php echo $nota_contenido; ?></textarea>
+                        <textarea class="ckeditor" name="contenido"><?php echo $nota_contenido; ?></textarea>
                     </div>
 
                     <div class="formRow">
@@ -154,7 +163,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                         </div>
                     </div>
 
-                    <div class="formRow">
+                    <div class="formRow" style="display: none;">
                         <div class="grid3"><label>Categoria:</label></div>
                         <div class="grid9">
                             <select name="categoria" class="styled">
@@ -173,7 +182,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                         </div>
                     </div>
 
-                    <div class="formRow">
+                    <div class="formRow" style="display: none;">
                         <div class="grid3"><label>Tipo de noticia: </label></div>
                         <div class="grid9 yes_no">
                             <div class="floatL mr10">Destacada
@@ -193,7 +202,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                         </div>
                     </div>
 
-                    <div class="formRow">
+                    <div class="formRow" style="display: none;">
                         <div class="grid3"><label>Etiquetas:</label></div>
                         <div class="grid9">
 

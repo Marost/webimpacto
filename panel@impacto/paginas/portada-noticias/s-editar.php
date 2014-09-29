@@ -4,24 +4,20 @@ include("../../conexion/conexion.php");
 include("../../conexion/funciones.php");
 require_once('../../js/plugins/thumbs/ThumbLib.inc.php');
 
+//VARIABLES DE URL
+$Req_Not=$_REQUEST["not"];
+
 //DECLARACION DE VARIABLES
 $nota_id=$_REQUEST["id"];
 $nombre=$_POST["nombre"];
 $url=getUrlAmigable(eliminarTextoURL($nombre));
 $contenido=$_POST["contenido"];
-$categoria=$_POST["categoria"];
-$tipo_noticia=$_POST["tipo_noticia"];
-$tags=$_POST["tags"];
+$pagina=$_POST["pagina"];
 
 //FECHA Y HORA
 $pub_fecha=$_POST["pub_fecha"];
 $pub_hora=$_POST["pub_hora"];
 $fecha_publicacion=$pub_fecha." ".$pub_hora;
-
-//TAGS
-$tags=$_POST["tags"];
-if($tags==""){ $union_tags=0; }
-elseif($tags<>""){ $union_tags=implode(",", $tags);}
 
 //PUBLICAR
 if ($_POST["publicar"]<>""){ $publicar=$_POST["publicar"]; }else{ $publicar=0; }
@@ -31,36 +27,18 @@ $video_youtube=$_POST["video_youtube"];
 //$video_upload=$_POST["uploader_video_0_tmpname"];
 
 //IMAGEN
-if ($tipo_noticia=="not_destacada") {
-	$destacada=1; 
-	if($_POST['uploader_0_tmpname']<>""){
-		$imagen=$_POST["uploader_0_tmpname"];
-		$imagen_carpeta=fechaCarpeta()."/";
+if($_POST['uploader_0_tmpname']<>""){
+    $imagen=$_POST["uploader_0_tmpname"];
+    $imagen_carpeta=fechaCarpeta()."/";
 
-        guardarImagen($imagen, $imagen_carpeta);
+    guardarImagen($imagen, $imagen_carpeta);
 
-	}else{
-		$imagen=$_POST["imagen"];
-		$imagen_carpeta=$_POST["imagen_carpeta"];
+}else{
+    $imagen=$_POST["imagen"];
+    $imagen_carpeta=$_POST["imagen_carpeta"];
 
-        guardarImagen($imagen, $imagen_carpeta);
+    guardarImagen($imagen, $imagen_carpeta);
 
-	}
-}elseif($tipo_noticia=="not_normal"){
-	$destacada=0;
-	if($_POST['uploader_0_tmpname']<>""){
-		$imagen=$_POST["uploader_0_tmpname"];
-		$imagen_carpeta=fechaCarpeta()."/";
-
-        guardarImagen($imagen, $imagen_carpeta);
-
-	}else{
-		$imagen=$_POST["imagen"];
-		$imagen_carpeta=$_POST["imagen_carpeta"];
-
-        guardarImagen($imagen, $imagen_carpeta);
-
-	}
 }
 
 //VIDEO YOUTUBE
@@ -77,26 +55,22 @@ if($video_youtube<>""){
 }
 
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_noticia SET url='$url', titulo='".htmlspecialchars($nombre)."', 
+$rst_guardar=mysql_query("UPDATE ".$tabla_suf."_edicion_noticia SET url='$url', titulo='".htmlspecialchars($nombre)."',
+    pagina=$pagina,
 	contenido='$contenido', 
 	imagen='$imagen', 
 	imagen_carpeta='$imagen_carpeta', 
 	fecha_publicacion='$fecha_publicacion', 
-	publicar=$publicar, 
-	destacada=$destacada, 
-	categoria=$categoria, 
-	tags='0,$union_tags,0', 
-	video='$video', 
-	tipo_video='$tipo_video', 
-	mostrar_video=$mostrar_video WHERE id=$nota_id;", $conexion);
+	publicar=$publicar,
+	video='$video' WHERE id=$nota_id;", $conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
 	mysql_close($conexion);
-	header("Location:lista.php?msj=er");
+	header("Location:lista.php?not=$Req_Not&msj=er");
 } else {
 	mysql_close($conexion);
-	header("Location:lista.php?msj=ok");
+	header("Location:lista.php?not=$Req_Not&msj=ok");
 }
 
 ?>
