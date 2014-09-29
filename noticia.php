@@ -19,6 +19,7 @@ $Noticia_url=$fila_noticia["url"];
 $Noticia_titulo=$fila_noticia["titulo"];
 $Noticia_contenido=$fila_noticia["contenido"];
 $Noticia_categoria=$fila_noticia["categoria"];
+$Noticia_tags=$fila_noticia["tags"];
 $Noticia_fechaPub=$fila_noticia["fecha_publicacion"];
 $Noticia_imagen=$fila_noticia["imagen"];
 $Noticia_imagen_carpeta=$fila_noticia["imagen_carpeta"];
@@ -27,6 +28,11 @@ $Noticia_imagen_carpeta=$fila_noticia["imagen_carpeta"];
 $Noticia_fechaPubSep=explode(" ", $Noticia_fechaPub);
 $Noticia_fecha=explode("-", $Noticia_fechaPubSep[0]);
 $NoticiaFecha=nombreFechaTotal($Noticia_fecha[0], $Noticia_fecha[1], $Noticia_fecha[2]);
+
+//TAGS
+$tags=explode(",", $Noticia_tags);    //SEPARACION DE ARRAY CON COMAS
+$rst_tags=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY nombre ASC;", $conexion);
+
 
 //URLS
 $Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imagen;
@@ -199,22 +205,33 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE id<>$Req_Id AND categor
                                 <!-- user rating -->
 
                                 <div class="link-social-2">
-                                    <div class="addthis_sharing_toolbox"></div>
-                                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63"></script>
+                                    <div class="addthis_native_toolbox"></div>
+                                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63" async></script>
+
                                 </div>
 
                                 <div class="tags-link">
                                     <span>Tags:</span>
-                                    <a href="#">cinema</a>,
-                                    <a href="#">sky</a>,
-                                    <a href="#">Design</a>,
-                                    <a href="#">Fashion</a>,
-                                    <a href="#">Life style</a>
+
+                                    <?php while($fila_tags=mysql_fetch_array($rst_tags)){
+                                        $tags_id=$fila_tags["id"];
+                                        $tags_url=$fila_tags["url"];
+                                        $tags_nombre=$fila_tags["nombre"];
+
+                                        //URL
+                                        $tags_WebURL=$web."tags/".$tags_id."/".$tags_url;
+                                        if(in_array($tags_id, $tags)){
+                                    ?>
+                                        <a href="<?php echo $tags_WebURL; ?>"><?php echo $tags_nombre; ?></a>
+                                    <?php }} ?>
+
                                 </div>
 
                             </div>
 
                         </div>
+
+                        <?php require_once("w-portada.php"); ?>
 
                         <div class="widget kopa-tab-widget">
                             <div class="widget-content">
@@ -268,6 +285,7 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE id<>$Req_Id AND categor
                     <!-- sidebar -->
 
                 </div>
+
             </div>
             <!-- row -->
         </div>
