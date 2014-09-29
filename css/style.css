@@ -4487,28 +4487,28 @@ section#home-notprin{
 }
 
 /* EDICION IMPRSA - WIDGET */
-.widget .edicion-impresa{
+.widget-ed .edicion-impresa{
     padding: 0;
     z-index: 3;
 }
 
-.widget .edicion-impresa .portada{
+.widget-ed .edicion-impresa .portada{
     float: left;
 }
 
-.widget .edicion-impresa .portada img{
+.widget-ed .edicion-impresa .portada img{
     width: 100%;
 }
 
-.widget .edicion-impresa .idiomas{
+.widget-ed .edicion-impresa .idiomas{
     float: left;
 }
 
-.widget .edicion-impresa .idiomas ul{
+.widget-ed .edicion-impresa .idiomas ul{
     margin: 0;
 }
 
-.widget .edicion-impresa .idiomas ul li{
+.widget-ed .edicion-impresa .idiomas ul li{
     margin: 10px 5px;
     display: inline-block;
 }
@@ -4553,4 +4553,14 @@ section#home-notprin{
 /* NOTICIA */
 .entry-content hr{
     display: none;
+}
+
+/* SIDEBAR - GALERIA DE FOTOS */
+.galsidebar{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.galsidebar .kopa-sync-carousel-widget .sync1 .owl-controls{
+    bottom: -110px !important;
 }

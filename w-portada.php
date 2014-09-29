@@ -12,7 +12,7 @@ $EdEsp_imagen=$fila_edEsp["imagen"];
 $EdEsp_UrlImg=$web."imagenes/revista/".$EdEsp_imagen;
 
 ?>
-<div class="widget">
+<div class="widget widget-ed">
 
     <div class="widget kopa-list-posts-carousel-2-widget">
         <header class="widget-header">
