@@ -52,9 +52,9 @@ $arr_extra_cols[0]  = array(6,'Acciones','100','<div class="btn-group" style="di
                                 <a class="buttonS bDefault" data-toggle="dropdown" href="#">Acción<span class="caret"></span></a>
                                 <ul class="dropdown-menu pull-right">
                                     <li>
-                                        <a onclick="eliminarRegistro(#COL1#);" href="javascript:;">
+                                        <a onclick="eliminarRegistro(#COL1#,'.$Req_Not.');" href="javascript:;">
                                         <span class="icos-trash"></span>Eliminar</a></li>
-                                    <li><a href="f-editar.php?id=#COL1#" class="">
+                                    <li><a href="f-editar.php?not='.$Req_Not.'&id=#COL1#" class="">
                                         <span class="icos-pencil"></span>Modificar</a></li>
                                 </ul>
                             </div>');
@@ -81,9 +81,9 @@ if($_POST['ajax_option']!=''){
 
 <!-- ELIMINAR  -->
 <script type="text/javascript">
-function eliminarRegistro(registro) {
+function eliminarRegistro(registro, edicion) {
     if(confirm("¿Está seguro de borrar este registro?")) {
-        document.location.href="s-eliminar.php?id="+registro;
+        document.location.href="s-eliminar.php?not="+edicion+"&id="+registro;
     }
 }
 </script>
