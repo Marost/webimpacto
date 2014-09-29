@@ -6,6 +6,7 @@ require_once("../../conexion/verificar_sesion.php");
 
 //VARIABLES DE URL
 $mensaje=$_REQUEST["msj"];
+$Req_Not=$_REQUEST["not"];
 
 //LISTA DE REGISTROS - FILTRO
 include_once('../../js/plugins/creative_table/configurations.php');
@@ -26,7 +27,7 @@ include_once('../../js/plugins/creative_table/creativeTable.php');
 $ct=new CreativeTable();
 
 // Data Gathering
-$params['sql_query']                = "SELECT noti.id,noti.titulo,cat.categoria,noti.fecha_publicacion FROM ".$tabla_suf."_noticia AS noti, ".$tabla_suf."_noticia_categoria AS cat WHERE noti.categoria=cat.id ORDER BY fecha_publicacion DESC, id DESC";
+$params['sql_query']                = "SELECT id,titulo,fecha_publicacion FROM ".$tabla_suf."_edicion_noticia WHERE edicion_id=$Req_Not ORDER BY fecha_publicacion DESC, id DESC";
 //$params['search']                   = $search;
 $params['multiple_search']          = $multiple_search;
 $params['items_per_page']           = $items_per_page;
@@ -34,8 +35,8 @@ $params['sort']                     = $sort;
 $params['page']                     = $page;
 $params['total_items']              = $total_items;
 
-$params['header']                   = 'ID,Registro,Categoria,Fecha publicación';
-$params['width']                    = '30,650,100,140';
+$params['header']                   = 'ID,Registro,Fecha publicación';
+$params['width']                    = '30,650,140';
 
 /* ORDENAR POR CAMPOS */
 $params['sort_init'] = false;  // sort all fields
@@ -55,8 +56,6 @@ $arr_extra_cols[0]  = array(6,'Acciones','100','<div class="btn-group" style="di
                                         <span class="icos-trash"></span>Eliminar</a></li>
                                     <li><a href="f-editar.php?id=#COL1#" class="">
                                         <span class="icos-pencil"></span>Modificar</a></li>
-                                    <li><a href="../noticias-slider/lista.php?not=#COL1#" class="">
-                                        <span class="icos-photos"></span>Galería de Fotos</a></li>
                                 </ul>
                             </div>');
 $params['extra_cols']   = $arr_extra_cols;
@@ -121,7 +120,7 @@ function eliminarRegistro(registro) {
     <div class="wrapper">
 
         <ul class="middleNavR">
-            <li><a href="f-agregar.php" title="Agregar" class="tipN"><img src="../../images/icons/middlenav/create.png" alt="" /></a></li>
+            <li><a href="f-agregar.php?not=<?php echo $Req_Not; ?>" title="Agregar" class="tipN"><img src="../../images/icons/middlenav/create.png" alt="" /></a></li>
         </ul>
 
         <?php if($mensaje=="ok"){ ?>
