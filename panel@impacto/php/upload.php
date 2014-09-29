@@ -23,6 +23,7 @@ include("../conexion/funciones.php");
     $targetDirThumbDest = "../../imagenes/upload/".fechaCarpeta()."/thumbdest";        //THUMB 728x452 - NOTICIA DESTACADA
     $targetDirThumbNorV = "../../imagenes/upload/".fechaCarpeta()."/thumbnor";         //THUMB 243x225 - NOTICIA SUPERIOR Y VISTO (SIDEBAR)
     $targetDirThumbDevEn = "../../imagenes/upload/".fechaCarpeta()."/thumbdeven";      //THUMB 385x250 - DEVOCIONAL - EVENTOS
+    $targetDirThumbPort = "../../imagenes/upload/".fechaCarpeta()."/thumbport";        //THUMB 263x149 - PORTADA
 	$cleanupTargetDir = false; // Remove old files
 	$maxFileAge = 60 * 60; // Temp file age in seconds
 
@@ -54,12 +55,13 @@ include("../conexion/funciones.php");
 	}
 
 	// Create target dir
-	if (!file_exists($targetDir) or !file_exists($targetDirThumb) or !file_exists($targetDirThumbDest) or !file_exists($targetDirThumbNorV) or !file_exists($targetDirThumbDevEn)){
+	if (!file_exists($targetDir) or !file_exists($targetDirThumb) or !file_exists($targetDirThumbDest) or !file_exists($targetDirThumbNorV) or !file_exists($targetDirThumbDevEn) or !file_exists($targetDirThumbPort)){
 		@mkdir($targetDir, 0777);
 		@mkdir($targetDirThumb, 0777);
         @mkdir($targetDirThumbDest, 0777);
         @mkdir($targetDirThumbNorV, 0777);
         @mkdir($targetDirThumbDevEn, 0777);
+        @mkdir($targetDirThumbPort, 0777);
 	}
 
 	// Remove old temp files
