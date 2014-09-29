@@ -800,6 +800,16 @@ jQuery(document).ready(function () {
         jQuery('.kopa-alert .close').parent().hide();
     });
 
+    //AUDIO PARA IDIOMA
+    jQuery(".edicion-impresa .idiomas ul li a").on("mouseover", function(){
+
+        var val = jQuery(this).attr("class");
+        jQuery("#idioma_audio").attr("src", "audio/idioma/"+val+".mp3");
+
+        var v = document.getElementById("idioma_audio");
+        v.play();
+    });
+
 });
 
 // 18. Browser resize
