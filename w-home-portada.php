@@ -11,6 +11,9 @@ $EdEsp_imagen=$fila_edEsp["imagen"];
 
 $EdEsp_UrlImg=$web."imagenes/revista/".$EdEsp_imagen;
 
+//NOTICIAS DE PORTADA
+$rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEsp_id AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC", $conexion);
+
 ?>
 <div class="widget-area-6">
 
@@ -44,117 +47,57 @@ $EdEsp_UrlImg=$web."imagenes/revista/".$EdEsp_imagen;
 
             <div class="owl-carousel col-lg-9">
 
+                <?php while($fila_edNot=mysql_fetch_array($rst_edNot)){
+                        $EdNot_id=$fila_edNot["id"];
+                        $EdNot_url=$fila_edNot["url"];
+                        $EdNot_titulo=$fila_edNot["titulo"];
+                        $EdNot_pagina=$fila_edNot["pagina"];
+                        $EdNot_imagen=$fila_edNot["imagen"];
+                        $EdNot_imagen_carpeta=$fila_edNot["imagen_carpeta"];
+                        $EdNot_fechaPub=$fila_edNot["fecha_publicacion"];
+
+                        //SEPARACION DE FECHA
+                        $fechaPubSep=explode(" ", $EdNot_fechaPub);
+                        $fechaSep=explode("-", $fechaPubSep[0]);
+                        $FechaDia=$fechaSep[2];
+                        $FechaMes=mesCorto($fechaSep[1]);
+                        $FechaAnio=$fechaSep[0];
+
+                        //URLS
+                        $EdNot_UrlWeb=$web."noticiaed/".$EdNot_id."-".$EdNot_url;
+                        $EdNot_UrlImg=$web."imagenes/upload/".$EdNot_imagen_carpeta."thumbport/".$EdNot_imagen;
+                ?>
                 <div class="item">
+
                     <div class="post-thumb">
-                        <a href="#" class="img-responsive"><img src="imagenes/prueba/img5.jpg" alt=""></a>
+                        <a href="#" class="img-responsive"><img src="<?php echo $EdNot_UrlImg; ?>" alt="<?php echo $EdNot_titulo; ?>"></a>
                         <div class="kopa-metadata">
-                            <span class="kopa-date"> Fer 20, 2014</span>
+                            <span class="kopa-date"><?php echo $FechaMes." ".$FechaDia.", ".$FechaAnio; ?></span>
                         </div>
                     </div>
                     <!-- post-thumb -->
+
                     <div class="item-content clearfix">
                         <span class="kopa-num-pag">Pág.</span>
-                        <span class="kopa-num pull-left">01</span>
+                        <span class="kopa-num pull-left"><?php echo $EdNot_pagina; ?></span>
                         <div class="post-content edimpresa-titulo">
-                            <h4 class="post-title"><a href="#">Los adolescentes protegen más su privacidad que los adultos</a></h4>
+                            <h4 class="post-title"><a href="#"><?php echo $EdNot_titulo; ?></a></h4>
                         </div>
 
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-volume-up fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
-                                    </span>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-volume-up fa-stack-1x fa-inverse"></i>
+                        </span>
 
-                        <!-- post content -->
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
+                        </span>
                     </div>
+                    <!-- post content -->
+
                 </div>
-
-                <div class="item">
-                    <div class="post-thumb">
-                        <a href="#" class="img-responsive"><img src="imagenes/prueba/img6.jpg" alt=""></a>
-                        <div class="kopa-metadata">
-                            <span class="kopa-date"> Fer 20, 2014</span>
-                        </div>
-                    </div>
-                    <!-- post-thumb -->
-                    <div class="item-content clearfix">
-                        <span class="kopa-num-pag">Pág.</span>
-                        <span class="kopa-num pull-left">02</span>
-                        <div class="post-content edimpresa-titulo">
-                            <h4 class="post-title"><a href="#">Panamá capital mundial de la fe</a></h4>
-                        </div>
-
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-volume-up fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
-                                    </span>
-
-                        <!-- post content -->
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="post-thumb">
-                        <a href="#" class="img-responsive"><img src="imagenes/prueba/img7.jpg" alt=""></a>
-                        <div class="kopa-metadata">
-                            <span class="kopa-date"> Fer 20, 2014</span>
-                        </div>
-                    </div>
-                    <!-- post-thumb -->
-                    <div class="item-content clearfix">
-                        <span class="kopa-num-pag">Pág.</span>
-                        <span class="kopa-num pull-left">03</span>
-                        <div class="post-content edimpresa-titulo">
-                            <h4 class="post-title"><a href="#">¿Por qué es tan malo el pecado?</a></h4>
-                        </div>
-
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-volume-up fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
-                                    </span>
-
-                        <!-- post content -->
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="post-thumb">
-                        <a href="#" class="img-responsive"><img src="imagenes/prueba/img8.jpg" alt=""></a>
-                        <div class="kopa-metadata">
-                            <span class="kopa-date"> Fer 20, 2014</span>
-                        </div>
-                    </div>
-                    <!-- post-thumb -->
-                    <div class="item-content">
-                        <span class="kopa-num-pag">Pág.</span>
-                        <span class="kopa-num pull-left">04</span>
-                        <div class="post-content edimpresa-titulo">
-                            <h4 class="post-title"><a href="#">Cinco décadas evangelizando</a></h4>
-                        </div>
-
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-volume-up fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
-                                    </span>
-
-                        <!-- post content -->
-                    </div>
-                </div>
+                <?php } ?>
 
             </div>
             <!-- owl carousel -->
