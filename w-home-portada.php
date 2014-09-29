@@ -33,6 +33,7 @@ $rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEs
                 </div>
 
                 <div class="idiomas">
+                    <audio id="idioma_audio" src=""></audio>
                     <ul>
                         <li><a class="en" href="">Ingles</a></li>
                         <li><a class="al" href="">Aleman</a></li>
