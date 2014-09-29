@@ -4486,6 +4486,33 @@ section#home-notprin{
     font-size: 13px !important;
 }
 
+/* EDICION IMPRSA - WIDGET */
+.widget .edicion-impresa{
+    padding: 0;
+    z-index: 3;
+}
+
+.widget .edicion-impresa .portada{
+    float: left;
+}
+
+.widget .edicion-impresa .portada img{
+    width: 100%;
+}
+
+.widget .edicion-impresa .idiomas{
+    float: left;
+}
+
+.widget .edicion-impresa .idiomas ul{
+    margin: 0;
+}
+
+.widget .edicion-impresa .idiomas ul li{
+    margin: 10px 5px;
+    display: inline-block;
+}
+
 /* LOGO */
 .header-1 .kopa-header-middle{
     background: rgba(255, 255, 255, 0.35);
