@@ -71,7 +71,7 @@ $rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEs
                 <div class="item">
 
                     <div class="post-thumb">
-                        <a href="#" class="img-responsive"><img src="<?php echo $EdNot_UrlImg; ?>" alt="<?php echo $EdNot_titulo; ?>"></a>
+                        <a href="<?php echo $EdNot_UrlWeb; ?>" class="img-responsive"><img src="<?php echo $EdNot_UrlImg; ?>" alt="<?php echo $EdNot_titulo; ?>"></a>
                         <div class="kopa-metadata">
                             <span class="kopa-date"><?php echo $FechaMes." ".$FechaDia.", ".$FechaAnio; ?></span>
                         </div>
@@ -82,7 +82,7 @@ $rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEs
                         <span class="kopa-num-pag">Pág.</span>
                         <span class="kopa-num pull-left"><?php echo $EdNot_pagina; ?></span>
                         <div class="post-content edimpresa-titulo">
-                            <h4 class="post-title"><a href="#"><?php echo $EdNot_titulo; ?></a></h4>
+                            <h4 class="post-title"><a href="<?php echo $EdNot_UrlWeb; ?>"><?php echo $EdNot_titulo; ?></a></h4>
                         </div>
 
                         <span class="fa-stack fa-lg">
