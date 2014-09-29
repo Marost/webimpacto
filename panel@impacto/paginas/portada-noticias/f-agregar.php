@@ -4,6 +4,10 @@ require_once("../../conexion/conexion.php");
 require_once("../../conexion/funciones.php");
 require_once("../../conexion/verificar_sesion.php");
 
+//VARIABLES DEL URL
+$Req_Not=$_REQUEST["not"];
+
+
 //VARIABLES
 $pub_fecha=date("Y-m-d");
 $pub_hora=date("H:i:s");
@@ -53,13 +57,18 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
     <!-- Main content -->
     <div class="wrapper">
 
-        <form id="validate" class="main" method="POST" action="s-guardar.php">
+        <form id="validate" class="main" method="POST" action="s-guardar.php?not=<?php echo $Req_Not; ?>">
 
             <fieldset>
                 <div class="widget fluid">
                     
                     <div class="whead"><h6>Agregar</h6></div>
-                    
+
+                    <div class="formRow">
+                        <div class="grid3"><label>Página:</label></div>
+                        <div class="grid9"><input type="text" name="pagina" /></div>
+                    </div>
+
                     <div class="formRow">
                         <div class="grid3"><label>Titulo:</label></div>
                         <div class="grid9"><input type="text" name="nombre" class="validate[required]" /></div>
@@ -86,7 +95,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                         </div>
                     </div>
 
-                    <div class="formRow">
+                    <div class="formRow" style="display: none;">
                         <div class="grid3"><label>Categoria:</label></div>
                         <div class="grid9">
                             <select name="categoria" class="validate[required] styled">
@@ -101,7 +110,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                         </div>
                     </div>
 
-                    <div class="formRow">
+                    <div class="formRow" style="display: none;">
                         <div class="grid3"><label>Tipo de noticia: </label></div>
                         <div class="grid9 yes_no">
                             <div class="floatL mr10">Destacada
@@ -111,7 +120,8 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                         </div>
                     </div>
 
-                    <div class="formRow">
+
+                    <div class="formRow" style="display: none;">
                         <div class="grid3">
                             <label>Etiquetas:</label>
                         </div>
@@ -136,6 +146,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                             </select>  
                         </div>             
                     </div>
+
 
                     <div class="formRow">
                         <div class="grid3"><label>Fecha de publicación:</label></div>

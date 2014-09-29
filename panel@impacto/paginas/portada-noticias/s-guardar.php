@@ -4,11 +4,14 @@ include("../../conexion/conexion.php");
 include("../../conexion/funciones.php");
 require_once('../../js/plugins/thumbs/ThumbLib.inc.php');
 
+//VARIABLES DE URL
+$Req_Url=$_REQUEST["not"];
+
 //DECLARACION DE VARIABLES
 $nombre=$_POST["nombre"];
 $url=getUrlAmigable(eliminarTextoURL($nombre));
 $contenido=$_POST["contenido"];
-$categoria=$_POST["categoria"];
+$pagina=$_POST["pagina"];
 $tipo_noticia=$_POST["tipo_noticia"];
 
 //FECHA Y HORA
@@ -30,31 +33,14 @@ $video_youtube=$_POST["video_youtube"];
 $video_upload=$_POST["uploader_video_0_tmpname"];
 
 //IMAGEN
-if ($tipo_noticia=="not_destacada") {
-	$destacada=1; 
-	if($upload_imagen<>""){
-		$imagen=$upload_imagen;
-		$imagen_carpeta=fechaCarpeta()."/";	
-		$mostrar_imagen=1;
-
-        guardarImagen($imagen, $imagen_carpeta);
-
-    }else{
-		$imagen=""; $imagen_carpeta="";
-	}
-}elseif($tipo_noticia=="not_normal"){
-    $destacada=0;
-	if($upload_imagen<>""){
-		$imagen=$upload_imagen;
-		$imagen_carpeta=fechaCarpeta()."/";	
-		$mostrar_imagen=1;
-
-        guardarImagen($imagen, $imagen_carpeta);
-
-	}else{
-		$imagen=""; $imagen_carpeta="";
-	}
+if($upload_imagen<>""){
+    $imagen=$upload_imagen;
+    $imagen_carpeta=fechaCarpeta()."/";
+    guardarImagen($imagen, $imagen_carpeta);
+}else{
+    $imagen=""; $imagen_carpeta="";
 }
+
 
 //VIDEO YOUTUBE
 if($video_youtube<>""){
@@ -70,15 +56,14 @@ if($video_youtube<>""){
 }
 
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_noticia (url, titulo, contenido, imagen, imagen_carpeta, fecha_publicacion, publicar, destacada, categoria, tags, video, tipo_video, mostrar_video) VALUES('$url', '".htmlspecialchars($nombre)."', '$contenido', '$imagen', '$imagen_carpeta', '$fecha_publicacion', $publicar, $destacada, $categoria, '0,$union_tags,0', '$video', '$tipo_video', '$mostrar_video');",$conexion);
+$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_edicion_noticia (url, titulo, pagina, contenido, imagen, imagen_carpeta, fecha_publicacion, publicar, video, edicion_id)
+VALUES('$url', '".htmlspecialchars($nombre)."', '$pagina', '$contenido', '$imagen', '$imagen_carpeta', '$fecha_publicacion', $publicar, '$video', $Req_Url);",$conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
 	mysql_close($conexion);
-	header("Location:lista.php?msj=er");
+	//header("Location:lista.php?not=$Req_Url&msj=er");
 } else {
 	mysql_close($conexion);
-	header("Location:lista.php?msj=ok");
+	header("Location:lista.php?not=$Req_Url&msj=ok");
 }
-
-?>
