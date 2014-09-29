@@ -267,19 +267,7 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE id<>$Req_Id AND categor
                             <!-- widget content -->
                         </div>
 
-                        <div class="widget kopa-gallery-widget">
-                            <header class="widget-header">
-                                <h3 class="widget-title">Gallery</h3>
-                            </header>
-                            <div class="widget-content">
-                                <a href="#" class="imgLiquid"><img src="placeholders/posts/1.jpg" alt=""></a>
-                                <a href="#" class="imgLiquid"><img src="placeholders/posts/2.jpg" alt=""></a>
-                                <a href="#" class="imgLiquid"><img src="placeholders/posts/3.jpg" alt=""></a>
-                                <a href="#" class="imgLiquid"><img src="placeholders/posts/4.jpg" alt=""></a>
-                                <a href="#" class="imgLiquid"><img src="placeholders/posts/5.jpg" alt=""></a>
-                                <a href="#" class="imgLiquid"><img src="placeholders/posts/6.jpg" alt=""></a>
-                            </div>
-                        </div>
+                        <?php require_once("w-galeria-fotos.php") ?>
 
                     </div>
                     <!-- sidebar -->
