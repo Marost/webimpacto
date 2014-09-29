@@ -118,18 +118,24 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE id<>$Req_Id AND categor
                                             $NotRel_categoria=$fila_NotRel["categoria"];
                                             $NotRel_fechaPub=$fila_NotRel["fecha_publicacion"];
 
+                                            //SEPARACION DE FECHA
+                                            $fechaPubSep=explode(" ", $NotRel_fechaPub);
+                                            $fechaSep=explode("-", $fechaPubSep[0]);
+                                            $FechaDia=$fechaSep[2];
+                                            $FechaMes=mesCorto($fechaSep[1]);
+                                            $FechaAnio=$fechaSep[0];
+
                                             //URL
                                             $NotRel_UrlWeb=$web."noticia/".$NotRel_id."-".$NotRel_url;
                                             $NotRel_UrlImg=$web."imagenes/upload/".$NotRel_imagen_carpeta."thumb/".$NotRel_imagen;
                                     ?>
                                     <div class="item">
                                         <div class="post-thumb">
-                                            <a href="#" class="img-responsive">
+                                            <a href="<?php echo $NotRel_UrlWeb; ?>" class="img-responsive">
                                                 <img src="<?php echo $NotRel_UrlImg; ?>" alt="<?php echo $NotRel_titulo; ?>">
                                             </a>
                                             <footer>
-                                                <h4 class="post-cat"><a href="#">culture</a></h4>
-                                                <span class="kopa-date">January 1, 2014</span>
+                                                <span class="kopa-date"><?php echo $FechaMes." ".$FechaDia.", ".$FechaAnio; ?></span>
                                             </footer>
                                         </div>
                                         <!-- post-thumb -->
