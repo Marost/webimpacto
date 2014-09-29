@@ -168,7 +168,10 @@ _notes/
 *.fla
 .idea/
 placeholders/
+
+#IMAGENES
 prueba/
 pruebas/
-upload/
+imagenes/upload/
 imagenes/revista/
+imagenes/galeria/
