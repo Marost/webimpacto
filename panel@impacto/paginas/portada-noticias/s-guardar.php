@@ -62,7 +62,7 @@ VALUES('$url', '".htmlspecialchars($nombre)."', '$pagina', '$contenido', '$image
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
 	mysql_close($conexion);
-	//header("Location:lista.php?not=$Req_Url&msj=er");
+	header("Location:lista.php?not=$Req_Url&msj=er");
 } else {
 	mysql_close($conexion);
 	header("Location:lista.php?not=$Req_Url&msj=ok");
