@@ -520,9 +520,13 @@ function guardarImagen($imagen, $imagen_carpeta){
     $thumb->adaptiveResize(385,250);
     $thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumbdeven/".$imagen."", "jpg");
 
+    //THUMB PORTADA
+    $thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
+    $thumb->adaptiveResize(263,149);
+    $thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumbport/".$imagen."", "jpg");
+
     //THUMB CATEGORIA - RELACIONADA
     $thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
     $thumb->adaptiveResize(290,210);
     $thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
-
 }
