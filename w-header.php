@@ -42,11 +42,6 @@ if(isset($header)){
             </div>
             <!-- logo -->
 
-            <div class="kopa-baner pull-right">
-                <a href="#"><img src="placeholders/ads/3.jpg" alt=""></a>
-            </div>
-            <!-- banner -->
-
         </div>
         <!-- container -->
     </div>
