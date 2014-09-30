@@ -33,10 +33,6 @@ $NoticiaFecha=nombreFechaTotal($Noticia_fecha[0], $Noticia_fecha[1], $Noticia_fe
 $tags=explode(",", $Noticia_tags);    //SEPARACION DE ARRAY CON COMAS
 $rst_tags=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY nombre ASC;", $conexion);
 
-
-//URLS
-$Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imagen;
-
 //NOTICIA - CATEGORIA
 $rst_notCat=mysql_query("SELECT * FROM iev_noticia_categoria WHERE id=$Noticia_categoria;", $conexion);
 $fila_notCat=mysql_fetch_array($rst_notCat);
@@ -48,6 +44,10 @@ $NotCat_titulo=$fila_notCat["categoria"];
 
 //NOTICIAS RELACIONADAS
 $rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE id<>$Req_Id AND categoria=$Noticia_categoria AND publicar=1 AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 6;", $conexion);
+
+//URLS
+$Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imagen;
+$Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
 
 ?>
 <!DOCTYPE html>
@@ -186,7 +186,7 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE id<>$Req_Id AND categor
                             <div class="widget-contenido">
 
                                 <div class="clearfix">
-                                    <h5 class="post-cat">Categoría: <a href="#"><?php echo $NotCat_titulo; ?></a></h5>
+                                    <h5 class="post-cat">Categoría: <a href="<?php echo $Noticia_UrlCat; ?>"><?php echo $NotCat_titulo; ?></a></h5>
                                     <h5 class="post-cat">Publicación: <?php echo $NoticiaFecha; ?></h5>
                                 </div>
 
