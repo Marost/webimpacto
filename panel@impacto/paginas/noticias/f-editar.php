@@ -17,6 +17,7 @@ $nota_imagen=$fila_nota["imagen"];
 $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
 $nota_contenido=$fila_nota["contenido"];
 $nota_video=$fila_nota["video"];
+$nota_audio=$fila_nota["audio"];
 $nota_video_tipo=$fila_nota["tipo_video"];
 $nota_categoria=$fila_nota["categoria"];
 $nota_destacada=$fila_nota["destacada"];
@@ -128,7 +129,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
 
                     <div class="widget">
                         <div class="whead"><h6>Contenido</h6></div>
-                        <textarea class="ckeditor" name="contenido" /><?php echo $nota_contenido; ?></textarea>
+                        <textarea class="ckeditor" name="contenido"><?php echo $nota_contenido; ?></textarea>
                     </div>
 
                     <div class="formRow">
@@ -151,6 +152,12 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                         <div class="grid3"><label>Video (Youtube):</label> </div>
                         <div class="grid9">http://www.youtube.com/watch?v=
                             <input type="text" name="video_youtube" value="<?php echo $nota_video; ?>" style="width: 300px;">
+                        </div>
+                    </div>
+
+                    <div class="formRow">
+                        <div class="grid3"><label>Audio (Soundcloud):</label></div>
+                        <div class="grid9"><textarea name="audio"><?php echo $nota_audio; ?></textarea>
                         </div>
                     </div>
 

@@ -30,6 +30,9 @@ if ($_POST["publicar"]<>""){ $publicar=$_POST["publicar"]; }else{ $publicar=0; }
 $video_youtube=$_POST["video_youtube"];
 //$video_upload=$_POST["uploader_video_0_tmpname"];
 
+//AUDIO
+$audio=$_POST["audio"];
+
 //IMAGEN
 if ($tipo_noticia=="not_destacada") {
 	$destacada=1; 
@@ -76,6 +79,13 @@ if($video_youtube<>""){
 	$video_carpeta="";
 }
 
+//AUDIO SOUNDCLOUD
+if($audio<>""){
+    $audio=$audio;
+}elseif($audio==""){
+    $audio="";
+}
+
 //INSERTANDO DATOS
 $rst_guardar=mysql_query("UPDATE ".$tabla_suf."_noticia SET url='$url', titulo='".htmlspecialchars($nombre)."', 
 	contenido='$contenido', 
@@ -88,7 +98,8 @@ $rst_guardar=mysql_query("UPDATE ".$tabla_suf."_noticia SET url='$url', titulo='
 	tags='0,$union_tags,0', 
 	video='$video', 
 	tipo_video='$tipo_video', 
-	mostrar_video=$mostrar_video WHERE id=$nota_id;", $conexion);
+	mostrar_video=$mostrar_video,
+	audio='$audio' WHERE id=$nota_id;", $conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();

@@ -29,6 +29,9 @@ $upload_imagen=$_POST["uploader_0_tmpname"];
 $video_youtube=$_POST["video_youtube"];
 $video_upload=$_POST["uploader_video_0_tmpname"];
 
+//AUDIO
+$audio=$_POST["audio"];
+
 //IMAGEN
 if ($tipo_noticia=="not_destacada") {
 	$destacada=1; 
@@ -69,8 +72,15 @@ if($video_youtube<>""){
 	$video_carpeta="";
 }
 
+//AUDIO SOUNDCLOUD
+if($audio<>""){
+    $audio=$audio;
+}elseif($audio==""){
+    $audio="";
+}
+
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_noticia (url, titulo, contenido, imagen, imagen_carpeta, fecha_publicacion, publicar, destacada, categoria, tags, video, tipo_video, mostrar_video) VALUES('$url', '".htmlspecialchars($nombre)."', '$contenido', '$imagen', '$imagen_carpeta', '$fecha_publicacion', $publicar, $destacada, $categoria, '0,$union_tags,0', '$video', '$tipo_video', '$mostrar_video');",$conexion);
+$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_noticia (url, titulo, contenido, imagen, imagen_carpeta, fecha_publicacion, publicar, destacada, categoria, tags, video, tipo_video, mostrar_video, audio) VALUES('$url', '".htmlspecialchars($nombre)."', '$contenido', '$imagen', '$imagen_carpeta', '$fecha_publicacion', $publicar, $destacada, $categoria, '0,$union_tags,0', '$video', '$tipo_video', '$mostrar_video', '$audio);",$conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();

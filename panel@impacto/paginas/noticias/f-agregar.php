@@ -109,7 +109,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
 
                     <div class="widget">
                         <div class="whead"><h6>Contenido</h6></div>
-                        <textarea class="validate[required] ckeditor" name="contenido" /></textarea>
+                        <textarea class="validate[required] ckeditor" name="contenido"></textarea>
                     </div>
 
                     <div class="formRow">
@@ -125,6 +125,12 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                         <div class="grid3"><label>Video (Youtube):</label> </div>
                         <div class="grid9">http://www.youtube.com/watch?v=
                             <input type="text" name="video_youtube" value="" style="width: 300px;">
+                        </div>
+                    </div>
+
+                    <div class="formRow">
+                        <div class="grid3"><label>Audio (Soundcloud):</label></div>
+                        <div class="grid9"><textarea name="audio"></textarea>
                         </div>
                     </div>
 
