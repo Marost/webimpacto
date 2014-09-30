@@ -97,14 +97,19 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
 
                                         <ul id="tipo-multimedia">
                                             <li><a id="foto" href="javascript:;" title="Foto"><i class="fa fa-image"></i><span> Foto</span></a></li>
+                                            <?php if($num_notFotos>0){ ?>
                                             <li><a id="galeria" href="javascript:;" title="Galería de Fotos"><i class="fa fa-film"></i><span> Galería de Fotos</span></a></li>
+                                            <?php } ?>
+                                            <?php if($Noticia_video<>""){ ?>
                                             <li><a id="video" href="javascript:;" title="Video de youtube"><i class="fa fa-youtube"></i><span> Video</span></a></li>
+                                            <?php } ?>
                                         </ul>
 
                                         <ul id="lista-multimedia">
                                             <li id="foto">
                                                 <img src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
                                             </li>
+                                            <?php if($num_notFotos>0){ ?>
                                             <li id="galeria">
                                                 <div class="owl-carousel kopa-galler-post">
                                                     <?php while($fila_notFotos=mysql_fetch_array($rst_notFotos)){
@@ -119,9 +124,12 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                                                 </div>
                                                 <!-- owl carousel -->
                                             </li>
+                                            <?php } ?>
+                                            <?php if($Noticia_video<>""){ ?>
                                             <li id="video">
-                                                <iframe width="100%" height="400" src="//www.youtube.com/embed/<?php echo $Noticia_video; ?>?list=RDSUIQaaZuitg" frameborder="0" allowfullscreen></iframe>
+                                                <iframe width="100%" height="400" src="//www.youtube.com/embed/<?php echo $Noticia_video; ?>?rel=0" frameborder="0" allowfullscreen></iframe>
                                             </li>
+                                            <?php } ?>
                                         </ul>
 
                                     </div>
