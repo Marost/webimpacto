@@ -810,6 +810,22 @@ jQuery(document).ready(function () {
         v.play();
     });
 
+    //SELECCIONAR FOTO/GALERIA/VIDEO
+    jQuery(document).on("ready", function(){
+        jQuery("#tipo-multimedia a#foto").addClass("select");
+        jQuery("#lista-multimedia li").addClass("ocultar");
+        jQuery("#lista-multimedia li#foto").removeClass();
+
+        jQuery("#tipo-multimedia a").on("click", function(){
+            var valor = jQuery(this).attr("id");
+            jQuery("#tipo-multimedia a").removeClass();
+            jQuery(this).addClass("select");
+            jQuery("#lista-multimedia li").addClass("ocultar");
+            jQuery("#lista-multimedia li#"+valor).removeClass();
+        });
+
+    });
+
 });
 
 // 18. Browser resize

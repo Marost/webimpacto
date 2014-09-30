@@ -4555,6 +4555,35 @@ section#home-notprin{
     display: none;
 }
 
+#tipo-multimedia{
+    margin-bottom: 10px;
+}
+
+#tipo-multimedia li{
+    display: inline-block;
+    padding-right: 20px;
+}
+
+#tipo-multimedia li a.select{
+    color: #fbbd2c;
+}
+
+#tipo-multimedia li a i{
+    font-size: 18px;
+}
+
+#tipo-multimedia li a span{
+    font-size: 16px;
+}
+
+#lista-multimedia{
+    margin-bottom: 0;
+}
+
+#lista-multimedia li.ocultar{
+    display: none;
+}
+
 /* SIDEBAR - GALERIA DE FOTOS */
 .galsidebar{
     padding-left: 0;

@@ -24,6 +24,7 @@ $Noticia_tags=$fila_noticia["tags"];
 $Noticia_fechaPub=$fila_noticia["fecha_publicacion"];
 $Noticia_imagen=$fila_noticia["imagen"];
 $Noticia_imagen_carpeta=$fila_noticia["imagen_carpeta"];
+$Noticia_video=$fila_noticia["video"];
 
 //SEPARACION FECHA
 $Noticia_fechaPubSep=explode(" ", $Noticia_fechaPub);
@@ -94,22 +95,34 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
 
                                     <div class="post-thumb">
 
-                                        <?php if($num_notFotos>0){ ?>
-                                        <div class="owl-carousel kopa-galler-post">
-                                            <?php while($fila_notFotos=mysql_fetch_array($rst_notFotos)){
-                                                    $NotFotos_imagen=$fila_notFotos["imagen"];
-                                                    $NotFotos_imagen_carpeta=$fila_notFotos["imagen_carpeta"];
+                                        <ul id="tipo-multimedia">
+                                            <li><a id="foto" href="javascript:;" title="Foto"><i class="fa fa-image"></i><span> Foto</span></a></li>
+                                            <li><a id="galeria" href="javascript:;" title="Galería de Fotos"><i class="fa fa-film"></i><span> Galería de Fotos</span></a></li>
+                                            <li><a id="video" href="javascript:;" title="Video de youtube"><i class="fa fa-youtube"></i><span> Video</span></a></li>
+                                        </ul>
 
-                                                    //URL
-                                                    $NotFotos_UrlImg=$web."imagenes/upload/".$NotFotos_imagen_carpeta."".$NotFotos_imagen;
-                                            ?>
-                                            <div class="item img-responsive"><img src="<?php echo $NotFotos_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>"></div>
-                                            <?php } ?>
-                                        </div>
-                                        <!-- owl carousel -->
-                                        <?php }else{ ?>
-                                        <img src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
-                                        <?php } ?>
+                                        <ul id="lista-multimedia">
+                                            <li id="foto">
+                                                <img src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
+                                            </li>
+                                            <li id="galeria">
+                                                <div class="owl-carousel kopa-galler-post">
+                                                    <?php while($fila_notFotos=mysql_fetch_array($rst_notFotos)){
+                                                        $NotFotos_imagen=$fila_notFotos["imagen"];
+                                                        $NotFotos_imagen_carpeta=$fila_notFotos["imagen_carpeta"];
+
+                                                        //URL
+                                                        $NotFotos_UrlImg=$web."imagenes/upload/".$NotFotos_imagen_carpeta."".$NotFotos_imagen;
+                                                        ?>
+                                                        <div class="item img-responsive"><img src="<?php echo $NotFotos_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>"></div>
+                                                    <?php } ?>
+                                                </div>
+                                                <!-- owl carousel -->
+                                            </li>
+                                            <li id="video">
+                                                <iframe width="100%" height="400" src="//www.youtube.com/embed/<?php echo $Noticia_video; ?>?list=RDSUIQaaZuitg" frameborder="0" allowfullscreen></iframe>
+                                            </li>
+                                        </ul>
 
                                     </div>
                                     <!-- post thumb -->
