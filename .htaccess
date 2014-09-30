@@ -339,13 +339,20 @@ FileETag None
 # RewriteBase /
 </IfModule>
 
+#NOTICIAS
 RewriteRule ^noticia/([0-9]*)-(.*)$           /noticia.php?id=$1&url=$2
+RewriteRule ^buscar$                          /noticia-buscar.php
+RewriteRule ^categoria/([0-9]*)/(.*)$         /noticia-categoria.php?id=$1&url=$2
+RewriteRule ^tags/([0-9]*)/(.*)$              /noticia-tags.php?id=$1&url=$2
+
+#EDICIONES ANTERIORES
 RewriteRule ^editorial/([0-9]*)-(.*)$         /editorial.php?id=$1&url=$2
-RewriteRule ^categoria/([0-9]*)/(.*)$         /categoria.php?id=$1&url=$2
-RewriteRule ^tags/([0-9]*)/(.*)$              /etiquetas.php?id=$1&url=$2
+
+#GALERIA DE FOTOS
 RewriteRule ^galeria/([0-9]*)-(.*)$           /galeria.php?id=$1&url=$2
 RewriteRule ^galerias$                        /galeria-all.php
-RewriteRule ^buscar$                          /buscar.php
+
+#ADMINISTRADOR
 RewriteRule ^panel@impacto/$                  /panel@impacto/login.php
 
 #EDICION ANTERIOS
