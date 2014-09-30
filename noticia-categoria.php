@@ -2,14 +2,51 @@
 require_once("panel@impacto/conexion/conexion.php");
 require_once("panel@impacto/conexion/funciones.php");
 
+//VARIABLES DE URL
+$Req_Id=$_REQUEST["id"];
+$Req_Url=$_REQUEST["url"];
+
 //VARIABLES
 $header="interno";
+$Req_UrlWeb=$web."categoria/".$Req_Id."/".$Req_Url;
+
+//CATEGORIA
+$rst_categoria=mysql_query("SELECT * FROM iev_noticia_categoria WHERE id=$Req_Id AND url='$Req_Url' AND publicar=1", $conexion);
+$fila_categoria=mysql_fetch_array($rst_categoria);
+$num_categoria=mysql_numrows($rst_categoria);
+
+if($num_categoria>0){
+    //VARIABLES
+    $Categoria_titulo=$fila_categoria["categoria"];
+
+    ################################################################
+    //PAGINACION DE NOTICIAS
+    require("libs/pagination/class_pagination.php");
+
+    //INICIO DE PAGINACION
+    $page           = (isset($_GET['page'])) ? intval($_GET['page']) : 1;
+    $rst_noticias   = mysql_query("SELECT COUNT(*) as count FROM iev_noticia WHERE categoria=$Req_Id AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC;", $conexion);
+    $row            = mysql_fetch_assoc($rst_noticias);
+    $generated      = intval($row['count']);
+    $pagination     = new Pagination("10", $generated, $page, $Req_UrlWeb."&page", 1, 0);
+    $start          = $pagination->prePagination();
+    $rst_noticias   = mysql_query("SELECT * FROM iev_noticia WHERE categoria=$Req_Id AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT $start, 10", $conexion);
+}else{
+    header("Location:/404");
+}
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es" class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>Karo</title>
+        <title><?php echo $Categoria_titulo; ?></title>
+
+        <!-- PAGINACION -->
+        <link rel="stylesheet" href="/libs/pagination/pagination.css" media="screen">
 
         <?php require_once("w-header-script.php"); ?>
 
@@ -30,28 +67,49 @@ $header="interno";
                         <div class="widget kopa-list-posts-widget">
 
                             <header class="widget-header">
-                                <h3 class="widget-title">Categoria</h3>
+                                <h3 class="widget-title"><?php echo $Categoria_titulo; ?></h3>
                                 <i class="fa fa-plus-square-o"></i>
                             </header>
 
                             <div class="widget-content">
                                 <ul class="list-unstyled clearfix">
+
+                                    <?php while($fila_noticias=mysql_fetch_array($rst_noticias)){
+                                        $noticia_id=$fila_noticias["id"];
+                                        $noticia_url=$fila_noticias["url"];
+                                        $noticia_titulo=stripslashes($fila_noticias["titulo"]);
+                                        $noticia_contenido=soloDescripcion($fila_noticias["contenido"]);
+                                        $noticia_imagen=$fila_noticias["imagen"];
+                                        $noticia_imagen_carpeta=$fila_noticias["imagen_carpeta"];
+                                        $noticia_fechaPub=$fila_noticias["fecha_publicacion"];
+
+                                        //SEPARACION DE FECHA
+                                        $fechaPubSep=explode(" ", $noticia_fechaPub);
+                                        $fechaSep=explode("-", $fechaPubSep[0]);
+                                        $FechaDia=$fechaSep[2];
+                                        $FechaMes=mesCorto($fechaSep[1]);
+                                        $FechaAnio=$fechaSep[0];
+
+                                        //URLS
+                                        $noticia_UrlWeb=$web."noticia/".$noticia_id."-".$noticia_url;
+                                        $noticia_UrlImg=$web."imagenes/upload/".$noticia_imagen_carpeta."thumb/".$noticia_imagen;
+                                    ?>
+
                                     <li class="item-outer">
                                         <div class="item">
                                             <div class="item-inner  clearfix">
                                                 <div class="post-thumb pull-left">
-                                                <a href="#" class="img-responsive"><img src="http://placehold.it/290x210" alt=""></a>
+                                                <a href="<?php echo $noticia_UrlWeb; ?>" class="img-responsive"><img src="<?php echo $noticia_UrlImg; ?>" alt=""></a>
                                                 <div class="kopa-date-box">
-                                                    <i class="fa fa-pencil"></i>
-                                                    <span class="kopa-mon">Fer</span>
-                                                    <span class="kopa-day">08</span>
-                                                    <span class="kopa-yea">2014</span>
+                                                    <span class="kopa-mon"><?php echo $FechaMes; ?></span>
+                                                    <span class="kopa-day"><?php echo $FechaDia; ?></span>
+                                                    <span class="kopa-yea"><?php echo $FechaAnio; ?></span>
                                                 </div>
                                             </div>
                                             <!-- post thumb -->
                                             <div class="item-content item-right">
                                                 <h4 class="post-title">
-                                                    <a href="#">Fred Armisen Joins ‘Late Night with Seth Meyers’ as Bandleader</a>
+                                                    <a href="<?php echo $noticia_UrlWeb; ?>"><?php echo $noticia_titulo; ?></a>
                                                 </h4>
                                                 <div class="kopa-metadata-border">
                                                     <span class="kopa-rate">
@@ -61,13 +119,10 @@ $header="interno";
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star-o"></i>
                                                     </span>
-                                                    <span><i class="fa fa-eye"></i> 26</span>
-                                                    <a href="#"><i class="fa fa-comment"></i> 350</a>
-                                                    <span><i class="fa fa-heart"></i> 50</span>
                                                 </div>
                                                 <!-- metadata -->
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed urna metus. Praesent eget imperdiet lectus. Suspendisse ut luctus mi. In pharetra scelerisque arcu sit amet ultricies. Quisque volutpat lacus in risus suscipit scelerisque. In vitae pharetra diam. Sed id lacinia leo, et gravida neque. In arcu dui</p>
-                                                <a href="#" class="kopa-readmore">Read more</a>
+                                                <p><?php echo $noticia_contenido; ?></p>
+                                                <a href="<?php echo $noticia_UrlWeb; ?>" class="kopa-readmore">Leer más</a>
                                             </div>
                                             <!-- item content -->
                                             </div>
@@ -75,17 +130,17 @@ $header="interno";
                                         </div>
                                         <!-- item -->
                                     </li>
+                                    <?php } ?>
+
                                 </ul>
                             </div>
                             <!-- widget content -->
 
-                            <ul class="page-numbers">
-                                <li><a href="#" class="prev page-numbers"><i class="fa fa-caret-left"></i></a></li>
-                                <li><a href="#" class="page-numbers">1</a></li>
-                                <li><a href="#" class="page-numbers">2</a></li>
-                                <li><a href="#" class="page-numbers">3</a></li>
-                                <li><a href="#" class="next page-numbers"><i class="fa fa-caret-right"></i></a></li>
-                            </ul>
+                            <div id="paginacion">
+                                <?php $pagination->pagination(); ?>
+                            </div>
+                            <!-- PAGINACION -->
+
                         </div>
                         <!-- kopa-list-posts-widget -->
 
@@ -95,121 +150,21 @@ $header="interno";
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
                     <div id="sidebar" class="widget-area-26">
 
-                        <div class="widget kopa-tab-widget">
+                        <?php require_once("w-portada.php"); ?>
 
-                            <div class="widget-content">
-                                <div class="kopa-tabs">
-                                    <ul>
-                                        <li><a href="javascript:;">popular</a></li>
-                                    </ul>
-                                    <div id="tabs-1">
-                                        <ul class="list-unstyled">
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/36.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/37.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/36.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/37.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- widget content -->
-                        </div>
-                        <!-- tab widget -->
+                        <?php require_once("w-galeria-fotos.php"); ?>
 
-                        <div class="widget kopa-gallery-widget">
-                            <header class="widget-header">
-                                <h3 class="widget-title">Gallery</h3>
-                                <i class="fa fa-plus-square-o"></i>
-                            </header>
-                            <div class="widget-content">
-                                <a href="#" class="imgLiquid"><img src="placeholders/posts/1.jpg" alt=""></a>
-                                <a href="#" class="imgLiquid"><img src="placeholders/posts/2.jpg" alt=""></a>
-                                <a href="#" class="imgLiquid"><img src="placeholders/posts/3.jpg" alt=""></a>
-                                <a href="#" class="imgLiquid"><img src="placeholders/posts/4.jpg" alt=""></a>
-                                <a href="#" class="imgLiquid"><img src="placeholders/posts/5.jpg" alt=""></a>
-                                <a href="#" class="imgLiquid"><img src="placeholders/posts/6.jpg" alt=""></a>
-                            </div>
-                        </div>
                     </div>
                     <!-- sidebar -->
 
                 </div>
+
             </div>
             <!-- row -->
+
         </div>
         <!-- container -->
 
