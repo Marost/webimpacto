@@ -25,6 +25,7 @@ $Noticia_fechaPub=$fila_noticia["fecha_publicacion"];
 $Noticia_imagen=$fila_noticia["imagen"];
 $Noticia_imagen_carpeta=$fila_noticia["imagen_carpeta"];
 $Noticia_video=$fila_noticia["video"];
+$Noticia_audio=$fila_noticia["audio"];
 
 //SEPARACION FECHA
 $Noticia_fechaPubSep=explode(" ", $Noticia_fechaPub);
@@ -103,6 +104,7 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                                             <?php if($Noticia_video<>""){ ?>
                                             <li><a id="video" href="javascript:;" title="Video de youtube"><i class="fa fa-youtube"></i><span> Video</span></a></li>
                                             <?php } ?>
+                                            <li><a id="audio" href="javascript:;" title="Audio de Soundcloud"><i class="fa fa-soundcloud"></i><span> Audio</span></a></li>
                                         </ul>
 
                                         <ul id="lista-multimedia">
@@ -128,6 +130,11 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                                             <?php if($Noticia_video<>""){ ?>
                                             <li id="video">
                                                 <iframe width="100%" height="400" src="//www.youtube.com/embed/<?php echo $Noticia_video; ?>?rel=0" frameborder="0" allowfullscreen></iframe>
+                                            </li>
+                                            <?php } ?>
+                                            <?php if($Noticia_audio<>""){ ?>
+                                            <li id="audio">
+                                                <?php echo $Noticia_audio; ?>
                                             </li>
                                             <?php } ?>
                                         </ul>
