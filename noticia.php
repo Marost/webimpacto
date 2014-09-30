@@ -104,7 +104,9 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                                             <?php if($Noticia_video<>""){ ?>
                                             <li><a id="video" href="javascript:;" title="Video de youtube"><i class="fa fa-youtube"></i><span> Video</span></a></li>
                                             <?php } ?>
+                                            <?php if($Noticia_audio<>""){ ?>
                                             <li><a id="audio" href="javascript:;" title="Audio de Soundcloud"><i class="fa fa-soundcloud"></i><span> Audio</span></a></li>
+                                            <?php } ?>
                                         </ul>
 
                                         <ul id="lista-multimedia">
