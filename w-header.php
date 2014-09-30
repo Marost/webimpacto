@@ -1,16 +1,7 @@
 <?php
 if(isset($header)){
-    if($header=="home"){
-        $header_class="header-1";
-        $ocultar="dpnone";
-        $mostrar="";
-        $cambioMB="middle";
-    }elseif($header=="interno"){
-        $header_class="header-2";
-        $ocultar="";
-        $mostrar="dpnone";
-        $cambioMB="bottom";
-    }
+    if($header=="home"){ $header_class="header-1"; $ocultar="dpnone"; $mostrar=""; $cambioMB="middle"; }
+    elseif($header=="interno"){ $header_class="header-2"; $ocultar=""; $mostrar="dpnone"; $cambioMB="bottom"; }
 }
 ?>
 <header id="kopa-header" class="<?php echo $header_class; ?>">
