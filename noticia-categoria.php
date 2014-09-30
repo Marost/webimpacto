@@ -35,9 +35,6 @@ if($num_categoria>0){
     header("Location:/404");
 }
 
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="es" class="no-js">
