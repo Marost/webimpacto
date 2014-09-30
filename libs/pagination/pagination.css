@@ -14,42 +14,42 @@ div.outer_pagination div.pagination {
 div.outer_pagination div.pagination span {
   display: inline-block;
   padding: 5px 1px;
-  background-color: #137BB1;
-  text-shadow: 1px 1px #3D3B3B;
-  border: 1px solid #0C5980;
+  background-color: #000;
+  border: 2px solid #000;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
 
 div.outer_pagination div.pagination span:hover {
-  border: 1px solid #1474a6;
-  background-color: #1e98d7;
+  border: 2px solid #000;
+  background-color: #fbbd2c;
 }
 
 div.outer_pagination div.pagination span.selected {
-  display: inline-block;
-  margin: 0;
-  padding: 5px 10px 5px 10px;
-  text-shadow: 1px 1px #3D3B3B;
-  text-decoration: none;
-  color: white;
-  border: 1px solid #2086BB;
-  background-color: #38AFEC;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+    display: inline-block;
+    margin: 0;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #000;
+    background-color: #fbbd2c;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font-weight: bold;
 }
 
 div.outer_pagination div.pagination span a {
-  display: inline;
-  width: 100%;
-  text-decoration: none;
-  padding: 0px 10px;
-  color: white;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+    display: inline;
+    width: 100%;
+    text-decoration: none;
+    padding: 0px 10px;
+    color: #fff;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font-weight: bold;
 }
 
 div.outer_pagination div.pagination span.selected a {
@@ -57,7 +57,7 @@ div.outer_pagination div.pagination span.selected a {
 }
 
 div.outer_pagination div.pagination span:hover a {
-  border: 1px solid #58c1f1;
+  /*border: 1px solid #58c1f1;*/
 }
 
 div.outer_pagination div.pagination a:active, div.pagination a:focused {
