@@ -9,6 +9,7 @@ $Req_Url=$_REQUEST["url"];
 //VARIABLES
 $header="interno";
 
+##################################################################################################################
 //NOTICIA
 $rst_noticia=mysql_query("SELECT * FROM iev_noticia WHERE id=$Req_Id AND publicar=1 AND fecha_publicacion<='$fechaActual';", $conexion);
 $fila_noticia=mysql_fetch_array($rst_noticia);
@@ -29,10 +30,17 @@ $Noticia_fechaPubSep=explode(" ", $Noticia_fechaPub);
 $Noticia_fecha=explode("-", $Noticia_fechaPubSep[0]);
 $NoticiaFecha=nombreFechaTotal($Noticia_fecha[0], $Noticia_fecha[1], $Noticia_fecha[2]);
 
-//TAGS
+##################################################################################################################
+//NOTICIA - GALERIA DE FOTOS
+$rst_notFotos=mysql_query("SELECT * FROM iev_noticia_slide WHERE noticia=$Noticia_id ORDER BY orden DESC", $conexion);
+$num_notFotos=mysql_numrows($rst_notFotos);
+
+##################################################################################################################
+//NOTICIA - TAGS
 $tags=explode(",", $Noticia_tags);    //SEPARACION DE ARRAY CON COMAS
 $rst_tags=mysql_query("SELECT * FROM iev_noticia_tags ORDER BY nombre ASC;", $conexion);
 
+##################################################################################################################
 //NOTICIA - CATEGORIA
 $rst_notCat=mysql_query("SELECT * FROM iev_noticia_categoria WHERE id=$Noticia_categoria;", $conexion);
 $fila_notCat=mysql_fetch_array($rst_notCat);
@@ -42,9 +50,11 @@ $NotCat_id=$fila_notCat["id"];
 $NotCat_url=$fila_notCat["url"];
 $NotCat_titulo=$fila_notCat["categoria"];
 
+##################################################################################################################
 //NOTICIAS RELACIONADAS
 $rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE id<>$Req_Id AND categoria=$Noticia_categoria AND publicar=1 AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 6;", $conexion);
 
+##################################################################################################################
 //URLS
 $Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imagen;
 $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
@@ -83,7 +93,24 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                                     </div>
 
                                     <div class="post-thumb">
+
+                                        <?php if($num_notFotos>0){ ?>
+                                        <div class="owl-carousel kopa-galler-post">
+                                            <?php while($fila_notFotos=mysql_fetch_array($rst_notFotos)){
+                                                    $NotFotos_imagen=$fila_notFotos["imagen"];
+                                                    $NotFotos_imagen_carpeta=$fila_notFotos["imagen_carpeta"];
+
+                                                    //URL
+                                                    $NotFotos_UrlImg=$web."imagenes/upload/".$NotFotos_imagen_carpeta."".$NotFotos_imagen;
+                                            ?>
+                                            <div class="item img-responsive"><img src="<?php echo $NotFotos_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>"></div>
+                                            <?php } ?>
+                                        </div>
+                                        <!-- owl carousel -->
+                                        <?php }else{ ?>
                                         <img src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
+                                        <?php } ?>
+
                                     </div>
                                     <!-- post thumb -->
 
