@@ -10,6 +10,12 @@
 <link rel="stylesheet" href="css/bxslider.css" media="all"/>
 <link rel="stylesheet" href="css/navgoco.css" media="all">
 <link rel="stylesheet" href="css/style.css" media="all">
-<link href="css/responsive.css" rel="stylesheet" media="all">
+<link rel="stylesheet" href="css/responsive.css" media="all">
+
+<?php if(isset($w_galeria)){ if($w_galeria==true){  ?>
+<!-- GALERIA -->
+<link href="libs/royalslider/royalslider.css" rel="stylesheet">
+<link href="libs/royalslider/skins/default/rs-default.css" rel="stylesheet">
+<?php }} ?>
 
 <script src="js/modernizr.custom.js"></script>

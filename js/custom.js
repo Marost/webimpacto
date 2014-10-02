@@ -796,9 +796,46 @@ jQuery(document).ready(function () {
             }
         }]);
     };
+
     jQuery('.kopa-alert .close').click(function(){
         jQuery('.kopa-alert .close').parent().hide();
     });
+
+    //GALERIA DE FOTOS
+    if(jQuery('#galeria').length > 0) {
+        Modernizr.load([{
+            load: 'libs/royalslider/jquery.royalslider.min.js',
+            complete: function () {
+                jQuery('#galeria').royalSlider({
+                    fullscreen: {
+                        enabled: true,
+                        nativeFS: true
+                    },
+                    controlNavigation: 'thumbnails',
+                    autoScaleSlider: true,
+                    autoScaleSliderWidth: 960,
+                    autoScaleSliderHeight: 600,
+                    loop: false,
+                    imageScaleMode: 'fit-if-smaller',
+                    navigateByClick: true,
+                    numImagesToPreload:2,
+                    arrowsNav:true,
+                    arrowsNavAutoHide: true,
+                    arrowsNavHideOnTouch: true,
+                    keyboardNavEnabled: true,
+                    fadeinLoadedSlide: true,
+                    globalCaption: true,
+                    globalCaptionInside: false,
+                    thumbs: {
+                        appendSpan: true,
+                        firstMargin: true,
+                        paddingBottom: 4
+                    }
+                });
+            }
+        }]);
+
+    };
 
     //AUDIO PARA IDIOMA
     jQuery(".edicion-impresa .idiomas ul li a").on("mouseover", function(){
