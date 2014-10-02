@@ -95,6 +95,12 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                         </div>
                     </div>
 
+                    <div class="formRow">
+                        <div class="grid3"><label>Audio (Soundcloud):</label> </div>
+                        <div class="grid9"><textarea name="audio"></textarea>
+                        </div>
+                    </div>
+
                     <div class="formRow" style="display: none;">
                         <div class="grid3"><label>Categoria:</label></div>
                         <div class="grid9">

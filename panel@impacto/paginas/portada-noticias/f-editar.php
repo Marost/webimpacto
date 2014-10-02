@@ -19,6 +19,7 @@ $nota_imagen=$fila_nota["imagen"];
 $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
 $nota_contenido=$fila_nota["contenido"];
 $nota_video=$fila_nota["video"];
+$nota_audio=$fila_nota["audio"];
 $nota_publicar=$fila_nota["publicar"];
 
 
@@ -160,6 +161,12 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                         <div class="grid3"><label>Video (Youtube):</label> </div>
                         <div class="grid9">http://www.youtube.com/watch?v=
                             <input type="text" name="video_youtube" value="<?php echo $nota_video; ?>" style="width: 300px;">
+                        </div>
+                    </div>
+
+                    <div class="formRow">
+                        <div class="grid3"><label>Audio (Soundcloud):</label></div>
+                        <div class="grid9"><textarea name="audio"><?php echo $nota_audio; ?></textarea>
                         </div>
                     </div>
 

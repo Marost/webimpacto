@@ -41,7 +41,6 @@ if($upload_imagen<>""){
     $imagen=""; $imagen_carpeta="";
 }
 
-
 //VIDEO YOUTUBE
 if($video_youtube<>""){
 	$mostrar_video=1;
@@ -55,9 +54,16 @@ if($video_youtube<>""){
 	$video_carpeta="";
 }
 
+//AUDIO SOUNDCLOUD
+if($audio<>""){
+    $audio=$audio;
+}elseif($audio==""){
+    $audio="";
+}
+
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_edicion_noticia (url, titulo, pagina, contenido, imagen, imagen_carpeta, fecha_publicacion, publicar, video, edicion_id)
-VALUES('$url', '".htmlspecialchars($nombre)."', '$pagina', '$contenido', '$imagen', '$imagen_carpeta', '$fecha_publicacion', $publicar, '$video', $Req_Url);",$conexion);
+$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_edicion_noticia (url, titulo, pagina, contenido, imagen, imagen_carpeta, fecha_publicacion, publicar, video, audio, edicion_id)
+VALUES('$url', '".htmlspecialchars($nombre)."', '$pagina', '$contenido', '$imagen', '$imagen_carpeta', '$fecha_publicacion', $publicar, '$video', '$audio', $Req_Url);",$conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
