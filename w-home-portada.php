@@ -22,6 +22,13 @@ $rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEs
             <h3 class="widget-title">EDICIÓN IMPRESA</h3>
         </header>
 
+        <div id="edicion-impresa-audio">
+            <a id="cerrar" href="javascript:;">
+                <i class="fa fa-close"></i>
+            </a>
+            <div id="contenido"></div>
+        </div>
+
         <div class="widget-content col-lg-12">
 
             <div class="edicion-impresa col-lg-3">
@@ -86,8 +93,10 @@ $rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEs
                         </div>
 
                         <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x"></i>
-                            <i class="fa fa-volume-up fa-stack-1x fa-inverse"></i>
+                            <a class="edicion-impresa-audio" id="<?php echo $EdNot_id; ?>" href="javscript:;">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-volume-up fa-stack-1x fa-inverse"></i>
+                            </a>
                         </span>
 
                         <span class="fa-stack fa-lg">

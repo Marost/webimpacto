@@ -4604,3 +4604,30 @@ section#home-notprin{
 .royalSlider{
     width: 100% !important;
 }
+
+/* AUDIO - EDICION IMPRESA */
+#edicion-impresa-audio{
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#edicion-impresa-audio .fa{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #FF0000;
+    font-size: 22px;
+}
+
+#edicion-impresa-audio #contenido{
+    height: 210px;
+}
+
+.mostrar{
+    display: block !important;
+}
