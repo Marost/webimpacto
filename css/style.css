@@ -4593,3 +4593,8 @@ section#home-notprin{
 .galsidebar .kopa-sync-carousel-widget .sync1 .owl-controls{
     bottom: -110px !important;
 }
+
+/* ROYALSLIDER */
+.royalSlider{
+    width: 100% !important;
+}
