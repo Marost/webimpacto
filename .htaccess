@@ -349,8 +349,8 @@ RewriteRule ^tags/([0-9]*)/(.*)$              /noticia-tags.php?id=$1&url=$2
 RewriteRule ^editorial/([0-9]*)-(.*)$         /editorial.php?id=$1&url=$2
 
 #GALERIA DE FOTOS
-RewriteRule ^galeria/([0-9]*)-(.*)$           /galeria.php?id=$1&url=$2
-RewriteRule ^galerias$                        /galeria-all.php
+RewriteRule ^galeria/([0-9]*)-(.*)$           /galeria-fotos.php?id=$1&url=$2
+RewriteRule ^galerias$                        /galeria-fotos-lista.php
 
 #ADMINISTRADOR
 RewriteRule ^panel@impacto/$                  /panel@impacto/login.php
