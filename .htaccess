@@ -345,8 +345,10 @@ RewriteRule ^buscar$                          /noticia-buscar.php
 RewriteRule ^categoria/([0-9]*)/(.*)$         /noticia-categoria.php?id=$1&url=$2
 RewriteRule ^tags/([0-9]*)/(.*)$              /noticia-tags.php?id=$1&url=$2
 
-#EDICIONES ANTERIORES
-RewriteRule ^editorial/([0-9]*)-(.*)$         /editorial.php?id=$1&url=$2
+#COLUMNISTA
+RewriteRule ^editorial/([0-9]*)-(.*)$         /columna-editorial.php?id=$1&url=$2
+RewriteRule ^la-palabra/([0-9]*)-(.*)$        /columna-palabra.php?id=$1&url=$2
+RewriteRule ^columnista/([0-9]*)-(.*)$        /columna-columnista.php?id=$1&url=$2
 
 #GALERIA DE FOTOS
 RewriteRule ^galeria/([0-9]*)-(.*)$           /galeria-fotos.php?id=$1&url=$2
