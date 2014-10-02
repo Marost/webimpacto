@@ -44,7 +44,9 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
                             </h4>
 
                             <span>
-                                <p><strong><?php echo $Columnista_titulo; ?></strong></p>
+                                <a href="<?php echo $Columnista_UrlWeb; ?>">
+                                    <p><strong><?php echo $Columnista_titulo; ?></strong></p>
+                                </a>
                                 <p><?php echo $Columnista_cargo; ?></p>
                             </span>
                         </div>
@@ -95,7 +97,9 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
                             </h4>
 
                             <span>
-                                <p><strong><?php echo $Columnista_titulo; ?></strong></p>
+                                <a href="<?php echo $Columnista_UrlWeb; ?>">
+                                    <p><strong><?php echo $Columnista_titulo; ?></strong></p>
+                                </a>
                                 <p><?php echo $Columnista_cargo; ?></p>
                             </span>
                         </div>
