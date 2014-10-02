@@ -62,6 +62,11 @@ require_once("../../conexion/verificar_sesion.php");
                         <div class="grid9"><input type="text" name="apellidos" /></div>
                     </div>
 
+                    <div class="formRow">
+                        <div class="grid3"><label>Cargo:</label></div>
+                        <div class="grid9"><input type="text" name="cargo" /></div>
+                    </div>
+
                     <div class="widget">
                         <div class="whead"><h6>Descripción</h6></div>
                         <textarea class="ckeditor" name="contenido" /></textarea>
@@ -71,26 +76,6 @@ require_once("../../conexion/verificar_sesion.php");
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
                             <input type="file" class="styled" id="fileInput" name="fileInput" />
-                        </div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Días de publicación: </label></div>
-                        <div class="grid9 yes_no">
-                            <div class="floatL mr10">Lunes
-                                <input type="checkbox" name="dia_lunes" value="1" /></div>
-                            <div class="floatL mr10">Martes
-                                <input type="checkbox" name="dia_martes" value="1" /></div>
-                            <div class="floatL mr10">Miercoles
-                                <input type="checkbox" name="dia_miercoles" value="1" /></div>
-                            <div class="floatL mr10">Jueves
-                                <input type="checkbox" name="dia_jueves" value="1" /></div>
-                            <div class="floatL mr10">Viernes
-                                <input type="checkbox" name="dia_viernes" value="1" /></div>
-                            <div class="floatL mr10">Sábado
-                                <input type="checkbox" name="dia_sabado" value="1" /></div>
-                            <div class="floatL mr10">Domingo
-                                <input type="checkbox" name="dia_domingo" value="1" /></div>
                         </div>
                     </div>
                     

@@ -8,6 +8,7 @@ require_once('../../js/plugins/thumbs/ThumbLib.inc.php');
 $nota_id=$_REQUEST["id"];
 $nombre=$_POST["nombre"];
 $apellidos=$_POST["apellidos"];
+$cargo=$_POST["cargo"];
 $nombre_completo=$nombre." ".$apellidos;
 $url=getUrlAmigable(eliminarTextoURL($nombre_completo));
 $contenido=$_POST["contenido"];
@@ -58,17 +59,11 @@ if(is_uploaded_file($_FILES['fileInput']['tmp_name'])){
 $rst_guardar=mysql_query("UPDATE ".$tabla_suf."_columnista SET url='$url',
 	nombre='$nombre',
 	apellidos='$apellidos',
+	cargo='$cargo',
 	nombre_completo='$nombre_completo',
 	foto='$name',
 	descripcion='$contenido',
-	publicar=$publicar,
-	dia_lunes=$dia_lunes,
-	dia_martes=$dia_martes,
-	dia_miercoles=$dia_miercoles,
-	dia_jueves=$dia_jueves,
-	dia_viernes=$dia_viernes,
-	dia_sabado=$dia_sabado,
-	dia_domingo=$dia_domingo WHERE id=$nota_id;", $conexion);
+	publicar=$publicar WHERE id=$nota_id;", $conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();

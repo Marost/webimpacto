@@ -14,16 +14,10 @@ $fila_nota=mysql_fetch_array($rst_nota);
 //VARIABLES
 $nota_nombre=$fila_nota["nombre"];
 $nota_apellidos=$fila_nota["apellidos"];
+$nota_cargo=$fila_nota["cargo"];
 $nota_imagen=$fila_nota["foto"];
 $nota_contenido=$fila_nota["descripcion"];
 $nota_publicar=$fila_nota["publicar"];
-$dia_lunes=$fila_nota["dia_lunes"];
-$dia_martes=$fila_nota["dia_martes"];
-$dia_miercoles=$fila_nota["dia_miercoles"];
-$dia_jueves=$fila_nota["dia_jueves"];
-$dia_viernes=$fila_nota["dia_viernes"];
-$dia_sabado=$fila_nota["dia_sabado"];
-$dia_domingo=$fila_nota["dia_domingo"];
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -83,11 +77,15 @@ $dia_domingo=$fila_nota["dia_domingo"];
                         <div class="grid9"><input type="text" name="apellidos" value="<?php echo $nota_apellidos; ?>" /></div>
                     </div>
 
-                    <div class="widget">
-                        <div class="whead"><h6>Descripción</h6></div>
-                        <textarea class="ckeditor" name="contenido" /><?php echo $nota_contenido; ?></textarea>
+                    <div class="formRow">
+                        <div class="grid3"><label>Cargo:</label></div>
+                        <div class="grid9"><input type="text" name="cargo" value="<?php echo $nota_cargo; ?>" /></div>
                     </div>
 
+                    <div class="widget">
+                        <div class="whead"><h6>Descripción</h6></div>
+                        <textarea class="ckeditor" name="contenido"><?php echo $nota_contenido; ?></textarea>
+                    </div>
 
                     <div class="formRow">
                         <div class="grid3"><label>Imagen:</label> </div>
@@ -101,54 +99,6 @@ $dia_domingo=$fila_nota["dia_domingo"];
                                 <input type="file" class="styled" id="fileInput" name="fileInput" />
                                 <input type="hidden" name="imagen_actual" value="<?php echo $nota_imagen; ?>" />
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="formRow">
-                        <div class="grid3"><label>Días de publicación: </label></div>
-                        <div class="grid9 yes_no">
-                            <div class="floatL mr10">Lunes
-                                <?php if($dia_lunes==1){ ?>
-                                <input type="checkbox" name="dia_lunes" value="1" checked /></div>
-                                <?php }else{ ?>
-                                <input type="checkbox" name="dia_lunes" value="1" /></div>
-                                <?php } ?>
-                            <div class="floatL mr10">Martes
-                                <?php if($dia_martes==1){ ?>
-                                <input type="checkbox" name="dia_martes" value="1" checked /></div>
-                                <?php }else{ ?>
-                                <input type="checkbox" name="dia_martes" value="1" /></div>
-                                <?php } ?>
-                            <div class="floatL mr10">Miercoles
-                                <?php if($dia_miercoles==1){ ?>
-                                <input type="checkbox" name="dia_miercoles" value="1" checked /></div>
-                                <?php }else{ ?>
-                                <input type="checkbox" name="dia_miercoles" value="1" /></div>
-                                <?php } ?>
-                            <div class="floatL mr10">Jueves
-                                <?php if($dia_jueves==1){ ?>
-                                <input type="checkbox" name="dia_jueves" value="1" checked /></div>
-                                <?php }else{ ?>
-                                <input type="checkbox" name="dia_jueves" value="1" /></div>
-                                <?php } ?>
-                            <div class="floatL mr10">Viernes
-                                <?php if($dia_viernes==1){ ?>
-                                <input type="checkbox" name="dia_viernes" value="1" checked /></div>
-                                <?php }else{ ?>
-                                <input type="checkbox" name="dia_viernes" value="1" /></div>
-                                <?php } ?>
-                            <div class="floatL mr10">Sábado
-                                <?php if($dia_sabado==1){ ?>
-                                <input type="checkbox" name="dia_sabado" value="1" checked /></div>
-                                <?php }else{ ?>
-                                <input type="checkbox" name="dia_sabado" value="1" /></div>
-                                <?php } ?>
-                            <div class="floatL mr10">Domingo
-                                <?php if($dia_domingo==1){ ?>
-                                <input type="checkbox" name="dia_domingo" value="1" checked /></div>
-                                <?php }else{ ?>
-                                <input type="checkbox" name="dia_domingo" value="1" /></div>
-                                <?php } ?>
                         </div>
                     </div>
 
