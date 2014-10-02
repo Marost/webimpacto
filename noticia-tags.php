@@ -13,7 +13,7 @@ $header="interno";
 //TAGS
 $rst_tags=mysql_query("SELECT * FROM iev_noticia_tags WHERE id=$Req_Id AND url='$Req_Url'", $conexion);
 $fila_tags=mysql_fetch_array($rst_tags);
-$num_tags=mysql_numrows($rst_tags);
+$num_tags=mysql_num_rows($rst_tags);
 
 if($num_tags>0){
     //VARIABLES

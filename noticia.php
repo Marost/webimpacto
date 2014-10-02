@@ -35,7 +35,7 @@ $NoticiaFecha=nombreFechaTotal($Noticia_fecha[0], $Noticia_fecha[1], $Noticia_fe
 ##################################################################################################################
 //NOTICIA - GALERIA DE FOTOS
 $rst_notFotos=mysql_query("SELECT * FROM iev_noticia_slide WHERE noticia=$Noticia_id ORDER BY orden DESC", $conexion);
-$num_notFotos=mysql_numrows($rst_notFotos);
+$num_notFotos=mysql_num_rows($rst_notFotos);
 
 ##################################################################################################################
 //NOTICIA - TAGS

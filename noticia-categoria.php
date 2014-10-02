@@ -13,7 +13,7 @@ $Req_UrlWeb=$web."categoria/".$Req_Id."/".$Req_Url;
 //CATEGORIA
 $rst_categoria=mysql_query("SELECT * FROM iev_noticia_categoria WHERE id=$Req_Id AND url='$Req_Url' AND publicar=1", $conexion);
 $fila_categoria=mysql_fetch_array($rst_categoria);
-$num_categoria=mysql_numrows($rst_categoria);
+$num_categoria=mysql_num_rows($rst_categoria);
 
 if($num_categoria>0){
     //VARIABLES
