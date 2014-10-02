@@ -10,6 +10,11 @@ $rst_galThumb=mysql_query("SELECT * FROM iev_galeria WHERE publicar=1 AND fecha_
         <div class="widget kopa-sync-carousel-widget">
             <header class="widget-header">
                 <h3 class="widget-title">GALERÍA DE IMÁGENES</h3>
+                <span class="galerias-mas">
+                    <a href="galerias">
+                        <i class="fa fa-plus"></i> Más galerías
+                    </a>
+                </span>
             </header>
             <div class="widget-content">
                 <div class="sync1 owl-carousel">
