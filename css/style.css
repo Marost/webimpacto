@@ -1386,6 +1386,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     padding: 15px 0;
     border-top: 2px solid #e4e3f0;
     border-bottom: 2px solid #e4e3f0;
+    text-align: center;
 }
 .single-post-content .entry-content p {
     margin-bottom: 25px;
@@ -2216,7 +2217,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     margin-bottom: 30px;
 }
 .widget-area-2 .widget-header i, .widget-area-2 .entry-header i, .widget-area-3 .widget-header i, .widget-area-3 .entry-header i, .widget-area-4 .widget-header i, .widget-area-4 .entry-header i, .widget-area-5 .widget-header i, .widget-area-5 .entry-header i, .widget-area-6 .widget-header i, .widget-area-6 .entry-header i, .widget-area-7 .widget-header i, .widget-area-7 .entry-header i, .widget-area-8 .widget-header i, .widget-area-8 .entry-header i, .widget-area-9 .widget-header i, .widget-area-9 .entry-header i, .widget-area-10 .widget-header i, .widget-area-10 .entry-header i, .widget-area-11 .widget-header i, .widget-area-11 .entry-header i, .widget-area-12 .widget-header i, .widget-area-12 .entry-header i, .widget-area-13 .widget-header i, .widget-area-13 .entry-header i, .widget-area-26 .widget-header i, .widget-area-26 .entry-header i, .widget-area-22 .widget-header i, .widget-area-22 .entry-header i, .widget-area-23 .widget-header i, .widget-area-23 .entry-header i, .widget-area-24 .widget-header i, .widget-area-24 .entry-header i, .widget-area-25 .widget-header i, .widget-area-25 .entry-header i, .widget-area-27 .widget-header i, .widget-area-27 .entry-header i, .widget-area-18 .widget-header i, .widget-area-18 .entry-header i, .widget-area-19 .widget-header i, .widget-area-19 .entry-header i, #main-content .widget .widget-header i, #main-content .widget .entry-header i, .single-page-content .widget-header i, .single-page-content .entry-header i {
-    position: absolute;
+    /*position: absolute;*/
     right: 0;
     top: 5px;
     font-size: 16px;
@@ -4534,6 +4535,10 @@ section#home-notprin{
 /* CLASSES */
 .dpnone{
     display: none;
+}
+
+.galerias-mas{
+    float: right;
 }
 
 /* SIDEBAT - WIDGET */
