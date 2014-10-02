@@ -122,7 +122,7 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_edicion_noticia WHERE id<>$Req_Id AND
                                             $FechaAnio=$fechaSep[0];
 
                                             //URL
-                                            $NotRel_UrlWeb=$web."noticia/".$NotRel_id."-".$NotRel_url;
+                                            $NotRel_UrlWeb=$web."noticiaed/".$NotRel_id."-".$NotRel_url;
                                             $NotRel_UrlImg=$web."imagenes/upload/".$NotRel_imagen_carpeta."thumb/".$NotRel_imagen;
                                     ?>
                                     <div class="item">
