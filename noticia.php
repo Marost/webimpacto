@@ -58,6 +58,7 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE id<>$Req_Id AND categor
 
 ##################################################################################################################
 //URLS
+$Noticia_UrlWeb=$web."noticia/".$Req_Id."-".$Req_Url;
 $Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imagen;
 $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
 
@@ -67,6 +68,15 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
     <head>
         <meta charset="utf-8">
         <title><?php echo $Noticia_titulo; ?></title>
+
+        <!-- OPEN GRAPH -->
+        <meta property="og:title" content="<?php echo $Noticia_titulo; ?>"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:url" content="<?php echo $Noticia_UrlWeb; ?>"/>
+        <meta property="og:image" content="<?php echo $Noticia_UrlImg; ?>"/>
+        <meta property="og:site_name" content="<?php echo $web_nombre; ?>"/>
+        <meta property="fb:admins" content="1376286793"/>
+        <meta property="og:description" content="<?php echo soloDescripcion($Noticia_contenido); ?>"/>
 
         <?php require_once("w-header-script.php"); ?>
 
