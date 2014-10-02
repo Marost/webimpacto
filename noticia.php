@@ -109,7 +109,7 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                                         <ul id="tipo-multimedia">
                                             <li><a id="foto" href="javascript:;" title="Foto"><i class="fa fa-image"></i><span> Foto</span></a></li>
                                             <?php if($num_notFotos>0){ ?>
-                                            <li><a id="galeria" href="javascript:;" title="Galería de Fotos"><i class="fa fa-film"></i><span> Galería de Fotos</span></a></li>
+                                            <li><a id="galeria-fotos" href="javascript:;" title="Galería de Fotos"><i class="fa fa-film"></i><span> Galería de Fotos</span></a></li>
                                             <?php } ?>
                                             <?php if($Noticia_video<>""){ ?>
                                             <li><a id="video" href="javascript:;" title="Video de youtube"><i class="fa fa-youtube"></i><span> Video</span></a></li>
@@ -124,7 +124,7 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                                                 <img src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
                                             </li>
                                             <?php if($num_notFotos>0){ ?>
-                                            <li id="galeria">
+                                            <li id="galeria-fotos">
                                                 <div class="owl-carousel kopa-galler-post">
                                                     <?php while($fila_notFotos=mysql_fetch_array($rst_notFotos)){
                                                         $NotFotos_imagen=$fila_notFotos["imagen"];
