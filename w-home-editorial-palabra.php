@@ -8,8 +8,7 @@ $Columnista_id=$fila_columnista["id"];
 $Columnista_url=$fila_columnista["url"];
 $Columnista_titulo=$fila_columnista["nombre_completo"];
 $Columnista_cargo=$fila_columnista["cargo"];
-$Columnista_foto=$fila_columnista["foto"];
-$Columnista_imagen=$fila_columnista["imagen_portada"];
+$Columnista_imagen=$fila_columnista["foto"];
 
 //COLUMNAS
 $rst_colNota=mysql_query("SELECT * FROM iev_columnista_columna WHERE columnista=1 AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC;", $conexion);
@@ -22,7 +21,7 @@ $ColNota_titulo=$fila_colNota["titulo"];
 
 //URLS
 $Columnista_UrlWeb=$web."columnista/".$Columnista_id."-".$Columnista_url;
-$Columnista_UrlImg=$web."imagenes/columnistas".$Columnista_imagen;
+$Columnista_UrlImg=$web."imagenes/columnistas/".$Columnista_imagen;
 $ColNota_UrlWeb=$web."editorial/".$ColNota_id."-".$ColNota_url;
 
 //MAS COLUMNISTAS
@@ -70,8 +69,7 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
                         $Columnista_url=$fila_colOtros["url"];
                         $Columnista_titulo=$fila_colOtros["nombre_completo"];
                         $Columnista_cargo=$fila_colOtros["cargo"];
-                        $Columnista_foto=$fila_colOtros["foto"];
-                        $Columnista_imagen=$fila_colOtros["imagen_portada"];
+                        $Columnista_imagen=$fila_colOtros["foto"];
 
                         //COLUMNAS
                         $rst_colNota=mysql_query("SELECT * FROM iev_columnista_columna WHERE columnista=$Columnista_id AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC;", $conexion);
@@ -84,7 +82,7 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
 
                         //URLS
                         $Columnista_UrlWeb=$web."columnista/".$Columnista_id."-".$Columnista_url;
-                        $Columnista_UrlImg=$web."imagenes/columnistas".$Columnista_imagen;
+                        $Columnista_UrlImg=$web."imagenes/columnistas/".$Columnista_imagen;
                         $ColNota_UrlWeb=$web."la-palabra/".$ColNota_id."-".$ColNota_url;
                     ?>
                     <li class="clearfix">
