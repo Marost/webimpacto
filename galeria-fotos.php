@@ -16,8 +16,6 @@ $rst_noticia=mysql_query("SELECT * FROM iev_galeria WHERE id=$Req_Id AND publica
 $fila_noticia=mysql_fetch_array($rst_noticia);
 
 //VARIABLES DE NOTICIA
-$Noticia_id=$fila_noticia["id"];
-$Noticia_url=$fila_noticia["url"];
 $Noticia_titulo=$fila_noticia["titulo"];
 $Noticia_contenido=$fila_noticia["contenido"];
 $Noticia_fechaPub=$fila_noticia["fecha_publicacion"];
@@ -29,16 +27,26 @@ $NoticiaFecha=nombreFechaTotal($Noticia_fecha[0], $Noticia_fecha[1], $Noticia_fe
 
 ##################################################################################################################
 //NOTICIA - GALERIA DE FOTOS
-$rst_notFotos=mysql_query("SELECT * FROM iev_galeria_slide WHERE noticia=$Req_Id ORDER BY orden DESC", $conexion);
+$rst_notFotos=mysql_query("SELECT * FROM iev_galeria_slide WHERE noticia=$Req_Id ORDER BY orden ASC", $conexion);
 $num_notFotos=mysql_num_rows($rst_notFotos);
 
 ##################################################################################################################
+//NOTICIA - GALERIA DE FOTOS - IMAGEN PARA OPEN GRAPH
+$rst_notImg=mysql_query("SELECT * FROM iev_galeria_slide WHERE noticia=$Req_Id AND orden=0", $conexion);
+$fila_notImg=mysql_fetch_array($rst_notImg);
+
+//VARIABLES
+$NotImg_imagen=$fila_notImg["imagen"];
+$NotImg_imagen_carpeta=$fila_notImg["imagen_carpeta"];
+
+##################################################################################################################
 //NOTICIAS RELACIONADAS
-$rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE id<>$Req_Id AND categoria=$Noticia_categoria AND publicar=1 AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 6;", $conexion);
+$rst_NotRel=mysql_query("SELECT * FROM iev_galeria WHERE id<>$Req_Id AND publicar=1 AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 15;", $conexion);
 
 ##################################################################################################################
 //URLS
-$Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imagen;
+$Noticia_UrlImg=$web."imagenes/galeria/".$NotImg_imagen_carpeta."".$NotImg_imagen;
+$Noticia_UrlWeb=$web."galeria/".$Req_Id."-".$Req_Url;
 
 ?>
 <!DOCTYPE html>
@@ -46,6 +54,15 @@ $Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imag
     <head>
         <meta charset="utf-8">
         <title><?php echo $Noticia_titulo; ?></title>
+
+        <!-- OPEN GRAPH -->
+        <meta property="og:title" content="<?php echo $Noticia_titulo; ?>"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:url" content="<?php echo $Noticia_UrlWeb; ?>"/>
+        <meta property="og:image" content="<?php echo $Noticia_UrlImg; ?>"/>
+        <meta property="og:site_name" content="<?php echo $web_nombre; ?>"/>
+        <meta property="fb:admins" content="1376286793"/>
+        <meta property="og:description" content="<?php echo soloDescripcion($Noticia_contenido); ?>"/>
 
         <?php require_once("w-header-script.php"); ?>
 
@@ -102,17 +119,10 @@ $Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imag
 
                         </article>
 
-                        <div id="comments">
-
-                            <h3>Comentarios</h3>
-
-                        </div>
-                        <!-- comments -->
-
                         <!-- NOTICIAS RELACIONADAS -->
                         <div class="widget kopa-list-posts-carousel-4-widget">
                             <header class="widget-header">
-                                <h3 class="widget-title">Articulos relacionados</h3>
+                                <h3 class="widget-title">Galería de Fotos</h3>
                                 <i class="fa fa-plus-square-o"></i>
                             </header>
                             <div class="widget-content">
@@ -122,9 +132,6 @@ $Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imag
                                             $NotRel_id=$fila_NotRel["id"];
                                             $NotRel_url=$fila_NotRel["url"];
                                             $NotRel_titulo=$fila_NotRel["titulo"];
-                                            $NotRel_imagen=$fila_NotRel["imagen"];
-                                            $NotRel_imagen_carpeta=$fila_NotRel["imagen_carpeta"];
-                                            $NotRel_categoria=$fila_NotRel["categoria"];
                                             $NotRel_fechaPub=$fila_NotRel["fecha_publicacion"];
 
                                             //SEPARACION DE FECHA
@@ -134,9 +141,16 @@ $Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imag
                                             $FechaMes=mesCorto($fechaSep[1]);
                                             $FechaAnio=$fechaSep[0];
 
+                                            //FOTOS
+                                            $rst_NotRelImg=mysql_query("SELECT * FROM iev_galeria_slide WHERE noticia=$NotRel_id AND orden=0", $conexion);
+                                            $fila_NotRelImg=mysql_fetch_array($rst_NotRelImg);
+
+                                            $NotRel_imagen=$fila_NotRelImg["imagen"];
+                                            $NotRel_imagen_carpeta=$fila_NotRelImg["imagen_carpeta"];
+
                                             //URL
-                                            $NotRel_UrlWeb=$web."noticia/".$NotRel_id."-".$NotRel_url;
-                                            $NotRel_UrlImg=$web."imagenes/upload/".$NotRel_imagen_carpeta."thumb/".$NotRel_imagen;
+                                            $NotRel_UrlWeb=$web."galeria/".$NotRel_id."-".$NotRel_url;
+                                            $NotRel_UrlImg=$web."imagenes/galeria/".$NotRel_imagen_carpeta."thumb/".$NotRel_imagen;
                                     ?>
                                     <div class="item">
                                         <div class="post-thumb">
@@ -162,7 +176,6 @@ $Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imag
                                         </div>
                                         <!-- item content -->
                                     </div>
-                                    <!-- item -->
                                     <?php } ?>
 
                                 </div>
