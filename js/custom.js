@@ -837,6 +837,24 @@ jQuery(document).ready(function () {
 
     };
 
+    //GALERIA DE VIDEOS
+    if(jQuery('#video').length>0) {
+        Modernizr.load([{
+            load: 'libs/bxslider/js/jquery.bxslider.js',
+            complete: function () {
+                jQuery('#video').bxSlider({
+                    mode: 'vertical',
+                    slideWidth: 300,
+                    minSlides: 3,
+                    slideMargin: 0,
+                    pager: false,
+                    infiniteLoop: false
+                });
+
+            }
+        }]);
+    };
+
     //AUDIO PARA IDIOMA
     jQuery(".edicion-impresa .idiomas ul li a").on("mouseover", function(){
 
