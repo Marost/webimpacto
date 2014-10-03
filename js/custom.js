@@ -887,15 +887,16 @@ jQuery(document).ready(function () {
         jQuery("#edicion-impresa-audio #cerrar").on("click", function(){
             jQuery("#edicion-impresa-audio").slideUp(500, function(){
                 jQuery(this).removeClass("mostrar");
+                jQuery("#edicion-impresa-audio #contenido").empty(); //VACIAR DIV
             });
         });
     });
 
-    //SELECCIONAR FOTO/GALERIA/VIDEO
+    //SELECCIONAR FOTO/GALERIA/VIDEO/AUDIO
     jQuery(document).on("ready", function(){
-        jQuery("#tipo-multimedia a#foto").addClass("select");
+        jQuery("#tipo-multimedia a#noticia-foto").addClass("select");
         jQuery("#lista-multimedia li").addClass("ocultar");
-        jQuery("#lista-multimedia li#foto").removeClass();
+        jQuery("#lista-multimedia li#noticia-foto").removeClass();
 
         jQuery("#tipo-multimedia a").on("click", function(){
             var valor = jQuery(this).attr("id");
