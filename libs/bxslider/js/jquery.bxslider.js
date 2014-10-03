@@ -53,8 +53,8 @@
 
 		// CONTROLS
 		controls: true,
-		nextText: '<i class="fa fa-chevron-down fa-3x"></i>',
-		prevText: '<i class="fa fa-chevron-up fa-3x"></i>',
+		nextText: '<i class="fa fa-chevron-down fa-2x"></i>',
+		prevText: '<i class="fa fa-chevron-up fa-2x"></i>',
 		nextSelector: null,
 		prevSelector: null,
 		autoControls: false,
