@@ -107,24 +107,24 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                                     <div class="post-thumb">
 
                                         <ul id="tipo-multimedia">
-                                            <li><a id="foto" href="javascript:;" title="Foto"><i class="fa fa-image"></i><span> Foto</span></a></li>
+                                            <li><a id="noticia-foto" href="javascript:;" title="Foto"><i class="fa fa-image"></i><span> Foto</span></a></li>
                                             <?php if($num_notFotos>0){ ?>
-                                            <li><a id="galeria-fotos" href="javascript:;" title="Galería de Fotos"><i class="fa fa-film"></i><span> Galería de Fotos</span></a></li>
+                                            <li><a id="noticia-galeria" href="javascript:;" title="Galería de Fotos"><i class="fa fa-film"></i><span> Galería de Fotos</span></a></li>
                                             <?php } ?>
                                             <?php if($Noticia_video<>""){ ?>
-                                            <li><a id="video" href="javascript:;" title="Video de youtube"><i class="fa fa-youtube"></i><span> Video</span></a></li>
+                                            <li><a id="noticia-video" href="javascript:;" title="Video de youtube"><i class="fa fa-youtube"></i><span> Video</span></a></li>
                                             <?php } ?>
                                             <?php if($Noticia_audio<>""){ ?>
-                                            <li><a id="audio" href="javascript:;" title="Audio de Soundcloud"><i class="fa fa-soundcloud"></i><span> Audio</span></a></li>
+                                            <li><a id="noticia-audio" href="javascript:;" title="Audio de Soundcloud"><i class="fa fa-soundcloud"></i><span> Audio</span></a></li>
                                             <?php } ?>
                                         </ul>
 
                                         <ul id="lista-multimedia">
-                                            <li id="foto">
+                                            <li id="noticia-foto">
                                                 <img src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
                                             </li>
                                             <?php if($num_notFotos>0){ ?>
-                                            <li id="galeria-fotos">
+                                            <li id="noticia-galeria">
                                                 <div class="owl-carousel kopa-galler-post">
                                                     <?php while($fila_notFotos=mysql_fetch_array($rst_notFotos)){
                                                         $NotFotos_imagen=$fila_notFotos["imagen"];
@@ -140,12 +140,12 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                                             </li>
                                             <?php } ?>
                                             <?php if($Noticia_video<>""){ ?>
-                                            <li id="video">
+                                            <li id="noticia-video">
                                                 <iframe width="100%" height="400" src="//www.youtube.com/embed/<?php echo $Noticia_video; ?>?rel=0" frameborder="0" allowfullscreen></iframe>
                                             </li>
                                             <?php } ?>
                                             <?php if($Noticia_audio<>""){ ?>
-                                            <li id="audio">
+                                            <li id="noticia-audio">
                                                 <?php echo $Noticia_audio; ?>
                                             </li>
                                             <?php } ?>
