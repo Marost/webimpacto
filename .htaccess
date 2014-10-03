@@ -354,6 +354,10 @@ RewriteRule ^columnista/([0-9]*)-(.*)$        /columna-columnista.php?id=$1&url=
 RewriteRule ^galeria/([0-9]*)-(.*)$           /galeria-fotos.php?id=$1&url=$2
 RewriteRule ^galerias$                        /galeria-fotos-lista.php
 
+#VIDEO
+RewriteRule ^video/([0-9]*)-(.*)$             /galeria-video.php?id=$1&url=$2
+RewriteRule ^videos$                          /galeria-video-lista.php
+
 #ADMINISTRADOR
 RewriteRule ^panel@impacto/$                  /panel@impacto/login.php
 
