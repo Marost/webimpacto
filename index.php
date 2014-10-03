@@ -4,6 +4,7 @@ require_once("panel@impacto/conexion/funciones.php");
 
 //VARIABLES
 $header="home";
+$w_video=true;
 ?>
 <!DOCTYPE html>
 <html lang="es" class="no-js">
