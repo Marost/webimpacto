@@ -24,7 +24,7 @@ $rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEs
 
         <div id="edicion-impresa-audio">
             <a id="cerrar" href="javascript:;">
-                <i class="fa fa-close"></i>
+                Cerrar <i class="fa fa-close"></i>
             </a>
             <div id="contenido"></div>
         </div>
