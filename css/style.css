@@ -4616,7 +4616,7 @@ section#home-notprin{
     position: relative;
 }
 
-#edicion-impresa-audio .fa{
+#edicion-impresa-audio a{
     position: absolute;
     top: 5px;
     right: 5px;
