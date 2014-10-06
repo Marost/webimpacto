@@ -20,8 +20,8 @@ $Noticia_titulo=$fila_noticia["titulo"];
 $Noticia_contenido=$fila_noticia["contenido"];
 $Noticia_tags=$fila_noticia["tags"];
 $Noticia_fechaPub=$fila_noticia["fecha_publicacion"];
-$Noticia_imagen=$fila_noticia["imagen"];
-$Noticia_imagen_carpeta=$fila_noticia["imagen_carpeta"];
+$Noticia_imagen=$fila_noticia["imagenin"];
+$Noticia_imagen_carpeta=$fila_noticia["imagenin_carpeta"];
 
 //SEPARACION FECHA
 $Noticia_fechaPubSep=explode(" ", $Noticia_fechaPub);
