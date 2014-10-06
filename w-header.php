@@ -126,15 +126,15 @@ if(isset($header)){
 
     <?php if(isset($mostrar)){ if($mostrar==""){ ?>
     <div class="kopa-header-bottom">
-        <?php }} ?>
+    <?php }} ?>
 
         <div class="kopa-head-line clearfix">
             <div class="container">
 
-                <?php if(isset($mostrar)){ if($mostrar==""){ ?>
-                    <div class="kopa-list-news-carousel-widget">
-                        <h3 class="widget-title">&nbsp</h3>
-                    </div>
+                <?php if(isset($header)){ if($header=="interno"){
+                    require_once("w-saludos-lista.php");
+                 }else{ ?>
+                <div class="kopa-list-news-carousel-widget"><h3 class="widget-title">&nbsp;</h3></div>
                 <?php }} ?>
 
                 <!-- widget news carousel -->
@@ -155,9 +155,9 @@ if(isset($header)){
         </div>
         <!-- kopa head line -->
 
-        <?php if(isset($mostrar)){ if($mostrar==""){ ?>
+    <?php if(isset($mostrar)){ if($mostrar==""){ ?>
     </div><!-- kopa header -->
-<?php }} ?>
+    <?php }} ?>
 
 </header>
 <!-- page header -->
