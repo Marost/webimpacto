@@ -4653,7 +4653,7 @@ section#home-notprin{
 }
 
 /* SALUDOS */
-#form_saludos_enlace{
+#form_saludo_home, #form_saludo_interno{
     position: absolute;
     left: 0;
     margin: 15px;
