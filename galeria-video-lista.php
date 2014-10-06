@@ -37,6 +37,7 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_videos WHERE fecha_publicacion<
         <?php require_once("w-header.php"); ?>
 
         <div class="container">
+            <?php require_once("w-saludos-formulario.php"); ?>
 
             <div class="kopa-breadcrumb"></div>
             <!-- kopa-breadcrumb -->

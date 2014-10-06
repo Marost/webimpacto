@@ -54,6 +54,7 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_edicion_noticia WHERE id<>$Req_Id AND
         <?php require_once("w-header.php"); ?>
 
         <div class="container">
+            <?php require_once("w-saludos-formulario.php"); ?>
 
             <div class="kopa-breadcrumb"></div><!-- kopa-breadcrumb -->
 

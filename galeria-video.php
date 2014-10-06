@@ -61,6 +61,7 @@ $Noticia_UrlWeb=$web."video/".$Req_Id."-".$Req_Url;
         <?php require_once("w-header.php"); ?>
 
         <div class="container">
+            <?php require_once("w-saludos-formulario.php"); ?>
 
             <div class="kopa-breadcrumb"></div><!-- kopa-breadcrumb -->
 

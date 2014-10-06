@@ -61,6 +61,7 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
         <?php require_once("w-header.php"); ?>
 
         <div class="container">
+            <?php require_once("w-saludos-formulario.php"); ?>
 
             <div class="kopa-breadcrumb"></div><!-- kopa-breadcrumb -->
 

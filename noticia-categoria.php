@@ -53,6 +53,7 @@ if($num_categoria>0){
         <?php require_once("w-header.php"); ?>
 
         <div class="container">
+            <?php require_once("w-saludos-formulario.php"); ?>
 
             <div class="kopa-breadcrumb"></div>
             <!-- kopa-breadcrumb -->
