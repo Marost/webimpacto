@@ -560,7 +560,16 @@ jQuery(document).ready(function () {
             scrollTop: 0
         }, 800);
         event.preventDefault();
-    })
+    });
+
+    //FORMULARIO SALUDOS
+    jQuery(window).scroll(function () {
+        if (jQuery(this).scrollTop() > 800) {
+            jQuery('#form_saludos_enlace').addClass("fixed");
+        } else {
+            jQuery('#form_saludos_enlace').removeClass("fixed");
+        }
+    });
 
     // 10. jQuery for css
     if (jQuery(".kopa-grid-posts-widget").length > 0) {
@@ -711,7 +720,7 @@ jQuery(document).ready(function () {
                     pauseOnHover: 'immediate'
                 };
                 jQuery('.ticker-1').carouFredSel({
-                    width: 1000,
+                    width: 1080,
                     align: false,
                     items: {
                         width: 'variable',
@@ -907,6 +916,30 @@ jQuery(document).ready(function () {
         });
 
     });
+
+    //POPUP PARA FORMULARIO DE SALUDOS
+    if(jQuery(".popup-with-zoom-anim").length>0) {
+        Modernizr.load([{
+            load: 'libs/magnific-popup/js/jquery.magnific-popup.min.js',
+            complete: function() {
+                jQuery('.popup-with-zoom-anim').magnificPopup({
+                    type: 'inline',
+
+                    fixedContentPos: false,
+                    fixedBgPos: true,
+
+                    overflowY: 'auto',
+
+                    closeBtnInside: true,
+                    preloader: false,
+
+                    midClick: true,
+                    removalDelay: 300,
+                    mainClass: 'my-mfp-zoom-in'
+                });
+            }
+        }]);
+    }
 
 });
 
