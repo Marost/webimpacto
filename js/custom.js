@@ -565,9 +565,17 @@ jQuery(document).ready(function () {
     //FORMULARIO SALUDOS
     jQuery(window).scroll(function () {
         if (jQuery(this).scrollTop() > 800) {
-            jQuery('#form_saludos_enlace').addClass("fixed");
+            jQuery('#form_saludo_home').addClass("fixed");
         } else {
-            jQuery('#form_saludos_enlace').removeClass("fixed");
+            jQuery('#form_saludo_home').removeClass("fixed");
+        }
+    });
+
+    jQuery(window).scroll(function () {
+        if (jQuery(this).scrollTop() > 200) {
+            jQuery('#form_saludo_interno').addClass("fixed");
+        } else {
+            jQuery('#form_saludo_interno').removeClass("fixed");
         }
     });
 
