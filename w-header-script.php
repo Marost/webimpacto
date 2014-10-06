@@ -23,4 +23,11 @@
 <link rel="stylesheet" href="libs/bxslider/css/jquery.bxslider.css"/>
 <?php }} ?>
 
+<!-- POPUP -->
+<link rel="stylesheet" href="libs/magnific-popup/css/magnific-popup.css"/>
+
+<!-- FORMULARIO SALUDO-->
+<link rel="stylesheet" href="libs/smartform/css/smart-forms.css"/>
+<!--[if lte IE 8]><link type="text/css" rel="stylesheet" href="libs/smartform/css/smart-forms-ie8.css"><![endif]-->
+
 <script src="js/modernizr.custom.js"></script>
