@@ -23,7 +23,14 @@ $w_video=true;
 
         <?php require_once("w-slider.php"); ?>
 
+        <div class="kopa-head-line clearfix">
+            <div class="container">
+                <?php require_once("w-saludos-lista.php"); ?>
+            </div>
+        </div>
+
         <div class="container">
+            <?php require_once("w-saludos-formulario.php"); ?>
 
             <?php require_once("w-home-noticias-prin.php"); ?>
 
