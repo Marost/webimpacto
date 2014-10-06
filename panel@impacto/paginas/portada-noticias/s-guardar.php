@@ -27,6 +27,7 @@ elseif($tags<>""){ $union_tags=implode(",", $tags);}
 
 //SUBIR IMAGEN
 $upload_imagen=$_POST["uploader_0_tmpname"];
+$upload_imagenin=$_POST["uploader_1_tmpname"];
 
 //SUBIR VIDEO
 $video_youtube=$_POST["video_youtube"];
@@ -39,6 +40,14 @@ if($upload_imagen<>""){
     guardarImagen($imagen, $imagen_carpeta);
 }else{
     $imagen=""; $imagen_carpeta="";
+}
+
+if($upload_imagenin<>""){
+    $imagenin=$upload_imagenin;
+    $imagenin_carpeta=fechaCarpeta()."/";
+    guardarImagen($imagenin, $imagenin_carpeta);
+}else{
+    $imagenin=""; $imagenin_carpeta="";
 }
 
 //VIDEO YOUTUBE
@@ -62,8 +71,8 @@ if($audio<>""){
 }
 
 //INSERTANDO DATOS
-$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_edicion_noticia (url, titulo, pagina, contenido, imagen, imagen_carpeta, fecha_publicacion, publicar, video, audio, edicion_id)
-VALUES('$url', '".htmlspecialchars($nombre)."', '$pagina', '$contenido', '$imagen', '$imagen_carpeta', '$fecha_publicacion', $publicar, '$video', '$audio', $Req_Url);",$conexion);
+$rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_edicion_noticia (url, titulo, pagina, contenido, imagen, imagen_carpeta, imagenin, imagenin_carpeta, fecha_publicacion, publicar, video, audio, edicion_id)
+VALUES('$url', '".htmlspecialchars($nombre)."', '$pagina', '$contenido', '$imagen', '$imagen_carpeta', '$imagenin', '$imagenin_carpeta', '$fecha_publicacion', $publicar, '$video', '$audio', $Req_Url);",$conexion);
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();

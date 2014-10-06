@@ -80,7 +80,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                     </div>
 
                     <div class="formRow">
-                        <div class="grid3"><label>Imagen:</label> </div>
+                        <div class="grid3"><label>Imagen (Home / Interno):</label> </div>
                         <div class="grid9">
                             <div class="widget nomargin">    
                                 <div id="uploader">Tu navegador no soporta HTML5.</div>                    

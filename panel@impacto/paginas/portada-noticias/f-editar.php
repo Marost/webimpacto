@@ -17,6 +17,8 @@ $nota_nombre=$fila_nota["titulo"];
 $nota_pagina=$fila_nota["pagina"];
 $nota_imagen=$fila_nota["imagen"];
 $nota_imagen_carpeta=$fila_nota["imagen_carpeta"];
+$nota_imagenin=$fila_nota["imagenin"];
+$nota_imagenin_carpeta=$fila_nota["imagenin_carpeta"];
 $nota_contenido=$fila_nota["contenido"];
 $nota_video=$fila_nota["video"];
 $nota_audio=$fila_nota["audio"];
@@ -142,11 +144,18 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                     </div>
 
                     <div class="formRow">
-                        <div class="grid3"><label>Imagen:</label> </div>
+                        <div class="grid3"><label>Imagen (Home / Interno):</label> </div>
                         <div class="grid9">
                             <div class="floatL">
+                                Home
                                 <a href="../../../imagenes/upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" class="lightbox">
                                     <img src="../../../imagenes/upload/<?php echo $nota_imagen_carpeta."".$nota_imagen; ?>" width="100" >
+                                </a>
+                            </div>
+                            <div class="floatL">
+                                Interno
+                                <a href="../../../imagenes/upload/<?php echo $nota_imagenin_carpeta."".$nota_imagenin; ?>" class="lightbox">
+                                    <img src="../../../imagenes/upload/<?php echo $nota_imagenin_carpeta."".$nota_imagenin; ?>" width="100" >
                                 </a>
                             </div>
                             <div class="widget floarL width60 margin1020">    

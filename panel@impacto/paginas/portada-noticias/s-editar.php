@@ -29,19 +29,25 @@ $video_youtube=$_POST["video_youtube"];
 //AUDIO
 $audio=$_POST["audio"];
 
+//SUBIR IMAGEN
+$upload_imagen=$_POST["uploader_0_tmpname"];
+$upload_imagenin=$_POST["uploader_1_tmpname"];
+
 //IMAGEN
-if($_POST['uploader_0_tmpname']<>""){
-    $imagen=$_POST["uploader_0_tmpname"];
+if($upload_imagen<>""){
+    $imagen=$upload_imagen;
     $imagen_carpeta=fechaCarpeta()."/";
-
     guardarImagen($imagen, $imagen_carpeta);
-
 }else{
-    $imagen=$_POST["imagen"];
-    $imagen_carpeta=$_POST["imagen_carpeta"];
+    $imagen=""; $imagen_carpeta="";
+}
 
-    guardarImagen($imagen, $imagen_carpeta);
-
+if($upload_imagenin<>""){
+    $imagenin=$upload_imagenin;
+    $imagenin_carpeta=fechaCarpeta()."/";
+    guardarImagen($imagenin, $imagenin_carpeta);
+}else{
+    $imagenin=""; $imagenin_carpeta="";
 }
 
 //VIDEO YOUTUBE
@@ -69,7 +75,9 @@ $rst_guardar=mysql_query("UPDATE ".$tabla_suf."_edicion_noticia SET url='$url', 
     pagina=$pagina,
 	contenido='$contenido', 
 	imagen='$imagen', 
-	imagen_carpeta='$imagen_carpeta', 
+	imagen_carpeta='$imagen_carpeta',
+	imagenin='$imagenin',
+	imagenin_carpeta='$imagenin_carpeta',
 	fecha_publicacion='$fecha_publicacion', 
 	publicar=$publicar,
 	video='$video',
