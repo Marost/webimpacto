@@ -1,0 +1,95 @@
+@media (min-width: 640px){
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px){
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) {
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) {
+    .kopa-grid-posts-widget{
+
+        .latest-post{
+
+            .item-content{
+                height: 185px;
+                max-height: 185px;
+            }
+        }
+
+        .item.pull-left{
+            .item-content {
+                padding-top: 45px;
+            }
+        }
+    }
+
+    .kopa-list-posts-carousel-2-widget{
+
+        .owl-carousel{
+
+            &.owl-theme{
+                left: 0;
+
+                .owl-controls{
+
+                    .owl-buttons{
+
+                        .owl-next{
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+    .kopa-grid-posts-widget{
+
+        .latest-post{
+
+            .item-content{
+                height: 222px;
+                max-height: 222px;
+            }
+        }
+
+        .item.pull-left{
+
+            .item-content {
+                padding-top: 85px;
+            }
+        }
+    }
+
+    .kopa-list-posts-carousel-2-widget{
+
+        .owl-carousel{
+
+            &.owl-theme{
+                left: -15px;
+
+                .owl-controls{
+                    position: absolute;
+                    top: 119px;
+                    left: 0px;
+                    z-index: 4;
+
+                    .owl-buttons{
+
+                        .owl-next{
+                            margin-right: -27px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
