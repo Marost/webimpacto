@@ -327,7 +327,7 @@ jQuery(document).ready(function () {
                     pagination: false,
                     items: 3,
                     itemsDesktop: [1180, 3],
-                    itemsDesktopSmall: [980, 3],
+                    itemsDesktopSmall: [980, 2],
                     itemsTablet: [767, 2],
                     navigation: true,
                     slideSpeed: 700,
@@ -897,6 +897,7 @@ jQuery(document).ready(function () {
                     var html = "<h4>"+data.titulo+"</h4>"+data.audio;
                     jQuery("#edicion-impresa-audio #contenido").html(html);
                     jQuery("#edicion-impresa-audio #contenido iframe").attr("height", 150);
+                    jQuery(".owl-controls.clickable").css("top", "-36px");
                 }
             });
         });
@@ -905,6 +906,7 @@ jQuery(document).ready(function () {
             jQuery("#edicion-impresa-audio").slideUp(500, function(){
                 jQuery(this).removeClass("mostrar");
                 jQuery("#edicion-impresa-audio #contenido").empty(); //VACIAR DIV
+                jQuery(".owl-controls.clickable").attr("style", "");
             });
         });
     });
