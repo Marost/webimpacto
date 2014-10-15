@@ -865,7 +865,9 @@ jQuery(document).ready(function () {
                     minSlides: 3,
                     slideMargin: 0,
                     pager: false,
-                    infiniteLoop: false
+                    infiniteLoop: false,
+                    adaptiveHeight: true,
+                    responsive: true
                 });
 
             }
