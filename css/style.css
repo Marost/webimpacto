@@ -4244,9 +4244,9 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 .kopa-head-line .kopa-search-box {
     position: absolute;
     z-index: 999;
-    top: 3px;
-    right: 0;
-    height: 25px;
+    top: 0px;
+    right: 0px;
+    height: 36px;
 }
 .kopa-head-line .kopa-search-box .search-form {
     width: 36px;

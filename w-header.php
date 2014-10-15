@@ -129,21 +129,16 @@ if(isset($header)){
                 <div class="kopa-list-news-carousel-widget"><h3 class="widget-title">&nbsp;</h3></div>
                 <?php }} ?>
 
-                <!-- widget news carousel -->
                 <div class="kopa-search-box">
-                    <script>
-                        (function() {
-                            var cx = '005142815043326354435:5qgiwe8awlo';
-                            var gcse = document.createElement('script');
-                            gcse.type = 'text/javascript';
-                            gcse.async = true;
-                            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                                '//www.google.com/cse/cse.js?cx=' + cx;
-                            var s = document.getElementsByTagName('script')[0];
-                            s.parentNode.insertBefore(gcse, s);
-                        })();
-                    </script>
-                    <gcse:searchbox-only></gcse:searchbox-only>
+                    <div class="kopa-search-box">
+                        <form action="buscar" method="get" class="search-form">
+                            <input type="text" name="buscar" onBlur="if (this.value == '')
+                                        this.value = this.defaultValue;" onFocus="if (this.value == this.defaultValue)
+                                        this.value = '';" value="Buscar" >
+                            <span class="fa fa-search"></span>
+                            <button type="submit" class="fa fa-search"></button>
+                        </form>
+                    </div>
                 </div>
                 <!-- search box -->
 

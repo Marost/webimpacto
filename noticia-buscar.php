@@ -72,19 +72,76 @@ if($buscar==""){
                                 <i class="fa fa-plus-square-o"></i>
                             </header>
 
-                            <script>
-                                (function() {
-                                    var cx = '005142815043326354435:5qgiwe8awlo';
-                                    var gcse = document.createElement('script');
-                                    gcse.type = 'text/javascript';
-                                    gcse.async = true;
-                                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                                        '//www.google.com/cse/cse.js?cx=' + cx;
-                                    var s = document.getElementsByTagName('script')[0];
-                                    s.parentNode.insertBefore(gcse, s);
-                                })();
-                            </script>
-                            <gcse:searchresults-only></gcse:searchresults-only>
+                            <div class="widget-content">
+                                <ul class="list-unstyled clearfix">
+
+                                    <?php while($fila_noticias=mysql_fetch_array($rst_noticias)){
+                                        $noticia_id=$fila_noticias["id"];
+                                        $noticia_url=$fila_noticias["url"];
+                                        $noticia_titulo=stripslashes($fila_noticias["titulo"]);
+                                        $noticia_contenido=soloDescripcion($fila_noticias["contenido"]);
+                                        $noticia_imagen=$fila_noticias["imagen"];
+                                        $noticia_imagen_carpeta=$fila_noticias["imagen_carpeta"];
+                                        $noticia_fechaPub=$fila_noticias["fecha_publicacion"];
+
+                                        //SEPARACION DE FECHA
+                                        $fechaPubSep=explode(" ", $noticia_fechaPub);
+                                        $fechaSep=explode("-", $fechaPubSep[0]);
+                                        $FechaDia=$fechaSep[2];
+                                        $FechaMes=mesCorto($fechaSep[1]);
+                                        $FechaAnio=$fechaSep[0];
+
+                                        //URLS
+                                        $noticia_UrlWeb=$web."noticia/".$noticia_id."-".$noticia_url;
+                                        $noticia_UrlImg=$web."imagenes/upload/".$noticia_imagen_carpeta."thumb/".$noticia_imagen;
+                                        ?>
+
+                                        <li class="item-outer">
+                                            <div class="item">
+                                                <div class="item-inner  clearfix">
+                                                    <div class="post-thumb pull-left">
+                                                        <a href="<?php echo $noticia_UrlWeb; ?>" class="img-responsive"><img src="<?php echo $noticia_UrlImg; ?>" alt=""></a>
+                                                        <div class="kopa-date-box">
+                                                            <span class="kopa-mon"><?php echo $FechaMes; ?></span>
+                                                            <span class="kopa-day"><?php echo $FechaDia; ?></span>
+                                                            <span class="kopa-yea"><?php echo $FechaAnio; ?></span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- post thumb -->
+                                                    <div class="item-content item-right">
+                                                        <h4 class="post-title">
+                                                            <a href="<?php echo $noticia_UrlWeb; ?>"><?php echo $noticia_titulo; ?></a>
+                                                        </h4>
+                                                        <div class="kopa-metadata-border">
+                                                    <span class="kopa-rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                    </span>
+                                                        </div>
+                                                        <!-- metadata -->
+                                                        <p><?php echo $noticia_contenido; ?></p>
+                                                        <a href="<?php echo $noticia_UrlWeb; ?>" class="kopa-readmore">Leer más</a>
+                                                    </div>
+                                                    <!-- item content -->
+                                                </div>
+                                                <!-- item inner -->
+                                            </div>
+                                            <!-- item -->
+                                        </li>
+                                    <?php } ?>
+
+                                </ul>
+
+                            </div>
+                            <!-- widget content -->
+
+                            <div id="paginacion">
+                                <?php $pagination->pagination(); ?>
+                            </div>
+                            <!-- PAGINACION -->
 
                         </div>
                         <!-- kopa-list-posts-widget -->
