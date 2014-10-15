@@ -50,9 +50,12 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE destacada=0 AND categor
                             <a href="<?php echo $NotDest_UrlWeb; ?>"><?php echo $NotDest_titulo; ?></a></h4>
                     </header>
                     <div class="post-content">
-                        <?php echo $NotDest_contenido; ?>
 
-                        <div class="kopa-metadata-border col-lg-9 col-md-9">
+                        <div class="notaprin-texto">
+                            <?php echo $NotDest_contenido; ?>
+                        </div>
+
+                        <div class="kopa-metadata-border col-lg-12 col-md-12">
 
                             <!-- AddThis -->
                             <div class="addthis_native_toolbox col-lg-7 col-md-7"></div>
@@ -66,10 +69,9 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE destacada=0 AND categor
                                 <i class="fa fa-star-o"></i>
                             </span>
 
-                        </div>
-                        <!-- metadata -->
+                            <a href="<?php echo $NotDest_UrlWeb; ?>" class="kopa-readmore col-lg-3">Leer nota</a>
 
-                        <a href="<?php echo $NotDest_UrlWeb; ?>" class="kopa-readmore col-lg-3">Leer nota</a>
+                        </div>
 
                     </div>
                 </div>
