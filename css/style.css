@@ -2503,7 +2503,6 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 }
 .kopa-sync-carousel-widget .sync1 .owl-controls {
     position: absolute;
-    bottom: -150px;
     width: 100%;
     left: 0;
 }
@@ -2880,15 +2879,15 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 
 .kopa-list-post-small-thumb-widget .item-right {
     overflow: hidden;
-    width: 269px;
     height: 100px;
+    max-height: 100px;
     position: relative;
 }
 
 .kopa-list-post-small-thumb-widget .item-left {
     overflow: hidden;
     height: 100px;
-    max-height: 79px;
+    max-height: 100px;
     position: relative;
     float: left;
 }
