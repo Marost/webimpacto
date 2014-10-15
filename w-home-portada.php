@@ -22,13 +22,6 @@ $rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEs
             <h3 class="widget-title">EDICIÓN IMPRESA</h3>
         </header>
 
-        <div id="edicion-impresa-audio">
-            <a id="cerrar" href="javascript:;">
-                Cerrar <i class="fa fa-close"></i>
-            </a>
-            <div id="contenido"></div>
-        </div>
-
         <div class="widget-content col-lg-12 col-md-12">
 
             <div class="edicion-impresa col-lg-3 col-md-3">

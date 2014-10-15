@@ -884,35 +884,6 @@ jQuery(document).ready(function () {
         v.play();
     });
 
-    //REPRODUCIR AUDIO DE NOTICIA DE PORTADA
-    jQuery(".edicion-impresa-audio").on("click", function(){
-        jQuery("#edicion-impresa-audio #contenido").empty(); //VACIAR DIV
-        var idNot = jQuery(this).attr("id"); //OBTENER ID DE AUDIO PARA PODER SELECCIONAR NOTA
-        jQuery("#edicion-impresa-audio").slideDown().fadeIn(1000, function(){
-            jQuery(this).addClass("mostrar");
-            jQuery.ajax({
-                type: "POST",
-                url: "inc/edicion-impresa-audio.php",
-                data: {"id":idNot},
-                success:function(response){
-                    var data = jQuery.parseJSON(response);
-                    var html = "<h4>"+data.titulo+"</h4>"+data.audio;
-                    jQuery("#edicion-impresa-audio #contenido").html(html);
-                    jQuery("#edicion-impresa-audio #contenido iframe").attr("height", 150);
-                    jQuery(".owl-controls.clickable").css("top", "-36px");
-                }
-            });
-        });
-
-        jQuery("#edicion-impresa-audio #cerrar").on("click", function(){
-            jQuery("#edicion-impresa-audio").slideUp(500, function(){
-                jQuery(this).removeClass("mostrar");
-                jQuery("#edicion-impresa-audio #contenido").empty(); //VACIAR DIV
-                jQuery(".owl-controls.clickable").attr("style", "");
-            });
-        });
-    });
-
     //SELECCIONAR FOTO/GALERIA/VIDEO/AUDIO
     jQuery(document).on("ready", function(){
         jQuery("#tipo-multimedia a#noticia-foto").addClass("select");
