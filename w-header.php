@@ -50,12 +50,7 @@ if(isset($header)){
                 <span class="mobile-menu-icon fa fa-align-justify"></span>
                 <ul class="kopa-menu sf-menu">
                     <li><a href="/">Inicio</a></li>
-                    <li><a href="#">Noticias</a>
-                        <ul>
-                            <li><a href="#">Actualidad</a></li>
-                            <li><a href="#">Internacionales</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#">Noticias</a></li>
                     <li><a href="#">Ediciones</a>
                         <ul>
                             <li><a href="#">Español</a></li>
@@ -77,6 +72,7 @@ if(isset($header)){
                             <li><a href="#">Historias de vida</a></li>
                             <li><a href="#">Devocional</a></li>
                             <li><a href="#">Eventos</a></li>
+                            <li><a href="#">Informe Especial</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Videogalería</a></li>
@@ -85,12 +81,7 @@ if(isset($header)){
 
                 <ul class="kopa-menu mobile-menu">
                     <li><a href="/">Inicio</a></li>
-                    <li><a href="#">Noticias</a>
-                        <ul>
-                            <li><a href="#">Actualidad</a></li>
-                            <li><a href="#">Internacionales</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#">Noticias</a></li>
                     <li><a href="#">Ediciones</a>
                         <ul>
                             <li><a href="#">Español</a></li>
@@ -112,6 +103,7 @@ if(isset($header)){
                             <li><a href="#">Historias de vida</a></li>
                             <li><a href="#">Devocional</a></li>
                             <li><a href="#">Eventos</a></li>
+                            <li><a href="#">Informe Especial</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Videogalería</a></li>
