@@ -58,18 +58,22 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE destacada=0 AND categor
                         <div class="kopa-metadata-border col-lg-12 col-md-12">
 
                             <!-- AddThis -->
-                            <div class="addthis_native_toolbox col-lg-7 col-md-7"></div>
+                            <div class="addthis_native_toolbox col-lg-6 col-md-6"></div>
                             <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63"></script>
 
-                            <span class="kopa-rate">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o"></i>
-                            </span>
+                            <div class="notaprin-mdstar col-lg-3 col-md-3">
+                                <span class="kopa-rate">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </span>
+                            </div>
 
-                            <a href="<?php echo $NotDest_UrlWeb; ?>" class="kopa-readmore col-lg-3">Leer nota</a>
+                            <div class="notaprin-mdln col-lg-3 col-md-3">
+                                <a href="<?php echo $NotDest_UrlWeb; ?>" class="kopa-readmore">Leer nota</a>
+                            </div>
 
                         </div>
 
