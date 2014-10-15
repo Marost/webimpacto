@@ -4244,10 +4244,9 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 .kopa-head-line .kopa-search-box {
     position: absolute;
     z-index: 999;
-    top: 0;
+    top: 3px;
     right: 0;
-    background: #131313;
-    height: 36px;
+    height: 25px;
 }
 .kopa-head-line .kopa-search-box .search-form {
     width: 36px;
@@ -4664,4 +4663,28 @@ section#home-notprin{
 
 #lapalabra span{
     left: 10px;
+}
+
+/* BUSCADOR DE GOOGLE */
+.cse input.gsc-search-button, input.gsc-search-button{
+    margin-top: 0 !important;
+    background: url('http://www.google.com/uds/css/v2/search_box_icon.png') no-repeat scroll center center #F1C232 !important;
+}
+
+.cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2{
+    height: 25px !important;
+}
+
+.gsc-search-box-tools .gsc-search-box .gsc-input {
+    padding-right: 0 !important;
+}
+
+table.gsc-search-box td {
+    display: block !important;
+    float: left;
+    padding-top: 2px;
+}
+
+.gsc-orderby-container{
+    display: none;
 }
