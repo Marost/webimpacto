@@ -22,6 +22,8 @@ $Noticia_tags=$fila_noticia["tags"];
 $Noticia_fechaPub=$fila_noticia["fecha_publicacion"];
 $Noticia_imagen=$fila_noticia["imagenin"];
 $Noticia_imagen_carpeta=$fila_noticia["imagenin_carpeta"];
+$Noticia_video=$fila_noticia["video"];
+$Noticia_audio=$fila_noticia["audio"];
 
 //SEPARACION FECHA
 $Noticia_fechaPubSep=explode(" ", $Noticia_fechaPub);
@@ -74,7 +76,33 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_edicion_noticia WHERE id<>$Req_Id AND
                                     </div>
 
                                     <div class="post-thumb">
-                                        <img src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
+
+                                        <ul id="tipo-multimedia">
+                                            <li><a id="noticia-foto" href="javascript:;" title="Foto"><i class="fa fa-image"></i><span> Foto</span></a></li>
+                                            <?php if($Noticia_video<>""){ ?>
+                                                <li><a id="noticia-video" href="javascript:;" title="Video de youtube"><i class="fa fa-youtube"></i><span> Video</span></a></li>
+                                            <?php } ?>
+                                            <?php if($Noticia_audio<>""){ ?>
+                                                <li><a id="noticia-audio" href="javascript:;" title="Audio de Soundcloud"><i class="fa fa-soundcloud"></i><span> Audio</span></a></li>
+                                            <?php } ?>
+                                        </ul>
+
+                                        <ul id="lista-multimedia">
+                                            <li id="noticia-foto">
+                                                <img src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
+                                            </li>
+                                            <?php if($Noticia_video<>""){ ?>
+                                                <li id="noticia-video">
+                                                    <iframe width="100%" height="400" src="//www.youtube.com/embed/<?php echo $Noticia_video; ?>?rel=0" frameborder="0" allowfullscreen></iframe>
+                                                </li>
+                                            <?php } ?>
+                                            <?php if($Noticia_audio<>""){ ?>
+                                                <li id="noticia-audio">
+                                                    <?php echo $Noticia_audio; ?>
+                                                </li>
+                                            <?php } ?>
+                                        </ul>
+
                                     </div>
                                     <!-- post thumb -->
 
