@@ -88,10 +88,10 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
                         $ColNota_UrlWeb=$web."la-palabra/".$ColNota_id."-".$ColNota_url;
                     ?>
                     <li class="clearfix">
-                        <a href="<?php echo $Columnista_UrlWeb; ?>" class="post-thumb pull-left">
+                        <a class="post-thumb pull-left  pdr0 pdl0 flnone col-lg-3 col-md-4" href="<?php echo $Columnista_UrlWeb; ?>">
                             <img src="<?php echo $Columnista_UrlImg; ?>" alt="<?php echo $Columnista_titulo; ?>">
                         </a>
-                        <div class="item-right">
+                        <div class="item-right col-lg-9 col-md-8 pdr0 pdl0 flnone">
                             <h4 class="post-title">
                                 <a href="<?php echo $ColNota_UrlWeb; ?>"><?php echo $ColNota_titulo; ?></a>
                             </h4>

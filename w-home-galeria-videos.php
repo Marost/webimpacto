@@ -26,7 +26,7 @@ $rst_videos=mysql_query("SELECT * FROM iev_videos WHERE publicar=1 AND fecha_pub
                     <div class="slide">
                         <a href="<?php echo $Videos_UrlWeb; ?>">
                         <span><p><?php echo $Videos_titulo; ?></p></span>
-                            <img src="<?php echo $Videos_UrlImg; ?>" alt="<?php echo $Videos_titulo; ?>" width="300" height="182"/>
+                            <img src="<?php echo $Videos_UrlImg; ?>" alt="<?php echo $Videos_titulo; ?>" width="300"/>
                         </a>
                     </div>
                     <?php } ?>
