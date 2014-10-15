@@ -301,40 +301,6 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
 
                         <?php require_once("w-portada.php"); ?>
 
-                        <div class="widget kopa-tab-widget">
-                            <div class="widget-content">
-                                <div class="kopa-tabs">
-                                    <ul>
-                                        <li><a href="javascript:;">Lo más visitado</a></li>
-                                    </ul>
-                                    <div>
-                                        <ul class="list-unstyled">
-                                            <li class="clearfix item-post">
-                                                <a href="#" class="post-thumb pull-left img-responsive">
-                                                <img src="placeholders/posts/36.jpg" alt="">
-                                                </a>
-                                                <div class="item-right">
-                                                    <h4 class="post-title"><a href="#">Live Now: Convene Founder Answers Questions via Video. </a></h4>
-                                                    <div class="kopa-metadata">
-                                                        <span class="kopa-date"> Fer 20, 2014</span>
-                                                        <span class="kopa-rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
-                                                        </span>
-                                                    </div>
-                                                    <!-- metadata -->
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- widget content -->
-                        </div>
-
                         <?php require_once("w-galeria-fotos.php") ?>
 
                     </div>
