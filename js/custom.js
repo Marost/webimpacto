@@ -294,7 +294,7 @@ jQuery(document).ready(function () {
                     items: 5,
                     itemsDesktop: [1200, 4],
                     itemsDesktopSmall: [1023, 3],
-                    itemsTablet: [767, 2],
+                    itemsTablet: [800, 2],
                     itemsMobile: [480, 1],
                     navigation: true,
                     slideSpeed: 700,
@@ -321,17 +321,30 @@ jQuery(document).ready(function () {
 
     if (jQuery('.kopa-list-posts-carousel-2-widget').length > 0) {
         Modernizr.load([{
-            load: 'js/owl.carousel.js',
+            load: 'js/owl.carousel.js?a',
             complete: function () {
                 jQuery('.kopa-list-posts-carousel-2-widget .owl-carousel').owlCarousel({
-                    pagination: false,
-                    items: 3,
-                    itemsDesktop: [1180, 3],
-                    itemsDesktopSmall: [980, 2],
-                    itemsTablet: [767, 2],
-                    navigation: true,
-                    slideSpeed: 700,
-                    navigationText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>']
+                    nav: true,
+                    navText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
+                    responsiveClass:true,
+                    loop: true,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        480:{
+                            items:1
+                        },
+                        800:{
+                            items:2
+                        },
+                        980:{
+                            items:2
+                        },
+                        1024:{
+                            items:3
+                        }
+                    }
                 });
             }
         }]);
@@ -543,8 +556,6 @@ jQuery(document).ready(function () {
         }]);
     }
 
-
-
     // 9. Back to top
     jQuery(".back-to-top").hide();
     jQuery(window).scroll(function () {
@@ -635,7 +646,6 @@ jQuery(document).ready(function () {
         });
     }
 
-
     // 12. Tweet
     if (jQuery('.tweets').length > 0) {
         Modernizr.load([{
@@ -661,6 +671,7 @@ jQuery(document).ready(function () {
             }
         }]);
     }
+
     // 13. Validate form
     if (jQuery('.comment-form,.contact-form').length > 0) {
         Modernizr.load([{
