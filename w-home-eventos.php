@@ -23,7 +23,7 @@ $FechaAnio=$fechaSep[0];
 $Eventos_UrlWeb=$web."noticia/".$Eventos_id."-".$Eventos_url;
 $Eventos_UrlImg=$web."imagenes/upload/".$Eventos_imagen_carpeta."thumbdeven/".$Eventos_imagen;
 ?>
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     <div class="widget-area-4">
         <div class="widget kopa-list-posts-thumb-big-small-widget">
             <header class="widget-header">

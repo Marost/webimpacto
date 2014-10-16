@@ -28,7 +28,7 @@ $ColNota_UrlWeb=$web."editorial/".$ColNota_id."-".$ColNota_url;
 $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id ASC", $conexion);
 
 ?>
-<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="widget-area-5">
 
         <div id="editorial" class="widget kopa-list-post-small-thumb-widget no-cat">

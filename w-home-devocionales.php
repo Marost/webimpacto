@@ -23,7 +23,7 @@ $FechaAnio=$fechaSep[0];
 $Devoc_UrlWeb=$web."noticia/".$Devoc_id."-".$Devoc_url;
 $Devoc_UrlImg=$web."imagenes/upload/".$Devoc_imagen_carpeta."thumbdeven/".$Devoc_imagen;
 ?>
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     <div class="widget-area-3">
         <div class="widget kopa-list-posts-thumb-big-small-widget">
             <header class="widget-header">
