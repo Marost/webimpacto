@@ -920,6 +920,9 @@ jQuery(document).ready(function () {
             jQuery("#tipo-multimedia a#noticia-audio").addClass("select");
             jQuery("#lista-multimedia li").addClass("ocultar");
             jQuery("#lista-multimedia li#noticia-audio").removeClass();
+            var autoplay = jQuery("#noticia-audio iframe").attr("src");
+            autoplay = autoplay.replace("auto_play=false", "auto_play=true");
+            jQuery("#noticia-audio iframe").attr("src", autoplay);
         }
     });
 
