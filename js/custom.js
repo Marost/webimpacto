@@ -251,7 +251,7 @@ jQuery(document).ready(function () {
     // 8. Carousel
     if (jQuery('.kopa-full-width-carousel-widget .owl-carousel').length > 0) {
         Modernizr.load([{
-            load: 'libs/owlcarousel/v1/owl.carousel.js?up=16102014',
+            load: 'libs/owlcarousel/v1/owl.carousel.js',
             complete: function () {
                 jQuery('.kopa-full-width-carousel-widget .owl-carousel').owlCarousel({
                     singleItem: true
@@ -262,7 +262,7 @@ jQuery(document).ready(function () {
 
     if (jQuery('.kopa-galler-post').length > 0) {
         Modernizr.load([{
-            load: 'libs/owlcarousel/v1/owl.carousel.js?up=16102014',
+            load: 'libs/owlcarousel/v1/owl.carousel.js',
             complete: function () {
                 jQuery('.kopa-galler-post').owlCarousel({
                     singleItem: true
@@ -273,7 +273,7 @@ jQuery(document).ready(function () {
 
     if (jQuery('.kopa-thumb-big-carousel-widget .owl-carousel').length > 0) {
         Modernizr.load([{
-            load: 'libs/owlcarousel/v1/owl.carousel.js?up=16102014',
+            load: 'libs/owlcarousel/v1/owl.carousel.js',
             complete: function () {
                 jQuery('.kopa-thumb-big-carousel-widget .owl-carousel').owlCarousel({
                     singleItem: true,
@@ -287,7 +287,7 @@ jQuery(document).ready(function () {
 
     if (jQuery('.kopa-list-posts-carousel-widget').length > 0) {
         Modernizr.load([{
-            load: 'libs/owlcarousel/v1/owl.carousel.js?up=16102014',
+            load: 'libs/owlcarousel/v1/owl.carousel.js',
             complete: function () {
                 jQuery('.kopa-list-posts-carousel-widget .owl-carousel').owlCarousel({
                     pagination: false,
@@ -306,7 +306,7 @@ jQuery(document).ready(function () {
 
     if (jQuery('.kopa-list-posts-carousel-4-widget').length > 0) {
         Modernizr.load([{
-            load: 'libs/owlcarousel/v1/owl.carousel.js?up=16102014',
+            load: 'libs/owlcarousel/v1/owl.carousel.js',
             complete: function () {
                 jQuery('.kopa-list-posts-carousel-4-widget .owl-carousel').owlCarousel({
                     items: 3,
@@ -321,7 +321,7 @@ jQuery(document).ready(function () {
 
     if (jQuery('.kopa-list-posts-carousel-2-widget').length > 0) {
         Modernizr.load([{
-            load: 'libs/owlcarousel/v2/owl.carousel.js?up=16102014',
+            load: 'libs/owlcarousel/v2/owl.carousel.js?up=16102014-2',
             complete: function () {
                 jQuery('.kopa-list-posts-carousel-2-widget .owl-carousel').owlCarousel({
                     nav: true,
@@ -351,7 +351,7 @@ jQuery(document).ready(function () {
     }
     if (jQuery('.kopa-list-posts-carousel-3-widget').length > 0) {
         Modernizr.load([{
-            load: 'libs/owlcarousel/v1/owl.carousel.js?up=16102014',
+            load: 'libs/owlcarousel/v1/owl.carousel.js',
             complete: function () {
                 jQuery('.kopa-list-posts-carousel-3-widget .owl-carousel').owlCarousel({
                     pagination: false,
@@ -446,7 +446,7 @@ jQuery(document).ready(function () {
 
     if (jQuery('.kopa-single-gallery-widget').length > 0) {
         Modernizr.load([{
-            load: 'libs/owlcarousel/v1/owl.carousel.js?up=16102014',
+            load: 'libs/owlcarousel/v1/owl.carousel.js',
             complete: function () {
                 var sync1 = jQuery(".kopa-single-gallery-widget .sync1");
                 var sync2 = jQuery(".kopa-single-gallery-widget .sync2");
@@ -524,7 +524,7 @@ jQuery(document).ready(function () {
     }
     if (jQuery('.kopa-list-item-carousel-widget').length > 0) {
         Modernizr.load([{
-            load: 'libs/owlcarousel/v1/owl.carousel.js?up=16102014',
+            load: 'libs/owlcarousel/v1/owl.carousel.js',
             complete: function () {
                 jQuery('.kopa-list-item-carousel-widget .owl-carousel').owlCarousel({
                     pagination: false,
