@@ -911,6 +911,18 @@ jQuery(document).ready(function () {
 
     });
 
+    //SELECCIONAR AUDIO SI URL ES IGUAL A #audio
+    jQuery(document).on("ready", function(){
+        var jash = location.hash;
+
+        if(jash=="#audio"){
+            jQuery("#tipo-multimedia a").removeClass();
+            jQuery("#tipo-multimedia a#noticia-audio").addClass("select");
+            jQuery("#lista-multimedia li").addClass("ocultar");
+            jQuery("#lista-multimedia li#noticia-audio").removeClass();
+        }
+    });
+
     //POPUP PARA FORMULARIO DE SALUDOS
     if(jQuery(".popup-with-zoom-anim").length>0) {
         Modernizr.load([{
