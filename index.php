@@ -38,11 +38,31 @@ $w_video=true;
 
             <div class="row">
 
-                <?php require_once("w-home-devocionales.php"); ?>
+                <div class="col-lg-8">
 
-                <?php require_once("w-home-eventos.php"); ?>
+                    <div class="row">
 
-                <?php require_once("w-home-editorial-palabra.php"); ?>
+                        <?php require_once("w-home-devocionales.php"); ?>
+
+                        <?php require_once("w-home-eventos.php"); ?>
+
+                    </div>
+
+                    <div class="row">
+
+                        <?php require_once("w-home-heroesfe.php"); ?>
+
+                        <?php require_once("w-home-histvida.php"); ?>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <?php require_once("w-home-editorial-palabra.php"); ?>
+
+                </div>
 
             </div>
 
