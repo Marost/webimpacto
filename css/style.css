@@ -234,7 +234,7 @@ li > ul, li > ol {
 .owl-theme .owl-controls {
     text-align: center;
 }
-.owl-theme .owl-controls .owl-buttons div {
+.owl-theme .owl-controls .owl-nav div {
     color: #FFF;
     display: inline-block;
     margin: 5px;
@@ -246,7 +246,7 @@ li > ul, li > ol {
     border-radius: 0;
     background: #869791;
 }
-.owl-theme .owl-controls.clickable .owl-buttons div:hover {
+.owl-theme .owl-controls.clickable .owl-nav div:hover {
     text-decoration: none;
 }
 .owl-theme .owl-controls .owl-page {
@@ -886,7 +886,7 @@ li > ul, li > ol {
  .mobile-menu-icon {
     cursor: pointer;
     display: none;
-    color: #727272;
+    color: #ffffff;
     position: absolute;
     top: 50%;
     margin-top: -12px;
@@ -1087,7 +1087,7 @@ ul.page-numbers li a:hover, ul.page-numbers li span.current {
   background-image: none;
   border: 1px solid #e4e3f0; }
 
-input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-social-1 i, .link-social-3 i, .header-1 .kopa-menu.sf-menu li, .header-2 .main-menu .kopa-menu.sf-menu li, .kopa-head-line .kopa-search-box button, .kopa-head-line .kopa-search-box span, .kopa-full-width-carousel-widget .owl-theme .owl-controls .owl-page span, .kopa-grid-posts-2-widget .item .item-content, .kopa-list-posts-carousel-widget .item-content, .kopa-list-posts-carousel-widget .owl-theme .owl-controls .owl-buttons div, .kopa-grid-posts-widget .item.pull-left .item-content, .kopa-list-item-carousel-widget .item .kopa-metadata, .kopa-gallery-widget .widget-content a:before, .kopa-single-gallery-widget .sync2 .owl-item:before, .widget_archive > ul li,
+input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-social-1 i, .link-social-3 i, .header-1 .kopa-menu.sf-menu li, .header-2 .main-menu .kopa-menu.sf-menu li, .kopa-head-line .kopa-search-box button, .kopa-head-line .kopa-search-box span, .kopa-full-width-carousel-widget .owl-theme .owl-controls .owl-page span, .kopa-grid-posts-2-widget .item .item-content, .kopa-list-posts-carousel-widget .item-content, .kopa-list-posts-carousel-widget .owl-theme .owl-controls .owl-nav div, .kopa-grid-posts-widget .item.pull-left .item-content, .kopa-list-item-carousel-widget .item .kopa-metadata, .kopa-gallery-widget .widget-content a:before, .kopa-single-gallery-widget .sync2 .owl-item:before, .widget_archive > ul li,
 .widget_categories > ul li,
 .widget_links > ul li,
 .widget_meta > ul li,
@@ -1165,7 +1165,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
   position: absolute;
   right: 0;
   top: -70px; }
-  .kopa-list-posts-carousel-2-widget .owl-theme .owl-controls .owl-buttons div, .kopa-list-posts-carousel-3-widget .owl-theme .owl-controls .owl-buttons div, .kopa-list-item-carousel-widget .owl-theme .owl-controls .owl-buttons div {
+  .kopa-list-posts-carousel-2-widget .owl-theme .owl-controls .owl-nav div, .kopa-list-posts-carousel-3-widget .owl-theme .owl-controls .owl-nav div, .kopa-list-item-carousel-widget .owl-theme .owl-controls .owl-nav div {
     padding: 0;
     width: 30px;
     height: 30px;
@@ -1175,7 +1175,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     font-size: 20px;
     text-align: center;
     margin: 0 2px; }
-    .kopa-list-posts-carousel-2-widget .owl-theme .owl-controls .owl-buttons div:hover, .kopa-list-posts-carousel-3-widget .owl-theme .owl-controls .owl-buttons div:hover, .kopa-list-item-carousel-widget .owl-theme .owl-controls .owl-buttons div:hover {
+    .kopa-list-posts-carousel-2-widget .owl-theme .owl-controls .owl-nav div:hover, .kopa-list-posts-carousel-3-widget .owl-theme .owl-controls .owl-nav div:hover, .kopa-list-item-carousel-widget .owl-theme .owl-controls .owl-nav div:hover {
       background: #fbbd2c; }
  .error-404 {
     margin: 50px 10% 50px;
@@ -2059,7 +2059,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
 .kopa-list-posts-carousel-widget .post-content .post-title a:hover {
     color: #fbbd2c;
 }
-.kopa-list-posts-carousel-widget .owl-theme .owl-controls .owl-buttons div {
+.kopa-list-posts-carousel-widget .owl-theme .owl-controls .owl-nav div {
     width: 32px;
     height: 42px;
     background: #fff;
@@ -2071,18 +2071,18 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     margin: -21px 0 0;
     font-size: 20px;
 }
-.kopa-list-posts-carousel-widget .owl-theme .owl-controls .owl-buttons div:hover {
+.kopa-list-posts-carousel-widget .owl-theme .owl-controls .owl-nav div:hover {
     background: #fbbd2c;
     color: #fff;
 }
-.kopa-list-posts-carousel-widget .owl-theme .owl-controls .owl-buttons .owl-prev {
+.kopa-list-posts-carousel-widget .owl-theme .owl-controls .owl-nav .owl-prev {
     -webkit-border-radius: 0 2px 2px 0;
     -moz-border-radius: 0 2px 2px 0;
     -ms-border-radius: 0 2px 2px 0;
     border-radius: 0 2px 2px 0;
     left: 0;
 }
-.kopa-list-posts-carousel-widget .owl-theme .owl-controls .owl-buttons .owl-next {
+.kopa-list-posts-carousel-widget .owl-theme .owl-controls .owl-nav .owl-next {
     right: 0;
     -webkit-border-radius: 2px 0 0 2px;
     -moz-border-radius: 2px 0 0 2px;
@@ -2864,7 +2864,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     border-color: #fbbd2c;
     background: #fbbd2c;
 }
-.kopa-thumb-big-carousel-widget .owl-theme .owl-controls .owl-buttons {
+.kopa-thumb-big-carousel-widget .owl-theme .owl-controls .owl-nav {
     display: none;
 }
 .kopa-list-post-small-thumb-widget .widget-content > ul {
@@ -3087,10 +3087,10 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     width: 100%;
     right: 0;
 }
-.widget-area-20 .kopa-thumb-big-carousel-widget .owl-theme .owl-controls .owl-buttons {
+.widget-area-20 .kopa-thumb-big-carousel-widget .owl-theme .owl-controls .owl-nav {
     display: block;
 }
-.widget-area-20 .kopa-thumb-big-carousel-widget .owl-theme .owl-controls .owl-buttons div {
+.widget-area-20 .kopa-thumb-big-carousel-widget .owl-theme .owl-controls .owl-nav div {
     width: 80px;
     height: 80px;
     line-height: 70px;
@@ -3105,10 +3105,10 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     top: 0;
     z-index: 999;
 }
-.widget-area-20 .kopa-thumb-big-carousel-widget .owl-theme .owl-controls .owl-buttons .owl-prev {
+.widget-area-20 .kopa-thumb-big-carousel-widget .owl-theme .owl-controls .owl-nav .owl-prev {
     left: 15px;
 }
-.widget-area-20 .kopa-thumb-big-carousel-widget .owl-theme .owl-controls .owl-buttons .owl-next {
+.widget-area-20 .kopa-thumb-big-carousel-widget .owl-theme .owl-controls .owl-nav .owl-next {
     right: 15px;
 }
 .widget-area-20 .kopa-thumb-big-carousel-widget .owl-theme .owl-controls .owl-page {
@@ -3827,7 +3827,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     float: right;
     width: 594px;
 }
-.kopa-single-gallery-widget .sync1 .owl-controls .owl-buttons div {
+.kopa-single-gallery-widget .sync1 .owl-controls .owl-nav div {
     position: absolute;
     width: 56px;
     height: 56px;
@@ -3844,10 +3844,10 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-buttons div, .link-
     padding: 0;
     color: #fff;
 }
-.kopa-single-gallery-widget .sync1 .owl-controls .owl-buttons .owl-prev {
+.kopa-single-gallery-widget .sync1 .owl-controls .owl-nav .owl-prev {
     left: 20px;
 }
-.kopa-single-gallery-widget .sync1 .owl-controls .owl-buttons .owl-next {
+.kopa-single-gallery-widget .sync1 .owl-controls .owl-nav .owl-next {
     right: 20px;
 }
 .kopa-single-gallery-widget .post-content {
@@ -4393,12 +4393,12 @@ section#home-notprin{
     z-index: 5;
 }
 
-.kopa-list-posts-carousel-2-widget .owl-carousel.owl-theme .owl-controls .owl-buttons .owl-prev{
+.kopa-list-posts-carousel-2-widget .owl-carousel.owl-theme .owl-controls .owl-nav .owl-prev{
     float: left;
     margin-left: -15px;
 }
 
-.kopa-list-posts-carousel-2-widget .owl-carousel.owl-theme .owl-controls .owl-buttons .owl-next{
+.kopa-list-posts-carousel-2-widget .owl-carousel.owl-theme .owl-controls .owl-nav .owl-next{
     float: right;
 }
 
