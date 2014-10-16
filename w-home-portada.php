@@ -22,9 +22,9 @@ $rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEs
             <h3 class="widget-title">EDICIÓN IMPRESA</h3>
         </header>
 
-        <div class="widget-content col-lg-12 col-md-12">
+        <div class="widget-content col-lg-12 col-md-12 col-sm-12">
 
-            <div class="edicion-impresa col-lg-3 col-md-3">
+            <div class="edicion-impresa col-lg-3 col-md-3 col-sm-5">
 
                 <div class="portada">
                     <a href="<?php echo $EdEsp_url; ?>" title="<?php echo $EdEsp_nombre_edicion; ?>" target="_blank">
@@ -46,7 +46,7 @@ $rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEs
 
             </div>
 
-            <div class="owl-carousel col-lg-9 col-md-9">
+            <div class="owl-carousel col-lg-9 col-md-9 col-sm-7">
 
                 <?php while($fila_edNot=mysql_fetch_array($rst_edNot)){
                         $EdNot_id=$fila_edNot["id"];
@@ -86,7 +86,7 @@ $rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEs
                         </div>
 
                         <span class="fa-stack fa-lg">
-                            <a class="edicion-impresa-audio" id="<?php echo $EdNot_id; ?>" href="javascript:;">
+                            <a class="edicion-impresa-audio" id="<?php echo $EdNot_id; ?>" href="<?php echo $EdNot_UrlWeb; ?>#audio">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-volume-up fa-stack-1x fa-inverse"></i>
                             </a>
