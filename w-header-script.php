@@ -2,7 +2,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" media="all">
-<link rel="stylesheet" href="css/owl.carousel.css?update=<?php echo date("YmdHi") ?>" media="all">
+<link rel="stylesheet" href="libs/owlcarousel/v1/owl.carousel.css?update=<?php echo date("YmdHi") ?>" media="all">
+<link rel="stylesheet" href="libs/owlcarousel/v2/owl.carousel.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="css/jquery-ui.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="css/reset.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="css/grid.css?update=<?php echo date("YmdHi") ?>" media="all">
