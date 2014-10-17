@@ -573,23 +573,6 @@ jQuery(document).ready(function () {
         event.preventDefault();
     });
 
-    //FORMULARIO SALUDOS
-    jQuery(window).scroll(function () {
-        if (jQuery(this).scrollTop() > 800) {
-            jQuery('#form_saludo_home').addClass("fixed");
-        } else {
-            jQuery('#form_saludo_home').removeClass("fixed");
-        }
-    });
-
-    jQuery(window).scroll(function () {
-        if (jQuery(this).scrollTop() > 200) {
-            jQuery('#form_saludo_interno').addClass("fixed");
-        } else {
-            jQuery('#form_saludo_interno').removeClass("fixed");
-        }
-    });
-
     // 10. jQuery for css
     if (jQuery(".kopa-grid-posts-widget").length > 0) {
         jQuery(".kopa-grid-posts-widget .item").each(function (index) {
