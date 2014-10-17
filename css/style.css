@@ -4635,6 +4635,10 @@ section#home-notprin{
 }
 
 /* SALUDOS */
+a#saludos-enviar{ color: #fff; }
+
+a#saludos-enviar:hover{ color: #FBBD2C; }
+
 #form_saludo_home, #form_saludo_interno{
     position: absolute;
     left: 0;
