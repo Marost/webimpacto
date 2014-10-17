@@ -1,6 +1,3 @@
-<?php if(isset($header)){ if($header=="interno"){ $id="form_saludo_interno"; }elseif($header=="home"){ $id="form_saludo_home"; } } ?>
-<a id="<?php echo $id; ?>" class="popup-with-zoom-anim"  href="#form_saludos"><i class="fa fa-comments"></i> Saludos</a>
-
 <div id="form_saludos" class="zoom-anim-dialog mfp-hide">
 
     <div class="smart-forms">
