@@ -1150,7 +1150,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
 
 .kopa-metadata-border {
     overflow: hidden;
-    padding: 0;
+    padding: 0 0 10px 0;
 }
   .kopa-metadata-border > a, .kopa-metadata-border span {
     display: inline-block;

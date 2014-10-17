@@ -42,11 +42,14 @@ $Devoc_UrlImg=$web."imagenes/upload/".$Devoc_imagen_carpeta."thumbdeven/".$Devoc
                             </h4>
                         </header>
                         <div class="post-content">
-                            <div class="kopa-metadata-border">
+
+                            <div class="kopa-metadata-border col-lg-12 col-md-12 col-sm-12">
+
                                 <!-- AddThis -->
-                                <div class="addthis_native_toolbox col-lg-8"></div>
+                                <div class="addthis_native_toolbox col-lg-8 col-md-6 col-sm-6"></div>
                                 <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63"></script>
 
+                                <div class="notaprin-mdstar col-lg-4 col-md-3 col-sm-3 pdr0 pdl0">
                                 <span class="kopa-rate">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -54,8 +57,10 @@ $Devoc_UrlImg=$web."imagenes/upload/".$Devoc_imagen_carpeta."thumbdeven/".$Devoc
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star-o"></i>
                                 </span>
+                                </div>
+
                             </div>
-                            <!-- metadata -->
+
                             <?php echo $Devoc_contenido; ?>
                         </div>
                     </div>
