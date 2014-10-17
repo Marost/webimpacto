@@ -22,7 +22,7 @@ $FechaMes=mesCorto($fechaSep[1]);
 $FechaAnio=$fechaSep[0];
 
 //NOTICIAS DERECHA
-$rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE destacada=0 AND categoria<>7 AND categoria<>8 AND fecha_publicacion<='$fechaActual' AND publicar=1 ORDER BY fecha_publicacion DESC LIMIT 3", $conexion);
+$rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE destacada=0 AND categoria<>6 AND categoria<>7 AND categoria<>8 AND categoria<>14 AND fecha_publicacion<='$fechaActual' AND publicar=1 ORDER BY fecha_publicacion DESC LIMIT 3", $conexion);
 
 ?>
 <div class="widget-area-2">
