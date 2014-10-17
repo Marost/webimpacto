@@ -4523,6 +4523,8 @@ section#home-notprin{
 .pdl0{ padding-left: 0; }
 .flnone{ float: none; }
 
+.rsImg.rsMainSlideImage{ margin-left: 0 !important; } /* MARGIN DE IMAGEN DE GALERIA DE FOTOS  */
+
 /* SIDEBAT - WIDGET */
 .widget-sidebar .widget-header{
     margin-bottom: 0;
@@ -4664,6 +4666,11 @@ a#saludos-enviar:hover{ color: #FBBD2C; }
 
 #editorial ul li a.post-thumb{
     margin-right: 0;
+    margin-top: 6px;
+}
+
+#lapalabra ul li a.post-thumb{
+    margin-top: 6px;
 }
 
 #lapalabra span{
@@ -4692,4 +4699,62 @@ table.gsc-search-box td {
 
 .gsc-orderby-container{
     display: none;
+}
+
+/* TAGS EN HOME */
+#home-tags li{
+    display: inline-block;
+    text-transform: capitalize;
+    margin: 5px 3px;
+    background-color: #000;
+    padding: 5px;
+    color: #FFF;
+}
+
+/* MAS VISTO */
+
+.masvisto-noticia{
+    width: 100%;
+    float: left;
+    padding: 10px 0;
+    border-bottom: 1px solid #E4E3F0;
+}
+
+.masvisto-noticia:first-child{
+    padding-top: 0;
+}
+
+.masvisto-noticia:last-child{
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.masvisto-noticia .imagen, .masvisto-noticia .titulo{
+    float: left;
+}
+
+.masvisto-noticia .imagen{
+    width: 30%;
+    margin-right: 5%;
+}
+
+.masvisto-noticia .imagen img{
+    width: 100%;
+}
+
+.masvisto-noticia .titulo{
+    width: 65%;
+}
+
+.masvisto-noticia .titulo a{
+    font-weight: bold;
+    color: #000;
+}
+
+.masvisto-noticia .titulo a:hover{
+    color: #FBBD2C;
+}
+
+.masvisto-noticia .titulo a, .masvisto-noticia .titulo span{
+    display: block;
 }

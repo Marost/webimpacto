@@ -72,44 +72,14 @@ $w_video=true;
 
                 <?php require_once("w-home-galeria-fotos.php"); ?>
 
-                <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                    <div class="widget-area-9">
-                        <div class="widget kopa-list-posts-thumb-big-small-widget">
-                            <header class="widget-header">
-                                <h3 class="widget-title">TAGS</h3>
-                            </header>
-                            <div class="widget-content">
-                                <div class="item item-latest clearfix">
+                <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
 
-                                    <div class="item-content">
+                    <div class="widget-area-9 col-lg-12">
 
-                                    </div>
-                                    <!-- item content -->
+                        <?php require_once("w-home-masvisto.php"); ?>
 
-                                </div>
-                                <!-- item latest -->
-                            </div>
-                        </div>
-                        <!-- list posts 1 widget -->
-
-                        <div class="widget kopa-list-posts-thumb-big-small-widget">
-                            <header class="widget-header">
-                                <h3 class="widget-title">LO MÁS VISTO</h3>
-                            </header>
-                            <div class="widget-content">
-                                <div class="item item-latest clearfix">
-
-                                    <div class="item-content">
-
-                                    </div>
-                                    <!-- item content -->
-
-                                </div>
-                                <!-- item latest -->
-                            </div>
-                        </div>
-                        <!-- list posts 1 widget -->
                     </div>
+
                 </div>
                 <!-- col 4 -->
 
