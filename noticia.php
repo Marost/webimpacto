@@ -26,11 +26,16 @@ $Noticia_imagen=$fila_noticia["imagen"];
 $Noticia_imagen_carpeta=$fila_noticia["imagen_carpeta"];
 $Noticia_video=$fila_noticia["video"];
 $Noticia_audio=$fila_noticia["audio"];
+$Noticia_contador=$fila_noticia["contador"]+1;
 
 //SEPARACION FECHA
 $Noticia_fechaPubSep=explode(" ", $Noticia_fechaPub);
 $Noticia_fecha=explode("-", $Noticia_fechaPubSep[0]);
 $NoticiaFecha=nombreFechaTotal($Noticia_fecha[0], $Noticia_fecha[1], $Noticia_fecha[2]);
+
+##################################################################################################################
+//SUMAR A CONTADOR
+$rst_noticiaCont=mysql_query("UPDATE iev_noticia SET contador=$Noticia_contador WHERE id=$Req_Id;", $conexion);
 
 ##################################################################################################################
 //NOTICIA - GALERIA DE FOTOS
