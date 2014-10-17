@@ -50,64 +50,64 @@ if(isset($header)){
                 <span class="mobile-menu-icon fa fa-align-justify"></span>
                 <ul class="kopa-menu sf-menu">
                     <li><a href="/">Inicio</a></li>
-                    <li><a href="#">Noticias</a></li>
-                    <li><a href="#">Ediciones</a>
+                    <li><a href="categoria/12/noticias">Noticias</a></li>
+                    <li><a href="javascript:;">Ediciones</a>
                         <ul>
-                            <li><a href="#">Español</a></li>
-                            <li><a href="#">Ingles</a></li>
-                            <li><a href="#">Francés</a></li>
-                            <li><a href="#">Portugués</a></li>
-                            <li><a href="#">Alemán</a></li>
-                            <li><a href="#">Italiano</a></li>
-                            <li><a href="#">Chino</a></li>
+                            <li><a href="edicion-anterior-es">Español</a></li>
+                            <li><a href="edicion-anterior-en">Ingles</a></li>
+                            <li><a href="edicion-anterior-fr">Francés</a></li>
+                            <li><a href="edicion-anterior-pr">Portugués</a></li>
+                            <li><a href="edicion-anterior-al">Alemán</a></li>
+                            <li><a href="edicion-anterior-it">Italiano</a></li>
+                            <li><a href="edicion-anterior-ch">Chino</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Secciones</a>
+                    <li><a href="javascript:;">Secciones</a>
                         <ul>
-                            <li><a href="#">Portada</a></li>
-                            <li><a href="#">Historia</a></li>
-                            <li><a href="#">Literatura</a></li>
-                            <li><a href="#">Música</a></li>
-                            <li><a href="#">Héroes de la fe</a></li>
-                            <li><a href="#">Historias de vida</a></li>
-                            <li><a href="#">Devocional</a></li>
-                            <li><a href="#">Eventos</a></li>
-                            <li><a href="#">Informe Especial</a></li>
+                            <li><a href="categoria/11/portada">Portada</a></li>
+                            <li><a href="categoria/3/historia">Historia</a></li>
+                            <li><a href="categoria/4/literatura">Literatura</a></li>
+                            <li><a href="categoria/13/musica">Música</a></li>
+                            <li><a href="categoria/6/heroes-fe">Héroes de la fe</a></li>
+                            <li><a href="categoria/14/historias-vida">Historias de vida</a></li>
+                            <li><a href="categoria/7/devocionales">Devocional</a></li>
+                            <li><a href="categoria/8/eventos">Eventos</a></li>
+                            <li><a href="categoria/16/informe-especial">Informe Especial</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Videogalería</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="videogaleria">Videogalería</a></li>
+                    <li><a href="contacto">Contacto</a></li>
                 </ul>
 
                 <ul class="kopa-menu mobile-menu">
                     <li><a href="/">Inicio</a></li>
-                    <li><a href="#">Noticias</a></li>
-                    <li><a href="#">Ediciones</a>
+                    <li><a href="categoria/12/noticias">Noticias</a></li>
+                    <li><a href="javascript:;">Ediciones</a>
                         <ul>
-                            <li><a href="#">Español</a></li>
-                            <li><a href="#">Ingles</a></li>
-                            <li><a href="#">Francés</a></li>
-                            <li><a href="#">Portugués</a></li>
-                            <li><a href="#">Alemán</a></li>
-                            <li><a href="#">Italiano</a></li>
-                            <li><a href="#">Chino</a></li>
+                            <li><a href="edicion-anterior-es">Español</a></li>
+                            <li><a href="edicion-anterior-en">Ingles</a></li>
+                            <li><a href="edicion-anterior-fr">Francés</a></li>
+                            <li><a href="edicion-anterior-pr">Portugués</a></li>
+                            <li><a href="edicion-anterior-al">Alemán</a></li>
+                            <li><a href="edicion-anterior-it">Italiano</a></li>
+                            <li><a href="edicion-anterior-ch">Chino</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Secciones</a>
+                    <li><a href="javascript:;">Secciones</a>
                         <ul>
-                            <li><a href="#">Portada</a></li>
-                            <li><a href="#">Historia</a></li>
-                            <li><a href="#">Literatura</a></li>
-                            <li><a href="#">Música</a></li>
-                            <li><a href="#">Héroes de la fe</a></li>
-                            <li><a href="#">Historias de vida</a></li>
-                            <li><a href="#">Devocional</a></li>
-                            <li><a href="#">Eventos</a></li>
-                            <li><a href="#">Informe Especial</a></li>
+                            <li><a href="categoria/11/portada">Portada</a></li>
+                            <li><a href="categoria/3/historia">Historia</a></li>
+                            <li><a href="categoria/4/literatura">Literatura</a></li>
+                            <li><a href="categoria/13/musica">Música</a></li>
+                            <li><a href="categoria/6/heroes-fe">Héroes de la fe</a></li>
+                            <li><a href="categoria/14/historias-vida">Historias de vida</a></li>
+                            <li><a href="categoria/7/devocionales">Devocional</a></li>
+                            <li><a href="categoria/8/eventos">Eventos</a></li>
+                            <li><a href="categoria/16/informe-especial">Informe Especial</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Videogalería</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="videogaleria">Videogalería</a></li>
+                    <li><a href="contacto">Contacto</a></li>
                 </ul>
             </div>
             <!-- main-menu -->
