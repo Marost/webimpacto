@@ -855,8 +855,8 @@ jQuery(document).ready(function () {
             complete: function () {
                 jQuery('#video').bxSlider({
                     mode: 'vertical',
-                    slideWidth: 300,
-                    minSlides: 3,
+                    slideWidth: 355,
+                    minSlides: 2,
                     slideMargin: 0,
                     pager: false,
                     infiniteLoop: false,
