@@ -42,17 +42,17 @@ $w_video=true;
 
                     <div class="row">
 
-                        <?php require_once("w-home-devocionales.php"); ?>
+                        <?php require_once("w-home-n-devocionales.php"); ?>
 
-                        <?php require_once("w-home-eventos.php"); ?>
+                        <?php require_once("w-home-n-eventos.php"); ?>
 
                     </div>
 
                     <div class="row">
 
-                        <?php require_once("w-home-heroesfe.php"); ?>
+                        <?php require_once("w-home-n-heroesfe.php"); ?>
 
-                        <?php require_once("w-home-histvida.php"); ?>
+                        <?php require_once("w-home-n-histvida.php"); ?>
 
                     </div>
 
