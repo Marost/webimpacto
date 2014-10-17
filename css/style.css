@@ -2879,15 +2879,11 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
 
 .kopa-list-post-small-thumb-widget .item-right {
     overflow: hidden;
-    height: 100px;
-    max-height: 100px;
     position: relative;
 }
 
 .kopa-list-post-small-thumb-widget .item-left {
     overflow: hidden;
-    height: 100px;
-    max-height: 100px;
     position: relative;
     float: left;
 }
