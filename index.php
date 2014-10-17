@@ -62,6 +62,8 @@ $w_video=true;
 
                     <?php require_once("w-home-editorial-palabra.php"); ?>
 
+                    <?php require_once("w-home-galeria-videos.php"); ?>
+
                 </div>
 
             </div>
@@ -69,8 +71,6 @@ $w_video=true;
             <div class="row">
 
                 <?php require_once("w-home-galeria-fotos.php"); ?>
-
-                <?php require_once("w-home-galeria-videos.php"); ?>
 
                 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                     <div class="widget-area-9">
