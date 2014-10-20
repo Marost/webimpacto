@@ -46,7 +46,7 @@ $Devoc_UrlImg=$web."imagenes/upload/".$Devoc_imagen_carpeta."thumbdeven/".$Devoc
                             <div class="kopa-metadata-border col-lg-12 col-md-12 col-sm-12">
 
                                 <!-- AddThis -->
-                                <div class="addthis_native_toolbox col-lg-6 col-md-6 col-sm-6"
+                                <div class="addthis_native_toolbox col-lg-8 col-md-9 col-sm-9"
                                      data-url="<?php echo $Devoc_UrlWeb; ?>" data-title="<?php echo $Devoc_titulo; ?>">
                                 </div>
 

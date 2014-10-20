@@ -46,7 +46,7 @@ $Eventos_UrlImg=$web."imagenes/upload/".$Eventos_imagen_carpeta."thumbdeven/".$E
                             <div class="kopa-metadata-border col-lg-12 col-md-12 col-sm-12">
 
                                 <!-- AddThis -->
-                                <div class="addthis_native_toolbox col-lg-6 col-md-6 col-sm-6"
+                                <div class="addthis_native_toolbox col-lg-8 col-md-9 col-sm-9"
                                      data-url="<?php echo $Eventos_UrlWeb; ?>" data-title="<?php echo $Eventos_titulo; ?>">
                                 </div>
 
