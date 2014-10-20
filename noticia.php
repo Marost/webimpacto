@@ -176,6 +176,17 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
 
                             <h3>Comentarios</h3>
 
+                            <div id="fb-root"></div>
+                            <script>(function(d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                    if (d.getElementById(id)) return;
+                                    js = d.createElement(s); js.id = id;
+                                    js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=1456294131292438&version=v2.0";
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));</script>
+
+                            <div data-width="624" class="fb-comments" data-href="<?php echo $Noticia_UrlWeb; ?>" data-numposts="5" data-colorscheme="light"></div>
+
                         </div>
                         <!-- comments -->
 
@@ -183,7 +194,6 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                         <div class="widget kopa-list-posts-carousel-4-widget">
                             <header class="widget-header">
                                 <h3 class="widget-title">Articulos relacionados</h3>
-                                <i class="fa fa-plus-square-o"></i>
                             </header>
                             <div class="widget-content">
                                 <div class="owl-carousel">
