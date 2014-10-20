@@ -4760,3 +4760,9 @@ table.gsc-search-box td {
 .fb_iframe_widget_lift{
     z-index: 200 !important;
 }
+
+/* MENU */
+.kopa-menu li ul li a img {
+    width: 20px;
+    margin-right: 5px;
+}

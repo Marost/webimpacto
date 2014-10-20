@@ -53,13 +53,13 @@ if(isset($header)){
                     <li><a href="categoria/12/noticias">Noticias</a></li>
                     <li><a href="javascript:;">Ediciones</a>
                         <ul>
-                            <li><a href="edicion-anterior-es">Español</a></li>
-                            <li><a href="edicion-anterior-en">Ingles</a></li>
-                            <li><a href="edicion-anterior-fr">Francés</a></li>
-                            <li><a href="edicion-anterior-pr">Portugués</a></li>
-                            <li><a href="edicion-anterior-al">Alemán</a></li>
-                            <li><a href="edicion-anterior-it">Italiano</a></li>
-                            <li><a href="edicion-anterior-ch">Chino</a></li>
+                            <li><a href="edicion-anterior-es"><img src="imagenes/flags/es.png" alt="Español"/> Español</a></li>
+                            <li><a href="edicion-anterior-en"><img src="imagenes/flags/en.png" alt="Ingles"/> Ingles</a></li>
+                            <li><a href="edicion-anterior-fr"><img src="imagenes/flags/fr.png" alt="Francés"/> Francés</a></li>
+                            <li><a href="edicion-anterior-pr"><img src="imagenes/flags/pr.png" alt="Portugués"/> Portugués</a></li>
+                            <li><a href="edicion-anterior-al"><img src="imagenes/flags/al.png" alt="Alemán"/> Alemán</a></li>
+                            <li><a href="edicion-anterior-it"><img src="imagenes/flags/it.png" alt="Italiano"/> Italiano</a></li>
+                            <li><a href="edicion-anterior-ch"><img src="imagenes/flags/ch.png" alt="Chino"/> Chino</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:;">Secciones</a>
@@ -84,13 +84,13 @@ if(isset($header)){
                     <li><a href="categoria/12/noticias">Noticias</a></li>
                     <li><a href="javascript:;">Ediciones</a>
                         <ul>
-                            <li><a href="edicion-anterior-es">Español</a></li>
-                            <li><a href="edicion-anterior-en">Ingles</a></li>
-                            <li><a href="edicion-anterior-fr">Francés</a></li>
-                            <li><a href="edicion-anterior-pr">Portugués</a></li>
-                            <li><a href="edicion-anterior-al">Alemán</a></li>
-                            <li><a href="edicion-anterior-it">Italiano</a></li>
-                            <li><a href="edicion-anterior-ch">Chino</a></li>
+                            <li><a href="edicion-anterior-es"><img src="imagenes/flags/es.png" alt="Español"/> Español</a></li>
+                            <li><a href="edicion-anterior-en"><img src="imagenes/flags/en.png" alt="Ingles"/> Ingles</a></li>
+                            <li><a href="edicion-anterior-fr"><img src="imagenes/flags/fr.png" alt="Francés"/> Francés</a></li>
+                            <li><a href="edicion-anterior-pr"><img src="imagenes/flags/pr.png" alt="Portugués"/> Portugués</a></li>
+                            <li><a href="edicion-anterior-al"><img src="imagenes/flags/al.png" alt="Alemán"/> Alemán</a></li>
+                            <li><a href="edicion-anterior-it"><img src="imagenes/flags/it.png" alt="Italiano"/> Italiano</a></li>
+                            <li><a href="edicion-anterior-ch"><img src="imagenes/flags/ch.png" alt="Chino"/> Chino</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:;">Secciones</a>
