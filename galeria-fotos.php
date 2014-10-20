@@ -124,7 +124,11 @@ $Noticia_UrlWeb=$web."galeria/".$Req_Id."-".$Req_Url;
                         <div class="widget kopa-list-posts-carousel-4-widget">
                             <header class="widget-header">
                                 <h3 class="widget-title">Galería de Fotos</h3>
-                                <i class="fa fa-plus-square-o"></i>
+                                <span class="galerias-mas-interno">
+                                    <a href="galerias" title="Más galerías">
+                                        <i class="fa fa-plus"></i> Más galerías
+                                    </a>
+                                </span>
                             </header>
                             <div class="widget-content">
                                 <div class="owl-carousel">

@@ -98,7 +98,11 @@ $Noticia_UrlWeb=$web."video/".$Req_Id."-".$Req_Url;
                         <div class="widget kopa-list-posts-carousel-4-widget">
                             <header class="widget-header">
                                 <h3 class="widget-title">Galería de Videos</h3>
-                                <i class="fa fa-plus-square-o"></i>
+                                <span class="videos-mas-interno">
+                                    <a href="videos" title="Más videos">
+                                        <i class="fa fa-plus"></i> Más videos
+                                    </a>
+                                </span>
                             </header>
                             <div class="widget-content">
                                 <div class="owl-carousel">

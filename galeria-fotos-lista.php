@@ -50,7 +50,6 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_galeria WHERE fecha_publicacion
 
                             <header class="widget-header">
                                 <h3 class="widget-title">Galería de Fotos</h3>
-                                <i class="fa fa-plus-square-o"></i>
                             </header>
 
                             <div class="widget-content">
