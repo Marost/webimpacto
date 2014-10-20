@@ -18,3 +18,6 @@
         }
     }
 </script>
+
+<!-- ADDTHIS -->
+<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63"></script>

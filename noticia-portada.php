@@ -235,9 +235,9 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_edicion_noticia WHERE id<>$Req_Id AND
                                 <!-- user rating -->
 
                                 <div class="link-social-2">
-                                    <div class="addthis_native_toolbox"></div>
-                                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63" async></script>
-
+                                    <div class="addthis_native_toolbox"
+                                         data-url="<?php echo $Noticia_UrlWeb; ?>" data-title="<?php echo $Noticia_titulo; ?>">
+                                    </div>
                                 </div>
 
                             </div>
