@@ -28,12 +28,8 @@ $Noticia_fecha=explode("-", $Noticia_fechaPubSep[0]);
 $NoticiaFecha=nombreFechaTotal($Noticia_fecha[0], $Noticia_fecha[1], $Noticia_fecha[2]);
 
 ##################################################################################################################
-//NOTICIAS RELACIONADAS
-$rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE id<>$Req_Id AND categoria=$Noticia_categoria AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 6;", $conexion);
-
-##################################################################################################################
 //URLS
-$Noticia_UrlWeb=$web."noticia/".$Req_Id."-".$Req_Url;
+$Noticia_UrlWeb=$web."editorial/".$Req_Id."-".$Req_Url;
 $Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imagen;
 $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
 
@@ -90,6 +86,17 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                         <div id="comments">
 
                             <h3>Comentarios</h3>
+
+                            <div id="fb-root"></div>
+                            <script>(function(d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                    if (d.getElementById(id)) return;
+                                    js = d.createElement(s); js.id = id;
+                                    js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=1456294131292438&version=v2.0";
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));</script>
+
+                            <div data-width="624" class="fb-comments" data-href="<?php echo $Noticia_UrlWeb; ?>" data-numposts="5" data-colorscheme="light"></div>
 
                         </div>
                         <!-- comments -->
