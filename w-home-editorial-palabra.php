@@ -28,7 +28,7 @@ $ColNota_UrlWeb=$web."editorial/".$ColNota_id."-".$ColNota_url;
 $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id ASC", $conexion);
 
 ?>
-<div class="col-lg-12 col-md-5 col-sm-12 col-xs-12">
+<div class="col-lg-12 col-md-5 col-sm-6 col-xs-12">
     <div class="widget-area-5">
 
         <div id="editorial" class="widget kopa-list-post-small-thumb-widget no-cat">
@@ -61,7 +61,7 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
 
         <div id="lapalabra" class="widget kopa-list-post-small-thumb-widget no-cat">
             <header class="widget-header">
-                <h3 class="widget-title">LA PALÁBRA</h3>
+                <h3 class="widget-title">LA PALABRA</h3>
             </header>
             <div class="widget-content">
                 <ul class="list-unstyled">

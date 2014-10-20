@@ -3,7 +3,7 @@
 $rst_videos=mysql_query("SELECT * FROM iev_videos WHERE publicar=1 AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 10", $conexion);
 
 ?>
-<div class="col-lg-12 col-md-7 col-sm-12 col-xs-12">
+<div class="col-lg-12 col-md-7 col-sm-6 col-xs-12">
     <div id="home-video" class="widget-area-9">
         <div class="widget kopa-list-posts-thumb-big-small-widget">
             <header class="widget-header">

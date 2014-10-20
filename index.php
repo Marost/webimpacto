@@ -72,7 +72,7 @@ $w_video=true;
 
                 <?php require_once("w-home-galeria-fotos.php"); ?>
 
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div id="masvisto" class="col-lg-4 col-md-4 col-sm-12 col-xs-12 visible-lg visible-md">
 
                     <div class="widget-area-9 col-lg-12">
 
