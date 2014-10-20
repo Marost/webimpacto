@@ -501,9 +501,6 @@ li > ul, li > ol {
 .link-social-1 .fa-skype {
     background: #00aff0;
 }
-.link-social-2 {
-    overflow: hidden;
-}
 .link-social-2 a {
     display: inline-block;
     float: left;
@@ -1149,7 +1146,6 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
     padding-bottom: 5px; }
 
 .kopa-metadata-border {
-    overflow: hidden;
     padding: 0 0 10px 0;
 }
   .kopa-metadata-border > a, .kopa-metadata-border span {
@@ -4758,4 +4754,9 @@ table.gsc-search-box td {
 
 .masvisto-noticia .titulo a, .masvisto-noticia .titulo span{
     display: block;
+}
+
+/* FACEBOOK */
+.fb_iframe_widget_lift{
+    z-index: 200 !important;
 }
