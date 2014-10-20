@@ -10,7 +10,11 @@ $rst_saludos=mysql_query("SELECT * FROM iev_saludos WHERE estado_saludo='A' ORDE
                     $Saludos_nombre=strtoupper($fila_saludos["nombre"]);
                     $Saludos_contenido=$fila_saludos["contenido"];
             ?>
-            <dd><a href="javascript:;"><?php echo $Saludos_nombre.": ".$Saludos_contenido; ?></a></dd>
+            <dd>
+                <a href="javascript:;" title="<?php echo $Saludos_nombre.": ".$Saludos_contenido; ?>">
+                    <span class="saludo-nombre"><?php echo $Saludos_nombre; ?>:</span> <?php echo $Saludos_contenido; ?>
+                </a>
+            </dd>
             <?php } ?>
         </dl>
         <!--ticker-1-->

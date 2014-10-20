@@ -4650,6 +4650,11 @@ a#saludos-enviar:hover{ color: #FBBD2C; }
     color: #000;
 }
 
+.saludo-nombre{
+    color: #fff;
+    font-weight: bold;
+}
+
 .fixed{
     position: fixed !important;
     top: 0;
