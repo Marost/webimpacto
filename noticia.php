@@ -113,7 +113,9 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                                     <div class="post-thumb">
 
                                         <ul id="tipo-multimedia">
+                                            <?php if($num_notFotos>0 OR $Noticia_video<>"" OR $Noticia_audio<>""){ ?>
                                             <li><a id="noticia-foto" href="javascript:;" title="Foto"><i class="fa fa-image"></i><span> Foto</span></a></li>
+                                            <?php } ?>
                                             <?php if($num_notFotos>0){ ?>
                                             <li><a id="noticia-galeria" href="javascript:;" title="Galería de Fotos"><i class="fa fa-film"></i><span> Galería de Fotos</span></a></li>
                                             <?php } ?>
