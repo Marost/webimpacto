@@ -24,7 +24,7 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_videos WHERE fecha_publicacion<
 <html lang="es" class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>Galería de Videos</title>
+        <title>Videogalería</title>
 
         <!-- PAGINACION -->
         <link rel="stylesheet" href="/libs/pagination/pagination.css" media="screen">
@@ -49,7 +49,7 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_videos WHERE fecha_publicacion<
                         <div class="widget kopa-list-posts-widget">
 
                             <header class="widget-header">
-                                <h3 class="widget-title">Galería de Videos</h3>
+                                <h3 class="widget-title">Videogalería</h3>
                                 <i class="fa fa-plus-square-o"></i>
                             </header>
 

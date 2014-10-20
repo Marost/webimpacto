@@ -4511,7 +4511,7 @@ section#home-notprin{
     display: none;
 }
 
-.galerias-mas{
+.galerias-mas, .videos-mas{
     float: right;
 }
 

@@ -8,6 +8,11 @@ $rst_videos=mysql_query("SELECT * FROM iev_videos WHERE publicar=1 AND fecha_pub
         <div class="widget kopa-list-posts-thumb-big-small-widget">
             <header class="widget-header">
                 <h3 class="widget-title">VIDEOS</h3>
+                <span class="videos-mas">
+                    <a href="videos" title="Más videos">
+                        <i class="fa fa-plus"></i> Más videos
+                    </a>
+                </span>
             </header>
             <div class="widget-content">
                 <div id="video" class="item item-latest clearfix">
