@@ -65,7 +65,6 @@ if($num_categoria>0){
 
                             <header class="widget-header">
                                 <h3 class="widget-title"><?php echo $Categoria_titulo; ?></h3>
-                                <i class="fa fa-plus-square-o"></i>
                             </header>
 
                             <div class="widget-content">

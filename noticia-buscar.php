@@ -69,7 +69,6 @@ if($buscar==""){
 
                             <header class="widget-header">
                                 <h3 class="widget-title">Buscar: <?php echo $buscar; ?></h3>
-                                <i class="fa fa-plus-square-o"></i>
                             </header>
 
                             <div class="widget-content">

@@ -3,7 +3,6 @@
     <div class="widget kopa-full-width-carousel-widget">
         <header class="widget-header">
             <h3 class="widget-title">Slides</h3>
-            <i class="fa fa-plus-square-o"></i>
         </header>
         <div class="widget-content clearfix">
             <div class="owl-carousel">

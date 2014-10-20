@@ -325,7 +325,6 @@
                             <div class="widget kopa-tweet-widget">
                                 <header class="widget-header">
                                     <h3 class="widget-title">recent tweets</h3>
-                                    <i class="fa fa-plus-square-o"></i>
                                 </header>
                                 <div class="widget-content">
                                     <div class="tweets" data-user="kopasoft">
@@ -344,7 +343,6 @@
                             <div class="widget kopa-flickr-widget">
                                  <header class="widget-header">
                                     <h3 class="widget-title">photo on flickr</h3>
-                                    <i class="fa fa-plus-square-o"></i>
                                 </header>
                                  <div class="widget-content">
                                     <div class="flickr-wrap clearfix" data-user="78715597@N07">

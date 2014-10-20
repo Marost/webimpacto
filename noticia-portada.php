@@ -129,7 +129,6 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_edicion_noticia WHERE id<>$Req_Id AND
                         <div class="widget kopa-list-posts-carousel-4-widget">
                             <header class="widget-header">
                                 <h3 class="widget-title">Articulos relacionados</h3>
-                                <i class="fa fa-plus-square-o"></i>
                             </header>
                             <div class="widget-content">
                                 <div class="owl-carousel">
