@@ -530,3 +530,27 @@ function guardarImagen($imagen, $imagen_carpeta){
     $thumb->adaptiveResize(290,210);
     $thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
 }
+
+function listaSocialMedia($facebook=true, $twitter=true, $twitter_usuario, $google=true, $pinterest=true, $url, $titulo, $imagen){
+
+    echo '<ul class="social-media-fc">';
+
+        if($facebook==true){ echo '<li class="fb"><div class="fb-like" data-href="'.$url.'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div></li>'; };
+
+        if($twitter==true){ echo '<li class="tw"><a class="twitter-share-button" href="https://twitter.com/share" data-url="'.$url.'" data-via="'.$twitter_usuario.'">Tweet</a></li>'; };
+
+        if($google==true){ echo '<li class="gp"><div class="g-plusone" data-size="medium" data-href="'.$url.'"></div></li>'; };
+
+        if($pinterest==true){ echo '<li class="pn"><a href="//es.pinterest.com/pin/create/button/?url='.$url.'&media='.$imagen.'&description='.$titulo.'" data-pin-do="buttonPin" data-pin-config="beside"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a></li>'; };
+
+    echo '</ul>';
+
+    if($facebook==true){ echo '<div id="fb-root"></div><script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return;js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&appId=595809933879793&version=v2.0"; fjs.parentNode.insertBefore(js, fjs); }(document, "script", "facebook-jssdk"));</script>'; };
+
+    if($twitter==true){ echo '<script type="text/javascript">window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));</script>'; };
+
+    if($google==true){ echo '<script src="https://apis.google.com/js/platform.js" async defer>{lang: "es-419"}</script>'; };
+
+    if($pinterest==true){ echo '<script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>'; };
+
+}
