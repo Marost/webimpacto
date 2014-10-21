@@ -1242,7 +1242,6 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
     margin: 0;
     background: #fbbd2c;
     display: inline-block;
-    float: left;
     padding: 0 8px;
 }
 .single-post-content .post-cat a:hover {
@@ -1374,7 +1373,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
     text-transform: uppercase;
 }
 .single-post-content .entry-title {
-    margin-top: 0;
+    margin-top: 10px;
     text-transform: uppercase;
 }
 .single-post-content .post-thumb {

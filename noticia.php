@@ -66,7 +66,6 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE id<>$Req_Id AND categor
 $Noticia_UrlWeb=$web."noticia/".$Req_Id."-".$Req_Url;
 $Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imagen;
 $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
-
 ?>
 <!DOCTYPE html>
 <html lang="es" class="no-js">
@@ -100,6 +99,9 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                     <div id="main-content">
                         <article class="single-post-content">
 
+                            <h5 class="post-cat"><a href="<?php echo $Noticia_UrlCat; ?>"><?php echo $NotCat_titulo; ?></a></h5>
+                            <h5 class="post-cat"><?php echo $NoticiaFecha; ?></h5>
+
                             <h1 class="entry-title"><?php echo $Noticia_titulo; ?></h1>
 
                             <div class="clearfix">
@@ -109,6 +111,8 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                                     <div class="entry-content">
                                         <?php echo primerParrafo($Noticia_contenido); ?>
                                     </div>
+
+                                    <?php listaSocialMedia(true, true, "Impacto_Evangel", true, true, $Noticia_UrlWeb, $Noticia_titulo, $Noticia_UrlImg); ?>
 
                                     <div class="post-thumb">
 
@@ -164,8 +168,26 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
 
                                     <div class="entry-content">
                                         <?php echo $Noticia_contenido; ?>
-                                    </div>
-                                    <!-- entry-content -->
+
+                                        <div class="tags-link">
+                                            <span>Tags:</span>
+
+                                            <?php while($fila_tags=mysql_fetch_array($rst_tags)){
+                                                $tags_id=$fila_tags["id"];
+                                                $tags_url=$fila_tags["url"];
+                                                $tags_nombre=$fila_tags["nombre"];
+
+                                                //URL
+                                                $tags_WebURL=$web."tags/".$tags_id."/".$tags_url;
+                                                if(in_array($tags_id, $tags)){
+                                                    ?>
+                                                    <a href="<?php echo $tags_WebURL; ?>"><?php echo $tags_nombre; ?></a>
+                                                <?php }} ?>
+
+                                        </div>
+
+                                    </div><!-- entry-content -->
+
                                 </div>
                                 <!-- item right -->
 
@@ -261,60 +283,6 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
                     <div id="sidebar" class="widget-area-26">
-
-                        <div class="widget widget-sidebar kopa-tab-widget">
-
-                            <header class="widget-header">
-                                <h3 class="widget-title">Datos de Noticia</h3>
-                            </header>
-
-                            <div class="widget-contenido">
-
-                                <div class="clearfix">
-                                    <h5 class="post-cat">Categoría: <a href="<?php echo $Noticia_UrlCat; ?>"><?php echo $NotCat_titulo; ?></a></h5>
-                                    <h5 class="post-cat">Publicación: <?php echo $NoticiaFecha; ?></h5>
-                                </div>
-
-                                <div class="user-rating">
-                                    <header>
-                                        <h3>Califica la Noticia</h3>
-                                        <span class="kopa-rate">
-                                            <i class="fa fa-star fa-3x"></i>
-                                            <i class="fa fa-star fa-3x"></i>
-                                            <i class="fa fa-star fa-3x"></i>
-                                            <i class="fa fa-star fa-3x"></i>
-                                            <i class="fa fa-star-o fa-3x"></i>
-                                        </span>
-                                    </header>
-                                </div>
-                                <!-- user rating -->
-
-                                <div class="link-social-2">
-                                    <div class="addthis_native_toolbox"
-                                         data-url="<?php echo $Noticia_UrlWeb; ?>" data-title="<?php echo $Noticia_titulo; ?>">
-                                    </div>
-                                </div>
-
-                                <div class="tags-link">
-                                    <span>Tags:</span>
-
-                                    <?php while($fila_tags=mysql_fetch_array($rst_tags)){
-                                        $tags_id=$fila_tags["id"];
-                                        $tags_url=$fila_tags["url"];
-                                        $tags_nombre=$fila_tags["nombre"];
-
-                                        //URL
-                                        $tags_WebURL=$web."tags/".$tags_id."/".$tags_url;
-                                        if(in_array($tags_id, $tags)){
-                                    ?>
-                                        <a href="<?php echo $tags_WebURL; ?>"><?php echo $tags_nombre; ?></a>
-                                    <?php }} ?>
-
-                                </div>
-
-                            </div>
-
-                        </div>
 
                         <?php require_once("w-portada.php"); ?>
 
