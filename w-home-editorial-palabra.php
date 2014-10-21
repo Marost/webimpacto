@@ -38,7 +38,7 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
             <div class="widget-content">
                 <ul class="list-unstyled">
                     <li class="clearfix col-lg-12 pdr0 pdl0 flnone">
-                        <div class="item-left col-lg-9 col-md-8 pdr0 pdl0 flnone">
+                        <div class="item-left col-lg-9 col-md-8 col-sm-9 pdr0 pdl0 flnone">
                             <h4 class="post-title">
                                 <a href="<?php echo $ColNota_UrlWeb; ?>"><?php echo $ColNota_titulo; ?></a>
                             </h4>
@@ -51,7 +51,7 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
                             </span>
                         </div>
 
-                        <a class="post-thumb pull-left pdr0 pdl0 flnone col-lg-3 col-md-4" href="<?php echo $Columnista_UrlWeb; ?>">
+                        <a class="post-thumb pull-left pdr0 pdl0 flnone col-lg-3 col-md-4 col-sm-3" href="<?php echo $Columnista_UrlWeb; ?>">
                             <img src="<?php echo $Columnista_UrlImg; ?>" alt="<?php echo $Columnista_titulo; ?>">
                         </a>
                     </li>

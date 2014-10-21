@@ -4674,6 +4674,14 @@ a#saludos-enviar:hover{ color: #FBBD2C; }
     left: 10px;
 }
 
+#editorial, #lapalabra{
+    margin-bottom: 30px;
+}
+
+#editorial .widget-header, #lapalabra .widget-header {
+    margin-bottom: 15px;
+}
+
 /* BUSCADOR DE GOOGLE */
 .cse input.gsc-search-button, input.gsc-search-button{
     margin-top: 0 !important;
