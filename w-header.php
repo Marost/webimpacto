@@ -50,6 +50,7 @@ if(isset($header)){
                 <span class="mobile-menu-icon fa fa-align-justify"></span>
                 <ul class="kopa-menu sf-menu">
                     <li><a href="/">Inicio</a></li>
+                    <li><a href="nosotros">Nosotros</a></li>
                     <li><a href="categoria/12/noticias">Noticias</a></li>
                     <li><a href="javascript:;">Ediciones</a>
                         <ul>

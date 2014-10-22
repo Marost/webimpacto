@@ -1279,10 +1279,16 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
     font-weight: 700;
 }
 .single-post-content .tags-link a {
-    color: #292929;
+    text-transform: uppercase;
+    background-color: #F3F3F3;
+    padding: 5px;
+    color: #666;
+    font-weight: bold;
 }
 .single-post-content .tags-link a:hover {
-    color: #fbbd2c;
+    color: #FBBD2C;
+    background-color: #000;
+    font-weight: bold;
 }
 .single-post-content .kopa-progressbar {
     position: relative;
@@ -1387,6 +1393,10 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
     margin-bottom: 25px;
     font-size: 16px;
     line-height: 24px;
+}
+
+.single-post-content .entry-content p img {
+    float: left;
 }
 .single-post-content .entry-content p:last-child {
     margin-bottom: 0;
