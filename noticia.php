@@ -65,7 +65,7 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_noticia WHERE id<>$Req_Id AND categor
 //URLS
 $Noticia_UrlWeb=$web."noticia/".$Req_Id."-".$Req_Url;
 $Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imagen;
-$Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
+$Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
 ?>
 <!DOCTYPE html>
 <html lang="es" class="no-js">
