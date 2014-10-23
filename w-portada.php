@@ -23,13 +23,13 @@ $EdEsp_UrlImg=$web."imagenes/revista/".$EdEsp_imagen;
 
             <div class="edicion-impresa">
 
-                <div class="portada col-lg-12 col-md-9">
+                <div class="portada col-lg-12 col-md-9 col-sm-5">
                     <a href="<?php echo $EdEsp_url; ?>" title="<?php echo $EdEsp_nombre_edicion; ?>" target="_blank">
                         <img src="<?php echo $EdEsp_UrlImg; ?>" alt="<?php echo $EdEsp_nombre_edicion; ?>"/>
                     </a>
                 </div>
 
-                <div class="idiomas col-lg-12 col-md-3">
+                <div class="idiomas col-lg-12 col-md-3 col-sm-2">
                     <audio id="idioma_audio" src="audio/idioma/es.mp3"></audio>
                     <ul>
                         <li><a class="en" href="">Ingles</a></li>
