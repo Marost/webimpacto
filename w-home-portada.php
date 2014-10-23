@@ -15,7 +15,7 @@ $EdEsp_UrlImg=$web."imagenes/revista/".$EdEsp_imagen;
 $rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEsp_id AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC", $conexion);
 
 ?>
-<div class="widget-area-6">
+<div class="widget-area-6 col-xs-12">
 
     <div class="widget kopa-list-posts-carousel-2-widget">
         <header class="widget-header">
@@ -46,7 +46,7 @@ $rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEs
 
             </div>
 
-            <div class="owl-carousel col-lg-9 col-md-9 col-sm-7">
+            <div class="owl-carousel col-lg-9 col-md-9 col-sm-7 hidden-xs">
 
                 <?php while($fila_edNot=mysql_fetch_array($rst_edNot)){
                         $EdNot_id=$fila_edNot["id"];
