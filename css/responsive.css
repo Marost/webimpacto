@@ -160,8 +160,8 @@
     margin-left: 28px;
 }
 .widget-area-2 .widget, .widget-area-3 .widget, .widget-area-4 .widget, .widget-area-5 .widget, .widget-area-7 .widget, .widget-area-8 .widget, .widget-area-9 .widget, .widget-area-11 .widget, .widget-area-12 .widget, .widget-area-13 .widget, .widget-area-21 .widget, .widget-area-22 .widget, .widget-area-23 .widget, .widget-area-24 .widget, .widget-area-25 .widget, .widget-area-26 .widget, .widget-area-18 .widget, .widget-area-19 .widget, .widget-area-27 .widget {
-    margin-left: 20px;
-    margin-right: 20px;
+    /*margin-left: 20px;
+    margin-right: 20px;*/
 }
 .kopa-ads-widget {
     display: none;

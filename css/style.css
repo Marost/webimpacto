@@ -163,7 +163,7 @@ ul, ol {
     margin: 0 0 20px 0;
 }
 li > ul, li > ol {
-    margin: 0 0 0 20px;
+    margin: 0;
 }
 .list-unstyled {
     padding-left: 0;
@@ -645,18 +645,14 @@ li > ul, li > ol {
     padding-top: 20px;
     margin-left: 0;
     position: relative;
-    background: rgba(0,0,0,0.65);
 }
 .header-1 .main-menu:before {
     content: '';
     height: 65px;
-    width: 1000px;
     /*background-image: url("../imagenes/fondo-trans.png");*/
     display: block;
     position: absolute;
-    right: -1000px;
     top: 0;
-    background: rgba(0,0,0,0.65);
 }
 .header-1 .kopa-logo {
     z-index: 5;
@@ -903,7 +899,7 @@ li > ul, li > ol {
     margin: 0;
 }
 .kopa-menu.mobile-menu > li > a {
-    padding: 6px 15px;
+    padding: 15px;
 }
 .kopa-menu.mobile-menu > li a {
     text-transform: uppercase;
@@ -4490,7 +4486,7 @@ section#home-notprin{
 
 /* LOGO */
 .header-1 .kopa-header-middle{
-    background: rgba(255, 255, 255, 0.35);
+    background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.65);
 }
 
 /* SOCIAL MEDIA */
@@ -4525,6 +4521,31 @@ section#home-notprin{
 .flnone{ float: none; }
 
 .rsImg.rsMainSlideImage{ margin-left: 0 !important; } /* MARGIN DE IMAGEN DE GALERIA DE FOTOS  */
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.row:before,
+.row:after {
+    display: table;
+    content: " ";
+}
+
+.row:after {
+    clear: both;
+}
+
+.row:before,
+.row:after {
+    display: table;
+    content: " ";
+}
+
+.row:after {
+    clear: both;
+}
 
 /* SIDEBAT - WIDGET */
 .widget-sidebar .widget-header{
@@ -4782,6 +4803,7 @@ table.gsc-search-box td {
 .kopa-menu li ul li a img {
     width: 20px;
     margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 /* SOCIAL MEDIA - FUNCTION */
