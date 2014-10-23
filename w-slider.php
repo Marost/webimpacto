@@ -1,4 +1,4 @@
-<div class="widget-area-1 clearfix">
+<div class="widget-area-1 clearfix hidden-xs">
 
     <div class="widget kopa-full-width-carousel-widget">
         <header class="widget-header">
