@@ -63,6 +63,8 @@ var map;
 
 jQuery(document).ready(function () {
 
+    jQuery(".kopa-rate").hide();
+
     // 1. Main menu
     Modernizr.load([{
         load: ['js/superfish.js'],
