@@ -8,16 +8,22 @@ $Req_Url=$_REQUEST["url"];
 
 //VARIABLES
 $header="interno";
-$Req_UrlWeb=$web."categoria/".$Req_Id."/".$Req_Url;
 
-//CATEGORIA
-$rst_categoria=mysql_query("SELECT * FROM iev_columnista WHERE id=$Req_Id AND url='$Req_Url'", $conexion);
-$fila_categoria=mysql_fetch_array($rst_categoria);
-$num_categoria=mysql_num_rows($rst_categoria);
+//EDITORIAL O LA PALABRA
+if($Req_Id==1){
+    $Categoria="editorial";
+}else{
+    $Categoria="la-palabra";
+}
 
-if($num_categoria>0){
+//COLUMNISTA
+$rst_columnista=mysql_query("SELECT * FROM iev_columnista WHERE id=$Req_Id AND url='$Req_Url'", $conexion);
+$fila_columnista=mysql_fetch_array($rst_columnista);
+$num_columnista=mysql_num_rows($rst_columnista);
+
+if($num_columnista>0){
     //VARIABLES
-    $Categoria_titulo=$fila_categoria["nombre_completo"];
+    $Columnista_titulo=$fila_columnista["nombre_completo"];
 
     ################################################################
     //PAGINACION DE NOTICIAS
@@ -40,7 +46,7 @@ if($num_categoria>0){
 <html lang="es" class="no-js">
     <head>
         <meta charset="utf-8">
-        <title><?php echo $Categoria_titulo; ?></title>
+        <title><?php echo $Columnista_titulo; ?></title>
 
         <!-- PAGINACION -->
         <link rel="stylesheet" href="/libs/pagination/pagination.css" media="screen">
@@ -64,7 +70,7 @@ if($num_categoria>0){
                         <div class="widget kopa-list-posts-widget">
 
                             <header class="widget-header">
-                                <h3 class="widget-title"><?php echo $Categoria_titulo; ?></h3>
+                                <h3 class="widget-title"><?php echo $Columnista_titulo; ?></h3>
                             </header>
 
                             <div class="widget-content">
@@ -87,7 +93,7 @@ if($num_categoria>0){
                                         $FechaAnio=$fechaSep[0];
 
                                         //URLS
-                                        $noticia_UrlWeb=$web."noticia/".$noticia_id."-".$noticia_url;
+                                        $noticia_UrlWeb=$web.$Categoria."/".$noticia_id."-".$noticia_url;
                                         $noticia_UrlImg=$web."imagenes/upload/".$noticia_imagen_carpeta."thumb/".$noticia_imagen;
                                     ?>
 
