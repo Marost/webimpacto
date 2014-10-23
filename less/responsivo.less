@@ -1,8 +1,4 @@
 @media (min-width: 640px){
-    #masvisto{
-        display: none;
-    }
-
     #lista-multimedia{
 
         #noticia-foto{
@@ -16,9 +12,6 @@
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px){
-    #masvisto{
-        display: none;
-    }
 }
 
 /* Portrait tablets and small desktops */
@@ -58,10 +51,6 @@
         .item-left, .item-right{
             height: 105px;
         }
-    }
-
-    #masvisto{
-        display: none;
     }
 }
 
@@ -170,19 +159,17 @@
 
                         &:first-child{
                             margin-top: 0;
+                            margin-left: 0;
                         }
 
                         &:last-child{
                             margin-bottom: 0;
+                            margin-right: 0;
                         }
                     }
                 }
             }
         }
-    }
-
-    #masvisto{
-        display: block;
     }
 }
 
@@ -302,11 +289,22 @@
             .idiomas{
                 padding-left: 0;
                 padding-right: 0;
+
+                ul{
+
+                    li{
+                        margin: 11px 5px;
+
+                        &:first-child{
+                            margin-left: 0;
+                        }
+
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                    }
+                }
             }
         }
-    }
-
-    #masvisto{
-        display: block;
     }
 }
