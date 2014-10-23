@@ -82,6 +82,7 @@ if(isset($header)){
 
                 <ul class="kopa-menu mobile-menu">
                     <li><a href="/">Inicio</a></li>
+                    <li><a href="nosotros/">Nosotros</a></li>
                     <li><a href="categoria/12/noticias">Noticias</a></li>
                     <li><a href="javascript:;">Ediciones</a>
                         <ul>
