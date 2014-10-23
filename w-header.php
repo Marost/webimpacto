@@ -76,7 +76,7 @@ if(isset($header)){
                             <li><a href="categoria/16/informe-especial">Informe Especial</a></li>
                         </ul>
                     </li>
-                    <li><a href="videogaleria">Videogalería</a></li>
+                    <li><a href="videos">Videogalería</a></li>
                     <li><a href="contacto">Contacto</a></li>
                 </ul>
 
@@ -108,7 +108,7 @@ if(isset($header)){
                             <li><a href="categoria/16/informe-especial">Informe Especial</a></li>
                         </ul>
                     </li>
-                    <li><a href="videogaleria">Videogalería</a></li>
+                    <li><a href="videos">Videogalería</a></li>
                     <li><a href="contacto">Contacto</a></li>
                 </ul>
             </div>
