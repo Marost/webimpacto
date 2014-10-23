@@ -20,7 +20,7 @@ $Noticia_url=$fila_noticia["url"];
 $Noticia_titulo=$fila_noticia["titulo"];
 $Noticia_contenido=$fila_noticia["contenido"];
 $Noticia_fechaPub=$fila_noticia["fecha_publicacion"];
-$Noticia_imagen=$fila_noticia["imagen"];
+$Noticia_columnista=$fila_noticia["columnista"];
 
 //SEPARACION FECHA
 $Noticia_fechaPubSep=explode(" ", $Noticia_fechaPub);
@@ -28,10 +28,19 @@ $Noticia_fecha=explode("-", $Noticia_fechaPubSep[0]);
 $NoticiaFecha=nombreFechaTotal($Noticia_fecha[0], $Noticia_fecha[1], $Noticia_fecha[2]);
 
 ##################################################################################################################
+//COLUMNISTA
+$rst_columnista=mysql_query("SELECT * FROM iev_columnista WHERE id=$Noticia_columnista", $conexion);
+$fila_columnista=mysql_fetch_array($rst_columnista);
+
+//VARIABLES
+$Columnista_id=$fila_columnista["id"];
+$Columnista_url=$fila_columnista["url"];
+$Columnista_titulo=$fila_columnista["nombre_completo"];
+
+##################################################################################################################
 //URLS
 $Noticia_UrlWeb=$web."la-palabra/".$Req_Id."-".$Req_Url;
-$Noticia_UrlImg=$web."imagenes/upload/".$Noticia_imagen_carpeta."".$Noticia_imagen;
-$Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
+$Noticia_UrlCol=$web."columnista/".$Columnista_id."-".$Columnista_url;
 
 ?>
 <!DOCTYPE html>
@@ -66,7 +75,12 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                     <div id="main-content">
                         <article class="single-post-content">
 
+                            <h5 class="post-cat"><a href="<?php echo $Noticia_UrlCol; ?>"><?php echo $Columnista_titulo; ?></a></h5>
+                            <h5 class="post-cat"><?php echo $NoticiaFecha; ?></h5>
+
                             <h1 class="entry-title"><?php echo $Noticia_titulo; ?></h1>
+
+                            <?php listaSocialMedia(true, true, "Impacto_Evangel", true, true, $Noticia_UrlWeb, $Noticia_titulo, ""); ?>
 
                             <div class="clearfix">
 
@@ -109,42 +123,6 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_titulo;
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
                     <div id="sidebar" class="widget-area-26">
-
-                        <div class="widget widget-sidebar kopa-tab-widget">
-
-                            <header class="widget-header">
-                                <h3 class="widget-title">Datos</h3>
-                            </header>
-
-                            <div class="widget-contenido">
-
-                                <div class="clearfix">
-                                    <h5 class="post-cat">Publicación: <?php echo $NoticiaFecha; ?></h5>
-                                </div>
-
-                                <div class="user-rating">
-                                    <header>
-                                        <h3>Califica la Noticia</h3>
-                                        <span class="kopa-rate">
-                                            <i class="fa fa-star fa-3x"></i>
-                                            <i class="fa fa-star fa-3x"></i>
-                                            <i class="fa fa-star fa-3x"></i>
-                                            <i class="fa fa-star fa-3x"></i>
-                                            <i class="fa fa-star-o fa-3x"></i>
-                                        </span>
-                                    </header>
-                                </div>
-                                <!-- user rating -->
-
-                                <div class="link-social-2">
-                                    <div class="addthis_native_toolbox"></div>
-                                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f364066076ff63" async></script>
-
-                                </div>
-
-                            </div>
-
-                        </div>
 
                         <?php require_once("w-portada.php"); ?>
 
