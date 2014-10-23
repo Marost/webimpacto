@@ -4,7 +4,7 @@ ul.mobile-menu, ul.mobile-menu ul, ul.mobile-menu li {
 
 ul.mobile-menu ul {
 	padding: 0;
-	margin: 0 0 0 18px;
+	margin: 0;
 }
 
 ul.mobile-menu {
@@ -66,13 +66,13 @@ ul.mobile-menu > li.active > a  {
 }
 
 ul.mobile-menu li a {
-	font-size: 12px;
+	font-size: 18px;
 	line-height: 18px;
 	padding: 2px 10px;
 }
 
 ul.mobile-menu > li > a {
-	font-size: 14px;
+	font-size: 24px;
 	line-height: 20px;
 	padding: 4px 10px;
 }
