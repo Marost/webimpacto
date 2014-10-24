@@ -26,6 +26,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
 
     <!-- AGREGANDO NUEVO TAG -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="/js/modernizr.custom.js"></script>
     <script type="text/javascript">
         var jMulSl = jQuery.noConflict();
 
@@ -59,6 +60,34 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                         $select.append($opt);
                     }
                 });
+            });
+
+
+
+            jMulSl("#cambiar-imagen").on("click", function(){
+
+                jMulSl("#cambiar-imagen-container").html('<div id="uploader">Tu navegador no soporta HTML5.</div>');
+
+                Modernizr.load([{
+                    load: '<?php if(isset($url_admin)){ echo $url_admin; }  ?>js/plugins/uploader/plupload.js',
+                    load: '<?php if(isset($url_admin)){ echo $url_admin; }  ?>js/plugins/uploader/plupload.html4.js',
+                    load: '<?php if(isset($url_admin)){ echo $url_admin; }  ?>js/plugins/uploader/plupload.html5.js',
+                    load: '<?php if(isset($url_admin)){ echo $url_admin; }  ?>js/plugins/uploader/jquery.plupload.queue.js',
+                    complete: function () {
+                        jMulSl("#uploader").pluploadQueue({
+                            runtimes : 'html5,html4',
+                            url : '/panel@impacto/php/upload.php',
+                            max_file_size : '100mb',
+                            chunk_size : '1mb',
+                            unique_names : true,
+                            dragdrop: false,
+                            resize: {width: 800, height: 500, quality: 80},
+                            filters : [
+                                {title : "Imagenes", extensions : "jpg,gif"}
+                            ]
+                        });
+                    }
+                }]);
             });
         });
     </script>
@@ -115,8 +144,9 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                     <div class="formRow">
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
-                            <div class="widget nomargin">    
-                                <div id="uploader">Tu navegador no soporta HTML5.</div>                    
+                            <a id="cambiar-imagen" href="javascript:;">Cambiar imagen</a>
+                            <div id="cambiar-imagen-container" class="widget nomargin">
+                                <div id="uploader">Tu navegador no soporta HTML5.</div>
                             </div>
                         </div>
                     </div>
@@ -195,11 +225,14 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                         <div class="grid4"><input type="text" class="timepicker" name="pub_hora" size="10" value="<?php echo $pub_hora; ?>" />
                             <span class="ui-datepicker-append">Utilice la rueda del ratón y el teclado</span></div>
                     </div>
-                    
+
                     <div class="formRow">
                         <div class="body" align="center">
+                            <input formtarget="_blank" type="submit" class="buttonL bBlue" name="btn-previa" value="Vista previa" onclick="this.form.action='/noticia-preview.php'; this.form.submit();">
+                        </div>
+                        <div class="body" align="center">
                             <a href="lista.php" class="buttonL bBlack">Cancelar</a>
-                            <input type="submit" class="buttonL bGreen" name="btn-guardar" value="Guardar datos">
+                            <input type="submit" class="buttonL bGreen" name="btn-guardar" value="Guardar datos" onclick="this.form.action='s-guardar.php'; this.form.submit();">
                         </div>
                     </div>
                     
