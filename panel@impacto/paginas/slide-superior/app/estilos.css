@@ -1,0 +1,90 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+#contenido-texto{
+	width: 1170px;
+	height: 600px;
+	background: rgba(255,255,255,0.5);
+	margin: auto;
+	left:0;
+	right:0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	z-index: 21;
+}
+
+#contenido-texto .texto{
+	position: absolute !important;
+}
+
+.texto div{
+	font-family: 'Oswald', sans-serif;
+	float: left;
+	color: #000;
+	font-size: 16px;
+}
+
+.texto span{
+	float: left;
+	margin-left: 10px;
+}
+
+.texto a, .texto a:hover{
+	background: #000;
+	color: #fff;
+	padding: 5px;
+	display: block;
+}
+
+.activado{
+	color: #f00 !important;
+}
+
+/* OPCIONES */
+#opciones{
+	position: absolute;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	border-radius: 0 0 10px 0;
+}
+
+#opciones ul li{
+	margin: 10px;
+}
+
+#opciones ul li a{
+	font-size: 24px;
+	color: #fff;
+}
+
+#opciones ul li:last-child{
+	display: none;
+}
+
+#opciones-estilos{
+	position: absolute;
+	z-index: 1000;
+	top: 0;
+	right: 0;
+	background-color: #fff;
+	width: 500px;
+	border-radius: 0 0 0 10px;
+	padding: 20px;
+}
+
+#opciones-estilos .opciones {
+	margin-bottom: 22px;
+}
+#opciones-estilos .opciones:last-child {
+	margin-bottom: 0;
+}
+
+#opciones-estilos .opciones:last-child h4{
+	float: left;
+	margin: 5px 10px 0 0;
+}
