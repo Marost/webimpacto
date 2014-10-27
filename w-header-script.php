@@ -17,6 +17,10 @@
 <link rel="stylesheet" href="css/responsive.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="css/responsivo.css?update=<?php echo date("YmdHi") ?>" media="all">
 
+<?php if(isset($header)) { if($header=="home"){ ?>
+<link rel="stylesheet" type="text/css" href="libs/revolution-slider/css/settings.css" media="screen" />
+<?php }} ?>
+
 <?php if(isset($w_galeria)){ if($w_galeria==true){  ?>
 <!-- GALERIA DE FOTOS -->
 <link href="libs/royalslider/royalslider.css?update=<?php echo date("YmdHi") ?>" rel="stylesheet">
