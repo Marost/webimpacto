@@ -22,7 +22,7 @@ website:   	http://www.themepunch.com
 .tp-hide-revslider,.tp-caption.tp-hidden-caption	{	visibility:hidden !important; display:none !important}
 
 
-.tp-caption { z-index:1; white-space:nowrap}
+.tp-caption { z-index:1; white-space:nowrap; font-family: 'Oswald', sans-serif; }
 
 .tp-caption-demo .tp-caption	{	position:relative !important; display:inline-block; margin-bottom:10px; margin-right:20px !important}
 
@@ -50,7 +50,7 @@ text-shadow:none;
 font-size:60px;
 line-height:60px;
 font-weight:300;
-font-family:"Open Sans", sans-serif;
+font-family: 'Oswald', sans-serif;
 background-color:transparent;
 text-decoration:none;
 text-transform:uppercase;
@@ -81,7 +81,7 @@ text-shadow:none;
 font-size:37px;
 line-height:37px;
 font-weight:300;
-font-family:"Open Sans", sans-serif;
+font-family: 'Oswald', sans-serif;
 background-color:transparent;
 text-decoration:none;
 text-transform:uppercase;
@@ -95,7 +95,7 @@ border-style:none;
 font-size:25px;
 line-height:25px;
 font-weight:800;
-font-family:"Open Sans", sans-serif;
+font-family: 'Oswald', sans-serif;
 color:rgb(255, 255, 255);
 text-decoration:none;
 background-color:transparent;
@@ -128,7 +128,7 @@ text-shadow:none;
 font-size:25px;
 line-height:25px;
 font-weight:300;
-font-family:"Open Sans", sans-serif;
+font-family: 'Oswald', sans-serif;
 background-color:transparent;
 text-decoration:none;
 text-transform:uppercase;
@@ -142,7 +142,7 @@ border-style:none;
 font-size:13px;
 line-height:25px;
 font-weight:400;
-font-family:"Open Sans", sans-serif;
+font-family: 'Oswald', sans-serif;
 color:#ffffff;
 text-decoration:none;
 background-color:transparent;
@@ -432,7 +432,7 @@ text-shadow:none;
 font-weight:800;
 font-size:24px;
 line-height:20px;
-font-family:"Open Sans", sans-serif;
+font-family: 'Oswald', sans-serif;
 margin:0px;
 border-width:0px;
 border-style:none;
@@ -446,7 +446,7 @@ text-shadow:none;
 font-weight:800;
 font-size:24px;
 line-height:20px;
-font-family:"Open Sans", sans-serif;
+font-family: 'Oswald', sans-serif;
 margin:0px;
 border-width:0px;
 border-style:none;
@@ -460,7 +460,7 @@ text-shadow:none;
 font-weight:300;
 font-size:24px;
 line-height:20px;
-font-family:"Open Sans", sans-serif;
+font-family: 'Oswald', sans-serif;
 margin:0px;
 border-width:0px;
 border-style:none;
@@ -474,7 +474,7 @@ text-shadow:none;
 font-weight:800;
 font-size:30px;
 line-height:36px;
-font-family:"Open Sans", sans-serif;
+font-family: 'Oswald', sans-serif;
 padding:3px 10px;
 margin:0px;
 border-width:0px;
@@ -490,7 +490,7 @@ text-shadow:none;
 font-weight:300;
 font-size:30px;
 line-height:36px;
-font-family:"Open Sans", sans-serif;
+font-family: 'Oswald', sans-serif;
 padding:3px 10px;
 padding-top:1px;
 margin:0px;
