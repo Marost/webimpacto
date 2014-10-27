@@ -4826,3 +4826,21 @@ table.gsc-search-box td {
 .social-media-fc li.gp{ width: 70px; }
 
 .social-media-fc li.pn{ width: 70px; }
+
+/* REVOLUTION SLIDER */
+.tp-banner-container{
+    width:100%;
+    position:relative;
+    padding:0;
+}
+
+.tp-banner{
+    width:100%;
+    position:relative;
+}
+
+.tp-banner-fullscreen-container {
+    width:100%;
+    position:relative;
+    padding:0;
+}
