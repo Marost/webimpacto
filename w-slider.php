@@ -1,52 +1,51 @@
-<div class="widget-area-1 clearfix hidden-xs">
+<?php
+//SLIDE SUPERIOR
+$rst_slideSup=mysql_query("SELECT * FROM iev_slide_superior", $conexion);
+?>
+<div class="tp-banner-container">
 
-    <div class="widget kopa-full-width-carousel-widget">
-        <header class="widget-header">
-            <h3 class="widget-title">Slides</h3>
-        </header>
-        <div class="widget-content clearfix">
-            <div class="owl-carousel">
-                <div class="item">
-                    <div class="post-thumb img-responsive">
-                        <img src="imagenes/prueba/01.jpg" alt="">
-                    </div>
-                    <div class="item-content">
-                        <h4 class="post-cat"><a href="#">Informe</a></h4>
-                        <h4 class="post-title"><a href="#">La verdad sobre Hamas</a></h4>
-                        <a href="#" class="kopa-readmore">LEER MÁS</a>
-                    </div>
-                </div>
-                <!-- item -->
+    <div class="tp-banner" >
+        <ul>
 
-                <div class="item">
-                    <div class="post-thumb img-responsive">
-                        <img src="imagenes/prueba/02.jpg" alt="">
-                    </div>
-                    <div class="item-content">
-                        <h4 class="post-cat"><a href="#">Informe</a></h4>
-                        <h4 class="post-title"><a href="#">La verdad sobre Hamas</a></h4>
-                        <a href="#" class="kopa-readmore">LEER MÁS</a>
-                    </div>
-                </div>
-                <!-- item -->
+            <?php while($fila_slideSup=mysql_fetch_array($rst_slideSup)){
+                    $SlideSup_titulo=$fila_slideSup["titulo"];
+                    $SlideSup_contenido=$fila_slideSup["contenido"];
+                    $SlideSup_imagen=$fila_slideSup["imagen"];
+                    $SlideSup_imagen_carpeta=$fila_slideSup["imagen_carpeta"];
 
-                <div class="item">
-                    <div class="post-thumb img-responsive">
-                        <img src="imagenes/prueba/03.jpg" alt="">
+                    //URLS
+                    $SlideSup_UrlWeb=$fila_slideSup["url"];
+                    $SlideSup_UrlImg=$web."imagenes/slide/".$SlideSup_imagen_carpeta."".$SlideSup_imagen;
+
+                    //DATOS PARA SLIDE
+                    //$SlideSup_contenido='[{"id":"35220","texto":"Conferencia","tamano":"73","color":"dd2a2a","x":420,"y":349},{"id":"355136","texto":"Creacionista","tamano":"73","color":"27cbe3","x":766,"y":354}]';
+                    $array=json_decode($SlideSup_contenido);
+            ?>
+
+            <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-thumb=""  data-saveperformance="on"  data-title="<?php echo $SlideSup_titulo; ?>">
+
+                <img alt="<?php echo $SlideSup_titulo; ?>" data-lazyload="<?php echo $SlideSup_UrlImg; ?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+                <?php for($i=0; $i<count($array); $i++){ ?>
+
+                    <div style="font-size: <?php echo $array[$i]->tamano; ?>px; color: #<?php echo $array[$i]->color; ?>" class="tp-caption tp-resizeme"
+                         data-x="<?php echo $array[$i]->x; ?>"
+                         data-y="<?php echo $array[$i]->y; ?>"
+                         data-speed="500"
+                         data-start="800"
+                         data-easing="Power3.easeInOut"><?php echo $array[$i]->texto; ?>
                     </div>
-                    <div class="item-content">
-                        <h4 class="post-cat"><a href="#">Informe</a></h4>
-                        <h4 class="post-title"><a href="#">La verdad sobre Hamas</a></h4>
-                        <a href="#" class="kopa-readmore">LEER MÁS</a>
-                    </div>
-                </div>
-                <!-- item -->
-            </div>
-            <!-- owl carousel -->
-        </div>
-        <!-- widget content -->
+
+                <?php } ?>
+
+            </li>
+
+            <?php } ?>
+
+        </ul>
+
+        <div class="tp-bannertimer"></div>
+
     </div>
-    <!-- full width carousel widget -->
 
 </div>
-<!-- area 1 -->
