@@ -69,10 +69,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                 jMulSl("#cambiar-imagen-container").html('<div id="uploader">Tu navegador no soporta HTML5.</div>');
 
                 Modernizr.load([{
-                    load: '<?php if(isset($url_admin)){ echo $url_admin; }  ?>js/plugins/uploader/plupload.js',
-                    load: '<?php if(isset($url_admin)){ echo $url_admin; }  ?>js/plugins/uploader/plupload.html4.js',
-                    load: '<?php if(isset($url_admin)){ echo $url_admin; }  ?>js/plugins/uploader/plupload.html5.js',
-                    load: '<?php if(isset($url_admin)){ echo $url_admin; }  ?>js/plugins/uploader/jquery.plupload.queue.js',
+                    load: ['<?php if(isset($url_admin)){ echo $url_admin; }  ?>js/plugins/uploader/plupload.js','<?php if(isset($url_admin)){ echo $url_admin; }  ?>js/plugins/uploader/plupload.html4.js','<?php if(isset($url_admin)){ echo $url_admin; }  ?>js/plugins/uploader/plupload.html5.js','<?php if(isset($url_admin)){ echo $url_admin; }  ?>js/plugins/uploader/jquery.plupload.queue.js'],
                     complete: function () {
                         jMulSl("#uploader").pluploadQueue({
                             runtimes : 'html5,html4',
