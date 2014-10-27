@@ -36,8 +36,7 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
 
                 var $select = jMulSl("select.selectMultiple"),
                     $input = jMulSl("#refreshInput"),
-                    value = jMulSl.trim($input.val())
-
+                    value = jMulSl.trim($input.val());
 
                 jMulSl.ajax({
                     type: "POST",
