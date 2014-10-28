@@ -174,12 +174,43 @@ jApp(function(){
                 "color": valor.childNodes[1].childNodes[8].innerHTML,
                 "x":valor.offsetLeft,
                 "y":valor.offsetTop,
-                "fondo": valor.childNodes[1].childNodes[9].innerHTML,
+                "fondo": valor.childNodes[1].childNodes[9].innerHTML
             };
-        };
+        }
 
         jApp("#enlace").show();
         jApp("#enlace a").attr("href","f-editar-preview.php?id="+IdBody+"&json="+JSON.stringify(json));
+
+    });
+
+    jApp("#guardar").on("click", function(){
+
+        var get = jApp("#contenido-texto").get(0);
+        var cantidad = get.childElementCount;
+        var json = [];
+
+        for(var i = 0; i < cantidad; i++){
+            var valor = get.childNodes[i];
+            json[i]= {
+                "id"        : valor.id,
+                "texto"     : valor.firstChild.innerHTML,
+                "tamano"    : valor.childNodes[1].childNodes[7].innerHTML,
+                "color"     : valor.childNodes[1].childNodes[8].innerHTML,
+                "x"         : valor.offsetLeft,
+                "y"         : valor.offsetTop,
+                "fondo": valor.childNodes[1].childNodes[9].innerHTML
+            };
+        }
+
+        jApp.ajax({
+            type: "POST",
+            url: "s-editar-slide.php",
+            data: {"id": IdBody,"contenido": JSON.stringify(json)},
+            success:function(response){
+                alert("Todo está "+response);
+            }
+        });
+
 
     });
 
