@@ -62,10 +62,13 @@ $nota_UrlImg=$web."imagenes/slide/".$nota_imagen_carpeta."".$nota_imagen;
 					<img  alt="Slide" data-lazyload="<?php echo $nota_UrlImg; ?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 					<!-- LAYERS -->
 
-					<?php for($i=0; $i<count($array); $i++){ ?>
+					<?php for($i=0; $i<count($array); $i++){
+                            if($array[$i]->fondo <> ""){ $fondo="padding: 10px 20px; background: #".$array[$i]->fondo.";";
+                            }else{ $fondo=""; }
+                    ?>
 
 					<!-- LAYER NR. 4 -->
-					<div style="font-size: <?php echo $array[$i]->tamano; ?>px; color: #<?php echo $array[$i]->color; ?>" class="tp-caption tp-resizeme"
+					<div style="font-size: <?php echo $array[$i]->tamano; ?>px; color: #<?php echo $array[$i]->color; ?>; <?php echo $fondo; ?>" class="tp-caption tp-resizeme"
 						data-x="<?php echo $array[$i]->x; ?>"
 						data-y="<?php echo $array[$i]->y; ?>" 
 						data-speed="500"

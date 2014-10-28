@@ -188,18 +188,31 @@ $nota_UrlImg=$web."imagenes/slide/".$nota_imagen_carpeta."".$nota_imagen;
 
 <div id="opciones-estilos">
 
-	<div class="opciones">
-		<h4>Tamaño</h4>
-		<div id="texto-tamano-slide"></div>
-	</div>
+    <div class="opciones">
+        <h4>Tamaño</h4>
+        <div id="texto-tamano-slide"></div>
+    </div>
 
-	<div class="opciones">
-		<h4>Color</h4>
-		<div id="texto-color">
-			<fieldset><input type="text" name="colorpicker" id="colorpicker" class="gui-input" /></fieldset>
-		</div>
-	</div>
-		
+    <div class="opciones">
+        <h4>Color</h4>
+        <div id="texto-color">
+            <fieldset><input type="text" name="colorpicker" id="colorpicker" class="gui-input" /></fieldset>
+        </div>
+    </div>
+
+</div>
+
+<div id="opciones-estilos-fondo">
+
+    <div class="opciones">
+        <h4>Fondo</h4>
+        <div id="texto-fondo-color">
+            <fieldset><input type="text" name="colorpicker-fondo" id="colorpicker-fondo" class="gui-input" /></fieldset>
+        </div>
+    </div>
+
+    <a id="cerrar" href="javascript:;">Cerrar</a>
+
 </div>
 
 </body>
