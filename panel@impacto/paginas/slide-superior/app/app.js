@@ -10,6 +10,8 @@ jApp(function(){
     jApp("#opciones-estilos").hide();
     jApp("#opciones-estilos-fondo").hide();
 
+    var IdBody = jApp("body").attr("id");
+
     jApp("#agregar").on("click", function(){
 
         var aleatorio = Math.floor(Math.random() * 999985) + 15;
@@ -177,7 +179,7 @@ jApp(function(){
         };
 
         jApp("#enlace").show();
-        jApp("#enlace a").attr("href","slider.php?json="+JSON.stringify(json));
+        jApp("#enlace a").attr("href","f-editar-preview.php?id="+IdBody+"&json="+JSON.stringify(json));
 
     });
 
