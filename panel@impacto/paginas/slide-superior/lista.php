@@ -109,7 +109,7 @@ function eliminarRegistro(registro, noticia) {
                             <img src="/imagenes/slide/<?php echo $galeria_imagen_carpeta."thumb/".$galeria_imagen; ?>" alt="" />
                         </a>
                         <div class="actions">
-                            <a href="f-editar-slide.php?id=<?php echo $galeria_id; ?>" title="" class="edit">
+                            <a target="_blank" href="f-editar-slide.php?id=<?php echo $galeria_id; ?>" title="" class="edit">
                                 <img src="../../images/icons/update.png" alt="" /></a>
                             <a href="s-eliminar.php?id=<?php echo $galeria_id; ?>" title="" class="remove">
                                 <img src="../../images/icons/delete.png" alt="" /></a>
