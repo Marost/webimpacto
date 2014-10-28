@@ -30,7 +30,7 @@ $rst_slideSup=mysql_query("SELECT * FROM iev_slide_superior", $conexion);
                         }else{ $fondo=""; }
                 ?>
 
-                    <div style="font-size: <?php echo $array[$i]->tamano; ?>px; color: #<?php echo $array[$i]->color; ?>; <?php echo $fondo; ?>" class="tp-caption tp-resizeme"
+                    <div style="line-height: normal !important; font-size: <?php echo $array[$i]->tamano; ?>px; color: #<?php echo $array[$i]->color; ?>; <?php echo $fondo; ?>" class="tp-caption tp-resizeme"
                          data-x="<?php echo $array[$i]->x; ?>"
                          data-y="<?php echo $array[$i]->y; ?>"
                          data-speed="500"
