@@ -4844,3 +4844,9 @@ table.gsc-search-box td {
     position:relative;
     padding:0;
 }
+
+/* ACCESIBILIDAD */
+#accesibilidad-opcion{
+    position: absolute;
+    z-index: 1000000;
+}

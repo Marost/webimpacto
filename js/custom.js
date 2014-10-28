@@ -63,7 +63,26 @@ var map;
 
 jQuery(document).ready(function () {
 
-    jQuery(".kopa-rate").hide();
+    jQuery(".kopa-rate").hide(); //OCULTAR STAR RATING
+
+    //ACCESIBILIDAD
+    var webAccModo = localStorage.getItem('accesibilidad');
+
+    if(webAccModo=="true"){
+        jQuery("#accesibilidad-opcion").html("<a id='accesibilidadDesactivar' href='#'>Desactivar modo de accesibilidad</a>");
+    }else{
+        jQuery("#accesibilidad-opcion").html("<a id='accesibilidadActivar' href='#'>Activar modo de accesibilidad</a>");
+    }
+
+    jQuery("#accesibilidadActivar").on("click", function(){
+        jQuery("#accesibilidad-opcion").html("").html("<a id='accesibilidadDesactivar' href='#'>Desactivar modo de accesibilidad</a>");
+        localStorage.setItem("accesibilidad", "true");
+    });
+
+    jQuery("#accesibilidadDesactivar").on("click", function(){
+        jQuery("#accesibilidad-opcion").html("").html("<a id='accesibilidadActivar' href='#'>Activar modo de accesibilidad</a>");
+        localStorage.removeItem("accesibilidad");
+    });
 
     // 1. Main menu
     Modernizr.load([{

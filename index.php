@@ -19,6 +19,8 @@ $w_video=true;
 
     <body class="kopa-home">
 
+        <div id="accesibilidad-opcion"></div>
+
         <?php require_once("w-header.php"); ?>
 
         <?php require_once("w-slider.php"); ?>
