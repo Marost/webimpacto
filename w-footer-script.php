@@ -1,4 +1,3 @@
-<script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
 
 <!-- FORMULARIO SALUDO -->

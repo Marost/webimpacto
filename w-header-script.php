@@ -42,3 +42,6 @@
 <!--[if lte IE 8]><link type="text/css" rel="stylesheet" href="libs/smartform/css/smart-forms-ie8.css?update=<?php echo date("YmdHi") ?>"><![endif]-->
 
 <script src="js/modernizr.custom.js"></script>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/accesibilidadweb.js"></script>
