@@ -19,7 +19,10 @@ $w_video=true;
 
     <body class="kopa-home">
 
-        <div id="accesibilidad-opcion"></div>
+        <div id="accesibilidad-opcion">
+            <a id="accesibilidadActivar" href="javascript:;">Activar modo de accesibilidad</a>
+            <a id="accesibilidadDesactivar" href="javascript:;">Desactivar modo de accesibilidad</a>
+        </div>
 
         <?php require_once("w-header.php"); ?>
 
