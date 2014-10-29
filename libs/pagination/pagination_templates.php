@@ -27,15 +27,15 @@ THE FOLLOWING VARIABLES ARE INTERPRETED BY THE TEMPLATE COMPILER, AND CAN BE USE
 <!--selected end-->
 
 <!--unselected-->
-        <span><a href="[location][nth_page]" title="">[nth_page]</a></span>
+        <span><a href="[location][nth_page]" title="Página [nth_page]">[nth_page]</a></span>
 <!--unselected end-->
 
 <!--previous-->
-        <span><a href="[location][previous_page]" title="">&laquo; Anterior</a></span>
+        <span><a href="[location][previous_page]" title="Ir a la anterior página de la sección">&laquo; Anterior</a></span>
 <!--previous end-->
 
 <!--next-->
-        <span><a href="[location][next_page]" title="">Siguiente &raquo;</a></span>
+        <span><a href="[location][next_page]" title="Ir a la siguiente página de la sección">Siguiente &raquo;</a></span>
 <!--next end-->
 
 <!--left_arrow_disabled-->
