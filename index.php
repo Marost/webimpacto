@@ -28,11 +28,7 @@ $w_video=true;
 
         <?php require_once("w-slider.php"); ?>
 
-        <div class="kopa-head-line clearfix">
-            <div class="container">
-                <?php require_once("w-saludos-lista.php"); ?>
-            </div>
-        </div>
+        <?php require_once("w-saludos-lista.php"); ?>
 
         <div class="container">
             <?php require_once("w-saludos-formulario.php"); ?>
