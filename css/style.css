@@ -4660,6 +4660,10 @@ section#home-notprin{
 }
 
 /* SALUDOS */
+#saludos-lista{
+    border-top: none;
+}
+
 a#saludos-enviar{ color: #fff; }
 
 a#saludos-enviar:hover{ color: #FBBD2C; }
