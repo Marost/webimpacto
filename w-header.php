@@ -3,10 +3,13 @@ if(isset($header)){
     if($header=="home"){ $header_class="header-1"; $ocultar="dpnone"; $mostrar=""; $cambioMB="middle"; }
     elseif($header=="interno"){ $header_class="header-2"; $ocultar=""; $mostrar="dpnone"; $cambioMB="bottom"; }
 }
+$UrlWeb_AW="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 ?>
 <div id="accesibilidad-opcion">
     <a id="accesibilidadActivar" href="javascript:;">Activar modo de accesibilidad</a>
     <a id="accesibilidadDesactivar" href="javascript:;">Desactivar modo de accesibilidad</a>
+    <a href="<?php echo $UrlWeb_AW; ?>#menu-principal">Ir a menu principal</a>
+    <a href="<?php echo $UrlWeb_AW; ?>#contenido-pagina">Ir a contenido de la página</a>
 </div>
 
 <header id="kopa-header" class="<?php echo $header_class; ?>">
@@ -51,7 +54,7 @@ if(isset($header)){
             </div>
             <!-- logo -->
 
-            <div class="main-menu">
+            <div id="menu-princpal" class="main-menu">
                 <span class="mobile-menu-icon fa fa-align-justify"></span>
                 <ul class="kopa-menu sf-menu">
                     <li><a href="/">Inicio</a></li>

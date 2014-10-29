@@ -25,7 +25,7 @@ $w_video=true;
 
         <?php require_once("w-saludos-lista.php"); ?>
 
-        <div class="container">
+        <div id="contenido-pagina" class="container">
             <?php require_once("w-saludos-formulario.php"); ?>
 
             <?php require_once("w-home-noticias-prin.php"); ?>
