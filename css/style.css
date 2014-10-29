@@ -4396,7 +4396,7 @@ section#home-notprin{
 /* EDICION IMPRSA */
 .edicion-impresa{
     padding: 0;
-    z-index: 3;
+    z-index: 1;
 }
 
 .edicion-impresa .portada{
