@@ -4,6 +4,11 @@ if(isset($header)){
     elseif($header=="interno"){ $header_class="header-2"; $ocultar=""; $mostrar="dpnone"; $cambioMB="bottom"; }
 }
 ?>
+<div id="accesibilidad-opcion">
+    <a id="accesibilidadActivar" href="javascript:;">Activar modo de accesibilidad</a>
+    <a id="accesibilidadDesactivar" href="javascript:;">Desactivar modo de accesibilidad</a>
+</div>
+
 <header id="kopa-header" class="<?php echo $header_class; ?>">
 
     <div class="kopa-header-top">
