@@ -3,28 +3,114 @@
 2. LISTA DE SALUDOS
 3. MENU EN MOVIL
 4. LISTA DE SOCIAL MEDIA
+5. FORMULARIO DE SALUDOS
+6. SOCIAL MEDIA DE NOTICIA PRINCIPAL
+7. GALERIA DE FOTOS EN HOME
+8. MAS VISTO EN HOME
+9. CUADRO DE BUSQUEDA
+10. NOTICIAS DE PORTADA EN HOME
+11. VIDEOS EN HOME
+12. TEXTO DE FOOTER
 */
 
 .tp-banner-container,
 #saludos-lista,
 .kopa-menu.mobile-menu,
 .kopa-header-top,
-.kopa-list-news-carousel-widget{
+.kopa-list-news-carousel-widget,
+#form-saludos,
+.kopa-metadata-border,
+#home-galeriafotos,
+#home-masvisto,
+.kopa-home .kopa-header-bottom,
+#home-portadanoticias,
+#home-videos,
+#bottom-sidebar{
     display: none !important;
 }
 
+#AccWeb-Portada{
+    display: block !important;
+}
+
 /*FONDO DE CAJA DE BUSCADOR*/
-.kopa-header-bottom{
-    background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.65);
+.kopa-home .kopa-header-bottom{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.65) !important;
 }
 
 /* MENU */
 .kopa-home #kopa-header{
-    position: relative;
+    position: relative !important;
 }
 
 
 .kopa-home #kopa-header .kopa-header-middle{
-    padding-top: 20px;
-    height: 86px;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    height: 95px !important;
 }
+
+/* NOTICIA PRINCIPAL */
+.kopa-grid-posts-widget .latest-post{
+    width: 100% !important;
+    border: 1px solid #c6c6c6;
+    padding: 10px;
+}
+
+.kopa-grid-posts-widget .latest-post .post-thumb{
+    width: 40% !important;
+    float: left !important;
+}
+
+.kopa-grid-posts-widget .latest-post .item-content{
+    width: 60% !important;
+    float: left !important;
+    border: none !important;
+}
+
+/* NOTICIA PRINCIPAL - SIDEBAR */
+.home-notprin{
+    border: 1px solid #c6c6c6;
+    padding: 10px;
+    float: left;
+    width: 100% !important;
+}
+
+.home-notprin article{
+    width: 33.3% !important;
+}
+
+.home-notprin article .post-thumb{
+    width: 50% !important;
+    float: right !important;
+}
+
+.home-notprin article .item-content{
+    width: 50% !important;
+    float: right !important;
+    padding-top: 45px !important;
+    height: 184px !important;
+}
+
+.home-notprin article .item-content .kopa-date{
+    display: none;
+}
+
+/* PORTADA */
+#AccWeb-Portada .noticias .item{
+    width: 20% !important;
+    float: left;
+    margin: 10px 15px;
+}
+
+/* PAGINAS INTERNAS */
+/* BUSCADOR */
+.sub-page .kopa-head-line,
+.sub-page #sidebar,
+.sub-page .kopa-readmore,
+.sub-page .social-media-fc,
+.sub-page #comments,
+.sub-page .tags-link{
+    display: none;
+}
+
