@@ -8,12 +8,12 @@ jAccWeb(document).on("ready", function(){
         jAccWeb("#accesibilidadActivar").hide();
         jAccWeb("#accesibilidadDesactivar").show();
 
-        ocultarWeb();
+        jAccWeb("#accesibilidadCSS").attr("href","css/accesibilidad.css");
     }else{
         jAccWeb("#accesibilidadActivar").show();
         jAccWeb("#accesibilidadDesactivar").hide();
 
-        mostrarWeb();
+        jAccWeb("#accesibilidadCSS").attr("href","");
     }
 
     jAccWeb("#accesibilidadActivar").on("click", function(){
@@ -21,7 +21,7 @@ jAccWeb(document).on("ready", function(){
         jAccWeb("#accesibilidadDesactivar").show();
         localStorage.setItem("accesibilidad", "true");
 
-        ocultarWeb();
+        jAccWeb("#accesibilidadCSS").attr("href","css/accesibilidad.css");
     });
 
     jAccWeb("#accesibilidadDesactivar").on("click", function(){
@@ -29,31 +29,7 @@ jAccWeb(document).on("ready", function(){
         jAccWeb("#accesibilidadActivar").show();
         localStorage.removeItem("accesibilidad");
 
-        mostrarWeb();
+        jAccWeb("#accesibilidadCSS").attr("href","");
     });
 
 });
-
-function ocultarWeb(){
-    jAccWeb(".tp-banner-container, " +                  //SLIDER
-        "#saludos-lista," +                             //LISTA DE SALUDOS
-        ".kopa-menu mobile-menu," +                     //MENU EN MOVIL
-        ".kopa-header-top," +                           //LISTA DE SOCIAL MEDIA
-        ".kopa-list-news-carousel-widget").addClass("ocultar");
-
-    jAccWeb(".kopa-header-bottom").css("background", "none repeat scroll 0% 0% rgba(0, 0, 0, 0.65)");   //FONDO DE CAJA DE BUSCADOR
-    jAccWeb(".kopa-home #kopa-header").css("position", "relative");
-    jAccWeb(".kopa-home #kopa-header .kopa-header-middle").css("padding-top", "20px").css("height", "86px");
-}
-
-function mostrarWeb(){
-    jAccWeb(".tp-banner-container," +
-        "#saludos-lista," +
-        ".kopa-menu mobile-menu," +
-        ".kopa-header-top," +
-        ".kopa-list-news-carousel-widget").removeClass("ocultar");
-
-    jAccWeb(".kopa-header-bottom").css("background", "");
-    jAccWeb(".kopa-home #kopa-header").css("position", "");
-    jAccWeb(".kopa-home #kopa-header .kopa-header-middle").css("padding-top", "").css("height", "");
-}

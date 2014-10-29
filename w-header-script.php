@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="css/style.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="css/responsive.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="css/responsivo.css?update=<?php echo date("YmdHi") ?>" media="all">
+<link rel="stylesheet" href="" media="all" id="accesibilidadCSS">
 
 <?php if(isset($header)) { if($header=="home"){ ?>
 <link rel="stylesheet" type="text/css" href="libs/revolution-slider/css/settings.css" media="screen" />
