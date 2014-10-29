@@ -65,7 +65,7 @@ if($num_categoria>0){
                         <div class="widget kopa-list-posts-widget">
 
                             <header class="widget-header">
-                                <h3 class="widget-title"><?php echo $Categoria_titulo; ?></h3>
+                                <h3 class="widget-title"><a href="#" title="Sección <?php echo $Categoria_titulo; ?>"><?php echo $Categoria_titulo; ?></a></h3>
                             </header>
 
                             <div class="widget-content">
@@ -96,7 +96,7 @@ if($num_categoria>0){
                                         <div class="item">
                                             <div class="item-inner  clearfix">
                                                 <div class="post-thumb pull-left">
-                                                <a href="<?php echo $noticia_UrlWeb; ?>" class="img-responsive"><img src="<?php echo $noticia_UrlImg; ?>" alt=""></a>
+                                                <a href="<?php echo $noticia_UrlWeb; ?>" class="img-responsive" alt="<?php echo $noticia_titulo; ?>"><img src="<?php echo $noticia_UrlImg; ?>" alt=""></a>
                                                 <div class="kopa-date-box">
                                                     <span class="kopa-mon"><?php echo $FechaMes; ?></span>
                                                     <span class="kopa-day"><?php echo $FechaDia; ?></span>
@@ -106,7 +106,7 @@ if($num_categoria>0){
                                             <!-- post thumb -->
                                             <div class="item-content item-right">
                                                 <h4 class="post-title">
-                                                    <a href="<?php echo $noticia_UrlWeb; ?>"><?php echo $noticia_titulo; ?></a>
+                                                    <a href="<?php echo $noticia_UrlWeb; ?>" title="<?php echo $noticia_titulo; ?>"><?php echo $noticia_titulo; ?></a>
                                                 </h4>
                                                 <div class="kopa-metadata-border">
                                                     <span class="kopa-rate">
