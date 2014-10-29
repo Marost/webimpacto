@@ -33,18 +33,20 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
 
         <div id="editorial" class="widget kopa-list-post-small-thumb-widget no-cat">
             <header class="widget-header">
-                <h3 class="widget-title">EDITORIAL</h3>
+                <h3 class="widget-title">
+                    <a href="#" title="Noticias de Editorial">
+                        EDITORIAL</a></h3>
             </header>
             <div class="widget-content">
                 <ul class="list-unstyled">
                     <li class="clearfix col-lg-12 pdr0 pdl0 flnone">
                         <div class="item-left col-lg-9 col-md-8 col-sm-9 pdr0 pdl0 flnone">
                             <h4 class="post-title">
-                                <a href="<?php echo $ColNota_UrlWeb; ?>"><?php echo $ColNota_titulo; ?></a>
+                                <a href="<?php echo $ColNota_UrlWeb; ?>" title="<?php echo $ColNota_titulo; ?>"><?php echo $ColNota_titulo; ?></a>
                             </h4>
 
                             <span>
-                                <a href="<?php echo $Columnista_UrlWeb; ?>">
+                                <a href="<?php echo $Columnista_UrlWeb; ?>" title="Autor <?php echo $Columnista_titulo; ?>, <?php echo $Columnista_cargo; ?>">
                                     <p><strong><?php echo $Columnista_titulo; ?></strong></p>
                                 </a>
                                 <p><?php echo $Columnista_cargo; ?></p>
@@ -61,7 +63,9 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
 
         <div id="lapalabra" class="widget kopa-list-post-small-thumb-widget no-cat">
             <header class="widget-header">
-                <h3 class="widget-title">LA PALABRA</h3>
+                <h3 class="widget-title">
+                    <a href="#" title="Noticias de La Palabra">
+                        LA PALABRA</a></h3>
             </header>
             <div class="widget-content">
                 <ul class="list-unstyled">
@@ -93,11 +97,11 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
                         </a>
                         <div class="item-right col-lg-9 col-md-8 pdr0 pdl0 flnone">
                             <h4 class="post-title">
-                                <a href="<?php echo $ColNota_UrlWeb; ?>"><?php echo $ColNota_titulo; ?></a>
+                                <a href="<?php echo $ColNota_UrlWeb; ?>" title="<?php echo $ColNota_titulo; ?>"><?php echo $ColNota_titulo; ?></a>
                             </h4>
 
                             <span>
-                                <a href="<?php echo $Columnista_UrlWeb; ?>">
+                                <a href="<?php echo $Columnista_UrlWeb; ?>" title="Autor <?php echo $Columnista_titulo; ?>, <?php echo $Columnista_cargo; ?>">
                                     <p><strong><?php echo $Columnista_titulo; ?></strong></p>
                                 </a>
                                 <p><?php echo $Columnista_cargo; ?></p>

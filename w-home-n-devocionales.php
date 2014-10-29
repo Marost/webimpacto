@@ -27,7 +27,9 @@ $Devoc_UrlImg=$web."imagenes/upload/".$Devoc_imagen_carpeta."thumbdeven/".$Devoc
     <div class="widget-area-3">
         <div class="widget kopa-list-posts-thumb-big-small-widget">
             <header class="widget-header">
-                <h3 class="widget-title">DEVOCIONALES</h3>
+                <h3 class="widget-title">
+                    <a href="#" title="Noticias de Devocionales">
+                        DEVOCIONALES</a></h3>
             </header>
             <div class="widget-content">
                 <div class="item item-latest clearfix">

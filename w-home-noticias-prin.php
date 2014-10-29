@@ -28,7 +28,7 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE destacada=0 AND categor
 <div class="widget-area-2">
 
     <header class="widget-header">
-        <h3 class="widget-title">NOTICIAS</h3>
+        <h3 class="widget-title"><a href="#" title="Noticias destacadas">NOTICIAS</a></h3>
     </header>
 
     <div class="widget kopa-grid-posts-widget">
@@ -38,8 +38,8 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE destacada=0 AND categor
             <article class="item latest-post">
 
                 <div class="post-thumb">
-                    <a href="<?php echo $NotDest_UrlWeb; ?>" class="img-responsive">
-                        <img src="<?php echo $NotDest_UrlImg; ?>" alt="">
+                    <a href="<?php echo $NotDest_UrlWeb; ?>" class="img-responsive" title="<?php echo $NotDest_titulo; ?>">
+                        <img src="<?php echo $NotDest_UrlImg; ?>" alt="<?php echo $NotDest_titulo; ?>">
                     </a>
                 </div>
                 <!-- post thumb -->
@@ -47,7 +47,7 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE destacada=0 AND categor
                 <div class="item-content">
                     <header>
                         <h4 class="post-title">
-                            <a href="<?php echo $NotDest_UrlWeb; ?>"><?php echo $NotDest_titulo; ?></a></h4>
+                            <a href="<?php echo $NotDest_UrlWeb; ?>" title="<?php echo $NotDest_titulo; ?>"><?php echo $NotDest_titulo; ?></a></h4>
                     </header>
                     <div class="post-content">
 
@@ -116,11 +116,11 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE destacada=0 AND categor
                     <div class="item-content">
                         <span class="kopa-date"><?php echo $NotNor_fechaPub; ?></span>
                         <h4 class="post-title">
-                            <a href="<?php echo $NotNor_UrlWeb; ?>"><?php echo $NotNor_titulo; ?></a>
+                            <a href="<?php echo $NotNor_UrlWeb; ?>" title="<?php echo $NotNor_titulo; ?>"><?php echo $NotNor_titulo; ?></a>
                         </h4>
                     </div>
                     <div class="post-thumb">
-                        <a href="#" class="img-responsive">
+                        <a href="<?php echo $NotNor_UrlWeb; ?>" class="img-responsive" title="<?php echo $NotNor_titulo; ?>">
                             <img src="<?php echo $NotNor_UrlImg; ?>" alt="<?php echo $NotNor_titulo; ?>">
                         </a>
                     </div>

@@ -2,7 +2,7 @@
 //SELECCIONAR MAS VISTO
 $rst_notCont=mysql_query("SELECT * FROM iev_noticia WHERE publicar=1 AND fecha_publicacion<='$fechaActual' ORDER BY contador DESC LIMIT 7", $conexion);
 ?>
-<div class="widget kopa-list-posts-thumb-big-small-widget">
+<div id="home-masvisto" class="widget kopa-list-posts-thumb-big-small-widget">
     <header class="widget-header">
         <h3 class="widget-title">LO MÁS VISTO</h3>
     </header>
