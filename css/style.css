@@ -4850,3 +4850,7 @@ table.gsc-search-box td {
     position: absolute;
     z-index: 1000000;
 }
+
+.ocultar{
+    display: none !important;
+}
