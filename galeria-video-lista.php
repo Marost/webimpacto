@@ -49,7 +49,7 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_videos WHERE fecha_publicacion<
                         <div class="widget kopa-list-posts-widget">
 
                             <header class="widget-header">
-                                <h3 class="widget-title">Videogalería</h3>
+                                <h3 class="widget-title"><a href="#" title="Sección Videogalería">Videogalería</a></h3>
                             </header>
 
                             <div class="widget-content">
