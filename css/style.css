@@ -4854,3 +4854,7 @@ table.gsc-search-box td {
 .ocultar{
     display: none !important;
 }
+
+#AccWeb-Portada{
+    display: none;
+}
