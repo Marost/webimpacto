@@ -4852,7 +4852,7 @@ table.gsc-search-box td {
 /* ACCESIBILIDAD */
 #accesibilidad-opcion{
     position: absolute;
-    z-index: 1000000;
+    top: -10000px;
 }
 
 .ocultar{
