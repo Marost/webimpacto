@@ -2,7 +2,7 @@
 //SLIDE SUPERIOR
 $rst_slideSup=mysql_query("SELECT * FROM iev_slide_superior", $conexion);
 ?>
-<div class="tp-banner-container">
+<div class="tp-banner-container hidden-sm hidden-xs">
 
     <div class="tp-banner" >
         <ul>
