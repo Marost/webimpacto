@@ -175,10 +175,7 @@
 .kopa-grid-posts-widget .item.pull-left .post-thumb {
     width: 100%;
 }
-.kopa-grid-posts-widget .latest-post .item-content {
-    border: none;
-    padding-left: 0;
-}
+
 .kopa-full-width-carousel-widget .item-content {
     top: 50px;
     left: 0;
