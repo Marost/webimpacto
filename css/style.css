@@ -1280,6 +1280,8 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
     padding: 5px;
     color: #666;
     font-weight: bold;
+    margin-bottom: 6px !important;
+    display: inline-block;
 }
 .single-post-content .tags-link a:hover {
     color: #FBBD2C;
@@ -3236,6 +3238,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
 }
 .kopa-list-posts-carousel-4-widget {
     overflow: hidden;
+    margin-top: 15px;
 }
 .kopa-list-posts-carousel-4-widget .post-thumb {
     position: relative;
@@ -4308,7 +4311,6 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
  * -----------------------------------------------------------------------------
  */
  #kopa-footer {
-    height: 60px;
     border-top: 2px solid #454545;
     background: #1f1e1e;
     padding: 19px 0;
@@ -4866,4 +4868,14 @@ table.gsc-search-box td {
 #twttrHubFrameSecure,
 #twttrHubFrame{
     display: none;
+}
+
+/* FOOTER */
+.html5{
+    text-align: right;
+    margin-top: 10px;
+}
+
+.copy-right{
+    text-align: left;
 }
