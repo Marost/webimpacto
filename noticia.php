@@ -196,7 +196,7 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
 
                         </article>
 
-                        <div id="comments">
+                        <div id="comments" class="hidden-xs">
 
                             <h3>Comentarios</h3>
 
@@ -217,7 +217,7 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
                         <!-- NOTICIAS RELACIONADAS -->
                         <div class="widget kopa-list-posts-carousel-4-widget">
                             <header class="widget-header">
-                                <h3 class="widget-title">Articulos relacionados</h3>
+                                <h3 class="widget-title">Noticias relacionadas</h3>
                             </header>
                             <div class="widget-content">
                                 <div class="owl-carousel">
@@ -251,7 +251,6 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
                                                 <span class="kopa-date"><?php echo $FechaMes." ".$FechaDia.", ".$FechaAnio; ?></span>
                                             </footer>
                                         </div>
-                                        <!-- post-thumb -->
                                         <div class="item-content">
                                             <h4 class="post-title">
                                                 <a href="<?php echo $NotRel_UrlWeb; ?>"><?php echo $NotRel_titulo; ?></a>
@@ -264,9 +263,7 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
                                                 </span>
                                             </h4>
                                         </div>
-                                        <!-- item content -->
                                     </div>
-                                    <!-- item -->
                                     <?php } ?>
 
                                 </div>
