@@ -20,6 +20,8 @@ if($num_pagina==0){
     //VARIABLES
     $Pagina_titulo=$fila_pagina["titulo"];
     $Pagina_contenido=$fila_pagina["contenido"];
+    $Pagina_contenido=str_replace("[", "<", $Pagina_contenido);
+    $Pagina_contenido=str_replace("]", ">", $Pagina_contenido);
 }
 
 ?>
