@@ -55,7 +55,7 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE destacada=0 AND categor
                             <?php echo $NotDest_contenido; ?>
                         </div>
 
-                        <div class="kopa-metadata-border col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="kopa-metadata-border col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden-xs">
 
                             <!-- AddThis -->
                             <div class="addthis_native_toolbox col-lg-6 col-md-6 col-sm-6 col-xs-5"
@@ -114,7 +114,7 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE destacada=0 AND categor
 
                 <article class="item pull-left">
                     <div class="item-content">
-                        <span class="kopa-date"><?php echo $NotNor_fechaPub; ?></span>
+                        <span class="kopa-date hidden-xs"><?php echo $NotNor_fechaPub; ?></span>
                         <h4 class="post-title">
                             <a href="<?php echo $NotNor_UrlWeb; ?>" title="<?php echo $NotNor_titulo; ?>"><?php echo $NotNor_titulo; ?></a>
                         </h4>
