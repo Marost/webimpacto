@@ -41,12 +41,12 @@
 <!-- bottom sidebar -->
 
 <footer id="kopa-footer">
-    <div class="container clearfix" style="position: relative;">
-        <div class="copy-right pull-left">
-            <p>2014 Medios Digitales - Impacto Evangelístico. Todos los derechos reservados.</p>
+    <div class="container clearfix">
+        <div class="copy-right pull-left col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <p>2014 Medios Digitales - Impacto Evangelístico.</p><p>Todos los derechos reservados.</p>
         </div>
         <!-- copy right -->
-        <div class="html5" style="position: absolute; top: 0; right: 0; ">
+        <div class="html5 col-lg-4 col-md-8 col-md-12 col-xs-12">
             <a href="http://www.w3.org/html/logo/" target="_blank">
                 <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-multimedia-semantics.png" height="35" alt="HTML5 Powered with CSS3 / Styling, Multimedia, and Semantics" title="HTML5 Powered with CSS3 / Styling, Multimedia, and Semantics">
             </a>
