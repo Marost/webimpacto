@@ -5,7 +5,7 @@ $rst_galeria=mysql_query("SELECT * FROM iev_galeria WHERE publicar=1 AND fecha_p
 //GALERIA DE FOTOS - THUMB
 $rst_galThumb=mysql_query("SELECT * FROM iev_galeria WHERE publicar=1 AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 4", $conexion);
 ?>
-<div class="widget galsidebar col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="widget galsidebar col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden-xs">
     <div class="widget">
         <div class="widget kopa-sync-carousel-widget">
             <header class="widget-header">

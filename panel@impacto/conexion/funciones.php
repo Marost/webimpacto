@@ -533,7 +533,7 @@ function guardarImagen($imagen, $imagen_carpeta){
 
 function listaSocialMedia($facebook=true, $twitter=true, $twitter_usuario, $google=true, $pinterest=true, $url, $titulo, $imagen){
 
-    echo '<ul class="social-media-fc">';
+    echo '<ul class="social-media-fc hidden-xs">';
 
         if($facebook==true){ echo '<li class="fb"><div class="fb-like" data-href="'.$url.'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div></li>'; };
 
