@@ -8,8 +8,6 @@ $UrlWeb_AW="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 <div id="accesibilidad-opcion">
     <a id="accesibilidadActivar" href="javascript:;">Activar modo de accesibilidad</a>
     <a id="accesibilidadDesactivar" href="javascript:;">Desactivar modo de accesibilidad</a>
-    <a href="<?php echo $UrlWeb_AW; ?>#menu-principal">Ir a menu principal</a>
-    <a href="<?php echo $UrlWeb_AW; ?>#contenido-pagina">Ir a contenido de la página</a>
 </div>
 
 <header id="kopa-header" class="<?php echo $header_class; ?>">
@@ -18,7 +16,7 @@ $UrlWeb_AW="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
         <div class="container">
             <div class="menu-second pull-left">
                 <ul class="list-unstyled clearfix">
-                    <li><a href="#">Contactos</a></li>
+                    <li><a href="contacto/">Contactos</a></li>
                     <li><a href="#">Login</a></li>
                 </ul>
             </div>
@@ -85,7 +83,7 @@ $UrlWeb_AW="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
                         </ul>
                     </li>
                     <li><a href="videos">Videogalería</a></li>
-                    <li><a href="contacto">Contacto</a></li>
+                    <li><a href="contacto/">Contacto</a></li>
                 </ul>
 
                 <ul class="kopa-menu mobile-menu">
@@ -117,7 +115,7 @@ $UrlWeb_AW="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
                         </ul>
                     </li>
                     <li><a href="videos">Videogalería</a></li>
-                    <li><a href="contacto">Contacto</a></li>
+                    <li><a href="contacto/">Contacto</a></li>
                 </ul>
             </div>
             <!-- main-menu -->
