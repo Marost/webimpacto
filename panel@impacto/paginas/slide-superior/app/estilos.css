@@ -16,11 +16,12 @@ body{
     z-index: 21;
 }
 
-#contenido-texto .texto{
+#contenido-texto .texto,
+#contenido-texto .line{
     position: absolute !important;
 }
 
-.texto div{
+.texto div, .line div{
     font-family: 'Oswald', sans-serif;
     float: left;
     color: #000;
@@ -31,12 +32,13 @@ body{
     padding: 10px 20px;
 }
 
-.texto span{
+.texto span, .line span{
     float: left;
     margin-left: 10px;
 }
 
-.texto a, .texto a:hover{
+.texto a, .texto a:hover,
+.line a, .line a:hover{
     background: #000;
     color: #fff;
     padding: 5px;
