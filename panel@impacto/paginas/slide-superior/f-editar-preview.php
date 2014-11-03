@@ -63,17 +63,17 @@ $nota_UrlImg=$web."imagenes/slide/".$nota_imagen_carpeta."".$nota_imagen;
 					<!-- LAYERS -->
 
 					<?php for($i=0; $i<count($array); $i++){
-                            if($array[$i]->fondo <> ""){ $fondo="padding: 10px 20px; background: #".$array[$i]->fondo.";";
+                            if($array[$i]->texto->fondo <> ""){ $fondo="padding: 10px 20px; background: #".$array[$i]->texto->fondo.";";
                             }else{ $fondo=""; }
                     ?>
 
 					<!-- LAYER NR. 4 -->
-					<div style="font-size: <?php echo $array[$i]->tamano; ?>px; color: #<?php echo $array[$i]->color; ?>; <?php echo $fondo; ?>" class="tp-caption tp-resizeme"
-						data-x="<?php echo $array[$i]->x; ?>"
-						data-y="<?php echo $array[$i]->y; ?>" 
+					<div style="font-size: <?php echo $array[$i]->texto->tamano; ?>px; color: #<?php echo $array[$i]->texto->color; ?>; <?php echo $fondo; ?>" class="tp-caption tp-resizeme"
+						data-x="<?php echo $array[$i]->texto->x; ?>"
+						data-y="<?php echo $array[$i]->texto->y; ?>" 
 						data-speed="500"
 						data-start="800"
-						data-easing="Power3.easeInOut"><?php echo $array[$i]->texto; ?>
+						data-easing="Power3.easeInOut"><?php echo $array[$i]->texto->texto; ?>
 					</div>
 
 					<?php } ?>				

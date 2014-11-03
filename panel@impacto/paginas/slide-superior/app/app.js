@@ -15,22 +15,22 @@ jApp(function(){
 
     jApp("#agregar").on("click", function(){
 
-        var aleatorio = Math.floor(Math.random() * 999985) + 15;
+        var randomText = Math.floor(Math.random() * 999985) + 15;
 
-        var TextoContenido = '<div id="'+aleatorio+'" class="texto"><div>Texto</div><span class="opciones"><a id="'+aleatorio+'" class="editarSi" href="javascript:;"><i class="fa fa-pencil"></i></a><a id="'+aleatorio+'" class="editarNo" href="javascript:;"><i class="fa fa-pencil"></i></a><a id="'+aleatorio+'" class="estilosSi" href="javascript:;"><i class="fa fa-font"></i></a><a id="'+aleatorio+'" class="estilosNo" href="javascript:;"><i class="fa fa-font"></i></a><a id="'+aleatorio+'" class="fondoSi" href="javascript:;"><i class="fa fa-square"></i></a><a id="'+aleatorio+'" class="fondoNo" href="javascript:;"><i class="fa fa-square-o"></i></a><a id="'+aleatorio+'" class="eliminar" href="javascript:;"><i class="fa fa-close"></i></a><div id="'+aleatorio+'" class="textoTamano">16</div><div id="'+aleatorio+'" class="textoColor">000000</div><div id="'+aleatorio+'" class="textoFondoColor"></div></span></div>';
+        var TextoContenido = '<div id="'+randomText+'" class="texto"><div>Texto</div><span class="opciones"><a id="'+randomText+'" class="editarSi" href="javascript:;"><i class="fa fa-pencil"></i></a><a id="'+randomText+'" class="editarNo" href="javascript:;"><i class="fa fa-pencil"></i></a><a id="'+randomText+'" class="estilosSi" href="javascript:;"><i class="fa fa-font"></i></a><a id="'+randomText+'" class="estilosNo" href="javascript:;"><i class="fa fa-font"></i></a><a id="'+randomText+'" class="fondoSi" href="javascript:;"><i class="fa fa-square"></i></a><a id="'+randomText+'" class="fondoNo" href="javascript:;"><i class="fa fa-square-o"></i></a><a id="'+randomText+'" class="eliminar" href="javascript:;"><i class="fa fa-close"></i></a><div id="'+randomText+'" class="textoTamano">16</div><div id="'+randomText+'" class="textoColor">000000</div><div id="'+randomText+'" class="textoFondoColor"></div></span></div>';
 
         jApp("#contenido-texto").append(TextoContenido);
 
         //OCULTAR BOTONES
-        jApp("#"+aleatorio+".editarNo").hide(); //DE EDICION
-        jApp("#"+aleatorio+".editarSi").show(); //DE EDICION
-        jApp("#"+aleatorio+".estilosNo").hide(); //DE ESTILOS
-        jApp("#"+aleatorio+".estilosSi").show(); //DE ESTILOS
-        jApp("#"+aleatorio+".fondoNo").hide(); //DE FONDO
-        jApp("#"+aleatorio+".fondoSi").show(); //DE FONDO
-        jApp("#"+aleatorio+".textoTamano").hide(); //TAMAÑO DE TEXTO
-        jApp("#"+aleatorio+".textoColor").hide(); //COLOR DE TEXTO
-        jApp("#"+aleatorio+".textoFondoColor").hide(); //FONDO DE TEXTO
+        jApp("#"+randomText+".editarNo").hide(); //DE EDICION
+        jApp("#"+randomText+".editarSi").show(); //DE EDICION
+        jApp("#"+randomText+".estilosNo").hide(); //DE ESTILOS
+        jApp("#"+randomText+".estilosSi").show(); //DE ESTILOS
+        jApp("#"+randomText+".fondoNo").hide(); //DE FONDO
+        jApp("#"+randomText+".fondoSi").show(); //DE FONDO
+        jApp("#"+randomText+".textoTamano").hide(); //TAMAÑO DE TEXTO
+        jApp("#"+randomText+".textoColor").hide(); //COLOR DE TEXTO
+        jApp("#"+randomText+".textoFondoColor").hide(); //FONDO DE TEXTO
 
         //ARRASTRAR
         jApp('.texto').draggable({disabled:false});
@@ -153,6 +153,26 @@ jApp(function(){
 
     jApp("#agregar-linea").on("click", function(){
 
+        var randomLine = Math.floor(Math.random() * 999985) + 15;
+
+        var LineContenido = '<div id="'+randomLine+'" class="line"><div></div><span class="opciones"><a id="'+randomLine+'" class="editarSi" href="javascript:;"><i class="fa fa-pencil"></i></a><a id="'+randomLine+'" class="editarNo" href="javascript:;"><i class="fa fa-pencil"></i></a><a id="'+randomLine+'" class="estilosSi" href="javascript:;"><i class="fa fa-font"></i></a><a id="'+randomLine+'" class="estilosNo" href="javascript:;"><i class="fa fa-font"></i></a><a id="'+randomLine+'" class="fondoSi" href="javascript:;"><i class="fa fa-square"></i></a><a id="'+randomLine+'" class="fondoNo" href="javascript:;"><i class="fa fa-square-o"></i></a><a id="'+randomLine+'" class="eliminar" href="javascript:;"><i class="fa fa-close"></i></a><div id="'+randomLine+'" class="textoTamano">16</div><div id="'+randomLine+'" class="textoColor">000000</div><div id="'+randomLine+'" class="textoFondoColor"></div></span></div>';
+
+        jApp("#contenido-texto").append(LineContenido);
+
+        //ARRASTRAR
+        jApp('.line').draggable({disabled:false});
+
+        //OCULTAR BOTONES
+        jApp("#"+randomLine+".editarNo").hide(); //DE EDICION
+        jApp("#"+randomLine+".editarSi").show(); //DE EDICION
+        jApp("#"+randomLine+".estilosNo").hide(); //DE ESTILOS
+        jApp("#"+randomLine+".estilosSi").show(); //DE ESTILOS
+        jApp("#"+randomLine+".fondoNo").hide(); //DE FONDO
+        jApp("#"+randomLine+".fondoSi").show(); //DE FONDO
+        jApp("#"+randomLine+".textoTamano").hide(); //TAMAÑO DE TEXTO
+        jApp("#"+randomLine+".textoColor").hide(); //COLOR DE TEXTO
+        jApp("#"+randomLine+".textoFondoColor").hide(); //FONDO DE TEXTO
+
     });
 
     jApp("#datos").on("click", function(){
@@ -218,6 +238,7 @@ jApp(function(){
             var valor = get.childNodes[i];
             json[i]= {
                 "id"        : valor.id,
+                //"tipo"      : 
                 "texto"     : {
                     "texto"     : valor.firstChild.innerHTML,
                     "tamano"    : valor.childNodes[1].childNodes[7].innerHTML,
