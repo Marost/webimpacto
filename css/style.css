@@ -4879,3 +4879,50 @@ table.gsc-search-box td {
 .copy-right{
     text-align: left;
 }
+
+/* FORMULARIOS */
+.formSubPage{
+    width: 100%;
+}
+
+.formSubPage fieldset{
+    width: 50%;
+    padding: 10px 0;
+    margin: 0 auto;
+}
+
+.formSubPage fieldset label{
+    width: 40%;
+    float: left;
+    padding: 1% 5% 1% 0;
+    text-align: right;
+    font-size: 16px;
+}
+
+.formSubPage fieldset input[type="text"]{
+    width: 60%;
+    float: left;
+    border-radius: 5px;
+    padding: 5px;
+    line-height: 120%;
+    border: 2px solid #c6c6c6;
+    font-size: 16px;
+}
+
+.formSubPage fieldset textarea{
+    width: 60%;
+    border: 2px solid #c6c6c6;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    resize: none;
+    height: 200px;
+}
+
+.formSubPage fieldset select{
+    width: 60%;
+    border: 2px solid #c6c6c6;
+    font-size: 16px;    
+    padding: 5px;
+    border-radius: 5px;
+}
