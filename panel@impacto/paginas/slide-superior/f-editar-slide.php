@@ -177,7 +177,9 @@ $nota_UrlImg=$web."imagenes/slide/".$nota_imagen_carpeta."".$nota_imagen;
 <div id="opciones">
 
 	<ul>
+		<li><a id="datos" href="javascript:;" title="Editar datos de foto"><i class="fa fa-wrench"></i></a></li>
 		<li><a id="agregar" href="javascript:;" title="Agrega texto"><i class="fa fa-plus-square-o"></i></a></li>
+		<li><a id="agregar-linea" href="javascript:;" title="Agrega linea"><i class="fa fa-minus"></i></a></li>
 		<li><a id="transparencia" href="javascript:;" title="Mostrar/Ocultar transparencia"><i class="fa fa-square"></i></a></li>
 		<li><a id="enviar" href="javascript:;" title="Listo!!!"><i class="fa fa-check-square-o"></i></a></li>
         <li><a id="guardar" href="javascript:;" title="Guardar"><i class="fa fa-save"></i></a></li>
@@ -212,6 +214,23 @@ $nota_UrlImg=$web."imagenes/slide/".$nota_imagen_carpeta."".$nota_imagen;
     </div>
 
     <a id="cerrar" href="javascript:;">Cerrar</a>
+
+</div>
+
+<div id="configuracion">
+	
+	<div class="opciones">
+		<form action="">
+			<fieldset>
+				<label for="titulo">Titulo: </label><input type="text" id="titulo" name="titulo">
+			</fieldset>
+			<fieldset>
+				<label for="url">URL: </label><input type="text" id="url" name="url">
+			</fieldset>
+		</form>
+	</div>
+
+	<a class="cerrar" href="javascript:;">Cerrar</a>
 
 </div>
 
