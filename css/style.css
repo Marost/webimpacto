@@ -4975,22 +4975,22 @@ table.gsc-search-box td {
     width: 95px;
     height: 70px;
     margin: 0 auto;
-    background: url("../imagenes/logos/logo-bethel-color.png");
+    background: url("../imagenes/logos/logo-bethel-bn.png");
 }
 
 #footer-enlaces ul li div a.betheltv:hover{
-    background: url("../imagenes/logos/logo-bethel-bn.png");
+    background: url("../imagenes/logos/logo-bethel-color.png");
 }
 
 #footer-enlaces ul li div a.mmm{
     width: 98px;
     height: 60px;
     margin: 5px auto;
-    background: url("../imagenes/logos/logo-mmm-color.png");
+    background: url("../imagenes/logos/logo-mmm-bn.png");
 }
 
 #footer-enlaces ul li div a.mmm:hover{
-    background: url("../imagenes/logos/logo-mmm-bn.png");
+    background: url("../imagenes/logos/logo-mmm-color.png");
 }
 
 #footer-enlaces ul li div p{
