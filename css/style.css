@@ -4952,3 +4952,59 @@ table.gsc-search-box td {
     text-align: center;
     padding-bottom: 9px;
 }
+
+/* ENLACES DE FOOTER */
+#footer-enlaces ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#footer-enlaces ul li{
+    display: inline-block;
+    text-align: center;
+}
+
+#footer-enlaces ul li div a{
+    height: 80px;
+    display: block;
+}
+
+#footer-enlaces ul li div a img{
+    margin-bottom: 10px;
+}
+
+#footer-enlaces ul li:last-child div a img{
+    margin-top: 10px;
+    height: 60px;
+}
+
+#footer-enlaces ul li div a img{
+    filter: url('#grayscale'); /* Versión SVG para IE10, Chrome 17, FF3.5, Safari 5.2 and Opera 11.6 */
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%); /* Para cuando es estándar funcione en todos */
+    filter: Gray(); /* IE4-8 and 9 */
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#footer-enlaces ul li div a img:hover { 
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    filter: none;
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
