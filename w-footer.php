@@ -33,17 +33,13 @@
                             <ul>
                                 <li class="col-lg-5">
                                     <div class="col-lg-12">
-                                        <a target="_blank" href="http://betheltv.tv/" title="Bethel TV">
-                                            <img height="70" src="imagenes/logos/logo-bethel-color.png" alt="Bethel TV">
-                                        </a>
+                                        <a class="betheltv" target="_blank" href="http://betheltv.tv/" title="Bethel TV"></a>
                                         <p>Bethel TV</p>                                        
                                     </div>                                    
                                 </li>
                                 <li class="col-lg-5">
                                     <div class="col-lg-12">
-                                        <a target="_blank" href="http://mmmperu.org/" title="Movimiento Misionero Mundial">
-                                            <img height="70" src="imagenes/logos/logo-mmm-color.png" alt="Movimiento Misionero Mundial">
-                                        </a>
+                                        <a class="mmm" target="_blank" href="http://mmmperu.org/" title="Movimiento Misionero Mundial"></a>
                                         <p>Movimiento Misionero Mundial</p>                                        
                                     </div>
                                 </li>

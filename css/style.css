@@ -2395,6 +2395,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
 .kopa-list-posts-carousel-2-widget .post-title {
     font-size: 16px;
     font-weight: 700;
+    height: 35px;
 }
 .kopa-list-posts-carousel-2-widget .post-content {
     margin-top: 5px;
@@ -4970,41 +4971,28 @@ table.gsc-search-box td {
     display: block;
 }
 
-#footer-enlaces ul li div a img{
-    margin-bottom: 10px;
+#footer-enlaces ul li div a.betheltv{
+    width: 95px;
+    height: 70px;
+    margin: 0 auto;
+    background: url("../imagenes/logos/logo-bethel-color.png");
 }
 
-#footer-enlaces ul li:last-child div a img{
-    margin-top: 10px;
+#footer-enlaces ul li div a.betheltv:hover{
+    background: url("../imagenes/logos/logo-bethel-bn.png");
+}
+
+#footer-enlaces ul li div a.mmm{
+    width: 98px;
     height: 60px;
+    margin: 5px auto;
+    background: url("../imagenes/logos/logo-mmm-color.png");
 }
 
-#footer-enlaces ul li div a img{
-    filter: url('#grayscale'); /* Versión SVG para IE10, Chrome 17, FF3.5, Safari 5.2 and Opera 11.6 */
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%); /* Para cuando es estándar funcione en todos */
-    filter: Gray(); /* IE4-8 and 9 */
-
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+#footer-enlaces ul li div a.mmm:hover{
+    background: url("../imagenes/logos/logo-mmm-bn.png");
 }
 
-#footer-enlaces ul li div a img:hover { 
-    -webkit-filter: grayscale(0%);
-    -moz-filter: grayscale(0%);
-    -ms-filter: grayscale(0%);
-    -o-filter: grayscale(0%);
-    filter: none;
-
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+#footer-enlaces ul li div p{
+    margin-top: 10px;
 }
