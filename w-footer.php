@@ -18,17 +18,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- widget text -->
-                    <div class="widget kopa-social-3-widget">
-                        <div class="widget-content">
-                            <div class="kopa-social clearfix">
-                                <a href="#" class="fa fa-facebook"></a>
-                                <a href="#" class="fa fa-twitter"></a>
-                                <a href="#" class="fa fa-youtube"></a>
-                            </div>
-                            <!-- social -->
-                        </div>
-                    </div>
                 </div>
             </div>
             <!-- col 3 -->
@@ -47,9 +36,7 @@
         </div>
         <!-- copy right -->
         <div class="html5 col-lg-4 col-md-8 col-md-12 col-xs-12">
-            <a href="http://www.w3.org/html/logo/" target="_blank">
-                <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-multimedia-semantics.png" height="35" alt="HTML5 Powered with CSS3 / Styling, Multimedia, and Semantics" title="HTML5 Powered with CSS3 / Styling, Multimedia, and Semantics">
-            </a>
+            <img src="imagenes/html5-css3-jquery.png" height="50" alt="HTML5 / CSS3 /jQuery">
         </div>
     </div>
     <!-- container -->
