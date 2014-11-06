@@ -4926,3 +4926,30 @@ table.gsc-search-box td {
     padding: 5px;
     border-radius: 5px;
 }
+
+/* EDICIONES ANTERIORES */
+#edicion-anterior .categoria{
+    float: none;
+    margin: 0 auto;
+}
+
+#edicion-anterior .categoria article{
+    display: block;
+    float: left;
+    text-align: center;
+}
+
+#edicion-anterior .categoria article img{
+    -moz-box-shadow: 5px 5px 10px #666666;
+    -webkit-box-shadow: 5px 5px 10px #666666;
+    box-shadow: 5px 5px 10px #666666;
+    filter: progid:DXImageTransform.Microsoft.Shadow(strength = 5, direction = 135, color = '#666666');
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength = 5, Direction = 135, Color = '#666666')";
+}
+
+#edicion-anterior .categoria article #paginacion{
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding-bottom: 9px;
+}
