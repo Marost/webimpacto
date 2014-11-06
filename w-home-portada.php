@@ -103,12 +103,12 @@ $rst_edNotAW=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$Ed
                 <div class="idiomas">
                     <audio id="idioma_audio" src=""></audio>
                     <ul>
-                        <li><a class="en" href="">Ingles</a></li>
-                        <li><a class="al" href="">Aleman</a></li>
-                        <li><a class="it" href="">Italiano</a></li>
-                        <li><a class="fr" href="">Fránces</a></li>
-                        <li><a class="pr" href="">Portugues</a></li>
-                        <li><a class="ch" href="">Chino</a></li>
+                        <li><a class="en" href="edicion-anterior-en">Ingles</a></li>
+                        <li><a class="al" href="edicion-anterior-al">Aleman</a></li>
+                        <li><a class="it" href="edicion-anterior-it">Italiano</a></li>
+                        <li><a class="fr" href="edicion-anterior-fr">Fránces</a></li>
+                        <li><a class="pr" href="edicion-anterior-pr">Portugues</a></li>
+                        <li><a class="ch" href="edicion-anterior-ch">Chino</a></li>
                     </ul>
                 </div>
 
