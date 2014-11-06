@@ -14,7 +14,7 @@
                         <div class="textwidget">
 
                             <div class="kopa-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget lorem iaculis, condimentum orci eget, scelerisque metus.Praesent vestibulum diam nec purus gravida rhoncus...</p>
+                                <p>Impacto Evangelístico es una publicación oficial del Movimiento Misionero Mundial con 50 años de circulación en el mundo entero, editado en seis idiomas. El contenido, con reportajes, testimonios, historias e información, está orientado a edificar la vida de nuestros lectores.</p>
                             </div>
                         </div>
                     </div>
