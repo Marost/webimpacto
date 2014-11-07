@@ -84,7 +84,7 @@ require_once("../../../panel@impacto/conexion/funciones.php");
         $fecha=$fechaActual;
         $estado="D";
 
-        $rst_saludo=mysql_query("INSERT INTO iev_saludos (nombre, contenido, pais, estado_saludo, fecha) VALUES('$nombre', '$pais', '$mensaje', '$estado', '$fecha')", $conexion);
+        $rst_saludo=mysql_query("INSERT INTO iev_saludos (nombre, contenido, pais, estado_saludo, fecha) VALUES('$nombre', '$mensaje', '$pais', '$estado', '$fecha')", $conexion);
 
         if (mysql_errno()!=0){
             echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
