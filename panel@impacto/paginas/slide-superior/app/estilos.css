@@ -45,6 +45,25 @@ body{
     display: block;
 }
 
+.line div{
+    display: inline-block;
+    position: relative;
+    line-height: 34px;
+    border-bottom: 1px solid #fff;
+    width: 400px;
+}
+
+.line div:before{
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    content: '';
+    display: block;
+    background: #fff;
+}
+
 .activado{
     color: #f00 !important;
 }
