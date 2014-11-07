@@ -31,13 +31,13 @@
                         </header>
                         <div id="footer-enlaces" class="widget-content">
                             <ul>
-                                <li class="col-lg-5">
+                                <li class="col-lg-5 col-xs-12">
                                     <div class="col-lg-12">
                                         <a class="betheltv" target="_blank" href="http://betheltv.tv/" title="Bethel TV"></a>
                                         <p>Bethel TV</p>                                        
                                     </div>                                    
                                 </li>
-                                <li class="col-lg-5">
+                                <li class="col-lg-5 col-xs-12">
                                     <div class="col-lg-12">
                                         <a class="mmm" target="_blank" href="http://mmmperu.org/" title="Movimiento Misionero Mundial"></a>
                                         <p>Movimiento Misionero Mundial</p>                                        
@@ -66,7 +66,7 @@
         </div>
         <!-- copy right -->
         <div class="html5 col-lg-4 col-md-8 col-md-12 col-xs-12">
-            <img src="imagenes/html5-css3-jquery.png" height="50" alt="HTML5 / CSS3 /jQuery">
+            <img src="imagenes/html5-css3-jquery.png" alt="HTML5 / CSS3 /jQuery">
         </div>
     </div>
     <!-- container -->
