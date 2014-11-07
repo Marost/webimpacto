@@ -35,7 +35,10 @@ $rst_slideSup=mysql_query("SELECT * FROM iev_slide_superior", $conexion);
                          data-y="<?php echo $array[$i]->texto->y; ?>"
                          data-speed="500"
                          data-start="800"
-                         data-easing="Power3.easeInOut"><?php echo $array[$i]->texto->texto; ?>
+                         data-easing="Power3.easeInOut">
+                         <a style="color: #<?php echo $array[$i]->texto->color; ?>;" href="<?php echo $SlideSup_UrlWeb; ?>">
+                            <?php echo $array[$i]->texto->texto; ?>
+                         </a>
                     </div>
 
                 <?php } ?>
