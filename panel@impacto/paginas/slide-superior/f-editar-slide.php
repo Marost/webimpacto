@@ -191,7 +191,7 @@ $nota_UrlImg=$web."imagenes/slide/".$nota_imagen_carpeta."".$nota_imagen;
 <div id="opciones-estilos">
 
     <div class="opciones">
-        <h4>Tamaño</h4>
+        <h4>Tamaño: <span class="tamano"></span></h4>
         <div id="texto-tamano-slide"></div>
     </div>
 

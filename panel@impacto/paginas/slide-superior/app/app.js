@@ -73,6 +73,7 @@ jApp(function(){
                 slide: function( event, ui ) {
                     jApp("div#"+id+" div").css("font-size", ui.value);
                     jApp("div#"+id+".textoTamano").text(ui.value);
+                    jApp("#opciones-estilos."+id+" .opciones .tamano").text(ui.value);
                 }
             });
 
@@ -155,7 +156,7 @@ jApp(function(){
 
         var randomLine = Math.floor(Math.random() * 999985) + 15;
 
-        var LineContenido = '<div id="'+randomLine+'" class="line"><div></div><span class="opciones"><a id="'+randomLine+'" class="editarSi" href="javascript:;"><i class="fa fa-pencil"></i></a><a id="'+randomLine+'" class="editarNo" href="javascript:;"><i class="fa fa-pencil"></i></a><a id="'+randomLine+'" class="estilosSi" href="javascript:;"><i class="fa fa-font"></i></a><a id="'+randomLine+'" class="estilosNo" href="javascript:;"><i class="fa fa-font"></i></a><a id="'+randomLine+'" class="fondoSi" href="javascript:;"><i class="fa fa-square"></i></a><a id="'+randomLine+'" class="fondoNo" href="javascript:;"><i class="fa fa-square-o"></i></a><a id="'+randomLine+'" class="eliminar" href="javascript:;"><i class="fa fa-close"></i></a><div id="'+randomLine+'" class="textoTamano">16</div><div id="'+randomLine+'" class="textoColor">000000</div><div id="'+randomLine+'" class="textoFondoColor"></div></span></div>';
+        var LineContenido = '<div id="'+randomLine+'" class="line"><div></div><span class="opciones"><a id="'+randomLine+'" class="estilosSi" href="javascript:;"><i class="fa fa-font"></i></a><a id="'+randomLine+'" class="estilosNo" href="javascript:;"><i class="fa fa-font"></i></a><a id="'+randomLine+'" class="eliminar" href="javascript:;"><i class="fa fa-close"></i></a><div id="'+randomLine+'" class="textoTamano">16</div><div id="'+randomLine+'" class="textoColor">000000</div></span></div>';
 
         jApp("#contenido-texto").append(LineContenido);
 
@@ -163,15 +164,16 @@ jApp(function(){
         jApp('.line').draggable({disabled:false});
 
         //OCULTAR BOTONES
-        jApp("#"+randomLine+".editarNo").hide(); //DE EDICION
-        jApp("#"+randomLine+".editarSi").show(); //DE EDICION
         jApp("#"+randomLine+".estilosNo").hide(); //DE ESTILOS
         jApp("#"+randomLine+".estilosSi").show(); //DE ESTILOS
-        jApp("#"+randomLine+".fondoNo").hide(); //DE FONDO
-        jApp("#"+randomLine+".fondoSi").show(); //DE FONDO
         jApp("#"+randomLine+".textoTamano").hide(); //TAMAÑO DE TEXTO
         jApp("#"+randomLine+".textoColor").hide(); //COLOR DE TEXTO
-        jApp("#"+randomLine+".textoFondoColor").hide(); //FONDO DE TEXTO
+
+        //ELIMINAR DIV
+        jApp(".eliminar").on("click", function(){
+            var id = jApp(this).attr("id");
+            jApp("div#"+id).remove();
+        });
 
     });
 
@@ -227,8 +229,8 @@ jApp(function(){
 
     jApp("#guardar").on("click", function(){
 
-        var titulo = jApp("#titulo").value;
-        var url = jApp("#url").value;
+        var titulo = jApp("#titulo").val();
+        var url = jApp("#url").val();
 
         var get = jApp("#contenido-texto").get(0);
         var cantidad = get.childElementCount;
@@ -262,8 +264,5 @@ jApp(function(){
                 alert("Todo está "+response);
             }
         });
-
-
     });
-
 });
