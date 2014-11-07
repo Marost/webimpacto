@@ -13,24 +13,6 @@ $url=getUrlAmigable(eliminarTextoURL($nombre_completo));
 $contenido=$_POST["contenido"];
 $publicar=1;
 
-//SELECCION DE DIAS
-$dia_lunes=$_POST["dia_lunes"];
-$dia_martes=$_POST["dia_martes"];
-$dia_miercoles=$_POST["dia_miercoles"];
-$dia_jueves=$_POST["dia_jueves"];
-$dia_viernes=$_POST["dia_viernes"];
-$dia_sabado=$_POST["dia_sabado"];
-$dia_domingo=$_POST["dia_domingo"];
-
-//DIAS DE PUBLICACION
-if($dia_lunes<>""){ $dia_lunes=1; }else{ $dia_lunes=0; }
-if($dia_martes<>""){ $dia_martes=1; }else{ $dia_martes=0; }
-if($dia_miercoles<>""){ $dia_miercoles=1; }else{ $dia_miercoles=0; }
-if($dia_jueves<>""){ $dia_jueves=1; }else{ $dia_jueves=0; }
-if($dia_viernes<>""){ $dia_viernes=1; }else{ $dia_viernes=0; }
-if($dia_sabado<>""){ $dia_sabado=1; }else{ $dia_sabado=0; }
-if($dia_domingo<>""){ $dia_domingo=1; }else{ $dia_domingo=0; }
-
 //SUBIR IMAGEN
 if(is_uploaded_file($_FILES['fileInput']['tmp_name'])){ 
 	$fileName=$_FILES['fileInput']['name'];
@@ -38,7 +20,7 @@ if(is_uploaded_file($_FILES['fileInput']['tmp_name'])){
 	$uploadFile=$uploadDir.$fileName;
 	$num = 0;
 	$name = $fileName;
-	$extension = end(explode('.',$fileName));     
+	$extension = end(explode(".", $fileName));     
 	$onlyName = substr($fileName,0,strlen($fileName)-(strlen($extension)+1));
 	while(file_exists($uploadDir.$name))
 	{
@@ -68,7 +50,7 @@ $rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_columnista (url,
 	$publicar);",$conexion);
 
 if (mysql_errno()!=0){
-	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
+	//echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
 	mysql_close($conexion);
 	header("Location:lista.php?msj=er");
 } else {
