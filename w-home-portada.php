@@ -25,7 +25,7 @@ $rst_edNotAW=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$Ed
     <div class="widget kopa-list-posts-carousel-2-widget">
         <header class="widget-header">
             <h3 class="widget-title">
-                <a href="/" title="<?php echo $EdEsp_AccWeb; ?>" alt="<?php echo $EdEsp_AccWeb; ?>" target="_blank">
+                <a href="#" title="<?php echo $EdEsp_AccWeb; ?>">
                     EDICIÓN IMPRESA
                 </a>
             </h3>

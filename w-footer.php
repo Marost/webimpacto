@@ -31,13 +31,13 @@
                         </header>
                         <div id="footer-enlaces" class="widget-content">
                             <ul>
-                                <li class="col-lg-5 col-xs-12">
+                                <li class="col-lg-5 col-sm-6 col-xs-12">
                                     <div class="col-lg-12">
                                         <a class="betheltv" target="_blank" href="http://betheltv.tv/" title="Bethel TV"></a>
                                         <p>Bethel TV</p>                                        
                                     </div>                                    
                                 </li>
-                                <li class="col-lg-5 col-xs-12">
+                                <li class="col-lg-5 col-sm-6 col-xs-12">
                                     <div class="col-lg-12">
                                         <a class="mmm" target="_blank" href="http://mmmperu.org/" title="Movimiento Misionero Mundial"></a>
                                         <p>Movimiento Misionero Mundial</p>                                        

@@ -1571,9 +1571,6 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
 .widget {
     margin-bottom: 40px;
 }
-.widget .widget-title {
-    margin-top: 0;
-}
 .widget .post-title {
     margin-top: 0;
     line-height: 20px;
