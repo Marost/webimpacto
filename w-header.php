@@ -80,7 +80,6 @@ $UrlWeb_AW="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
                         </ul>
                     </li>
                     <li><a href="videos">Videogalería</a></li>
-                    <li><a href="contacto/">Contacto</a></li>
                 </ul>
 
                 <ul class="kopa-menu mobile-menu">
@@ -112,7 +111,6 @@ $UrlWeb_AW="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
                         </ul>
                     </li>
                     <li><a href="videos">Videogalería</a></li>
-                    <li><a href="contacto/">Contacto</a></li>
                 </ul>
             </div>
             <!-- main-menu -->
