@@ -24,22 +24,10 @@ $nota_video=$fila_nota["video"];
 $nota_audio=$fila_nota["audio"];
 $nota_publicar=$fila_nota["publicar"];
 
-
-//$nota_categoria=$fila_nota["categoria"];
-//$nota_destacada=$fila_nota["destacada"];
-
-
 /* FECHA */
 $nota_fecha_pub=explode(" ", $fila_nota["fecha_publicacion"]);
 $nota_pub_fecha=$nota_fecha_pub[0];
 $nota_pub_hora=$nota_fecha_pub[1];
-
-//CATEGORIA
-$rst_cat=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_categoria WHERE publicar=1 ORDER BY categoria ASC;", $conexion);
-
-//TAGS
-$tags=explode(",", $fila_nota["tags"]);    //SEPARACION DE ARRAY CON COMAS
-$rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre ASC;", $conexion);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -50,45 +38,6 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
 <title>Administrador</title>
 
 <?php require_once("../../w-scripts.php"); ?>
-
-    <!-- AGREGANDO NUEVO TAG -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.min.js"></script>
-    <script type="text/javascript">
-        var jMulSl = jQuery.noConflict();
-
-        jMulSl(document).on("ready", function(){
-
-            jMulSl("#refreshAdd").on("click", function() {
-
-                var $select = jMulSl("select.selectMultiple"),
-                    $input = jMulSl("#refreshInput"),
-                    value = jMulSl.trim($input.val())
-
-
-                jMulSl.ajax({
-                    type: "POST",
-                    url: "s-guardar-tag.php",
-                    data: {"input": $input.val()},
-                    success:function(response){
-                        if (!value) {
-                            $input.focus();
-                            return;
-                        }
-
-                        var data = jMulSl.parseJSON(response)
-
-                        var $opt = jMulSl("<option />", {
-                            value: data.id,
-                            text: data.titulo
-                        });
-
-                        $input.val("");
-                        $select.append($opt);
-                    }
-                });
-            });
-        });
-    </script>
 
 </head>
 
@@ -162,6 +111,8 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                                 <div id="uploader">Tu navegador no soporta HTML5.</div>
                                 <input type="hidden" name="imagen" value="<?php echo $nota_imagen; ?>">
                                 <input type="hidden" name="imagen_carpeta" value="<?php echo $nota_imagen_carpeta; ?>">
+                                <input type="hidden" name="imagenin" value="<?php echo $nota_imagenin; ?>">
+                                <input type="hidden" name="imagenin_carpeta" value="<?php echo $nota_imagenin_carpeta; ?>">
                             </div>
                         </div>
                     </div>
@@ -176,72 +127,6 @@ $rst_tags=mysql_query("SELECT * FROM ".$tabla_suf."_noticia_tags ORDER BY nombre
                     <div class="formRow">
                         <div class="grid3"><label>Audio (Soundcloud):</label></div>
                         <div class="grid9"><textarea name="audio"><?php echo $nota_audio; ?></textarea>
-                        </div>
-                    </div>
-
-                    <div class="formRow" style="display: none;">
-                        <div class="grid3"><label>Categoria:</label></div>
-                        <div class="grid9">
-                            <select name="categoria" class="styled">
-                                <option>Selecciona</option>
-                                <?php while($fila_cat=mysql_fetch_array($rst_cat)){
-                                        $cat_id=$fila_cat["id"];
-                                        $cat_nombre=$fila_cat["categoria"];
-
-                                        if ($nota_categoria==$cat_id){
-                                ?>
-                                <option value="<?php echo $cat_id; ?>" selected><?php echo $cat_nombre; ?></option>
-                                <?php }else{ ?>
-                                <option value="<?php echo $cat_id; ?>"><?php echo $cat_nombre; ?></option>
-                                <?php }} ?>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="formRow" style="display: none;">
-                        <div class="grid3"><label>Tipo de noticia: </label></div>
-                        <div class="grid9 yes_no">
-                            <div class="floatL mr10">Destacada
-                                <?php if($nota_destacada==1){ ?>
-                                <input type="radio" name="tipo_noticia" value="not_destacada" checked />
-                                <?php }else{ ?>
-                                <input type="radio" name="tipo_noticia" value="not_destacada" />
-                                <?php } ?>
-                            </div>
-                            <div class="floatL mr10">Normal
-                                <?php if($nota_destacada<>1){ ?>
-                                <input type="radio" name="tipo_noticia" value="not_normal" checked />
-                                <?php }else{ ?>
-                                <input type="radio" name="tipo_noticia" value="not_normal" />
-                                <?php } ?>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="formRow" style="display: none;">
-                        <div class="grid3"><label>Etiquetas:</label></div>
-                        <div class="grid9">
-
-                            <span class="grid5" style="margin-bottom: 10px;margin-right: 10px;">
-                                <input id="refreshInput" type="text" />
-
-                            </span>
-                            <span class="gri5" style="font-weight: bold;font-size: 14px;">
-                                <a id="refreshAdd" href="javascript:;">Agregar nueva Etiqueta</a>
-                            </span>
-
-                            <select class="selectMultiple" multiple="multiple" tabindex="6" name="tags[]">
-                                <?php while($fila_tags=mysql_fetch_array($rst_tags)){
-                                        $tags_id=$fila_tags["id"];
-                                        $tags_nombre=$fila_tags["nombre"];
-                                        if(in_array($tags_id, $tags)){
-                                ?>
-                                <option value="<?php echo $tags_id; ?>" selected><?php echo $tags_nombre; ?></option>
-                                <?php }else{ ?>
-                                <option value="<?php echo $tags_id; ?>"><?php echo $tags_nombre; ?></option>
-                                <?php }}  ?>
-
-                            </select>
                         </div>
                     </div>
 

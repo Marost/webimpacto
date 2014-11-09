@@ -12,18 +12,12 @@ $nombre=$_POST["nombre"];
 $url=getUrlAmigable(eliminarTextoURL($nombre));
 $contenido=$_POST["contenido"];
 $pagina=$_POST["pagina"];
-$tipo_noticia=$_POST["tipo_noticia"];
 
 //FECHA Y HORA
 $pub_fecha=$_POST["pub_fecha"];
 $pub_hora=$_POST["pub_hora"];
 $fecha_publicacion=$pub_fecha." ".$pub_hora;
 $publicar=1;
-
-//TAGS
-$tags=$_POST["tags"];
-if($tags==""){ $union_tags=0; }
-elseif($tags<>""){ $union_tags=implode(",", $tags);}
 
 //SUBIR IMAGEN
 $upload_imagen=$_POST["uploader_0_tmpname"];

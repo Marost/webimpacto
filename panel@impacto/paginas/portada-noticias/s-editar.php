@@ -24,7 +24,6 @@ if ($_POST["publicar"]<>""){ $publicar=$_POST["publicar"]; }else{ $publicar=0; }
 
 //VIDEO
 $video_youtube=$_POST["video_youtube"];
-//$video_upload=$_POST["uploader_video_0_tmpname"];
 
 //AUDIO
 $audio=$_POST["audio"];
@@ -39,7 +38,8 @@ if($upload_imagen<>""){
     $imagen_carpeta=fechaCarpeta()."/";
     guardarImagen($imagen, $imagen_carpeta);
 }else{
-    $imagen=""; $imagen_carpeta="";
+    $imagen=$_POST["imagen"];
+    $imagen_carpeta=$_POST["imagen_carpeta"];
 }
 
 if($upload_imagenin<>""){
@@ -47,7 +47,8 @@ if($upload_imagenin<>""){
     $imagenin_carpeta=fechaCarpeta()."/";
     guardarImagen($imagenin, $imagenin_carpeta);
 }else{
-    $imagenin=""; $imagenin_carpeta="";
+    $imagenin=$_POST["imagenin"];
+    $imagenin_carpeta=$_POST["imagenin_carpeta"];
 }
 
 //VIDEO YOUTUBE

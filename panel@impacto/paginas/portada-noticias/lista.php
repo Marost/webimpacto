@@ -27,7 +27,7 @@ include_once('../../js/plugins/creative_table/creativeTable.php');
 $ct=new CreativeTable();
 
 // Data Gathering
-$params['sql_query']                = "SELECT id,titulo,fecha_publicacion FROM ".$tabla_suf."_edicion_noticia WHERE edicion_id=$Req_Not ORDER BY fecha_publicacion DESC, id DESC";
+$params['sql_query']                = "SELECT id,pagina,titulo,fecha_publicacion FROM ".$tabla_suf."_edicion_noticia WHERE edicion_id=$Req_Not ORDER BY pagina DESC";
 //$params['search']                   = $search;
 $params['multiple_search']          = $multiple_search;
 $params['items_per_page']           = $items_per_page;
@@ -35,8 +35,8 @@ $params['sort']                     = $sort;
 $params['page']                     = $page;
 $params['total_items']              = $total_items;
 
-$params['header']                   = 'ID,Registro,Fecha publicación';
-$params['width']                    = '30,650,140';
+$params['header']                   = 'ID,Página,Registro,Fecha publicación';
+$params['width']                    = '30,30,650,140';
 
 /* ORDENAR POR CAMPOS */
 $params['sort_init'] = false;  // sort all fields
@@ -46,7 +46,7 @@ $params['search_init'] = false;  // no search
 $params['multiple_search_init'] = true;  // all fields
 $params['multiple_search_init'] = false;  // no advanced search
 $params['multiple_search_init'] = hide;  // all fields but in beginnig they are hidden
-$params['multiple_search_init'] = 'ftff';  // 3rd field only
+$params['multiple_search_init'] = 'fffff';  // 3rd field only
 
 $arr_extra_cols[0]  = array(6,'Acciones','100','<div class="btn-group" style="display: inline-block; margin-bottom: -4px;">
                                 <a class="buttonS bDefault" data-toggle="dropdown" href="#">Acción<span class="caret"></span></a>
