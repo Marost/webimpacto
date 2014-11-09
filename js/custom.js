@@ -65,11 +65,20 @@ jQuery(document).ready(function () {
 
     jQuery(".kopa-rate").hide(); //OCULTAR STAR RATING
 
+    Modernizr.load([{
+        load: 'libs/lazyload/jquery.lazyload.js',
+        complete: function() {
+            jQuery("img.lazy").lazyload({
+                effect : "fadeIn"
+            });
+        }
+    }]);
+
     // 1. Main menu
     Modernizr.load([{
         load: 'js/superfish.js',
         complete: function () {
-            $('.kopa-menu.sf-menu').superfish({
+            jQuery('.kopa-menu.sf-menu').superfish({
                 delay:500
                 // cssArrows:  false
             });
