@@ -96,7 +96,9 @@ if($num_categoria>0){
                                         <div class="item">
                                             <div class="item-inner  clearfix">
                                                 <div class="post-thumb pull-left">
-                                                <a href="<?php echo $noticia_UrlWeb; ?>" class="img-responsive" alt="<?php echo $noticia_titulo; ?>"><img src="<?php echo $noticia_UrlImg; ?>" alt=""></a>
+                                                <a href="<?php echo $noticia_UrlWeb; ?>" class="img-responsive" alt="<?php echo $noticia_titulo; ?>">
+                                                    <img class="lazy" data-original="<?php echo $noticia_UrlImg; ?>" src="<?php echo $noticia_UrlImg; ?>" alt="">
+                                                </a>
                                                 <div class="kopa-date-box">
                                                     <span class="kopa-mon"><?php echo $FechaMes; ?></span>
                                                     <span class="kopa-day"><?php echo $FechaDia; ?></span>

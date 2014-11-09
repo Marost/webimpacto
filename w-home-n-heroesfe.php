@@ -35,7 +35,7 @@ $HerFe_UrlImg=$web."imagenes/upload/".$HerFe_imagen_carpeta."thumbdeven/".$HerFe
                 <div class="item item-latest clearfix">
                     <div class="post-thumb">
                         <a href="<?php echo $HerFe_UrlWeb; ?>" class="img-responsive" title="<?php echo $HerFe_titulo; ?>">
-                            <img src="<?php echo $HerFe_UrlImg; ?>" alt="<?php echo $HerFe_titulo; ?>"></a>
+                            <img class="lazy" data-original="<?php echo $HerFe_UrlImg; ?>" src="<?php echo $HerFe_UrlImg; ?>" alt="<?php echo $HerFe_titulo; ?>"></a>
                     </div>
                     <!-- thumb -->
                     <div class="item-content">

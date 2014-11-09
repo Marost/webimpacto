@@ -23,7 +23,7 @@ $rst_slideSup=mysql_query("SELECT * FROM iev_slide_superior", $conexion);
 
             <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-thumb=""  data-saveperformance="on"  data-title="<?php echo $SlideSup_titulo; ?>">
 
-                <img alt="<?php echo $SlideSup_titulo; ?>" data-lazyload="<?php echo $SlideSup_UrlImg; ?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                <img class="lazy" alt="<?php echo $SlideSup_titulo; ?>" data-original="<?php echo $SlideSup_UrlImg; ?>" data-lazyload="<?php echo $SlideSup_UrlImg; ?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 
                 <?php for($i=0; $i<count($array); $i++){
                         if($array[$i]->texto->fondo <> ""){ $fondo="padding: 10px 20px; background: #".$array[$i]->texto->fondo.";";

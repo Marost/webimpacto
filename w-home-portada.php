@@ -14,10 +14,10 @@ $EdEsp_UrlImg=$web."imagenes/revista/".$EdEsp_imagen;
 $EdEsp_AccWeb="Noticias de nuestra ".$EdEsp_nombre_edicion;
 
 //NOTICIAS DE PORTADA
-$rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEsp_id AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC", $conexion);
+$rst_edNot=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEsp_id AND fecha_publicacion<='$fechaActual' ORDER BY pagina ASC", $conexion);
 
 //NOTICIAS DE PORTADA - ACCESIBILIDAD
-$rst_edNotAW=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEsp_id AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC", $conexion);
+$rst_edNotAW=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$EdEsp_id AND fecha_publicacion<='$fechaActual' ORDER BY pagina ASC", $conexion);
 
 ?>
 <div class="widget-area-6 col-xs-12 pdl0 pdr0">
@@ -59,7 +59,7 @@ $rst_edNotAW=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$Ed
 
                         <div class="post-thumb">
                             <a href="<?php echo $EdNot_UrlWeb; ?>" class="img-responsive" title="<?php echo $EdNot_titulo; ?>">
-                                <img src="<?php echo $EdNot_UrlImg; ?>" alt="<?php echo $EdNot_titulo; ?>">
+                                <img class="lazy" data-original="<?php echo $EdNot_UrlImg; ?>" src="<?php echo $EdNot_UrlImg; ?>" alt="<?php echo $EdNot_titulo; ?>">
                             </a>
                         </div>
                         <!-- post-thumb -->
@@ -96,7 +96,7 @@ $rst_edNotAW=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$Ed
 
                 <div class="portada">
                     <a href="<?php echo $EdEsp_url; ?>" title="<?php echo $EdEsp_nombre_edicion; ?>" target="_blank">
-                        <img height="249" src="<?php echo $EdEsp_UrlImg; ?>" alt="<?php echo $EdEsp_nombre_edicion; ?>"/>
+                        <img class="lazy" data-original="<?php echo $EdEsp_UrlImg; ?>" height="249" src="<?php echo $EdEsp_UrlImg; ?>" alt="<?php echo $EdEsp_nombre_edicion; ?>"/>
                     </a>
                 </div>
 
@@ -139,7 +139,9 @@ $rst_edNotAW=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$Ed
                 <div class="item">
 
                     <div class="post-thumb">
-                        <a href="<?php echo $EdNot_UrlWeb; ?>" class="img-responsive"><img src="<?php echo $EdNot_UrlImg; ?>" alt="<?php echo $EdNot_titulo; ?>"></a>
+                        <a href="<?php echo $EdNot_UrlWeb; ?>" class="img-responsive">
+                            <img class="lazy" data-original="<?php echo $EdNot_UrlImg; ?>" src="<?php echo $EdNot_UrlImg; ?>" alt="<?php echo $EdNot_titulo; ?>">
+                        </a>
                         <div class="kopa-metadata">
                             <span class="kopa-date"><?php echo $FechaMes." ".$FechaDia.", ".$FechaAnio; ?></span>
                         </div>

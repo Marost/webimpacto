@@ -104,8 +104,8 @@ $Noticia_UrlWeb=$web."galeria/".$Req_Id."-".$Req_Url;
                                                 ?>
 
                                                 <div>
-                                                    <img class="rsImg" data-rsbigimg="<?php echo $galeria_UrlImg; ?>" src="<?php echo $galeria_UrlImg; ?>" />
-                                                    <img width="96" height="72" class="rsTmb" src="<?php echo $galeria_UrlImgThumb; ?>">
+                                                    <img class="rsImg lazy" data-original="<?php echo $galeria_UrlImg; ?>" data-rsbigimg="<?php echo $galeria_UrlImg; ?>" src="<?php echo $galeria_UrlImg; ?>" />
+                                                    <img width="96" height="72" class="rsTmb lazy"  data-original="<?php echo $galeria_UrlImgThumb; ?>" src="<?php echo $galeria_UrlImgThumb; ?>">
                                                 </div>
                                             <?php } ?>
                                         </div>
@@ -160,7 +160,7 @@ $Noticia_UrlWeb=$web."galeria/".$Req_Id."-".$Req_Url;
                                     <div class="item">
                                         <div class="post-thumb">
                                             <a href="<?php echo $NotRel_UrlWeb; ?>" class="img-responsive">
-                                                <img src="<?php echo $NotRel_UrlImg; ?>" alt="<?php echo $NotRel_titulo; ?>">
+                                                <img class="lazy" data-original="<?php echo $NotRel_UrlImg; ?>" src="<?php echo $NotRel_UrlImg; ?>" alt="<?php echo $NotRel_titulo; ?>">
                                             </a>
                                             <footer>
                                                 <span class="kopa-date"><?php echo $FechaMes." ".$FechaDia.", ".$FechaAnio; ?></span>

@@ -35,7 +35,7 @@ $Eventos_UrlImg=$web."imagenes/upload/".$Eventos_imagen_carpeta."thumbdeven/".$E
                 <div class="item item-latest clearfix">
                     <div class="post-thumb">
                         <a href="<?php echo $Eventos_UrlWeb; ?>" class="img-responsive" title="<?php echo $Eventos_titulo; ?>">
-                            <img src="<?php echo $Eventos_UrlImg; ?>" alt="<?php echo $Eventos_titulo; ?>"></a>
+                            <img class="lazy" data-original="<?php echo $Eventos_UrlImg; ?>" src="<?php echo $Eventos_UrlImg; ?>" alt="<?php echo $Eventos_titulo; ?>"></a>
                     </div>
                     <!-- thumb -->
                     <div class="item-content">

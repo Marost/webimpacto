@@ -109,7 +109,7 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
                                 <div class="article-content">
 
                                     <div class="entry-content">
-                                        <?php echo primerParrafo($Noticia_contenido); ?>
+                                        <?php echo cortarTextoRH($Noticia_contenido,1,0,150); ?>
                                     </div>
 
                                     <?php listaSocialMedia(true, true, "Impacto_Evangel", true, true, $Noticia_UrlWeb, $Noticia_titulo, $Noticia_UrlImg); ?>
@@ -133,7 +133,7 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
 
                                         <ul id="lista-multimedia">
                                             <li id="noticia-foto">
-                                                <img src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
+                                                <img class="lazy" data-original="<?php echo $Noticia_UrlImg; ?>" src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
                                             </li>
                                             <?php if($num_notFotos>0){ ?>
                                             <li id="noticia-galeria">
@@ -145,7 +145,7 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
                                                         //URL
                                                         $NotFotos_UrlImg=$web."imagenes/upload/".$NotFotos_imagen_carpeta."".$NotFotos_imagen;
                                                         ?>
-                                                        <div class="item img-responsive"><img src="<?php echo $NotFotos_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>"></div>
+                                                        <div class="item img-responsive"><img class="lazy" data-original="<?php echo $NotFotos_UrlImg; ?>" src="<?php echo $NotFotos_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>"></div>
                                                     <?php } ?>
                                                 </div>
                                                 <!-- owl carousel -->
@@ -167,7 +167,7 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
                                     <!-- post thumb -->
 
                                     <div class="entry-content">
-                                        <?php echo $Noticia_contenido; ?>
+                                        <?php echo cortarTextoRH($Noticia_contenido,0,1,0); ?>
 
                                         <div class="tags-link">
                                             <span>Tags:</span>
@@ -245,7 +245,7 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
                                     <div class="item">
                                         <div class="post-thumb">
                                             <a href="<?php echo $NotRel_UrlWeb; ?>" class="img-responsive">
-                                                <img src="<?php echo $NotRel_UrlImg; ?>" alt="<?php echo $NotRel_titulo; ?>">
+                                                <img class="lazy" data-original="<?php echo $NotRel_UrlImg; ?>" src="<?php echo $NotRel_UrlImg; ?>" alt="<?php echo $NotRel_titulo; ?>">
                                             </a>
                                             <footer>
                                                 <span class="kopa-date"><?php echo $FechaMes." ".$FechaDia.", ".$FechaAnio; ?></span>

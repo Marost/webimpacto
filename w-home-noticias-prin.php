@@ -39,7 +39,7 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE destacada=0 AND categor
 
                 <div class="post-thumb">
                     <a href="<?php echo $NotDest_UrlWeb; ?>" class="img-responsive" title="<?php echo $NotDest_titulo; ?>">
-                        <img src="<?php echo $NotDest_UrlImg; ?>" alt="<?php echo $NotDest_titulo; ?>">
+                        <img class="lazy" data-original="<?php echo $NotDest_UrlImg; ?>" src="<?php echo $NotDest_UrlImg; ?>" alt="<?php echo $NotDest_titulo; ?>">
                     </a>
                 </div>
                 <!-- post thumb -->
@@ -121,7 +121,7 @@ $rst_notNor=mysql_query("SELECT * FROM iev_noticia WHERE destacada=0 AND categor
                     </div>
                     <div class="post-thumb">
                         <a href="<?php echo $NotNor_UrlWeb; ?>" class="img-responsive" title="<?php echo $NotNor_titulo; ?>">
-                            <img src="<?php echo $NotNor_UrlImg; ?>" alt="<?php echo $NotNor_titulo; ?>">
+                            <img class="lazy" data-original="<?php echo $NotNor_UrlImg; ?>" src="<?php echo $NotNor_UrlImg; ?>" alt="<?php echo $NotNor_titulo; ?>">
                         </a>
                     </div>
                     <!-- post thumb -->

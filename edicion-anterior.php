@@ -94,7 +94,7 @@ if($num_edAnterior>0){
 
                                     <article class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
                                         <a href="<?php echo $noticia_url; ?>" target="_blank">
-                                            <img src="<?php echo $noticia_UrlImg; ?>" alt="<?php echo $noticia_titulo; ?>" width="130">
+                                            <img class="lazy" data-original="<?php echo $noticia_UrlImg; ?>" src="<?php echo $noticia_UrlImg; ?>" alt="<?php echo $noticia_titulo; ?>" width="130">
                                         </a>
                                     </article>
 

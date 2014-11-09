@@ -116,7 +116,7 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
 
                                         <ul id="lista-multimedia">
                                             <li id="noticia-foto">
-                                                <img src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
+                                                <img class="lazy" data-original="<?php echo $Noticia_UrlImg; ?>" src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
                                             </li>
                                             <?php if($num_notFotos>0){ ?>
                                             <li id="noticia-galeria">
@@ -128,7 +128,7 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
                                                         //URL
                                                         $NotFotos_UrlImg=$web."imagenes/upload/".$NotFotos_imagen_carpeta."".$NotFotos_imagen;
                                                         ?>
-                                                        <div class="item img-responsive"><img src="<?php echo $NotFotos_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>"></div>
+                                                        <div class="item img-responsive"><img class="lazy" data-original="<?php echo $NotFotos_UrlImg; ?>" src="<?php echo $NotFotos_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>"></div>
                                                     <?php } ?>
                                                 </div>
                                                 <!-- owl carousel -->

@@ -35,7 +35,7 @@ $HisVida_UrlImg=$web."imagenes/upload/".$HisVida_imagen_carpeta."thumbdeven/".$H
                 <div class="item item-latest clearfix">
                     <div class="post-thumb">
                         <a href="<?php echo $HisVida_UrlWeb; ?>" class="img-responsive" title="<?php echo $HisVida_titulo; ?>">
-                            <img src="<?php echo $HisVida_UrlImg; ?>" alt="<?php echo $HisVida_titulo; ?>"></a>
+                            <img class="lazy" data-original="<?php echo $HisVida_UrlImg; ?>" src="<?php echo $HisVida_UrlImg; ?>" alt="<?php echo $HisVida_titulo; ?>"></a>
                     </div>
                     <!-- thumb -->
                     <div class="item-content">

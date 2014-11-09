@@ -91,7 +91,7 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_edicion_noticia WHERE id<>$Req_Id AND
 
                                         <ul id="lista-multimedia">
                                             <li id="noticia-foto">
-                                                <img src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
+                                                <img class="lazy" data-original="<?php echo $Noticia_UrlImg; ?>" src="<?php echo $Noticia_UrlImg; ?>" alt="<?php echo $Noticia_titulo; ?>">
                                             </li>
                                             <?php if($Noticia_video<>""){ ?>
                                                 <li id="noticia-video">
@@ -169,7 +169,7 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_edicion_noticia WHERE id<>$Req_Id AND
                                     <div class="item">
                                         <div class="post-thumb">
                                             <a href="<?php echo $NotRel_UrlWeb; ?>" class="img-responsive">
-                                                <img src="<?php echo $NotRel_UrlImg; ?>" alt="<?php echo $NotRel_titulo; ?>">
+                                                <img class="lazy" data-original="<?php echo $NotRel_UrlImg; ?>" src="<?php echo $NotRel_UrlImg; ?>" alt="<?php echo $NotRel_titulo; ?>">
                                             </a>
                                             <footer>
                                                 <span class="kopa-date"><?php echo $FechaMes." ".$FechaDia.", ".$FechaAnio; ?></span>
@@ -219,20 +219,6 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_edicion_noticia WHERE id<>$Req_Id AND
                                 <div class="clearfix">
                                     <h5 class="post-cat">Publicación: <?php echo $NoticiaFecha; ?></h5>
                                 </div>
-
-                                <div class="user-rating">
-                                    <header>
-                                        <h3>Califica la Noticia</h3>
-                                        <span class="kopa-rate">
-                                            <i class="fa fa-star fa-3x"></i>
-                                            <i class="fa fa-star fa-3x"></i>
-                                            <i class="fa fa-star fa-3x"></i>
-                                            <i class="fa fa-star fa-3x"></i>
-                                            <i class="fa fa-star-o fa-3x"></i>
-                                        </span>
-                                    </header>
-                                </div>
-                                <!-- user rating -->
 
                                 <div class="link-social-2">
                                     <div class="addthis_native_toolbox"

@@ -45,7 +45,7 @@ $UrlWeb_AW="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
         <div class="container">
 
             <div class="kopa-logo <?php echo $mostrar; ?>">
-                <a href="#"><img src="imagenes/logo.png" alt=""></a>
+                <a href="/"><img src="imagenes/logo.png" alt=""></a>
             </div>
             <!-- logo -->
 

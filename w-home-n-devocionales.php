@@ -35,7 +35,7 @@ $Devoc_UrlImg=$web."imagenes/upload/".$Devoc_imagen_carpeta."thumbdeven/".$Devoc
                 <div class="item item-latest clearfix">
                     <div class="post-thumb">
                         <a href="<?php echo $Devoc_UrlWeb; ?>" class="img-responsive" title="<?php echo $Devoc_titulo; ?>">
-                            <img src="<?php echo $Devoc_UrlImg; ?>" alt="<?php echo $Devoc_titulo; ?>"></a>
+                            <img class="lazy" data-original="<?php echo $Devoc_UrlImg; ?>" src="<?php echo $Devoc_UrlImg; ?>" alt="<?php echo $Devoc_titulo; ?>"></a>
                     </div>
                     <!-- thumb -->
                     <div class="item-content">

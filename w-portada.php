@@ -25,7 +25,7 @@ $EdEsp_UrlImg=$web."imagenes/revista/".$EdEsp_imagen;
 
                 <div class="portada col-lg-12 col-md-9 col-sm-5">
                     <a href="<?php echo $EdEsp_url; ?>" title="<?php echo $EdEsp_nombre_edicion; ?>" target="_blank">
-                        <img src="<?php echo $EdEsp_UrlImg; ?>" alt="<?php echo $EdEsp_nombre_edicion; ?>"/>
+                        <img class="lazy" data-original="<?php echo $EdEsp_UrlImg; ?>" src="<?php echo $EdEsp_UrlImg; ?>" alt="<?php echo $EdEsp_nombre_edicion; ?>"/>
                     </a>
                 </div>
 

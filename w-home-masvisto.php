@@ -27,7 +27,7 @@ $rst_notCont=mysql_query("SELECT * FROM iev_noticia WHERE publicar=1 AND fecha_p
 
                         <div class="imagen">
                             <a href="<?php echo $NotCont_UrlWeb; ?>">
-                                <img src="<?php echo $NotCont_UrlImg; ?>" alt="<?php echo $NotCont_titulo; ?>"/>
+                                <img class="lazy" data-original="<?php echo $NotCont_UrlImg; ?>" src="<?php echo $NotCont_UrlImg; ?>" alt="<?php echo $NotCont_titulo; ?>"/>
                             </a>
                         </div>
 

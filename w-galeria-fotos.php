@@ -35,7 +35,7 @@ $rst_galThumb=mysql_query("SELECT * FROM iev_galeria WHERE publicar=1 AND fecha_
                     <div class="item">
                         <div class="post-thumb">
                             <a href="<?php echo $Galeria_UrlWeb; ?>" class="img-responsive">
-                                <img src="<?php echo $Galeria_UrlImg; ?>" alt="">
+                                <img class="lazy" data-original="<?php echo $Galeria_UrlImg; ?>" src="<?php echo $Galeria_UrlImg; ?>" alt="">
                             </a>
                         </div>
                         <!-- thumb -->
@@ -73,7 +73,7 @@ $rst_galThumb=mysql_query("SELECT * FROM iev_galeria WHERE publicar=1 AND fecha_
                     $Galeria_UrlImg=$web."imagenes/galeria/".$GalFotos_imagen_carpeta."thumb/".$GalFotos_imagen;
 
                     ?>
-                    <div class="item img-responsive"><img src="<?php echo $Galeria_UrlImg; ?>" alt=""></div>
+                    <div class="item img-responsive"><img class="lazy" data-original="<?php echo $Galeria_UrlImg; ?>" src="<?php echo $Galeria_UrlImg; ?>" alt=""></div>
                     <?php } ?>
                 </div>
             </div>

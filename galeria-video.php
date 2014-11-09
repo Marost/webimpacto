@@ -129,7 +129,7 @@ $Noticia_UrlWeb=$web."video/".$Req_Id."-".$Req_Url;
                                     <div class="item">
                                         <div class="post-thumb">
                                             <a href="<?php echo $NotRel_UrlWeb; ?>" class="img-responsive">
-                                                <img src="<?php echo $NotRel_UrlImg; ?>" alt="<?php echo $NotRel_titulo; ?>">
+                                                <img class="lazy" data-original="<?php echo $NotRel_UrlImg; ?>" src="<?php echo $NotRel_UrlImg; ?>" alt="<?php echo $NotRel_titulo; ?>">
                                             </a>
                                             <footer>
                                                 <span class="kopa-date"><?php echo $FechaMes." ".$FechaDia.", ".$FechaAnio; ?></span>
