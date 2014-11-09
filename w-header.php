@@ -16,7 +16,7 @@ $UrlWeb_AW="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
         <div class="container">
             <div class="menu-second pull-left">
                 <ul class="list-unstyled clearfix">
-                    <li><a href="contacto/">Contactos</a></li>
+                    <li><a href="#">Contactos</a></li>
                     <li><a href="#">Login</a></li>
                 </ul>
             </div>
