@@ -2249,7 +2249,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
 }
 .kopa-list-posts-thumb-big-small-widget .item .post-title {
     font-size: 14px;
-    line-height: 20px;
+    line-height: 120%;
     margin-bottom: 10px;
 }
 .kopa-list-posts-thumb-big-small-widget .item.item-latest {
@@ -2917,12 +2917,6 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
     position: absolute;
     right: 0;
     top: 0;
-}
-
-.kopa-list-post-small-thumb-widget span{
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
 .kopa-list-post-small-thumb-widget span p{
@@ -4420,7 +4414,7 @@ section#home-notprin{
     text-indent: 10000em;
     width: 50px;
     height: 34px;
-    background: url("../imagenes/icon-idiomas.png");
+    background: url("../imagenes/icon-bandera-idiomas.png");
     border-radius: 5px;
     display: block;
 }
@@ -4692,6 +4686,41 @@ a#saludos-enviar:hover{ color: #FBBD2C; }
 }
 
 /* EDITORIAL - LA PALABRA */
+#editorial ul li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#editorial .contenedor{
+}
+
+#editorial .contenedor .datos{
+    float: left;
+}
+
+#editorial .contenedor .datos .titulo{
+    float: left;
+    width: 100%;
+    height: 60px;
+}
+
+#editorial .contenedor .datos .titulo h4{
+    width: 100%;
+    float: left;
+    margin: 0;
+}
+
+#editorial .contenedor .datos .cargo{
+    text-align: right;
+}
+
+#editorial .contenedor .imagen{
+    float: left;
+    text-align: center;
+}
+
+/*
 #editorial span{
     right: 10px;
 }
@@ -4716,6 +4745,7 @@ a#saludos-enviar:hover{ color: #FBBD2C; }
 #editorial .widget-header, #lapalabra .widget-header {
     margin-bottom: 15px;
 }
+*/
 
 /* BUSCADOR DE GOOGLE */
 .cse input.gsc-search-button, input.gsc-search-button{

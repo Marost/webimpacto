@@ -53,7 +53,9 @@
 }
 .kopa-grid-posts-widget .item.item-rtl .item-content, .kopa-grid-posts-widget .item.pull-left .item-content {
     float: left;
-    padding-top: 45px;
+    padding-top: 15px;
+  padding-left: 0px;
+  padding-right: 10px;
 }
 .kopa-list-item-carousel-widget .item {
     padding-bottom: 130px;
@@ -743,4 +745,3 @@
     top: 117px;
 }
 }
-

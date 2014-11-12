@@ -38,24 +38,37 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
                         EDITORIAL</a></h3>
             </header>
             <div class="widget-content">
-                <ul class="list-unstyled">
-                    <li class="clearfix col-lg-12 pdr0 pdl0 flnone">
-                        <div class="item-left col-lg-9 col-md-8 pdr0 pdl0 flnone">
-                            <h4 class="post-title">
-                                <a href="<?php echo $ColNota_UrlWeb; ?>" title="<?php echo $ColNota_titulo; ?>"><?php echo $ColNota_titulo; ?></a>
-                            </h4>
+                <ul>
+                    <li class="col-lg-12 pdr0 pdl0">
+                        <div class="contenedor col-lg-12 pdr0 pdl0">
 
-                            <span>
-                                <a href="<?php echo $Columnista_UrlWeb; ?>" title="Autor <?php echo $Columnista_titulo; ?>, <?php echo $Columnista_cargo; ?>">
-                                    <p><strong><?php echo $Columnista_titulo; ?></strong></p>
+                            <div class="datos col-lg-8 pdr0 pdl0 flnone">
+                                
+                                <span class="titulo">
+                                    <h4>
+                                        <a href="<?php echo $ColNota_UrlWeb; ?>" title="<?php echo $ColNota_titulo; ?>"><?php echo $ColNota_titulo; ?></a>
+                                    </h4>
+                                </span>
+
+                                <span class="cargo">
+                                    <a href="<?php echo $Columnista_UrlWeb; ?>" title="Autor <?php echo $Columnista_titulo; ?>, <?php echo $Columnista_cargo; ?>">
+                                        <p><strong><?php echo $Columnista_titulo; ?></strong></p>
+                                    </a>
+                                    <p><?php echo $Columnista_cargo; ?></p>
+                                </span>
+
+                            </div>
+
+                            <div class="imagen col-lg-4 pdr0 pdl0 flnone">
+                                
+                                <a href="<?php echo $Columnista_UrlWeb; ?>">
+                                    <img class="lazy" data-original="<?php echo $Columnista_UrlImg; ?>" src="<?php echo $Columnista_UrlImg; ?>" alt="<?php echo $Columnista_titulo; ?>">
                                 </a>
-                                <p><?php echo $Columnista_cargo; ?></p>
-                            </span>
+
+                            </div>
+
                         </div>
 
-                        <a class="post-thumb pull-left pdr0 pdl0 flnone col-lg-3 col-md-4" href="<?php echo $Columnista_UrlWeb; ?>">
-                            <img class="lazy" data-original="<?php echo $Columnista_UrlImg; ?>" src="<?php echo $Columnista_UrlImg; ?>" alt="<?php echo $Columnista_titulo; ?>">
-                        </a>
                     </li>
                 </ul>
             </div>
