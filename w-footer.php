@@ -66,7 +66,7 @@
         </div>
         <!-- copy right -->
         <div class="html5 col-lg-4 col-md-8 col-md-12 col-xs-12">
-            <img src="imagenes/html5-css3-jquery.png" alt="HTML5 / CSS3 /jQuery">
+            <img src="imagenes/logos-cert.png" alt="HTML5 / CSS3 / jQuery">
         </div>
     </div>
     <!-- container -->
