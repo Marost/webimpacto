@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" media="all">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" media="all">
 
-<link rel="stylesheet" href="css/style.css?update=<?php echo date("YmdHi") ?>" media="all">
+<link rel="stylesheet" href="css/estilos.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="css/responsive.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="css/responsivo.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="" media="all" id="accesibilidadCSS">
