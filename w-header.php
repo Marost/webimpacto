@@ -6,8 +6,8 @@ if(isset($header)){
 $UrlWeb_AW="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
 ?>
 <div id="accesibilidad-opcion">
-    <a id="accesibilidadActivar" href="javascript:;">Activar modo de accesibilidad</a>
-    <a id="accesibilidadDesactivar" href="javascript:;">Desactivar modo de accesibilidad</a>
+    <a id="accesibilidadActivar" href="javascript:;" title="Presionar ENTER para activar modo de accesibilidad">Presionar ENTER para activar modo de accesibilidad</a>
+    <a id="accesibilidadDesactivar" href="javascript:;" title="Presionar ENTER para desactivar modo de accesibilidad">Presionar ENTER para desactivar modo de accesibilidad</a>
 </div>
 
 <header id="kopa-header" class="<?php echo $header_class; ?>">
@@ -32,7 +32,7 @@ $UrlWeb_AW="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
         <div class="container">
 
             <div class="kopa-logo pull-left">
-                <a href="/"><img src="imagenes/logo.png" alt=""></a>
+                <a href="/" title="Logo Impacto Evangelistico"><img src="imagenes/logo.png" alt="Logo Impacto Evangelistico"></a>
             </div>
             <!-- logo -->
 
