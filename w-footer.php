@@ -61,11 +61,11 @@
 
 <footer id="kopa-footer">
     <div class="container clearfix">
-        <div class="copy-right pull-left col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <div class="copy-right pull-left col-lg-8 col-md-8 col-sm-6 col-xs-12">
             <p>2014 Medios Digitales - Impacto Evangelístico.</p><p>Todos los derechos reservados.</p>
         </div>
         <!-- copy right -->
-        <div class="html5 col-lg-4 col-md-8 col-md-12 col-xs-12">
+        <div class="html5 col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <img src="imagenes/logos-cert.png" alt="HTML5 / CSS3 / jQuery">
         </div>
     </div>
