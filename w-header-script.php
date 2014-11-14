@@ -6,6 +6,7 @@
 
 <link rel="stylesheet" href="libs/owlcarousel/v1/owl.carousel.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="libs/owlcarousel/v2/owl.carousel.css?update=<?php echo date("YmdHi") ?>" media="all">
+
 <link rel="stylesheet" href="css/jquery-ui.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="css/reset.css?update=<?php echo date("YmdHi") ?>" media="all">
 
@@ -16,7 +17,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" media="all">
 
 <link rel="stylesheet" href="css/estilos.css?update=<?php echo date("YmdHi") ?>" media="all">
-<link rel="stylesheet" href="css/responsive.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="css/responsivo.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="" media="all" id="accesibilidadCSS">
 
