@@ -285,6 +285,8 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
 
                         <?php require_once("w-galeria-fotos.php") ?>
 
+                        <?php require_once("w-masvisto.php") ?>
+
                     </div>
                     <!-- sidebar -->
 
