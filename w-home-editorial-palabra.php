@@ -39,10 +39,10 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
             </header>
             <div class="widget-content">
                 <ul>
-                    <li class="col-lg-12 pdr0 pdl0">
-                        <div class="contenedor col-lg-12 pdr0 pdl0">
+                    <li class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pdr0 pdl0">
+                        <div class="contenedor col-lg-12 col-md-12 col-sm-12 col-xs-12 pdr0 pdl0">
 
-                            <div class="datos col-lg-8 pdr0 pdl0 flnone">
+                            <div class="datos col-lg-8 col-md-8 col-sm-8 col-xs-12 pdr0 pdl0 flnone">
                                 
                                 <span class="titulo">
                                     <h4>
@@ -59,7 +59,7 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
 
                             </div>
 
-                            <div class="imagen col-lg-4 pdr0 pdl0 flnone">
+                            <div class="imagen col-lg-4 col-md-4 col-sm-4 col-xs-12 pdr0 pdl0 flnone">
                                 
                                 <a href="<?php echo $Columnista_UrlWeb; ?>">
                                     <img class="lazy" data-original="<?php echo $Columnista_UrlImg; ?>" src="<?php echo $Columnista_UrlImg; ?>" alt="<?php echo $Columnista_titulo; ?>">
@@ -104,10 +104,10 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
                         $Columnista_UrlImg=$web."imagenes/columnistas/".$Columnista_imagen;
                         $ColNota_UrlWeb=$web."la-palabra/".$ColNota_id."-".$ColNota_url;
                     ?>
-                    <li class="col-lg-12 pdr0 pdl0">
-                        <div class="contenedor col-lg-12 pdr0 pdl0">
+                    <li class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pdr0 pdl0">
+                        <div class="contenedor col-lg-12 col-md-12 col-sm-12 col-xs-12 pdr0 pdl0">
 
-                            <div class="imagen col-lg-4 pdr0 pdl0 flnone">
+                            <div class="imagen col-lg-4 col-md-4 col-sm-4 col-xs-12 pdr0 pdl0 flnone">
                                 
                                 <a href="<?php echo $Columnista_UrlWeb; ?>">
                                     <img class="lazy" data-original="<?php echo $Columnista_UrlImg; ?>" src="<?php echo $Columnista_UrlImg; ?>" alt="<?php echo $Columnista_titulo; ?>">
@@ -115,7 +115,7 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
 
                             </div>
                             
-                            <div class="datos col-lg-8 pdr0 pdl0 flnone">
+                            <div class="datos col-lg-8 col-md-8 col-sm-8 col-xs-12 pdr0 pdl0 flnone">
                                 
                                 <span class="titulo">
                                     <h4>
