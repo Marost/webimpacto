@@ -65,6 +65,8 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_edicion_noticia WHERE id<>$Req_Id AND
                     <div id="main-content">
                         <article class="single-post-content">
 
+                            <h5 class="post-cat"><?php echo $NoticiaFecha; ?></h5>
+
                             <h1 class="entry-title"><?php echo $Noticia_titulo; ?></h1>
 
                             <div class="clearfix">
@@ -72,8 +74,10 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_edicion_noticia WHERE id<>$Req_Id AND
                                 <div class="article-content">
 
                                     <div class="entry-content">
-                                        <?php echo primerParrafo($Noticia_contenido); ?>
+                                        <?php echo cortarTextoRH($Noticia_contenido,1,0,150); ?>
                                     </div>
+
+                                    <?php listaSocialMedia(true, true, "Impacto_Evangel", true, true, $Noticia_UrlWeb, $Noticia_titulo, $Noticia_UrlImg); ?>
 
                                     <div class="post-thumb">
 
@@ -109,7 +113,7 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_edicion_noticia WHERE id<>$Req_Id AND
                                     <!-- post thumb -->
 
                                     <div class="entry-content">
-                                        <?php echo $Noticia_contenido; ?>
+                                        <?php echo cortarTextoRH($Noticia_contenido,0,1,0); ?>
                                     </div>
                                     <!-- entry-content -->
                                 </div>
@@ -207,28 +211,6 @@ $rst_NotRel=mysql_query("SELECT * FROM iev_edicion_noticia WHERE id<>$Req_Id AND
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
                     <div id="sidebar" class="widget-area-26">
-
-                        <div class="widget widget-sidebar kopa-tab-widget">
-
-                            <header class="widget-header">
-                                <h3 class="widget-title">Datos de Noticia</h3>
-                            </header>
-
-                            <div class="widget-contenido">
-
-                                <div class="clearfix">
-                                    <h5 class="post-cat">Publicación: <?php echo $NoticiaFecha; ?></h5>
-                                </div>
-
-                                <div class="link-social-2">
-                                    <div class="addthis_native_toolbox"
-                                         data-url="<?php echo $Noticia_UrlWeb; ?>" data-title="<?php echo $Noticia_titulo; ?>">
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
 
                         <?php require_once("w-portada.php"); ?>
 
