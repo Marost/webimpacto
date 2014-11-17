@@ -95,9 +95,9 @@ $nota_publicar=$fila_nota["publicar"];
                                     <img src="../../../imagenes/columnistas/<?php echo $nota_imagen; ?>" width="100" >
                                 </a>
                             </div>
-                            <div class="floarL width60 margin1020">    
-                                <input type="file" class="styled" id="fileInput" name="fileInput" />
-                                <input type="hidden" name="imagen_actual" value="<?php echo $nota_imagen; ?>" />
+                            <div class="widget floarL width60 margin1020">    
+                                <div id="uploader_columnista">Tu navegador no soporta HTML5.</div>
+                                <input type="hidden" name="imagen" value="<?php echo $nota_imagen; ?>">
                             </div>
                         </div>
                     </div>

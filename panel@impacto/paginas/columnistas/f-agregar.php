@@ -75,7 +75,9 @@ require_once("../../conexion/verificar_sesion.php");
                     <div class="formRow">
                         <div class="grid3"><label>Imagen:</label> </div>
                         <div class="grid9">
-                            <input type="file" class="styled" id="fileInput" name="fileInput" />
+                            <div id="cambiar-imagen-container" class="widget nomargin">
+                                <div id="uploader_columnista">Tu navegador no soporta HTML5.</div>
+                            </div>
                         </div>
                     </div>
                     

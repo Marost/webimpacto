@@ -12,25 +12,7 @@ $nombre_completo=$nombre." ".$apellidos;
 $url=getUrlAmigable(eliminarTextoURL($nombre_completo));
 $contenido=$_POST["contenido"];
 $publicar=1;
-
-//SUBIR IMAGEN
-if(is_uploaded_file($_FILES['fileInput']['tmp_name'])){ 
-	$fileName=$_FILES['fileInput']['name'];
-	$uploadDir="../../../imagenes/columnistas/";
-	$uploadFile=$uploadDir.$fileName;
-	$num = 0;
-	$name = $fileName;
-	$extension = end(explode(".", $fileName));     
-	$onlyName = substr($fileName,0,strlen($fileName)-(strlen($extension)+1));
-	while(file_exists($uploadDir.$name))
-	{
-		$num++;         
-		$name = $onlyName."".$num.".".$extension; 
-	}
-	$uploadFile = $uploadDir.$name; 
-	move_uploaded_file($_FILES['fileInput']['tmp_name'], $uploadFile);  
-	$name;
-}
+$imagen=$_POST["uploader_columnista_0_tmpname"];
 
 //INSERTANDO DATOS
 $rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_columnista (url,
@@ -43,9 +25,9 @@ $rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_columnista (url,
 	publicar) VALUES('$url',
 	'$nombre',
 	'$apellidos',
-	'$cargo','
+	'$cargo',
 	'$nombre_completo',
-	'$name',
+	'$imagen',
 	'$contenido',
 	$publicar);",$conexion);
 

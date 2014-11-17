@@ -373,6 +373,21 @@ $(function() {
 			{title : "Video", extensions : "mp4,flv"}
 		]
 	});
+
+	//===== File uploader: NOTICIAS =====//
+	
+	$("#uploader_columnista").pluploadQueue({
+		runtimes : 'html5,html4',
+		url : '/panel@impacto/php/upload_columnista.php',
+		max_file_size : '100mb',
+		chunk_size : '1mb',
+		unique_names : true,
+		dragdrop: false,
+		resize: {width: 400, height: 400, quality: 100},
+		filters : [
+			{title : "Imagenes", extensions : "jpg,gif,png"}
+		]
+	});
 	
 	
 	//===== Wizards =====//
