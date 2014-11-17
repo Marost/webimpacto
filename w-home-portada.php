@@ -92,7 +92,7 @@ $rst_edNotAW=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$Ed
 
         <div id="home-portadanoticias" class="widget-content col-lg-12 col-md-12 col-sm-12">
 
-            <div class="edicion-impresa col-lg-3 col-md-3 col-sm-5">
+            <div class="edicion-impresa col-lg-3 col-md-3 col-sm-5 col-xs-6">
 
                 <div class="portada">
                     <a href="<?php echo $EdEsp_url; ?>" title="<?php echo $EdEsp_nombre_edicion; ?>" target="_blank">
@@ -114,7 +114,7 @@ $rst_edNotAW=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$Ed
 
             </div>
 
-            <div class="owl-carousel col-lg-9 col-md-9 col-sm-7 hidden-xs">
+            <div class="owl-carousel col-lg-9 col-md-9 col-sm-7 col-xs-6">
 
                 <?php while($fila_edNot=mysql_fetch_array($rst_edNot)){
                         $EdNot_id=$fila_edNot["id"];
