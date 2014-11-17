@@ -34,30 +34,12 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
         <div id="editorial" class="widget kopa-list-post-small-thumb-widget no-cat">
             <header class="widget-header">
                 <h3 class="widget-title">
-                    <a href="#" title="Noticias de Editorial">
-                        EDITORIAL</a></h3>
+                    <a href="#" title="Noticias de Editorial">EDITORIAL</a></h3>
             </header>
             <div class="widget-content">
                 <ul>
                     <li class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pdr0 pdl0">
                         <div class="contenedor col-lg-12 col-md-12 col-sm-12 col-xs-12 pdr0 pdl0">
-
-                            <div class="datos col-lg-8 col-md-8 col-sm-8 col-xs-12 pdr0 pdl0 flnone">
-                                
-                                <span class="titulo">
-                                    <h4>
-                                        <a href="<?php echo $ColNota_UrlWeb; ?>" title="<?php echo $ColNota_titulo; ?>"><?php echo $ColNota_titulo; ?></a>
-                                    </h4>
-                                </span>
-
-                                <span class="cargo">
-                                    <a href="<?php echo $Columnista_UrlWeb; ?>" title="Autor <?php echo $Columnista_titulo; ?>, <?php echo $Columnista_cargo; ?>">
-                                        <p><strong><?php echo $Columnista_titulo; ?></strong></p>
-                                    </a>
-                                    <p><?php echo $Columnista_cargo; ?></p>
-                                </span>
-
-                            </div>
 
                             <div class="imagen col-lg-4 col-md-4 col-sm-4 col-xs-12 pdr0 pdl0 flnone">
                                 
@@ -66,6 +48,23 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
                                 </a>
 
                             </div>
+
+                            <div class="datos col-lg-8 col-md-8 col-sm-8 col-xs-12 pdr0 pdl0 flnone">
+                                
+                                <span class="cargo">
+                                    <a href="<?php echo $Columnista_UrlWeb; ?>" title="Autor <?php echo $Columnista_titulo; ?>, <?php echo $Columnista_cargo; ?>">
+                                        <p><strong><?php echo $Columnista_titulo; ?></strong></p>
+                                    </a>
+                                    <p><?php echo $Columnista_cargo; ?></p>
+                                </span>
+
+                                <span class="titulo">
+                                    <h4>
+                                        <a href="<?php echo $ColNota_UrlWeb; ?>" title="<?php echo $ColNota_titulo; ?>"><?php echo $ColNota_titulo; ?></a>
+                                    </h4>
+                                </span>                                
+
+                            </div>                            
 
                         </div>
 
@@ -77,8 +76,7 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
         <div id="lapalabra" class="widget kopa-list-post-small-thumb-widget no-cat">
             <header class="widget-header">
                 <h3 class="widget-title">
-                    <a href="#" title="Noticias de La Palabra">
-                        LA PALABRA</a></h3>
+                    <a href="#" title="Noticias de La Palabra">LA PALABRA</a></h3>
             </header>
             <div class="widget-content">
                 <ul class="list-unstyled">
@@ -117,17 +115,17 @@ $rst_colOtros=mysql_query("SELECT * FROM iev_columnista WHERE id<>1 ORDER BY id 
                             
                             <div class="datos col-lg-8 col-md-8 col-sm-8 col-xs-12 pdr0 pdl0 flnone">
                                 
-                                <span class="titulo">
-                                    <h4>
-                                        <a href="<?php echo $ColNota_UrlWeb; ?>" title="<?php echo $ColNota_titulo; ?>"><?php echo $ColNota_titulo; ?></a>
-                                    </h4>
-                                </span>
-
                                 <span class="cargo">
                                     <a href="<?php echo $Columnista_UrlWeb; ?>" title="Autor <?php echo $Columnista_titulo; ?>, <?php echo $Columnista_cargo; ?>">
                                         <p><strong><?php echo $Columnista_titulo; ?></strong></p>
                                     </a>
                                     <p><?php echo $Columnista_cargo; ?></p>
+                                </span>
+
+                                <span class="titulo">
+                                    <h4>
+                                        <a href="<?php echo $ColNota_UrlWeb; ?>" title="<?php echo $ColNota_titulo; ?>"><?php echo $ColNota_titulo; ?></a>
+                                    </h4>
                                 </span>
 
                             </div>
