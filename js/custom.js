@@ -381,10 +381,7 @@ jQuery(document).ready(function () {
                     responsiveClass:true,
                     loop: true,
                     responsive:{
-                        0:{
-                            items:1
-                        },
-                        480:{
+                        540:{
                             items:1
                         },
                         800:{
