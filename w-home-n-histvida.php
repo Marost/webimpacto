@@ -28,8 +28,7 @@ $HisVida_UrlImg=$web."imagenes/upload/".$HisVida_imagen_carpeta."thumbdeven/".$H
         <div class="widget kopa-list-posts-thumb-big-small-widget">
             <header class="widget-header">
                 <h3 class="widget-title">
-                    <a href="#" title="Noticias de Historias de Vida">
-                    HISTORIAS DE VIDA</a></h3>
+                    <a href="categoria/14/historias-vida" title="Noticias de Historias de Vida">HISTORIAS DE VIDA</a></h3>
             </header>
             <div class="widget-content">
                 <div class="item item-latest clearfix">
