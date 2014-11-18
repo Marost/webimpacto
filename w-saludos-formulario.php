@@ -40,12 +40,14 @@
                 </div><!-- end section -->
 
                 <div class="section">
-                    <div class="smart-widget sm-left sml-80">
-                        <label class="field prepend-icon">
-                            <input type="text" name="securitycode" id="securitycode" class="gui-input" placeholder="Cual es el número?">
-                            <label class="field-icon"><i class="fa fa-shield"></i></label>
+                    <div class="smart-widget sm-left sml-120">
+                        <label class="field">
+                            <input type="text" name="securitycode" id="securitycode" class="gui-input sfcode" placeholder="Ingresa código">
                         </label>
-                        <label for="securitycode" class="button">4 + 12</label>
+                        <label for="securitycode" class="button captcode">
+                            <img src="libs/smartform/php/captcha.php" id="captcha" alt="Captcha"/>
+                            <span class="refresh-captcha"><i class="fa fa-refresh"></i></span>
+                        </label>
                     </div><!-- end .smart-widget section -->
                 </div><!-- end section -->
 
