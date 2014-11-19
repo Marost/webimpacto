@@ -20,47 +20,6 @@
  *-----------------------------------------------------------------
  **/
 "use strict";
-var kopa_variable = {
-    "contact": {
-        "address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "marker": "/url image"
-    },
-    "i18n": {
-        "VIEW": "View",
-        "VIEWS": "Views",
-        "validate": {
-            "form": {
-                "SUBMIT": "Submit",
-                "SENDING": "Sending..."
-            },
-            "name": {
-                "REQUIRED": "Please enter your name",
-                "MINLENGTH": "At least {0} characters required"
-            },
-            "email": {
-                "REQUIRED": "Please enter your email",
-                "EMAIL": "Please enter a valid email"
-            },
-            "url": {
-                "REQUIRED": "Please enter your url",
-                "URL": "Please enter a valid url"
-            },
-            "message": {
-                "REQUIRED": "Please enter a message",
-                "MINLENGTH": "At least {0} characters required"
-            }
-        },
-        "tweets": {
-            "failed": "Sorry, twitter is currently unavailable for this user.",
-            "loading": "Loading tweets..."
-        }
-    },
-    "url": {
-        "template_directory_uri":"file:///E:/kopasoft/ducnm_svn/karo/HTML"
-    }
-};
-var map;
-
 jQuery(document).ready(function () {
 
     jQuery(".kopa-rate").hide(); //OCULTAR STAR RATING
@@ -95,6 +54,7 @@ jQuery(document).ready(function () {
             });
         }
     }]);
+
     // 2. Video wrapper
     if (jQuery(".video-wrapper").length > 0) {
         if (jQuery(".video-wrapper").length > 0) {
@@ -122,8 +82,6 @@ jQuery(document).ready(function () {
         }]);
     }
     if (jQuery('.kp-toggle').length > 0) {
-        // jQuery('.kp-toggle > h3').addClass('toggle-header');
-        // jQuery('.kp-toggle > div').addClass('toggle-content');
         jQuery('.kp-toggle .toggle-header') .next() .hide();
         jQuery('.kp-toggle .toggle-header').click(function(){
             if (jQuery(this).next() .is(':hidden')) {
@@ -136,6 +94,7 @@ jQuery(document).ready(function () {
             };
         });
     };
+
     // 4. Tabs
     if (jQuery('.kopa-tab-widget .kopa-tabs').length > 0) {
         Modernizr.load([{
@@ -188,26 +147,11 @@ jQuery(document).ready(function () {
             }
         }]);
     }
-    // 5. Progressbar
-    if (jQuery('.kopa-progressbar').length > 0) {
-        Modernizr.load([{
-            load: 'js/jquery-ui.js',
-            complete: function () {
 
-                jQuery(".kopa-progressbar").each(function () {
-                    var val = jQuery(this).attr("data-val");
-                    jQuery(this).progressbar({
-                        "value": val * 1
-                    });
-                });
-
-            }
-        }]);
-    };
     // 6. Slider
     if (jQuery('.tp-banner').length > 0) {
         Modernizr.load([{
-            load: ['libs/revolution-slider/js/jquery.themepunch.tools.min.js','libs/revolution-slider/js/jquery.themepunch.revolution.min.js'],
+            load: ['http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js','libs/revolution-slider/js/jquery.themepunch.tools.min.js','libs/revolution-slider/js/jquery.themepunch.revolution.min.js'],
             complete: function () {
                 jQuery('.tp-banner').show().revolution({
                     dottedOverlay:"none",
@@ -298,7 +242,6 @@ jQuery(document).ready(function () {
             }
         }]);
     }
-
 
     // 8. Carousel
     if (jQuery('.kopa-full-width-carousel-widget .owl-carousel').length > 0) {
@@ -661,7 +604,6 @@ jQuery(document).ready(function () {
     }
 
 
-
     // 11. Search box
     if (jQuery('.kopa-head-line').length > 0) {
         var $search = jQuery('.kopa-search-box .search-form');
@@ -676,85 +618,6 @@ jQuery(document).ready(function () {
             $search.find('span').css('display', 'none');
             $search.find('button').css('display', 'block');
         });
-    }
-
-    // 12. Tweet
-    if (jQuery('.tweets').length > 0) {
-        Modernizr.load([{
-            load: ['js/tweetable.js', 'js/timeago.js'],
-            complete: function () {
-                jQuery('.tweets').each(function () {
-                    jQuery(this).tweetable({
-                        username: jQuery(this).find('.tweets').attr('data-user'),
-                        time: true,
-                        rotate: false,
-                        speed: 400,
-                        limit: 4,
-                        replies: false,
-                        position: 'append',
-                        failed: kopa_variable.i18n.tweets.failed,
-                        loading: kopa_variable.i18n.tweets.loading,
-                        html5: true,
-                        onComplete: function ($ul) {
-                            jQuery('time').timeago();
-                        }
-                    });
-                });
-            }
-        }]);
-    }
-
-    // 13. Validate form
-    if (jQuery('.comment-form,.contact-form').length > 0) {
-        Modernizr.load([{
-            load: ['js/form.js', 'js/validate.js'],
-            complete: function () {
-                jQuery('.comment-form,.contact-form').validate({
-                    // Add requirements to each of the fields
-                    rules: {
-                        name: {
-                            required: true,
-                            minlength: 2
-                        },
-                        email: {
-                            required: true,
-                            email: true
-                        },
-                        message: {
-                            required: true,
-                            minlength: 10
-                        }
-                    },
-                    // Specify what error messages to display
-                    // when the user does something horrid
-                    messages: {
-                        name: {
-                            required: kopa_variable.i18n.validate.name.REQUIRED,
-                            minlength: jQuery.format(kopa_variable.i18n.validate.name.MINLENGTH)
-                        },
-                        email: {
-                            required: kopa_variable.i18n.validate.email.REQUIRED,
-                            email: kopa_variable.i18n.validate.email.EMAIL
-                        },
-                        message: {
-                            required: kopa_variable.i18n.validate.message.REQUIRED,
-                            minlength: jQuery.format(kopa_variable.i18n.validate.message.MINLENGTH)
-                        }
-                    },
-                    // Use Ajax to send everything to processForm.php
-                    submitHandler: function (form) {
-                        jQuery(".comment-form .input-submit,.contact-form.input-submit").attr("value", kopa_variable.i18n.validate.form.SENDING);
-                        jQuery(form).ajaxSubmit({
-                            success: function (responseText, statusText, xhr, $form) {
-                                jQuery("#response").html(responseText).hide().slideDown("fast");
-                                jQuery(".comment-form .input-submit,.contact-form.input-submit").attr("value", kopa_variable.i18n.validate.form.SUBMIT);
-                            }
-                        });
-                        return false;
-                    }
-                });
-            }
-        }]);
     }
 
     // 14.Breadking
@@ -783,27 +646,7 @@ jQuery(document).ready(function () {
             }
         }]);
     }
-    // 15. Flickr
-    if (jQuery('.kopa-flickr-widget').length > 0) {
-
-        Modernizr.load([{
-            load: ['js/jflickrfeed.js', 'js/imgliquid.js'],
-            complete: function () {
-                jQuery('.kopa-flickr-widget ul').each(function () {
-                    jQuery(this).jflickrfeed({
-                        limit: 9,
-                        qstrings: {
-                            id: jQuery(this).find('.flickr-wrap').attr('data-user')
-                        },
-                        itemTemplate: '<li class="flickr-badge-image">' + '<a target="blank" href="{{link}}" title="{{title}}" class="imgLiquid">' + '<img src="{{image_m}}" alt="{{title}}"  />' + '</a>' + '</li>'
-                    }, function (data) {
-                        jQuery('.kopa-flickr-widget .imgLiquid').imgLiquid();
-                    });
-                });
-            }
-        }]);
-    }
-
+    
 
     // 16. Gallery widget
     if (jQuery('.kopa-gallery-widget').length > 0) {
@@ -814,48 +657,6 @@ jQuery(document).ready(function () {
             }
         }]);
     }
-
-    // 17. Gmap
-    if (jQuery('.kopa-contact-widget').length > 0) {
-        Modernizr.load([{
-            load: 'js/gmaps.js',
-            complete: function () {
-                var map_id = '#' + jQuery('.map-wrap').attr('id');
-                var lat = parseFloat(jQuery('.map-wrap').attr('data-latitude'));
-                var lng = parseFloat(jQuery('.map-wrap').attr('data-longitude'));
-
-                map = new GMaps({
-                    el: map_id,
-                    lat: lat,
-                    lng: lng,
-                    zoomControl: true,
-                    zoomControlOpt: {
-                        style: 'SMALL',
-                        position: 'TOP_LEFT'
-                    },
-                    panControl: false,
-                    streetViewControl: false,
-                    mapTypeControl: false,
-                    overviewMapControl: false
-                });
-                var marker_info = {
-                    lat: lat,
-                    lng: lng
-                };
-
-                if ('' !== kopa_variable.contact.marker) {
-                    marker_info.icon = kopa_variable.contact.marker;
-                }
-
-                if ('' !== kopa_variable.contact.address) {
-                    marker_info.infoWindow = {
-                        content: kopa_variable.contact.address
-                    };
-                }
-                // gmap.addMarker(marker_info);
-            }
-        }]);
-    };
 
     jQuery('.kopa-alert .close').click(function(){
         jQuery('.kopa-alert .close').parent().hide();
