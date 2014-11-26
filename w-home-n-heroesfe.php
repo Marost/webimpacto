@@ -1,6 +1,6 @@
 <?php
 //EVENTOS
-$rst_heroefe=mysql_query("SELECT * FROM iev_noticia WHERE categoria=6 AND publicar=1 AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 1;", $conexion);
+$rst_heroefe=mysql_query("SELECT * FROM iev_noticia WHERE categoria=6 OR categoria=4 OR categoria=13 AND publicar=1 AND fecha_publicacion<='$fechaActual' ORDER BY fecha_publicacion DESC LIMIT 1;", $conexion);
 $fila_heroefe=mysql_fetch_array($rst_heroefe);
 
 //VARIABLES
@@ -11,6 +11,7 @@ $HerFe_contenido=primerParrafo($fila_heroefe["contenido"]);
 $HerFe_imagen=$fila_heroefe["imagen"];
 $HerFe_imagen_carpeta=$fila_heroefe["imagen_carpeta"];
 $HerFe_fechaPub=$fila_heroefe["fecha_publicacion"];
+$HerFe_categoria=$fila_heroefe["categoria"];
 
 //SEPARACION DE FECHA
 $fechaPubSep=explode(" ", $HerFe_fechaPub);
@@ -19,16 +20,25 @@ $FechaDia=$fechaSep[2];
 $FechaMes=mesCorto($fechaSep[1]);
 $FechaAnio=$fechaSep[0];
 
+//CATEGORIA
+$rst_heroefeCat=mysql_query("SELECT * FROM iev_noticia_categoria WHERE id=$HerFe_categoria", $conexion);
+$fila_heroefeCat=mysql_fetch_array($rst_heroefeCat);
+
+$HeroefeCat_id=$fila_heroefeCat["id"];
+$HeroefeCat_url=$fila_heroefeCat["url"];
+$HeroefeCat_titulo=$fila_heroefeCat["categoria"];
+
 //URLS
 $HerFe_UrlWeb=$web."noticia/".$HerFe_id."-".$HerFe_url;
 $HerFe_UrlImg=$web."imagenes/upload/".$HerFe_imagen_carpeta."thumbdeven/".$HerFe_imagen;
+$HerFe_UrlWebCat=$web."categoria/".$HeroefeCat_id."/".$HeroefeCat_url;
 ?>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     <div class="widget-area-4">
         <div class="widget kopa-list-posts-thumb-big-small-widget">
             <header class="widget-header">
                 <h3 class="widget-title">
-                    <a href="categoria/6/heroes-fe" title="Noticias de Héroes de la Fe">HÉROES DE LA FE</a></h3>
+                    <a href="<?php echo $HerFe_UrlWebCat; ?>" title="Noticias de <?php echo $HeroefeCat_titulo ?>"><?php echo $HeroefeCat_titulo ?></a></h3>
             </header>
             <div class="widget-content">
                 <div class="item item-latest clearfix">
