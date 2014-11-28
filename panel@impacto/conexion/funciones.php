@@ -503,48 +503,61 @@ function notaTiempo($fecha_mysql) {
 }
 
 
-function guardarImagen($imagen, $imagen_carpeta){
+function guardarImagen($imagenTmp, $imagen_carpeta, $imagenName){
 
 	$rutaUpload="../../../imagenes/upload/";
 
-	if(file_exists($ruta."".$imagen_carpeta."".$imagen)){
-		echo "<br>existe";
-		echo "<br>".$_POST["uploader_0_name"];
+	$rutaImgTmp = $rutaUpload."".$imagen_carpeta."".$imagenTmp;
 
-		$fileName = $_POST["uploader_0_name"];
+	if(file_exists($rutaImgTmp))
+	{
+		
+		$fileName = $imagenName;
 		$extension = explode(".",$fileName);
 		$onlyName = substr($fileName,0,strlen($fileName)-(strlen($extension[1])+1));
 
-		rename($ruta."".$imagen_carpeta."".$imagen, $ruta."".$imagen_carpeta."".getUrlAmigable(eliminarTextoURL($onlyName)).".".$extension[1]);
+		$nameOld = $rutaUpload."".$imagen_carpeta."".$imagenTmp;
+		$nameNew = $rutaUpload."".$imagen_carpeta."".getUrlAmigable(eliminarTextoURL($onlyName))."-".date("YmdHis").".".$extension[1];
 
-		echo "<br>".getUrlAmigable(eliminarTextoURL($onlyName)).".".$extension[1];
+		rename($nameOld, $nameNew);
+
+		$imagen = getUrlAmigable(eliminarTextoURL($onlyName))."-".date("YmdHis").".".$extension[1];
+
+		$rutaImg = $rutaUpload."".$imagen_carpeta."".$imagen;
+
+		if(file_exists($rutaImg))
+		{
+
+			//THUMB DESTACADA
+		    $thumb=PhpThumbFactory::create($rutaImg);
+		    $thumb->adaptiveResize(728,452);
+		    $thumb->save($rutaUpload.$imagen_carpeta."thumbdest/".$imagen."", "jpg");
+
+		    //THUMB NORMAL - VISTO
+		    $thumb=PhpThumbFactory::create($rutaImg);
+		    $thumb->adaptiveResize(243,225);
+		    $thumb->save($rutaUpload.$imagen_carpeta."thumbnor/".$imagen."", "jpg");
+
+		    //THUMB DEVOCIONAL - EVENTOS
+		    $thumb=PhpThumbFactory::create($rutaImg);
+		    $thumb->adaptiveResize(385,250);
+		    $thumb->save($rutaUpload.$imagen_carpeta."thumbdeven/".$imagen."", "jpg");
+
+		    //THUMB PORTADA
+		    $thumb=PhpThumbFactory::create($rutaImg);
+		    $thumb->adaptiveResize(263,149);
+		    $thumb->save($rutaUpload.$imagen_carpeta."thumbport/".$imagen."", "jpg");
+
+		    //THUMB CATEGORIA - RELACIONADA
+		    $thumb=PhpThumbFactory::create($rutaImg);
+		    $thumb->adaptiveResize(290,210);
+		    $thumb->save($rutaUpload.$imagen_carpeta."thumb/".$imagen."", "jpg");
+
+		    return $imagen;
+		}
 
 	}
 
-    //THUMB DESTACADA
-    $thumb=PhpThumbFactory::create($rutaUpload.$imagen_carpeta."".$imagen."");
-    $thumb->adaptiveResize(728,452);
-    $thumb->save($rutaUpload.$imagen_carpeta."thumbdest/".$imagen."", "jpg");
-
-    //THUMB NORMAL - VISTO
-    $thumb=PhpThumbFactory::create($rutaUpload.$imagen_carpeta."".$imagen."");
-    $thumb->adaptiveResize(243,225);
-    $thumb->save($rutaUpload.$imagen_carpeta."thumbnor/".$imagen."", "jpg");
-
-    //THUMB DEVOCIONAL - EVENTOS
-    $thumb=PhpThumbFactory::create($rutaUpload.$imagen_carpeta."".$imagen."");
-    $thumb->adaptiveResize(385,250);
-    $thumb->save($rutaUpload.$imagen_carpeta."thumbdeven/".$imagen."", "jpg");
-
-    //THUMB PORTADA
-    $thumb=PhpThumbFactory::create($rutaUpload.$imagen_carpeta."".$imagen."");
-    $thumb->adaptiveResize(263,149);
-    $thumb->save($rutaUpload.$imagen_carpeta."thumbport/".$imagen."", "jpg");
-
-    //THUMB CATEGORIA - RELACIONADA
-    $thumb=PhpThumbFactory::create($rutaUpload.$imagen_carpeta."".$imagen."");
-    $thumb->adaptiveResize(290,210);
-    $thumb->save($rutaUpload.$imagen_carpeta."thumb/".$imagen."", "jpg");
 }
 
 function listaSocialMedia($facebook=true, $twitter=true, $twitter_usuario, $google=true, $pinterest=true, $url, $titulo, $imagen){
