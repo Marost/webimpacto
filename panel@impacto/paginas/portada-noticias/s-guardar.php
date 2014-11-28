@@ -20,26 +20,30 @@ $fecha_publicacion=$pub_fecha." ".$pub_hora;
 $publicar=1;
 
 //SUBIR IMAGEN
-$upload_imagen=$_POST["uploader_0_tmpname"];
-$upload_imagenin=$_POST["uploader_1_tmpname"];
+$upload_imagenTmp=$_POST["uploader_0_tmpname"];
+$upload_imagenName=$_POST["uploader_0_name"];
+
+$upload_imageninTmp=$_POST["uploader_1_tmpname"];
+$upload_imageninName=$_POST["uploader_1_name"];
 
 //SUBIR VIDEO
 $video_youtube=$_POST["video_youtube"];
-$video_upload=$_POST["uploader_video_0_tmpname"];
 
 //IMAGEN
-if($upload_imagen<>""){
-    $imagen=$upload_imagen;
+if($upload_imagenTmp<>""){
     $imagen_carpeta=fechaCarpeta()."/";
-    guardarImagen($imagen, $imagen_carpeta);
+    
+    $imagen = guardarImagen($upload_imagenTmp, $imagen_carpeta, $upload_imagenName);
+
 }else{
     $imagen=""; $imagen_carpeta="";
 }
 
-if($upload_imagenin<>""){
-    $imagenin=$upload_imagenin;
+if($upload_imageninTmp<>""){
     $imagenin_carpeta=fechaCarpeta()."/";
-    guardarImagen($imagenin, $imagenin_carpeta);
+    
+    $imagenin = guardarImagen($upload_imageninTmp, $imagenin_carpeta, $upload_imageninName);
+
 }else{
     $imagenin=""; $imagenin_carpeta="";
 }
@@ -63,6 +67,9 @@ if($audio<>""){
 }elseif($audio==""){
     $audio="";
 }
+
+echo $imagen."<br>";
+echo $imagenin."<br>";
 
 //INSERTANDO DATOS
 $rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_edicion_noticia (url, titulo, pagina, contenido, imagen, imagen_carpeta, imagenin, imagenin_carpeta, fecha_publicacion, publicar, video, audio, edicion_id)

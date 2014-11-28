@@ -23,11 +23,11 @@ if($tags==""){ $union_tags=0; }
 elseif($tags<>""){ $union_tags=implode(",", $tags);}
 
 //SUBIR IMAGEN
-$upload_imagen=$_POST["uploader_0_tmpname"];
+$upload_imagenTmp=$_POST["uploader_0_tmpname"];
+$upload_imagenName=$_POST["uploader_0_name"];
 
 //SUBIR VIDEO
 $video_youtube=$_POST["video_youtube"];
-$video_upload=$_POST["uploader_video_0_tmpname"];
 
 //AUDIO
 $audio=$_POST["audio"];
@@ -35,24 +35,24 @@ $audio=$_POST["audio"];
 //IMAGEN
 if ($tipo_noticia=="not_destacada") {
 	$destacada=1; 
-	if($upload_imagen<>""){
-		$imagen=$upload_imagen;
+	if($upload_imagenTmp<>""){
+		$imagenTmp=$upload_imagenTmp;
 		$imagen_carpeta=fechaCarpeta()."/";	
 		$mostrar_imagen=1;
 
-        guardarImagen($imagen, $imagen_carpeta);
+        $imagen = guardarImagen($imagenTmp, $imagen_carpeta, $upload_imagenName);
 
     }else{
 		$imagen=""; $imagen_carpeta="";
 	}
 }elseif($tipo_noticia=="not_normal"){
     $destacada=0;
-	if($upload_imagen<>""){
-		$imagen=$upload_imagen;
+	if($upload_imagenTmp<>""){
+		$imagenTmp=$upload_imagenTmp;
 		$imagen_carpeta=fechaCarpeta()."/";	
 		$mostrar_imagen=1;
 
-        guardarImagen($imagen, $imagen_carpeta);
+        $imagen = guardarImagen($imagenTmp, $imagen_carpeta, $upload_imagenName);
 
 	}else{
 		$imagen=""; $imagen_carpeta="";

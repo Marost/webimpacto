@@ -29,23 +29,28 @@ $video_youtube=$_POST["video_youtube"];
 $audio=$_POST["audio"];
 
 //SUBIR IMAGEN
-$upload_imagen=$_POST["uploader_0_tmpname"];
-$upload_imagenin=$_POST["uploader_1_tmpname"];
+$upload_imagenTmp=$_POST["uploader_0_tmpname"];
+$upload_imagenName=$_POST["uploader_0_name"];
+
+$upload_imageninTmp=$_POST["uploader_1_tmpname"];
+$upload_imageninName=$_POST["uploader_1_name"];
 
 //IMAGEN
 if($upload_imagen<>""){
-    $imagen=$upload_imagen;
+    $imagenTmp=$upload_imagenTmp;
     $imagen_carpeta=fechaCarpeta()."/";
-    guardarImagen($imagen, $imagen_carpeta);
+    
+    $imagen = guardarImagen($imagenTmp, $imagen_carpeta, $upload_imagenName);
 }else{
     $imagen=$_POST["imagen"];
     $imagen_carpeta=$_POST["imagen_carpeta"];
 }
 
 if($upload_imagenin<>""){
-    $imagenin=$upload_imagenin;
+    $imageninTmp=$upload_imageninTmp;
     $imagenin_carpeta=fechaCarpeta()."/";
-    guardarImagen($imagenin, $imagenin_carpeta);
+    
+    $imagenin = guardarImagen($imageninTmp, $imagenin_carpeta, $upload_imageninName);
 }else{
     $imagenin=$_POST["imagenin"];
     $imagenin_carpeta=$_POST["imagenin_carpeta"];
@@ -72,6 +77,7 @@ if($audio<>""){
 }
 
 //INSERTANDO DATOS
+/*
 $rst_guardar=mysql_query("UPDATE ".$tabla_suf."_edicion_noticia SET url='$url', titulo='".htmlspecialchars($nombre)."',
     pagina=$pagina,
 	contenido='$contenido', 
@@ -83,14 +89,15 @@ $rst_guardar=mysql_query("UPDATE ".$tabla_suf."_edicion_noticia SET url='$url', 
 	publicar=$publicar,
 	video='$video',
 	audio='$audio' WHERE id=$nota_id;", $conexion);
+*/
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
 	mysql_close($conexion);
-	header("Location:lista.php?not=$Req_Not&msj=er");
+	//header("Location:lista.php?not=$Req_Not&msj=er");
 } else {
 	mysql_close($conexion);
-	header("Location:lista.php?not=$Req_Not&msj=ok");
+	//header("Location:lista.php?not=$Req_Not&msj=ok");
 }
 
 ?>

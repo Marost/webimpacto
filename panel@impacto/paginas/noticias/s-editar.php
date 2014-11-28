@@ -28,7 +28,6 @@ if ($_POST["publicar"]<>""){ $publicar=$_POST["publicar"]; }else{ $publicar=0; }
 
 //VIDEO
 $video_youtube=$_POST["video_youtube"];
-//$video_upload=$_POST["uploader_video_0_tmpname"];
 
 //AUDIO
 $audio=$_POST["audio"];
@@ -37,10 +36,13 @@ $audio=$_POST["audio"];
 if ($tipo_noticia=="not_destacada") {
 	$destacada=1; 
 	if($_POST['uploader_0_tmpname']<>""){
-		$imagen=$_POST["uploader_0_tmpname"];
-		$imagen_carpeta=fechaCarpeta()."/";
+		$imagenTmp=$_POST["uploader_0_tmpname"];
+		$upload_imagenName=$_POST["uploader_0_name"];
+		
+		$imagen_carpeta=fechaCarpeta()."/";	
+		$mostrar_imagen=1;
 
-        guardarImagen($imagen, $imagen_carpeta);
+        $imagen = guardarImagen($imagenTmp, $imagen_carpeta, $upload_imagenName);
 
 	}else{
 		$imagen=$_POST["imagen"];
@@ -52,10 +54,13 @@ if ($tipo_noticia=="not_destacada") {
 }elseif($tipo_noticia=="not_normal"){
 	$destacada=0;
 	if($_POST['uploader_0_tmpname']<>""){
-		$imagen=$_POST["uploader_0_tmpname"];
-		$imagen_carpeta=fechaCarpeta()."/";
+		$imagenTmp=$_POST["uploader_0_tmpname"];
+		$upload_imagenName=$_POST["uploader_0_name"];
+		
+		$imagen_carpeta=fechaCarpeta()."/";	
+		$mostrar_imagen=1;
 
-        guardarImagen($imagen, $imagen_carpeta);
+        $imagen = guardarImagen($imagenTmp, $imagen_carpeta, $upload_imagenName);
 
 	}else{
 		$imagen=$_POST["imagen"];
