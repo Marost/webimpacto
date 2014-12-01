@@ -62,14 +62,12 @@ if($video_youtube<>""){
 }
 
 //AUDIO SOUNDCLOUD
+$audio=$_POST["audio"];
 if($audio<>""){
     $audio=$audio;
 }elseif($audio==""){
     $audio="";
 }
-
-echo $imagen."<br>";
-echo $imagenin."<br>";
 
 //INSERTANDO DATOS
 $rst_guardar=mysql_query("INSERT INTO ".$tabla_suf."_edicion_noticia (url, titulo, pagina, contenido, imagen, imagen_carpeta, imagenin, imagenin_carpeta, fecha_publicacion, publicar, video, audio, edicion_id)
