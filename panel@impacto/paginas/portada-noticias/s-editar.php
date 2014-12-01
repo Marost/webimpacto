@@ -77,7 +77,7 @@ if($audio<>""){
 }
 
 //INSERTANDO DATOS
-/*
+
 $rst_guardar=mysql_query("UPDATE ".$tabla_suf."_edicion_noticia SET url='$url', titulo='".htmlspecialchars($nombre)."',
     pagina=$pagina,
 	contenido='$contenido', 
@@ -89,15 +89,14 @@ $rst_guardar=mysql_query("UPDATE ".$tabla_suf."_edicion_noticia SET url='$url', 
 	publicar=$publicar,
 	video='$video',
 	audio='$audio' WHERE id=$nota_id;", $conexion);
-*/
 
 if (mysql_errno()!=0){
 	echo "ERROR: <strong>".mysql_errno()."</strong> - ". mysql_error();
 	mysql_close($conexion);
-	//header("Location:lista.php?not=$Req_Not&msj=er");
+	header("Location:lista.php?not=$Req_Not&msj=er");
 } else {
 	mysql_close($conexion);
-	//header("Location:lista.php?not=$Req_Not&msj=ok");
+	header("Location:lista.php?not=$Req_Not&msj=ok");
 }
 
 ?>
