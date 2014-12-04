@@ -48,7 +48,7 @@ if ($tipo_noticia=="not_destacada") {
 		$imagen=$_POST["imagen"];
 		$imagen_carpeta=$_POST["imagen_carpeta"];
 
-        guardarImagen($imagen, $imagen_carpeta);
+        guardarImagenSolo($imagen, $imagen_carpeta);
 
 	}
 }elseif($tipo_noticia=="not_normal"){
@@ -66,7 +66,7 @@ if ($tipo_noticia=="not_destacada") {
 		$imagen=$_POST["imagen"];
 		$imagen_carpeta=$_POST["imagen_carpeta"];
 
-        guardarImagen($imagen, $imagen_carpeta);
+        guardarImagenSolo($imagen, $imagen_carpeta);
 
 	}
 }

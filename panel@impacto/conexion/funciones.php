@@ -560,6 +560,29 @@ function guardarImagen($imagenTmp, $imagen_carpeta, $imagenName){
 
 }
 
+function guardarImagenSolo($imagen, $imagen_carpeta){
+    //THUMB DESTACADA
+    $thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
+    $thumb->adaptiveResize(728,452);
+    $thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumbdest/".$imagen."", "jpg");
+    //THUMB NORMAL - VISTO
+    $thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
+    $thumb->adaptiveResize(243,225);
+    $thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumbnor/".$imagen."", "jpg");
+    //THUMB DEVOCIONAL - EVENTOS
+    $thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
+    $thumb->adaptiveResize(385,250);
+    $thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumbdeven/".$imagen."", "jpg");
+    //THUMB PORTADA
+    $thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
+    $thumb->adaptiveResize(263,149);
+    $thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumbport/".$imagen."", "jpg");
+    //THUMB CATEGORIA - RELACIONADA
+    $thumb=PhpThumbFactory::create("../../../imagenes/upload/".$imagen_carpeta."".$imagen."");
+    $thumb->adaptiveResize(290,210);
+    $thumb->save("../../../imagenes/upload/".$imagen_carpeta."thumb/".$imagen."", "jpg");
+}
+
 function listaSocialMedia($facebook=true, $twitter=true, $twitter_usuario, $google=true, $pinterest=true, $url, $titulo, $imagen){
 
     echo '<ul class="social-media-fc hidden-xs">';
