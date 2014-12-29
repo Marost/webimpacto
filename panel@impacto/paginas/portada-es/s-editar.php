@@ -25,12 +25,12 @@ if($_FILES['fileInput']['name']!=""){
 		$uploadFile=$uploadDir.$fileName;
 		$num = 0;
 		$name = $fileName;
-		$extension = end(explode('.',$fileName));     
-		$onlyName = substr($fileName,0,strlen($fileName)-(strlen($extension)+1));
+		$extension = explode('.',$fileName);
+		$onlyName = substr($fileName,0,strlen($fileName)-(strlen($extension[1])+1));
 		while(file_exists($uploadDir.$name))
 		{
 			$num++;         
-			$name = $onlyName."".$num.".".$extension; 
+			$name = $onlyName."".$num.".".$extension[1]; 
 		}
 		$uploadFile = $uploadDir.$name; 
 		move_uploaded_file($_FILES['fileInput']['tmp_name'], $uploadFile);
