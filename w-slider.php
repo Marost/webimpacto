@@ -1,6 +1,6 @@
 <?php
 //SLIDE SUPERIOR
-$rst_slideSup=mysql_query("SELECT * FROM iev_slide_superior", $conexion);
+$rst_slideSup=mysql_query("SELECT * FROM iev_slide_superior ORDER BY orden ASC", $conexion);
 ?>
 <div class="tp-banner-container hidden-sm hidden-xs">
 
