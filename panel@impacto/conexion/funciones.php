@@ -587,7 +587,7 @@ function listaSocialMedia($facebook=true, $twitter=true, $twitter_usuario, $goog
 
     echo '<ul class="social-media-fc hidden-xs">';
 
-        if($facebook==true){ echo '<li class="fb"><div class="fb-like" data-href="'.$url.'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div></li>'; };
+    	if($facebook==true){ echo '<li class="fb"><div class="fb-like" data-href="'.$url.'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div></li>'; };
 
         if($twitter==true){ echo '<li class="tw"><a class="twitter-share-button" href="https://twitter.com/share" data-url="'.$url.'" data-via="'.$twitter_usuario.'">Tweet</a></li>'; };
 
