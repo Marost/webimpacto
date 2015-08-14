@@ -6,6 +6,7 @@
     
     <!-- Sidebar subnav -->
     <ul class="subNav">
+        <li><a href="<?php echo $url_admin; ?>paginas/configuracion/f-editar.php" title=""><span class="icos-frames"></span>Configuración</a></li>
         <li><a href="<?php echo $url_admin; ?>paginas/paginas/lista.php" title=""><span class="icos-frames"></span>Páginas</a></li>
         <li><a href="<?php echo $url_admin; ?>paginas/noticias/lista.php" title=""><span class="icos-frames"></span>Noticias</a></li>
         <li><a href="<?php echo $url_admin; ?>paginas/noticias-tag/lista.php" title=""><span class="icos-frames"></span>Noticias - Etiquetas</a></li>

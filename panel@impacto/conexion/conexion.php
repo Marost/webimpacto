@@ -1,7 +1,7 @@
 <?php
 //CONEXION CON EL SERVIDOR
-$conexion=mysql_connect("localhost","root","") or die("no se puede conectar");
-mysql_select_db("impevadwebmast", $conexion) or die("no se puede seleccionar la BD");
+$conexion=mysql_connect("localhost","root","secret") or die("no se puede conectar");
+mysql_select_db("impacto", $conexion) or die("no se puede seleccionar la BD");
 
 //ZONA HORARIA
 date_default_timezone_set('America/Lima');
@@ -23,7 +23,10 @@ global $usuario_apellido;
 global $usuario_email;
 global $web;
 global $web_nombre;
+global $web_descripcion;
+global $web_palabras_clave;
 global $fechaActual;
+global $userLog;
 
 //VARIABLES
 $carpeta_admin="panel@impacto";
@@ -36,6 +39,8 @@ $rst_empresa=mysql_query("SELECT * FROM ".$tabla_suf."_empresa WHERE id=1;", $co
 $fila_empresa=mysql_fetch_array($rst_empresa);
 $web=$fila_empresa["web"];
 $web_nombre=$fila_empresa["nombre"];
+$web_descripcion=$fila_empresa["descripcion"];
+$web_palabras_clave=$fila_empresa["palabras_clave"];
 
 //URL DE ARCHIVOS
 $url_admin=$web."".$carpeta_admin."/";
