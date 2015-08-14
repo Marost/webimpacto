@@ -43,7 +43,7 @@ if($buscar==""){
 <html lang="es" class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>Buscar: <?php echo $buscar; ?></title>
+        <title>Buscar: <?php echo $buscar; ?> | <?php echo $web_nombre; ?></title>
 
         <!-- PAGINACION -->
         <link rel="stylesheet" href="/libs/pagination/pagination.css" media="screen">

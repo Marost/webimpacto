@@ -11,8 +11,7 @@ $w_video=true;
 
     <head>
         <meta charset="utf-8">
-        <title>Impacto Evangelístico</title>
-        <meta name="description" content="Impacto Evangelístico es una publicación oficial del Movimiento Misionero Mundial con 50 años de circulación en el mundo entero, editado en seis idiomas. El contenido, con reportajes, testimonios, historias e información, está orientado a edificar la vida de nuestros lectores">
+        <title><?php echo $web_nombre; ?></title>        
 
         <?php require_once("w-header-script.php"); ?>
 

@@ -9,7 +9,7 @@ $header="interno";
 <html lang="es" class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>Impacto Evangelístico</title>
+        <title><?php echo $web_nombre; ?></title>
 
         <?php require_once("w-header-script.php"); ?>
 

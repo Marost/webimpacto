@@ -1,4 +1,6 @@
 <base href="<?php echo $web; ?>"/>
+<meta name="description" content="<?php echo $web_descripcion; ?>"/>
+<meta name="keywords" content="<?php echo $web_palabras_clave; ?>"/>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 

@@ -41,7 +41,7 @@ if($num_tags>0){
 <html lang="es" class="no-js">
     <head>
         <meta charset="utf-8">
-        <title><?php echo $tags_titulo; ?></title>
+        <title><?php echo $tags_titulo; ?> | <?php echo $web_nombre; ?></title>
 
         <!-- PAGINACION -->
         <link rel="stylesheet" href="/libs/pagination/pagination.css" media="screen">

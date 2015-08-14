@@ -24,7 +24,7 @@ $rst_noticias   = mysql_query("SELECT * FROM iev_videos WHERE fecha_publicacion<
 <html lang="es" class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>Videogalería</title>
+        <title>Videogalería | <?php echo $web_nombre; ?></title>
 
         <!-- PAGINACION -->
         <link rel="stylesheet" href="/libs/pagination/pagination.css" media="screen">

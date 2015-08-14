@@ -47,7 +47,7 @@ $Noticia_UrlCol=$web."columnista/".$Columnista_id."-".$Columnista_url;
 <html lang="es" class="no-js">
     <head>
         <meta charset="utf-8">
-        <title><?php echo $Noticia_titulo; ?></title>
+        <title><?php echo $Noticia_titulo; ?> | <?php echo $web_nombre; ?></title>
 
         <!-- OPEN GRAPH -->
         <meta property="og:title" content="<?php echo $Noticia_titulo; ?>"/>

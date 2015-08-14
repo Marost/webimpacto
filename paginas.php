@@ -29,7 +29,7 @@ if($num_pagina==0){
 <html lang="es" class="no-js">
 <head>
     <meta charset="utf-8">
-    <title><?php echo $Pagina_titulo; ?></title>
+    <title><?php echo $Pagina_titulo; ?> | <?php echo $web_nombre; ?></title>
 
     <?php require_once("w-header-script.php"); ?>
 
