@@ -587,7 +587,6 @@ li > ul, li > ol {
 }
 
 .header-1 {
-    position: absolute;
     z-index: 100;
     top: 0;
     left: 0;
@@ -1582,7 +1581,6 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
 
 
 #bottom-sidebar {
-    background: #262626;
     padding: 40px 0;
 
     .widget {
@@ -1609,6 +1607,79 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
     .kopa-social-3-widget {
         margin-bottom: 5px;
     }
+    
+    .superior{
+        padding: 20px 0;
+        background: #262626;
+    }
+
+    .inferior{
+        padding: 20px 0;
+        background: #fff;
+        position: relative;
+
+        .imgwidget{
+
+            ul{
+
+                li{
+                    width: 22%;
+                    float: left;
+                    margin-top: 20px;
+
+                    img{
+                        width: 100%;
+                        -moz-box-shadow: 4px 4px 20px #000000;
+                        -webkit-box-shadow: 4px 4px 20px #000000;
+                        box-shadow: 4px 4px 20px #000000;
+                        filter: progid:DXImageTransform.Microsoft.Shadow(strength = 4, direction = 135, color = '#000000');
+                        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength = 4, Direction = 135, Color = '#000000')";
+                    }
+                }
+
+                li:first-child{
+                    margin-top: 0;
+                }
+
+                li:last-child{
+                    margin-top: 40px;
+                }
+            }
+
+        }
+
+        .textwidget{
+            font-size: 11px;
+            position: absolute;
+            width: 140px;
+            left: 275px;
+            line-height: 15px;
+        }
+
+        .issuu{
+            position: absolute;
+            text-align: right;
+            left: 0;
+            width: 40%;
+            top: 65px;
+
+            img{
+                width: 50%;
+            }
+        }
+
+        .pc-movil{
+            position: absolute;
+            width: 65%;
+            top: -80px;
+            right: 0;
+
+            img{
+                width: 100%;
+            }
+        }
+    }
+
 }
 
 
@@ -2772,6 +2843,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
 
         img {
             margin: 0;
+            height: 65px;
         }
     }
 }
@@ -2786,8 +2858,8 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
  * -----------------------------------------------------------------------------
  */
  #kopa-footer {
-    border-top: 2px solid #454545;
-    background: #1f1e1e;
+    border-top: 2px solid #808080;
+    background: #FFAB05;
     padding: 19px 0;
     
     .menu-third{
@@ -3475,28 +3547,32 @@ a#saludos-enviar:hover{ color: #FBBD2C; }
             div{
 
                 a{
-                    height: 80px;
+                    height: 40px;
                     display: block;
 
                     &.betheltv{
-                        width: 95px;
-                        height: 70px;
                         margin: 0 auto;
                         background: url("../imagenes/logos/logo-bethel-bn.png");
+                        background-size: contain;
+                        background-repeat: no-repeat;
 
                         &:hover{
                             background: url("../imagenes/logos/logo-bethel-color.png");
+                            background-size: contain;
+                            background-repeat: no-repeat;
                         }
                     }
 
                     &.mmm{
-                        width: 98px;
-                        height: 60px;
                         margin: 5px auto;
                         background: url("../imagenes/logos/logo-mmm-bn.png");
+                        background-size: contain;
+                        background-repeat: no-repeat;
 
                         &:hover{
                             background: url("../imagenes/logos/logo-mmm-color.png");
+                            background-size: contain;
+                            background-repeat: no-repeat;
                         }
                     }
                 }
