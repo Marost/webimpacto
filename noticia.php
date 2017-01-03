@@ -87,23 +87,6 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
     </head>
     <body class="kopa-single-blog sub-page">
 
-        <div class="publicidad-header container">
-
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <style type="text/css">
-                .adslot_header { width: 970px; height: 90px; margin: 10px auto; }
-            </style>
-            <ins class="adsbygoogle adslot_header"
-                 style="display:block"
-                 data-ad-client="ca-pub-4677891133721920"
-                 data-ad-slot="3499676490"
-                 data-ad-format="auto"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-
-        </div>
-
         <?php require_once("w-header.php"); ?>
 
         <div class="container">
@@ -208,22 +191,6 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
                                 </div>
                                 <!-- item right -->
 
-                                <div class="publicidad-nota">
-
-                                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                                    <style type="text/css">
-                                        .adslot_nota { width: 728px; height: 90px; margin: 10px auto; }
-                                    </style>
-                                    <ins class="adsbygoogle adslot_nota"
-                                         style="display:block"
-                                         data-ad-client="ca-pub-3674889010429322"
-                                         data-ad-slot="5650709146"
-                                         data-ad-format="auto"></ins>
-                                    <script>
-                                    (adsbygoogle = window.adsbygoogle || []).push({});
-                                    </script>
-
-                                </div>
 
                             </div>
                             <!-- clearfix -->
@@ -316,23 +283,6 @@ $Noticia_UrlCat=$web."categoria/".$NotCat_id."/".$NotCat_url;
                     <div id="sidebar" class="widget-area-26">
 
                         <?php require_once("w-portada.php"); ?>
-
-                        <div class="publicidad-sidebar">
-
-                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <style type="text/css">
-                                .adslot_sidebar { width: 300px; height: 600px; margin: 10px auto; }
-                            </style>
-                            <ins class="adsbygoogle adslot_sidebar"
-                                 style="display:block"
-                                 data-ad-client="ca-pub-4677891133721920"
-                                 data-ad-slot="3499676490"
-                                 data-ad-format="auto"></ins>
-                            <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-
-                        </div>
 
                         <?php require_once("w-galeria-fotos.php") ?>
 

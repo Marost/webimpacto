@@ -19,23 +19,6 @@ $w_video=true;
 
     <body class="kopa-home">
 
-        <div class="publicidad-header container">
-
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <style type="text/css">
-                .adslot_header { width: 970px; height: 250px; margin: 10px auto; }
-            </style>
-            <ins class="adsbygoogle adslot_header"
-                 style="display:block"
-                 data-ad-client="ca-pub-4677891133721920"
-                 data-ad-slot="3499676490"
-                 data-ad-format="auto"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            
-        </div>
-
         <?php require_once("w-header.php"); ?>
 
         <?php require_once("w-saludos-lista.php"); ?>
@@ -44,23 +27,6 @@ $w_video=true;
             <?php require_once("w-saludos-formulario.php"); ?>
 
             <?php require_once("w-home-noticias-prin.php"); ?>
-
-            <div class="publicidad-header container">
-
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <style type="text/css">
-                    .adslot_slider { width: 970px; height: 250px; margin: 10px auto; }
-                </style>
-                <ins class="adsbygoogle adslot_slider"
-                     style="display:block"
-                     data-ad-client="ca-pub-4677891133721920"
-                     data-ad-slot="3499676490"
-                     data-ad-format="auto"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                
-            </div>
 
             <?php require_once("w-home-portada.php"); ?>
 
@@ -74,23 +40,6 @@ $w_video=true;
 
                         <?php require_once("w-home-n-eventos.php"); ?>
 
-                    </div>
-
-                    <div class="publicidad-header">
-
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <style type="text/css">
-                            .adslot_nota { width: 728px; height: 90px; margin: 10px auto; }
-                        </style>
-                        <ins class="adsbygoogle adslot_nota"
-                             style="display:block"
-                             data-ad-client="ca-pub-4677891133721920"
-                             data-ad-slot="3499676490"
-                             data-ad-format="auto"></ins>
-                        <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                        
                     </div>
 
                     <div class="row">
@@ -112,7 +61,7 @@ $w_video=true;
                 </div>
 
             </div>
-
+ 
             <div class="row">
 
                 <?php require_once("w-home-galeria-fotos.php"); ?>
