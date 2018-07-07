@@ -61,7 +61,7 @@ $w_video=true;
                 </div>
 
             </div>
- 
+
             <div class="row">
 
                 <?php require_once("w-home-galeria-fotos.php"); ?>

@@ -22,6 +22,7 @@ $UrlWeb_AW="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
             </div>
             <div class="kopa-social pull-right">
                 <a target="_blank" href="https://www.facebook.com/impactoevangelistico" class="fa fa-facebook"></a>
+                <a target="_blank" href="https://twitter.com/_impactoe" class="fa fa-twitter"></a>
             </div>
             <!-- social -->
         </div>

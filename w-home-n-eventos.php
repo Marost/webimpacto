@@ -28,7 +28,8 @@ $Eventos_UrlImg=$web."imagenes/upload/".$Eventos_imagen_carpeta."thumbdeven/".$E
         <div class="widget kopa-list-posts-thumb-big-small-widget">
             <header class="widget-header">
                 <h3 class="widget-title">
-                    <a href="categoria/8/eventos" title="Noticias de Eventos">EVENTOS</a></h3>
+                    <a href="#" title="Noticias de Eventos">
+                        EVENTOS</a></h3>
             </header>
             <div class="widget-content">
                 <div class="item item-latest clearfix">
