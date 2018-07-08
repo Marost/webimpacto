@@ -67,6 +67,7 @@ $UrlWeb_AW="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
                             <li><a href="edicion-anterior-ch"><img src="imagenes/flags/ch.png" alt="Chino"/> Chino</a></li>
                         </ul>
                     </li>
+                    <li><a href="#">Edición Europa</a></li>
                     <li><a href="javascript:;">Secciones</a>
                         <ul>
                             <li><a href="categoria/11/portada">Portada</a></li>
@@ -98,6 +99,7 @@ $UrlWeb_AW="http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];
                             <li><a href="edicion-anterior-ch"><img src="imagenes/flags/ch.png" alt="Chino"/> Chino</a></li>
                         </ul>
                     </li>
+                    <li><a href="#">Edición Europa</a></li>
                     <li><a href="javascript:;">Secciones</a>
                         <ul>
                             <li><a href="categoria/11/portada">Portada</a></li>
