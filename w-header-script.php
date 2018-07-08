@@ -4,7 +4,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 
 <link rel="stylesheet" href="libs/owlcarousel/v1/owl.carousel.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="libs/owlcarousel/v2/owl.carousel.css?update=<?php echo date("YmdHi") ?>" media="all">

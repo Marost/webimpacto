@@ -46,8 +46,8 @@ $nota_UrlImg=$web."imagenes/slide/".$nota_imagen_carpeta."".$nota_imagen;
 	<link rel="stylesheet" type="text/css" href="<?php if(isset($url_admin)){ echo $url_admin; }; ?>paginas/slide-superior/app/rs-plugin/css/settings.css" media="screen" />
 
 	<!-- GOOGLE FONTS -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
