@@ -10,7 +10,7 @@ body {
 .container {
     width: 1214px;
 }
- ::selection {
+::selection {
     background: #fbbd2c;
     color: #fff;
     text-shadow: none;
@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     clear: both;
 
     a{
-        color: #292929; 
+        color: #292929;
 
         &:hover{
             color: #fbbd2c;
@@ -244,7 +244,7 @@ li > ul, li > ol {
 
 /* TEMA */
 .owl-theme{
-    
+
     .owl-controls {
         text-align: center;
 
@@ -258,7 +258,6 @@ li > ul, li > ol {
                 font-size: 12px;
                 -webkit-border-radius: 0;
                 -moz-border-radius: 0;
-                -ms-border-radius: 0;
                 border-radius: 0;
                 background: #869791;
             }
@@ -284,7 +283,6 @@ li > ul, li > ol {
                 margin: 5px 7px;
                 -webkit-border-radius: 20px;
                 -moz-border-radius: 20px;
-                -ms-border-radius: 20px;
                 border-radius: 20px;
                 background: #869791;
 
@@ -296,7 +294,6 @@ li > ul, li > ol {
                     font-size: 12px;
                     -webkit-border-radius: 30px;
                     -moz-border-radius: 30px;
-                    -ms-border-radius: 30px;
                     border-radius: 30px;
                 }
             }
@@ -337,7 +334,6 @@ li > ul, li > ol {
         background: #131313;
         -webkit-border-radius: 0;
         -moz-border-radius: 0;
-        -ms-border-radius: 0;
         border-radius: 0;
         border: none;
         padding: 11px 15px 9px;
@@ -356,7 +352,6 @@ li > ul, li > ol {
         padding: 15px 20px;
         -webkit-border-radius: 0;
         -moz-border-radius: 0;
-        -ms-border-radius: 0;
         border-radius: 0;
 
         p:last-child {
@@ -380,7 +375,7 @@ li > ul, li > ol {
         .ui-accordion-content {
             padding: 15px 0;
         }
-    }    
+    }
 }
 
 
@@ -516,7 +511,7 @@ li > ul, li > ol {
  * 2. Header/#kopa-header
  * -----------------------------------------------------------------------------
  */
- #kopa-header{
+#kopa-header{
 
     .menu-second{
 
@@ -669,7 +664,7 @@ li > ul, li > ol {
                     background: #343434;
                 }
 
-                &::first-child {
+                &:first-child {
                     border: none;
                 }
 
@@ -768,7 +763,7 @@ li > ul, li > ol {
     }
 
     .kopa-social{
-        
+
         a{
             line-height: 30px;
         }
@@ -802,7 +797,7 @@ li > ul, li > ol {
         height: 38px;
 
         .kopa-menu{
-            
+
             &.sf-menu{
 
                 li {
@@ -866,7 +861,7 @@ li > ul, li > ol {
     .mobile-menu-icon {
         right: 0;
     }
-    
+
     .kopa-menu{
 
         &.mobile-menu {
@@ -1018,7 +1013,7 @@ li > ul, li > ol {
 ul{
 
     &.page-numbers {
-        margin: 30px 0px;
+        margin: 30px 0;
         overflow: hidden;
         display: inline-block;
         border-right: 1px solid #e4e3f0;
@@ -1079,23 +1074,37 @@ ul{
 }
 
 
- /**
- * 4. Content
- * -----------------------------------------------------------------------------
- */
- textarea, input[type="submit"] {
-  display: block;
-  width: 100%;
-  height: 34px;
-  padding: 6px 12px;
-  font-size: 12px;
-  line-height: 20px;
-  vertical-align: middle;
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #e4e3f0; }
+/**
+* 4. Content
+* -----------------------------------------------------------------------------
+*/
+textarea, input[type="submit"] {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 12px;
+    line-height: 20px;
+    vertical-align: middle;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #e4e3f0; }
 
-input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-social-1 i, .link-social-3 i, .header-1 .kopa-menu.sf-menu li, .header-2 .main-menu .kopa-menu.sf-menu li, .kopa-head-line .kopa-search-box button, .kopa-head-line .kopa-search-box span, .kopa-full-width-carousel-widget .owl-theme .owl-controls .owl-page span, .kopa-grid-posts-2-widget .item .item-content, .kopa-list-posts-carousel-widget .item-content, .kopa-list-posts-carousel-widget .owl-theme .owl-controls .owl-nav div, .kopa-grid-posts-widget .item.pull-left .item-content, .kopa-list-item-carousel-widget .item .kopa-metadata, .kopa-gallery-widget .widget-content a:before, .kopa-single-gallery-widget .sync2 .owl-item:before, .widget_archive > ul li,
+input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div,
+.link-social-1 i, .link-social-3 i,
+.header-1 .kopa-menu.sf-menu li,
+.header-2 .main-menu .kopa-menu.sf-menu li,
+.kopa-head-line .kopa-search-box button,
+.kopa-head-line .kopa-search-box span,
+.kopa-full-width-carousel-widget .owl-theme .owl-controls .owl-page span,
+.kopa-grid-posts-2-widget .item .item-content,
+.kopa-list-posts-carousel-widget .item-content,
+.kopa-list-posts-carousel-widget .owl-theme .owl-controls .owl-nav div,
+.kopa-grid-posts-widget .item.pull-left .item-content,
+.kopa-list-item-carousel-widget .item .kopa-metadata,
+.kopa-gallery-widget .widget-content a:before,
+.kopa-single-gallery-widget .sync2 .owl-item:before,
+.widget_archive > ul li,
 .widget_categories > ul li,
 .widget_links > ul li,
 .widget_meta > ul li,
@@ -1103,10 +1112,9 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
 .widget_pages > ul li,
 .widget_recent_comments > ul li,
 .widget_recent_entries > ul li {
-  transition: all .3s;
-  -ms-transition: all .3s;
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
 }
 
 .kopa-date:before, .kopa-tweet-widget .tweetList li:before, .widget_archive > ul li:before,
@@ -1117,13 +1125,13 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
 .widget_pages > ul li:before,
 .widget_recent_comments > ul li:before,
 .widget_recent_entries > ul li:before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-family: FontAwesome, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .kopa-date-box {
@@ -1137,7 +1145,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
 
     i, span{
         display: block;
-        text-align: center;        
+        text-align: center;
     }
 
     i{
@@ -1257,16 +1265,16 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
         }
     }
 }
- 
+
 @media screen and (max-width: 599px) {
     .error-404 .left-col,
     .error-404 .right-col{
         width: 100%;
         margin: 0;
-   }
-   .error-404 .left-col p {
-       text-align: center;
-  }
+    }
+    .error-404 .left-col p {
+        text-align: center;
+    }
 }
 
 
@@ -1279,7 +1287,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
 
     .entry-meta {
         margin-bottom: 10px;
-        
+
         > span, > a {
             margin-right: 5px;
         }
@@ -1366,7 +1374,6 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
         position: relative;
         -webkit-border-radius: 0;
         -moz-border-radius: 0;
-        -ms-border-radius: 0;
         border-radius: 0;
         background: #131313;
         height: 24px;
@@ -1387,7 +1394,6 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
             background: #686868;
             -webkit-border-radius: 0;
             -moz-border-radius: 0;
-            -ms-border-radius: 0;
             border-radius: 0;
             border: none;
             margin: 0;
@@ -1399,7 +1405,6 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
         margin-top: 10px;
         -webkit-border-radius: 0;
         -moz-border-radius: 0;
-        -ms-border-radius: 0;
         border-radius: 0;
         background: #686868;
         border: none;
@@ -1409,7 +1414,6 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
             background: #131313;
             -webkit-border-radius: 0;
             -moz-border-radius: 0;
-            -ms-border-radius: 0;
             border-radius: 0;
         }
 
@@ -1418,7 +1422,6 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
             background: #131313;
             -webkit-border-radius: 0;
             -moz-border-radius: 0;
-            -ms-border-radius: 0;
             border-radius: 0;
             cursor: pointer;
             height: 12px;
@@ -1607,7 +1610,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
     .kopa-social-3-widget {
         margin-bottom: 5px;
     }
-    
+
     .superior{
         padding: 20px 0;
         background: #262626;
@@ -1694,7 +1697,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
         .widget-header {
             display: none;
         }
-    }   
+    }
 
     .kopa-list-posts-carousel-widget{
 
@@ -1746,7 +1749,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
     }
 }
 
- 
+
 
 .kopa-grid-posts-widget {
     position: relative;
@@ -2176,7 +2179,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
                 top: auto;
                 bottom: 96px;
 
-                > spann, > a{
+                > span, > a{
                     display: inline-block;
                     float: left;
                     margin: 0 3px;
@@ -2447,7 +2450,7 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
             }
         }
     }
-} 
+}
 
 
 
@@ -2747,10 +2750,10 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
     margin-bottom: 0;
 }
 
- /**
- * 6. Search/
- * -----------------------------------------------------------------------------
- */
+/**
+* 6. Search/
+* -----------------------------------------------------------------------------
+*/
 #sidebar .search-form {
     position: relative;
 }
@@ -2776,8 +2779,8 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
 .kopa-head-line .kopa-search-box {
     position: absolute;
     z-index: 999;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     height: 36px;
 }
 .kopa-head-line .kopa-search-box .search-form {
@@ -2812,10 +2815,10 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
     border: none;
     color: #727272;
 }
- /**
- * 7. Advertisements / .kopa-ads-widget
- * -----------------------------------------------------------------------------
- */
+/**
+* 7. Advertisements / .kopa-ads-widget
+* -----------------------------------------------------------------------------
+*/
 .kopa-ads-widget {
     border: 1px solid #eae9e9;
     background: #f7f7f7;
@@ -2853,15 +2856,15 @@ input[type="submit"], a, .btn, .owl-theme .owl-controls .owl-nav div, .link-soci
     border: none;
     background: none;
 }
- /**
- * 8. Footer / #kopa-footer
- * -----------------------------------------------------------------------------
- */
- #kopa-footer {
+/**
+* 8. Footer / #kopa-footer
+* -----------------------------------------------------------------------------
+*/
+#kopa-footer {
     border-top: 2px solid #808080;
     background: #FFAB05;
     padding: 19px 0;
-    
+
     .menu-third{
 
         ul {
@@ -3064,7 +3067,7 @@ section#home-notprin{
 
 /* LOGO */
 .header-1 .kopa-header-middle{
-    background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.65);
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.65);
 }
 
 /* SOCIAL MEDIA */
@@ -3278,7 +3281,7 @@ a#saludos-enviar:hover{ color: #FBBD2C; }
         li{
             list-style: none;
             padding: 0;
-            margin: 0 0 20px 0px;
+            margin: 0 0 20px 0;
         }
     }
 
@@ -3494,13 +3497,13 @@ a#saludos-enviar:hover{ color: #FBBD2C; }
         select{
             width: 60%;
             border: 2px solid #c6c6c6;
-            font-size: 16px;    
+            font-size: 16px;
             padding: 5px;
             border-radius: 5px;
         }
     }
 }
- 
+
 
 /* EDICIONES ANTERIORES */
 #edicion-anterior{

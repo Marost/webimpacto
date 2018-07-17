@@ -39,7 +39,7 @@
 
         <div class="container">
 
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                 
                 <div class="widget widget_text">
 
@@ -63,7 +63,7 @@
 
             </div>
 
-            <div class="col-lg-8">
+            <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
 
                 <div class="issuu">
                     <a href="http://issuu.com/impactoevangelistico.net" target="_blank">
