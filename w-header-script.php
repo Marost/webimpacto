@@ -20,6 +20,7 @@
 
 <link rel="stylesheet" href="css/estilos.css?update=<?php echo date("YmdHi") ?>" media="all">
 <link rel="stylesheet" href="css/responsivo.css?update=<?php echo date("YmdHi") ?>" media="all">
+<link rel="stylesheet" href="css/custom.css" media="all">
 <link rel="stylesheet" href="" media="all" id="accesibilidadCSS">
 
 <?php if(isset($header)) { if($header=="home"){ ?>

@@ -363,12 +363,13 @@ RewriteRule ^panel@impacto/$                  /panel@impacto/login.php
 
 #EDICION ANTERIOS
 RewriteRule ^edicion-anterior-(.*)$           /edicion-anterior.php?url=$1
+RewriteRule ^edicion-europa$                  /edicion-europa.php
 
 #NOTICIA DE PORTADA
-RewriteRule ^noticiaed/([0-9]*)-(.*)$        /noticia-portada.php?id=$1&url=$2
+RewriteRule ^noticiaed/([0-9]*)-(.*)$         /noticia-portada.php?id=$1&url=$2
 
 #OTROS
-RewriteRule ^(.*)/$                          /paginas.php?url=$1
+RewriteRule ^(.*)/$                           /paginas.php?url=$1
 
 # ----------------------------------------------------------------------
 # Suppress or force the "www." at the beginning of URLs

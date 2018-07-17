@@ -26,9 +26,12 @@ $rst_edNotAW=mysql_query("SELECT * FROM iev_edicion_noticia WHERE edicion_id=$Ed
         <header class="widget-header">
             <h3 class="widget-title">
                 <a href="#" title="<?php echo $EdEsp_AccWeb; ?>">
-                    EDICIÓN IMPRESA
+                    EDICIÓN AMÉRICA
                 </a>
             </h3>
+            <a class="edicion-europa" href="/edicion-europa" title="Edición Europa">
+                EDICIÓN EUROPA
+            </a>
         </header>
 
         <div id="AccWeb-Portada">
