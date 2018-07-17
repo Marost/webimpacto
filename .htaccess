@@ -362,8 +362,8 @@ RewriteRule ^videos$                          /galeria-video-lista.php
 RewriteRule ^panel@impacto/$                  /panel@impacto/login.php
 
 #EDICION ANTERIOS
-RewriteRule ^edicion-anterior-(.*)$           /edicion-anterior.php?url=$1
 RewriteRule ^edicion-europa$                  /edicion-europa.php
+RewriteRule ^edicion-anterior-(.*)$           /edicion-anterior.php?url=$1
 
 #NOTICIA DE PORTADA
 RewriteRule ^noticiaed/([0-9]*)-(.*)$         /noticia-portada.php?id=$1&url=$2
